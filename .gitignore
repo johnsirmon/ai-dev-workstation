@@ -1,0 +1,35 @@
+# Environment variables (contains sensitive keys)
+.env
+
+# Logs
+logs/
+*.log
+
+# Reports (may contain sensitive data)
+reports/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# IDE files
+.vscode/settings.json
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+sync-diff.txt
+
+# Claude Code files
+.claude/
