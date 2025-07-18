@@ -4,10 +4,8 @@
 
 set -e
 
-echo "🤖 AI Agent Development Workstation - Weekly Update"
-echo "=================================================="
+echo "AI Agent Development Workstation - Weekly Update"
 echo "Started: $(date)"
-echo ""
 
 # Create necessary directories
 mkdir -p reports logs
@@ -19,27 +17,31 @@ exec 2> >(tee -a "$LOG_FILE" >&2)
 
 # Function to check if Python packages are installed
 check_python_deps() {
-    echo "📦 Checking Python dependencies..."
+    echo "Checking Python dependencies..."
     
     if ! python3 -c "import requests, packaging, bs4" 2>/dev/null; then
         echo "Installing required Python packages..."
-        pip3 install requests packaging beautifulsoup4
+        if [ -f "requirements.txt" ]; then
+            pip3 install -r requirements.txt
+        else
+            pip3 install requests packaging beautifulsoup4
+        fi
     fi
     
-    echo "✅ Python dependencies ready"
+    echo "Python dependencies ready"
 }
 
 # Function to run tool version checks
 run_tool_checks() {
     echo ""
-    echo "🔧 Running tool version checks..."
+    echo "Running tool version checks..."
     echo "================================="
     
     if [ -f "scripts/update-tools.py" ]; then
         python3 scripts/update-tools.py
-        echo "✅ Tool version check completed"
+        echo "Tool version check completed"
     else
-        echo "❌ Tool version checker not found"
+        echo "ERROR: Tool version checker not found"
         exit 1
     fi
 }
@@ -47,14 +49,14 @@ run_tool_checks() {
 # Function to run forum monitoring
 run_forum_monitoring() {
     echo ""
-    echo "📡 Running forum monitoring..."
+    echo "Running forum monitoring..."
     echo "=============================="
     
     if [ -f "scripts/forum-monitor.py" ]; then
         python3 scripts/forum-monitor.py
-        echo "✅ Forum monitoring completed"
+        echo "Forum monitoring completed"
     else
-        echo "❌ Forum monitor not found"
+        echo "ERROR: Forum monitor not found"
         exit 1
     fi
 }
@@ -62,7 +64,7 @@ run_forum_monitoring() {
 # Function to update MCP server configurations
 update_mcp_configs() {
     echo ""
-    echo "🔌 Updating MCP server configurations..."
+    echo "Updating MCP server configurations..."
     echo "======================================="
     
     # Check if MCP servers are up to date
@@ -71,22 +73,22 @@ update_mcp_configs() {
         
         # Update context7 if available
         if npx --yes @upstash/context7-mcp --version &> /dev/null; then
-            echo "✅ Context7 MCP server is available"
+            echo "Context7 MCP server is available"
         else
-            echo "⚠️  Context7 MCP server not accessible - check configuration"
+            echo "WARNING: Context7 MCP server not accessible - check configuration"
         fi
         
         # Update other MCP servers
-        echo "✅ MCP server check completed"
+        echo "MCP server check completed"
     else
-        echo "⚠️  npm/npx not found - MCP servers may not be available"
+        echo "WARNING: npm/npx not found - MCP servers may not be available"
     fi
 }
 
 # Function to generate weekly summary
 generate_summary() {
     echo ""
-    echo "📊 Generating weekly summary..."
+    echo "Generating weekly summary..."
     echo "=============================="
     
     SUMMARY_FILE="reports/weekly-summary-$(date +%Y-%m-%d).md"
@@ -97,10 +99,10 @@ generate_summary() {
 
 ## Summary
 This weekly update includes:
-- ✅ Tool version checks and updates
-- ✅ Community forum monitoring
-- ✅ MCP server configuration updates
-- ✅ Trending tool analysis
+- Tool version checks and updates
+- Community forum monitoring
+- MCP server configuration updates
+- Trending tool analysis
 
 ## Files Updated
 - \`config/tools-tracking.json\` - Tool version tracking
@@ -114,28 +116,28 @@ This weekly update includes:
 4. Consider updating development workflow based on new findings
 
 ## Automation Status
-- 🤖 **Automated**: Tool version checking
-- 🤖 **Automated**: Forum monitoring
-- 🤖 **Automated**: README updates
-- 👤 **Manual**: Tool evaluation and integration decisions
+- **Automated**: Tool version checking
+- **Automated**: Forum monitoring
+- **Automated**: README updates
+- **Manual**: Tool evaluation and integration decisions
 
 ---
 *This update was generated automatically by the AI Agent Development Workstation update system.*
 EOF
 
-    echo "✅ Weekly summary generated: $SUMMARY_FILE"
+    echo "Weekly summary generated: $SUMMARY_FILE"
 }
 
 # Function to commit changes if any
 commit_changes() {
     echo ""
-    echo "📝 Checking for changes to commit..."
+    echo "Checking for changes to commit..."
     echo "==================================="
     
     if git diff --quiet && git diff --cached --quiet; then
-        echo "📄 No changes to commit"
+        echo "No changes to commit"
     else
-        echo "📝 Changes detected, creating commit..."
+        echo "Changes detected, creating commit..."
         
         # Add all tracked files that have been modified
         git add -u
@@ -153,15 +155,15 @@ commit_changes() {
 - Added community insights report
 - Refreshed trending tools analysis
 
-🤖 Generated by AI Agent Development Workstation automation"
+Generated by AI Agent Development Workstation automation"
         
-        echo "✅ Changes committed successfully"
+        echo "Changes committed successfully"
     fi
 }
 
 # Main execution
 main() {
-    echo "🚀 Starting automated update process..."
+    echo "Starting automated update process..."
     
     # Check dependencies
     check_python_deps
@@ -182,12 +184,12 @@ main() {
     commit_changes
     
     echo ""
-    echo "🎉 Weekly update completed successfully!"
+    echo "Weekly update completed successfully!"
     echo "======================================"
     echo "Completed: $(date)"
     echo "Log file: $LOG_FILE"
     echo ""
-    echo "📋 Next actions to consider:"
+    echo "Next actions to consider:"
     echo "1. Review the generated reports in the reports/ directory"
     echo "2. Check for any new trending tools that might be worth investigating"
     echo "3. Test any updated tool versions in your development environment"

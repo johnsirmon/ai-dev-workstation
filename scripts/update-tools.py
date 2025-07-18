@@ -1,142 +1,134 @@
 #!/usr/bin/env python3
 """
 Automated tool version checker and README updater for AI Agent Development Workstation
-Uses MCP servers and web scraping to check for updates to tracked tools
+Uses APIs to check for updates to tracked tools and updates documentation
 """
 
-import json
+import logging
 import re
-import subprocess
 import sys
 from datetime import datetime
 from pathlib import Path
 from typing import Dict, List, Optional
 
-import requests
-from packaging import version
+from utils import ConfigManager, DependencyManager, HTTPClient, Logger, ReportGenerator, get_current_timestamp
 
 
 class ToolVersionChecker:
+    """Checks for updates to tracked tools and frameworks"""
+    
     def __init__(self, config_path: str = "config/tools-tracking.json"):
-        self.config_path = Path(config_path)
-        self.config = self.load_config()
+        self.config_manager = ConfigManager(config_path)
+        self.http_client = HTTPClient()
         self.updates_found = []
         self.trending_tools = []
         
-    def load_config(self) -> Dict:
-        """Load the tools tracking configuration"""
-        try:
-            with open(self.config_path, 'r') as f:
-                return json.load(f)
-        except FileNotFoundError:
-            print(f"Config file not found: {self.config_path}")
-            sys.exit(1)
-    
-    def save_config(self):
-        """Save updated configuration"""
-        with open(self.config_path, 'w') as f:
-            json.dump(self.config, f, indent=2)
-    
     def check_pypi_version(self, package_name: str) -> Optional[str]:
         """Check PyPI for latest version of a package"""
-        try:
-            response = requests.get(f"https://pypi.org/pypi/{package_name}/json", timeout=10)
-            if response.status_code == 200:
-                data = response.json()
-                return data['info']['version']
-        except Exception as e:
-            print(f"Error checking PyPI for {package_name}: {e}")
+        url = f"https://pypi.org/pypi/{package_name}/json"
+        data = self.http_client.get(url)
+        
+        if data and 'info' in data:
+            return data['info']['version']
         return None
     
     def check_npm_version(self, package_name: str) -> Optional[str]:
         """Check npm registry for latest version of a package"""
-        try:
-            response = requests.get(f"https://registry.npmjs.org/{package_name}", timeout=10)
-            if response.status_code == 200:
-                data = response.json()
-                return data['dist-tags']['latest']
-        except Exception as e:
-            print(f"Error checking npm for {package_name}: {e}")
+        url = f"https://registry.npmjs.org/{package_name}"
+        data = self.http_client.get(url)
+        
+        if data and 'dist-tags' in data:
+            return data['dist-tags']['latest']
         return None
     
     def check_github_releases(self, repo_url: str) -> Optional[str]:
         """Check GitHub releases for latest version"""
-        try:
-            # Extract owner/repo from URL
-            match = re.search(r'github\.com/([^/]+)/([^/]+)', repo_url)
-            if not match:
-                return None
-            
-            owner, repo = match.groups()
-            api_url = f"https://api.github.com/repos/{owner}/{repo}/releases/latest"
-            
-            response = requests.get(api_url, timeout=10)
-            if response.status_code == 200:
-                data = response.json()
-                return data['tag_name'].lstrip('v')
-        except Exception as e:
-            print(f"Error checking GitHub releases for {repo_url}: {e}")
+        match = re.search(r'github\.com/([^/]+)/([^/]+)', repo_url)
+        if not match:
+            return None
+        
+        owner, repo = match.groups()
+        url = f"https://api.github.com/repos/{owner}/{repo}/releases/latest"
+        data = self.http_client.get(url)
+        
+        if data and 'tag_name' in data:
+            return data['tag_name'].lstrip('v')
         return None
     
     def check_tool_updates(self):
         """Check for updates to all tracked tools"""
-        print("Checking for tool updates...")
+        logging.info("Checking for tool updates...")
         
-        for category, tools in self.config['tracked_tools'].items():
-            print(f"\nChecking {category}...")
+        for category, tools in self.config_manager.config['tracked_tools'].items():
+            logging.info(f"Checking {category}...")
             
             for tool_name, tool_info in tools.items():
-                print(f"  Checking {tool_name}...")
-                latest_version = None
+                latest_version = self._get_latest_version(tool_info)
                 
-                # Check PyPI if package is available
-                if tool_info.get('pypi_package'):
-                    latest_version = self.check_pypi_version(tool_info['pypi_package'])
-                
-                # Check npm if package is available
-                if not latest_version and tool_info.get('npm_package'):
-                    latest_version = self.check_npm_version(tool_info['npm_package'])
-                
-                # Check GitHub releases
-                if not latest_version and tool_info.get('source'):
-                    latest_version = self.check_github_releases(tool_info['source'])
-                
-                # Compare versions
-                if latest_version and latest_version != tool_info['current_version']:
-                    try:
-                        if version.parse(latest_version) > version.parse(tool_info['current_version']):
-                            self.updates_found.append({
-                                'tool': tool_name,
-                                'category': category,
-                                'old_version': tool_info['current_version'],
-                                'new_version': latest_version,
-                                'description': tool_info['description']
-                            })
-                            
-                            # Update config
-                            tool_info['current_version'] = latest_version
-                            tool_info['last_updated'] = datetime.now().strftime('%Y-%m-%d')
-                            
-                            print(f"    → Update found: {tool_info['current_version']} → {latest_version}")
-                    except Exception as e:
-                        print(f"    → Error comparing versions: {e}")
+                if latest_version and self._is_newer_version(latest_version, tool_info['current_version']):
+                    self._record_update(tool_name, category, tool_info, latest_version)
+                    logging.info(f"Update found for {tool_name}: {tool_info['current_version']} → {latest_version}")
                 else:
-                    print(f"    → Up to date: {tool_info['current_version']}")
+                    logging.debug(f"{tool_name} is up to date: {tool_info['current_version']}")
+    
+    def _get_latest_version(self, tool_info: Dict) -> Optional[str]:
+        """Get latest version from available sources"""
+        # Check PyPI first
+        if tool_info.get('pypi_package'):
+            version = self.check_pypi_version(tool_info['pypi_package'])
+            if version:
+                return version
+        
+        # Check npm
+        if tool_info.get('npm_package'):
+            version = self.check_npm_version(tool_info['npm_package'])
+            if version:
+                return version
+        
+        # Check GitHub releases
+        if tool_info.get('source'):
+            return self.check_github_releases(tool_info['source'])
+        
+        return None
+    
+    def _is_newer_version(self, new_version: str, current_version: str) -> bool:
+        """Compare versions to determine if new version is newer"""
+        try:
+            from packaging import version
+            return version.parse(new_version) > version.parse(current_version)
+        except Exception as e:
+            logging.warning(f"Error comparing versions {current_version} vs {new_version}: {e}")
+            return new_version != current_version
+    
+    def _record_update(self, tool_name: str, category: str, tool_info: Dict, latest_version: str):
+        """Record an update in the tracking system"""
+        self.updates_found.append({
+            'tool': tool_name,
+            'category': category,
+            'old_version': tool_info['current_version'],
+            'new_version': latest_version,
+            'description': tool_info['description']
+        })
+        
+        # Update config
+        tool_info['current_version'] = latest_version
+        tool_info['last_updated'] = get_current_timestamp()
     
     def search_trending_tools(self):
-        """Search for trending tools on GitHub and forums"""
-        print("\nSearching for trending tools...")
+        """Search for trending tools on GitHub"""
+        logging.info("Searching for trending tools...")
         
-        # Search GitHub topics
-        for topic in self.config['monitoring_sources']['github_topics']:
+        topics = self.config_manager.config['monitoring_sources']['github_topics']
+        
+        for topic in topics:
             try:
-                # Search for repositories created in the last 30 days
-                query = f"topic:{topic} created:>={datetime.now().strftime('%Y-%m-%d')}"
+                # Search for recent repositories with stars
+                created_since = datetime.now().strftime('%Y-%m-%d')
+                query = f"topic:{topic} created:>={created_since}"
                 url = f"https://api.github.com/search/repositories?q={query}&sort=stars&order=desc&per_page=5"
                 
-                response = requests.get(url, timeout=10)
-                if response.status_code == 200:
-                    data = response.json()
+                data = self.http_client.get(url)
+                if data and 'items' in data:
                     for repo in data['items']:
                         if repo['stargazers_count'] > 50:  # Minimum stars threshold
                             self.trending_tools.append({
@@ -149,124 +141,132 @@ class ToolVersionChecker:
                                 'created_at': repo['created_at']
                             })
             except Exception as e:
-                print(f"Error searching topic {topic}: {e}")
+                logging.warning(f"Error searching topic {topic}: {e}")
     
     def update_readme(self):
-        """Update README.md with latest tool versions and trending tools"""
-        print("\nUpdating README.md...")
+        """Update README.md with latest tool versions"""
+        logging.info("Updating README.md...")
         
         readme_path = Path("README.md")
         if not readme_path.exists():
-            print("README.md not found!")
+            logging.error("README.md not found!")
             return
         
         with open(readme_path, 'r') as f:
             content = f.read()
         
-        # Update version numbers in the frameworks table
+        # Update version numbers in framework table
         for update in self.updates_found:
             if update['category'] == 'ai_frameworks':
-                # Look for version pattern in the table
-                old_pattern = rf"(\*\*{re.escape(update['tool'])}\*\*\|)([^|]+)(\|)"
-                new_replacement = rf"\g<1>{update['new_version']} (Updated {datetime.now().strftime('%b %d %Y')})\g<3>"
-                content = re.sub(old_pattern, new_replacement, content, flags=re.IGNORECASE)
+                pattern = rf"(\*\*{re.escape(update['tool'])}\*\*\|)([^|]+)(\|)"
+                replacement = rf"\g<1>{update['new_version']} (Updated {get_current_timestamp()})\g<3>"
+                content = re.sub(pattern, replacement, content, flags=re.IGNORECASE)
         
         # Add trending tools section if new tools found
         if self.trending_tools:
-            trending_section = self.generate_trending_section()
-            
-            # Find the end of the existing content and add trending section
-            if "## Trending Tools to Investigate" not in content:
-                content += f"\n\n---\n\n{trending_section}"
-            else:
-                # Replace existing trending section
-                pattern = r"## Trending Tools to Investigate.*?(?=\n\n---|\n\n##|\Z)"
-                content = re.sub(pattern, trending_section, content, flags=re.DOTALL)
+            content = self._add_trending_section(content)
         
-        # Update the last updated timestamp
+        # Update timestamp
         today = datetime.now().strftime('%B %d, %Y')
-        content = re.sub(
-            r'Generated.*?–',
-            f'Generated {today} –',
-            content
-        )
+        content = re.sub(r'Generated.*?–', f'Generated {today} –', content)
         
         with open(readme_path, 'w') as f:
             f.write(content)
         
-        print("README.md updated successfully!")
+        logging.info("README.md updated successfully")
     
-    def generate_trending_section(self) -> str:
-        """Generate the trending tools section"""
+    def _add_trending_section(self, content: str) -> str:
+        """Add or update trending tools section in README"""
+        trending_section = self._generate_trending_section()
+        
+        if "## Trending Tools to Investigate" not in content:
+            content += f"\n\n---\n\n{trending_section}"
+        else:
+            pattern = r"## Trending Tools to Investigate.*?(?=\n\n---|\n\n##|\Z)"
+            content = re.sub(pattern, trending_section, content, flags=re.DOTALL)
+        
+        return content
+    
+    def _generate_trending_section(self) -> str:
+        """Generate trending tools section"""
         section = "## Trending Tools to Investigate\n\n"
         section += "| Tool | Stars | Language | Use Case | Repository |\n"
         section += "|------|-------|----------|----------|------------|\n"
         
-        for tool in self.trending_tools[:10]:  # Limit to top 10
-            section += f"|**{tool['name']}**|{tool['stars']}|{tool['language'] or 'N/A'}|{tool['description'][:100]}{'...' if len(tool['description']) > 100 else ''}|[GitHub]({tool['url']})|\n"
+        for tool in self.trending_tools[:10]:  # Top 10 only
+            desc = tool['description'][:100] + ('...' if len(tool['description']) > 100 else '')
+            section += f"|**{tool['name']}**|{tool['stars']}|{tool['language'] or 'N/A'}|{desc}|[GitHub]({tool['url']})|\n"
         
         return section
     
-    def generate_update_summary(self) -> str:
+    def generate_summary(self) -> str:
         """Generate summary of updates found"""
         if not self.updates_found and not self.trending_tools:
             return "No updates found."
         
-        summary = []
+        sections = []
         
         if self.updates_found:
-            summary.append(f"## Tool Updates Found ({len(self.updates_found)})")
-            for update in self.updates_found:
-                summary.append(f"- **{update['tool']}**: {update['old_version']} → {update['new_version']}")
+            sections.append({
+                'title': f"Tool Updates Found ({len(self.updates_found)})",
+                'items': [f"**{u['tool']}**: {u['old_version']} → {u['new_version']}" 
+                         for u in self.updates_found]
+            })
         
         if self.trending_tools:
-            summary.append(f"\n## Trending Tools Found ({len(self.trending_tools)})")
-            for tool in self.trending_tools[:5]:  # Show top 5 in summary
-                summary.append(f"- **{tool['name']}** ({tool['stars']} stars): {tool['description'][:100]}{'...' if len(tool['description']) > 100 else ''}")
+            sections.append({
+                'title': f"Trending Tools Found ({len(self.trending_tools)})",
+                'items': [f"**{t['name']}** ({t['stars']} stars): {t['description'][:100]}{'...' if len(t['description']) > 100 else ''}"
+                         for t in self.trending_tools[:5]]
+            })
         
-        return "\n".join(summary)
+        return ReportGenerator.generate_markdown_report("Update Summary", sections)
     
     def run(self):
         """Run the complete update process"""
-        print("Starting AI Agent Development Workstation Update Check...")
-        print(f"Config: {self.config_path}")
-        print(f"Last update check: {self.config.get('last_update_check', 'Never')}")
+        logging.info("Starting tool update check...")
         
-        # Check for tool updates
+        # Check for updates
         self.check_tool_updates()
         
         # Search for trending tools
         self.search_trending_tools()
         
         # Update configuration
-        self.config['last_update_check'] = datetime.now().strftime('%Y-%m-%d')
-        self.config['trending_tools'] = self.trending_tools
-        self.save_config()
+        self.config_manager.config['last_update_check'] = get_current_timestamp()
+        self.config_manager.config['trending_tools'] = self.trending_tools
+        self.config_manager.save_config()
         
         # Update README
         self.update_readme()
         
-        # Print summary
-        print(f"\n{self.generate_update_summary()}")
+        # Generate and display summary
+        summary = self.generate_summary()
+        print(summary)
         
         return len(self.updates_found) > 0 or len(self.trending_tools) > 0
 
 
-if __name__ == "__main__":
+def main():
+    """Main entry point"""
+    Logger.setup_logging("INFO")
+    
+    # Check and install dependencies
+    DependencyManager.check_and_install(['requests', 'packaging'])
+    
     try:
-        import requests
-        from packaging import version
-    except ImportError:
-        print("Installing required packages...")
-        subprocess.check_call([sys.executable, "-m", "pip", "install", "requests", "packaging"])
-        import requests
-        from packaging import version
-    
-    checker = ToolVersionChecker()
-    has_updates = checker.run()
-    
-    if has_updates:
-        print(f"\n✅ Update check completed with changes!")
-        print("Consider reviewing the updates and committing the changes.")
-    else:
-        print(f"\n✅ Update check completed - everything is up to date!")
+        checker = ToolVersionChecker()
+        has_updates = checker.run()
+        
+        if has_updates:
+            logging.info("Update check completed with changes!")
+        else:
+            logging.info("Update check completed - everything is up to date!")
+            
+    except Exception as e:
+        logging.error(f"Error during update check: {e}")
+        sys.exit(1)
+
+
+if __name__ == "__main__":
+    main()
