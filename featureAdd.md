@@ -1,5 +1,3 @@
-# ai-dev-workstation
-basic setup for development on a Windows machine with WSL and vscode
 
 # Modern AI Agent Development Toolkit — July 18, 2025
 
@@ -139,65 +137,4 @@ sudo apt update && sudo apt full-upgrade
 
 ---
 
-## Self-Updating Documentation System
-
-This workstation now includes automated weekly updates to keep your AI agent development environment current:
-
-### Automated Update Features
-
-| Component | What it does | Frequency |
-|-----------|-------------|-----------|
-|**Tool Version Tracking**|Checks PyPI, npm, and GitHub for updates to all tracked frameworks|Weekly|
-|**Community Monitoring**|Scans OpenAI forums, GitHub discussions, and Reddit for trending topics|Weekly|
-|**Trending Tool Discovery**|Identifies new AI agent tools and frameworks gaining popularity|Weekly|
-|**README Auto-Updates**|Updates version numbers and adds new trending tools to this document|Weekly|
-
-### MCP Server Configuration
-
-Your `.vscode/mcp.json` is configured with:
-- **Context7** for enhanced AI context management
-- **Memory server** for persistent agent sessions
-- **Web search** for real-time information access
-- **GitHub integration** for repository management
-- **Filesystem access** for local development
-
-### Running Updates
-
-```bash
-# Manual update (weekly automation recommended)
-./scripts/weekly-update.sh
-
-# Check individual components
-python3 scripts/update-tools.py
-python3 scripts/forum-monitor.py
-```
-
-### Setup Automation
-
-```bash
-# Set up weekly cron job (Linux/WSL)
-echo "0 9 * * 1 cd /path/to/ai-dev-workstation && ./scripts/weekly-update.sh" | crontab -
-
-# Or use Windows Task Scheduler for weekly runs
-```
-
-### Environment Variables for MCP Servers
-
-Create a `.env` file in your project root:
-
-```bash
-# Upstash Redis (for Context7)
-UPSTASH_REDIS_REST_URL=your_redis_url
-UPSTASH_REDIS_REST_TOKEN=your_redis_token
-
-# Search API (for web search MCP)
-SEARCH_API_KEY=your_google_search_api_key
-SEARCH_ENGINE_ID=your_search_engine_id
-
-# GitHub integration
-GITHUB_TOKEN=your_github_personal_access_token
-```
-
----
-
-*Generated July 18, 2025 – automatically updating weekly to keep pace with the evolving agentic toolbox.*  
+*Generated July 18, 2025 – keep exploring; the agentic toolbox grows daily.*  

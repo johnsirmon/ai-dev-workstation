@@ -1,0 +1,112 @@
+{
+  "tracked_tools": {
+    "ai_frameworks": {
+      "CrewAI": {
+        "current_version": "0.140.0",
+        "last_updated": "2025-07-09",
+        "source": "https://github.com/crewAIInc/crewAI",
+        "npm_package": null,
+        "pypi_package": "crewai",
+        "description": "Declarative YAML mission files, vector‑based memory, Agents → Roles → Tasks hierarchy"
+      },
+      "Microsoft Autogen": {
+        "current_version": "0.2",
+        "last_updated": "2025-07-01",
+        "source": "https://github.com/microsoft/autogen",
+        "npm_package": null,
+        "pypi_package": "autogen-agentchat",
+        "description": "Replay analytics, compliance hooks, VS Code debug adapter"
+      },
+      "LangGraph": {
+        "current_version": "0.2.5",
+        "last_updated": "2025-07-01",
+        "source": "https://github.com/langchain-ai/langgraph",
+        "npm_package": "@langchain/langgraph",
+        "pypi_package": "langgraph",
+        "description": "Graph‑style branching flows; easy to plug into LangChain tools"
+      },
+      "Semantic Kernel": {
+        "current_version": "1.35.0",
+        "last_updated": "2025-07-15",
+        "source": "https://github.com/microsoft/semantic-kernel",
+        "npm_package": "@microsoft/semantic-kernel",
+        "pypi_package": "semantic-kernel",
+        "description": "Process Framework (durable orchestration) + C#/Python parity"
+      }
+    },
+    "mcp_servers": {
+      "@upstash/context7-mcp": {
+        "current_version": "latest",
+        "last_updated": "2025-07-01",
+        "source": "https://github.com/upstash/context7-mcp",
+        "description": "Enhanced context management for AI agents"
+      },
+      "@modelcontextprotocol/server-memory": {
+        "current_version": "latest",
+        "last_updated": "2025-07-01",
+        "source": "https://github.com/modelcontextprotocol/servers",
+        "description": "Persistent memory across AI agent sessions"
+      },
+      "@modelcontextprotocol/server-web-search": {
+        "current_version": "latest",
+        "last_updated": "2025-07-01",
+        "source": "https://github.com/modelcontextprotocol/servers",
+        "description": "Web search capabilities for AI agents"
+      },
+      "@modelcontextprotocol/server-github": {
+        "current_version": "latest",
+        "last_updated": "2025-07-01",
+        "source": "https://github.com/modelcontextprotocol/servers",
+        "description": "GitHub integration for repository management"
+      }
+    },
+    "dev_tools": {
+      "VS Code Insiders": {
+        "current_version": "daily",
+        "last_updated": "2025-07-18",
+        "source": "https://code.visualstudio.com/insiders/",
+        "description": "Daily insiders build with improved chat‑mode diagnostics"
+      },
+      "Azure AI Foundry": {
+        "current_version": "latest",
+        "last_updated": "2025-07-01",
+        "source": "https://azure.microsoft.com/en-us/products/ai-foundry",
+        "description": "Agent factory with governed deployment, Deep Research API"
+      }
+    }
+  },
+  "monitoring_sources": {
+    "forums": [
+      {
+        "name": "OpenAI Developer Forum",
+        "url": "https://community.openai.com/",
+        "focus": "Assistants API & function calling updates"
+      },
+      {
+        "name": "LangChain Discord",
+        "url": "https://discord.gg/langchain",
+        "focus": "LangGraph templates and Q&A"
+      },
+      {
+        "name": "Autogen GitHub Discussions",
+        "url": "https://github.com/microsoft/autogen/discussions",
+        "focus": "Microsoft design patterns"
+      },
+      {
+        "name": "Azure AI Foundry Blog",
+        "url": "https://azure.microsoft.com/en-us/blog/",
+        "focus": "Enterprise agent governance & roadmap"
+      }
+    ],
+    "github_topics": [
+      "ai-agents",
+      "mcp-servers",
+      "langchain",
+      "autogen",
+      "semantic-kernel",
+      "crew-ai"
+    ]
+  },
+  "trending_tools": [],
+  "last_update_check": "2025-07-18"
+}
