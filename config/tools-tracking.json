@@ -2,24 +2,24 @@
   "tracked_tools": {
     "ai_frameworks": {
       "CrewAI": {
-        "current_version": "0.140.0",
-        "last_updated": "2025-07-09",
+        "current_version": "0.148.0",
+        "last_updated": "2025-07-20",
         "source": "https://github.com/crewAIInc/crewAI",
         "npm_package": null,
         "pypi_package": "crewai",
         "description": "Declarative YAML mission files, vector‑based memory, Agents → Roles → Tasks hierarchy"
       },
       "Microsoft Autogen": {
-        "current_version": "0.2",
-        "last_updated": "2025-07-01",
+        "current_version": "0.6.4",
+        "last_updated": "2025-07-20",
         "source": "https://github.com/microsoft/autogen",
         "npm_package": null,
         "pypi_package": "autogen-agentchat",
         "description": "Replay analytics, compliance hooks, VS Code debug adapter"
       },
       "LangGraph": {
-        "current_version": "0.2.5",
-        "last_updated": "2025-07-01",
+        "current_version": "0.5.3",
+        "last_updated": "2025-07-20",
         "source": "https://github.com/langchain-ai/langgraph",
         "npm_package": "@langchain/langgraph",
         "pypi_package": "langgraph",
@@ -36,26 +36,26 @@
     },
     "mcp_servers": {
       "@upstash/context7-mcp": {
-        "current_version": "latest",
-        "last_updated": "2025-07-01",
+        "current_version": "1.0.14",
+        "last_updated": "2025-07-20",
         "source": "https://github.com/upstash/context7-mcp",
         "description": "Enhanced context management for AI agents"
       },
       "@modelcontextprotocol/server-memory": {
-        "current_version": "latest",
-        "last_updated": "2025-07-01",
+        "current_version": "2025.7.1",
+        "last_updated": "2025-07-20",
         "source": "https://github.com/modelcontextprotocol/servers",
         "description": "Persistent memory across AI agent sessions"
       },
       "@modelcontextprotocol/server-web-search": {
-        "current_version": "latest",
-        "last_updated": "2025-07-01",
+        "current_version": "2025.7.1",
+        "last_updated": "2025-07-20",
         "source": "https://github.com/modelcontextprotocol/servers",
         "description": "Web search capabilities for AI agents"
       },
       "@modelcontextprotocol/server-github": {
-        "current_version": "latest",
-        "last_updated": "2025-07-01",
+        "current_version": "2025.7.1",
+        "last_updated": "2025-07-20",
         "source": "https://github.com/modelcontextprotocol/servers",
         "description": "GitHub integration for repository management"
       }
@@ -108,5 +108,5 @@
     ]
   },
   "trending_tools": [],
-  "last_update_check": "2025-07-18"
+  "last_update_check": "2025-07-20"
 }

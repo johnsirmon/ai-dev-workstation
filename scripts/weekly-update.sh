@@ -19,12 +19,23 @@ exec 2> >(tee -a "$LOG_FILE" >&2)
 check_python_deps() {
     echo "Checking Python dependencies..."
     
+    # Check if virtual environment exists and activate it
+    if [ -d ".venv" ]; then
+        echo "Activating virtual environment..."
+        source .venv/bin/activate
+    else
+        echo "Virtual environment not found. Creating one..."
+        python3 -m venv .venv
+        source .venv/bin/activate
+    fi
+    
+    # Install dependencies if needed
     if ! python3 -c "import requests, packaging, bs4" 2>/dev/null; then
         echo "Installing required Python packages..."
         if [ -f "requirements.txt" ]; then
-            pip3 install -r requirements.txt
+            pip install -r requirements.txt
         else
-            pip3 install requests packaging beautifulsoup4
+            pip install requests packaging beautifulsoup4
         fi
     fi
     

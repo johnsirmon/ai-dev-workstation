@@ -55,7 +55,7 @@ class ToolVersionChecker:
             return data['tag_name'].lstrip('v')
         return None
     
-    def check_tool_updates(self):
+    def check_tool_updates(self) -> None:
         """Check for updates to all tracked tools"""
         logging.info("Checking for tool updates...")
         
@@ -94,8 +94,14 @@ class ToolVersionChecker:
     def _is_newer_version(self, new_version: str, current_version: str) -> bool:
         """Compare versions to determine if new version is newer"""
         try:
-            from packaging import version
-            return version.parse(new_version) > version.parse(current_version)
+            # Try importing packaging if available
+            try:
+                from packaging import version
+                return version.parse(new_version) > version.parse(current_version)
+            except ImportError:
+                # Fallback to string comparison if packaging not available
+                logging.warning("packaging library not available, using string comparison")
+                return new_version != current_version
         except Exception as e:
             logging.warning(f"Error comparing versions {current_version} vs {new_version}: {e}")
             return new_version != current_version
@@ -114,7 +120,7 @@ class ToolVersionChecker:
         tool_info['current_version'] = latest_version
         tool_info['last_updated'] = get_current_timestamp()
     
-    def search_trending_tools(self):
+    def search_trending_tools(self) -> None:
         """Search for trending tools on GitHub"""
         logging.info("Searching for trending tools...")
         
@@ -143,7 +149,7 @@ class ToolVersionChecker:
             except Exception as e:
                 logging.warning(f"Error searching topic {topic}: {e}")
     
-    def update_readme(self):
+    def update_readme(self) -> None:
         """Update README.md with latest tool versions"""
         logging.info("Updating README.md...")
         
@@ -222,7 +228,7 @@ class ToolVersionChecker:
         
         return ReportGenerator.generate_markdown_report("Update Summary", sections)
     
-    def run(self):
+    def run(self) -> bool:
         """Run the complete update process"""
         logging.info("Starting tool update check...")
         

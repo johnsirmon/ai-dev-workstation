@@ -7,9 +7,15 @@ import json
 import logging
 import subprocess
 import sys
+import time
 from datetime import datetime
 from pathlib import Path
 from typing import Dict, List, Optional
+
+try:
+    import requests
+except ImportError:
+    requests = None
 
 
 class ConfigManager:
@@ -22,20 +28,42 @@ class ConfigManager:
     def load_config(self) -> Dict:
         """Load configuration from JSON file"""
         try:
-            with open(self.config_path, 'r') as f:
-                return json.load(f)
-        except FileNotFoundError:
-            logging.error(f"Config file not found: {self.config_path}")
-            sys.exit(1)
+            if not self.config_path.exists():
+                logging.error(f"Config file not found: {self.config_path}")
+                logging.info("Please ensure the config file exists or run setup.sh first")
+                sys.exit(1)
+                
+            with open(self.config_path, 'r', encoding='utf-8') as f:
+                config = json.load(f)
+                
+            # Validate basic structure
+            if not isinstance(config, dict):
+                raise ValueError("Config must be a JSON object")
+                
+            return config
+            
         except json.JSONDecodeError as e:
             logging.error(f"Invalid JSON in config file: {e}")
+            logging.info("Please check the JSON syntax in your config file")
+            sys.exit(1)
+        except Exception as e:
+            logging.error(f"Unexpected error loading config: {e}")
             sys.exit(1)
     
-    def save_config(self):
+    def save_config(self) -> None:
         """Save configuration to JSON file"""
         try:
-            with open(self.config_path, 'w') as f:
-                json.dump(self.config, f, indent=2)
+            # Ensure directory exists
+            self.config_path.parent.mkdir(parents=True, exist_ok=True)
+            
+            with open(self.config_path, 'w', encoding='utf-8') as f:
+                json.dump(self.config, f, indent=2, ensure_ascii=False)
+                
+            logging.debug(f"Config saved successfully to {self.config_path}")
+            
+        except PermissionError as e:
+            logging.error(f"Permission denied saving config: {e}")
+            raise
         except Exception as e:
             logging.error(f"Error saving config: {e}")
             raise
@@ -45,19 +73,32 @@ class DependencyManager:
     """Manages Python package dependencies"""
     
     @staticmethod
-    def install_packages(packages: List[str]):
+    def install_packages(packages: List[str]) -> None:
         """Install Python packages using pip"""
         try:
-            subprocess.check_call([
-                sys.executable, "-m", "pip", "install", "--quiet"
-            ] + packages)
+            # Check if we're in a virtual environment
+            in_venv = (hasattr(sys, 'real_prefix') or 
+                      (hasattr(sys, 'base_prefix') and sys.base_prefix != sys.prefix))
+            
+            cmd = [sys.executable, "-m", "pip", "install", "--quiet"]
+            
+            # If not in virtual environment, suggest creating one
+            if not in_venv:
+                logging.warning("Not in a virtual environment. Consider activating the .venv environment:")
+                logging.warning("source .venv/bin/activate")
+                logging.warning("Attempting to install packages anyway...")
+                
+            cmd.extend(packages)
+            subprocess.check_call(cmd)
             logging.info(f"Installed packages: {', '.join(packages)}")
+            
         except subprocess.CalledProcessError as e:
             logging.error(f"Failed to install packages: {e}")
+            logging.error("Try running: source .venv/bin/activate")
             raise
     
     @staticmethod
-    def install_requirements():
+    def install_requirements() -> None:
         """Install packages from requirements.txt"""
         requirements_path = Path("requirements.txt")
         if requirements_path.exists():
@@ -73,7 +114,7 @@ class DependencyManager:
             logging.warning("requirements.txt not found")
     
     @staticmethod
-    def check_and_install(packages: List[str]):
+    def check_and_install(packages: List[str]) -> None:
         """Check if packages are available and install if needed"""
         missing_packages = []
         
@@ -97,9 +138,11 @@ class HTTPClient:
     
     def get(self, url: str, headers: Optional[Dict] = None) -> Optional[Dict]:
         """Make GET request and return JSON response"""
-        try:
-            import requests
+        if requests is None:
+            logging.error("requests library not available. Install with: pip install requests")
+            return None
             
+        try:
             if not self.session:
                 self.session = requests.Session()
                 self.session.headers.update({
@@ -126,7 +169,7 @@ class Logger:
     """Centralized logging configuration"""
     
     @staticmethod
-    def setup_logging(log_level: str = "INFO", log_file: Optional[str] = None):
+    def setup_logging(log_level: str = "INFO", log_file: Optional[str] = None) -> None:
         """Setup logging configuration"""
         log_format = "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
         
@@ -167,7 +210,7 @@ class ReportGenerator:
         return "\n".join(report)
     
     @staticmethod
-    def save_report(content: str, file_path: str):
+    def save_report(content: str, file_path: str) -> None:
         """Save report to file"""
         try:
             path = Path(file_path)
@@ -194,7 +237,6 @@ def get_current_timestamp() -> str:
     return datetime.now().strftime('%Y-%m-%d')
 
 
-def rate_limit_delay(seconds: int = 1):
+def rate_limit_delay(seconds: int = 1) -> None:
     """Add delay for rate limiting"""
-    import time
     time.sleep(seconds)

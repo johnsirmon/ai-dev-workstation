@@ -222,7 +222,7 @@ class ForumMonitor:
             sections
         )
     
-    def run(self):
+    def run(self) -> tuple[List[Dict], Dict]:
         """Run the complete forum monitoring process"""
         logging.info("Starting community monitoring...")
         

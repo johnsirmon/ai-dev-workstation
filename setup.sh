@@ -4,24 +4,37 @@
 
 set -e
 
+echo "======================================"
 echo "AI Agent Development Workstation Setup"
 echo "======================================"
 
 # Create necessary directories
-echo "Creating directory structure..."
-mkdir -p reports logs config scripts .vscode
+mkdir -p reports logs config scripts .vscode .venv
 
-# Install Python dependencies
-echo "Installing Python dependencies..."
+echo "Creating directory structure..."
+
+# Set up Python virtual environment
 if command -v python3 &> /dev/null; then
-    pip3 install -r requirements.txt
-    echo "Python dependencies installed successfully"
+    echo "Setting up Python virtual environment..."
+    python3 -m venv .venv
+    source .venv/bin/activate
+    echo "Virtual environment activated."
 else
     echo "ERROR: Python 3 not found. Please install Python 3 first."
     exit 1
 fi
 
-# Check for Node.js/npm for MCP servers
+echo "Upgrading pip and installing Python dependencies..."
+if command -v pip &> /dev/null; then
+    pip install --upgrade pip
+    pip install -r requirements.txt
+    echo "Python dependencies installed successfully"
+else
+    echo "ERROR: pip not found. Please ensure Python 3 and pip are installed."
+    deactivate || true
+    exit 1
+fi
+
 echo "Checking for Node.js/npm..."
 if command -v npm &> /dev/null; then
     echo "Node.js/npm found - MCP servers will be available"
@@ -30,11 +43,9 @@ else
     echo "Install Node.js to enable MCP server functionality."
 fi
 
-# Make scripts executable
 echo "Making scripts executable..."
 chmod +x scripts/*.sh scripts/*.py
 
-# Check if .env file exists
 if [ ! -f ".env" ]; then
     echo "Creating .env file from template..."
     cp .env.example .env
