@@ -3,7 +3,7 @@ basic setup for development on a Windows machine with WSL and vscode
 
 > **Living Document Notice:** This document automatically updates itself nightly with the latest tool versions, community trends, and emerging frameworks. Changes are committed automatically in addition to manual updates.
 
-# Modern AI Agent Development Toolkit — July 18, 2025
+# Modern AI Agent Development Toolkit — July 20, 2025
 
 > **Audience:** Developers using **VS Code Insiders** on Windows 11 with GitHub Copilot (agent mode), Claude Code, WSL 2, and Azure resources.
 

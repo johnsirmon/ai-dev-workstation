@@ -204,8 +204,17 @@ class ToolVersionChecker:
         if self.trending_tools:
             content = self._add_trending_section(content)
 
-        # Update timestamp
+        # Update timestamps
         today = datetime.now().strftime('%B %d, %Y')
+        
+        # Update main header date
+        content = re.sub(
+            r'(# Modern AI Agent Development Toolkit.*?)([A-Z][a-z]+ \d{1,2}, \d{4})',
+            rf'\1{today}',
+            content
+        )
+        
+        # Update footer timestamp
         content = re.sub(r'Generated.*?–', f'Generated {today} –', content)
 
         with open(readme_path, 'w') as f:
