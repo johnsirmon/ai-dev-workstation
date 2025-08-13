@@ -63,9 +63,9 @@ GitHub’s docs outline editing `mcp.json` in the *Tools* panel citeturn0
 
 | Framework / Lib | Latest ver. | Killer features |
 |-----------------|------------|-----------------|
-|**CrewAI**|0.148.0 (Updated 2025-07-20)|Declarative YAML mission files, vector‑based memory, Agents → Roles → Tasks hierarchy.|
+|**CrewAI**|0.157.0 (Updated 2025-08-13)|Declarative YAML mission files, vector‑based memory, Agents → Roles → Tasks hierarchy.|
 |**Microsoft Autogen**|0.2 (major rewrite) citeturn0search2|Replay analytics, compliance hooks, VS Code debug adapter.|
-|**LangGraph**|0.5.3 (Updated 2025-07-20)|Graph‑style branching flows; easy to plug into LangChain tools.|
+|**LangGraph**|0.6.4 (Updated 2025-08-13)|Graph‑style branching flows; easy to plug into LangChain tools.|
 |**Semantic Kernel**|1.35.0 (Jul 15) citeturn1search7|Process Framework (durable orchestration) + C#/**Python** parity.|
 |**GPTScript Agents**|Bleeding‑edge citeturn1search5|Script agents in 10 lines; great for Kubernetes ops.|
 |**Clio (CLI Copilot)**|Active citeturn1search8|Executes shell commands safely with confirm step.|
@@ -202,4 +202,4 @@ GITHUB_TOKEN=your_github_personal_access_token
 
 ---
 
-*Generated July 20, 2025 – automatically updating weekly to keep pace with the evolving agentic toolbox.*  
+*Generated August 13, 2025 – automatically updating weekly to keep pace with the evolving agentic toolbox.*  

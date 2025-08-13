@@ -2,32 +2,32 @@
   "tracked_tools": {
     "ai_frameworks": {
       "CrewAI": {
-        "current_version": "0.148.0",
-        "last_updated": "2025-07-20",
+        "current_version": "0.157.0",
+        "last_updated": "2025-08-13",
         "source": "https://github.com/crewAIInc/crewAI",
         "npm_package": null,
         "pypi_package": "crewai",
         "description": "Declarative YAML mission files, vector‑based memory, Agents → Roles → Tasks hierarchy"
       },
       "Microsoft Autogen": {
-        "current_version": "0.6.4",
-        "last_updated": "2025-07-20",
+        "current_version": "0.7.2",
+        "last_updated": "2025-08-13",
         "source": "https://github.com/microsoft/autogen",
         "npm_package": null,
         "pypi_package": "autogen-agentchat",
         "description": "Replay analytics, compliance hooks, VS Code debug adapter"
       },
       "LangGraph": {
-        "current_version": "0.5.3",
-        "last_updated": "2025-07-20",
+        "current_version": "0.6.4",
+        "last_updated": "2025-08-13",
         "source": "https://github.com/langchain-ai/langgraph",
         "npm_package": "@langchain/langgraph",
         "pypi_package": "langgraph",
         "description": "Graph‑style branching flows; easy to plug into LangChain tools"
       },
       "Semantic Kernel": {
-        "current_version": "1.35.0",
-        "last_updated": "2025-07-15",
+        "current_version": "1.35.2",
+        "last_updated": "2025-08-13",
         "source": "https://github.com/microsoft/semantic-kernel",
         "npm_package": "@microsoft/semantic-kernel",
         "pypi_package": "semantic-kernel",
@@ -42,20 +42,20 @@
         "description": "Enhanced context management for AI agents"
       },
       "@modelcontextprotocol/server-memory": {
-        "current_version": "2025.7.1",
-        "last_updated": "2025-07-20",
+        "current_version": "2025.8.4",
+        "last_updated": "2025-08-13",
         "source": "https://github.com/modelcontextprotocol/servers",
         "description": "Persistent memory across AI agent sessions"
       },
       "@modelcontextprotocol/server-web-search": {
-        "current_version": "2025.7.1",
-        "last_updated": "2025-07-20",
+        "current_version": "2025.8.4",
+        "last_updated": "2025-08-13",
         "source": "https://github.com/modelcontextprotocol/servers",
         "description": "Web search capabilities for AI agents"
       },
       "@modelcontextprotocol/server-github": {
-        "current_version": "2025.7.1",
-        "last_updated": "2025-07-20",
+        "current_version": "2025.8.4",
+        "last_updated": "2025-08-13",
         "source": "https://github.com/modelcontextprotocol/servers",
         "description": "GitHub integration for repository management"
       }
@@ -108,5 +108,5 @@
     ]
   },
   "trending_tools": [],
-  "last_update_check": "2025-07-20"
+  "last_update_check": "2025-08-13"
 }
