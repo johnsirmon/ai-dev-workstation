@@ -203,3 +203,12 @@ GITHUB_TOKEN=your_github_personal_access_token
 ---
 
 *Generated August 13, 2025 – automatically updating weekly to keep pace with the evolving agentic toolbox.*  
+
+
+---
+
+## Trending Tools to Investigate
+
+| Tool | Stars | Language | Use Case | Repository |
+|------|-------|----------|----------|------------|
+|**rag-ecosystem**|89|Jupyter Notebook|Understand and code every important component of RAG architecture|[GitHub](https://github.com/FareedKhan-dev/rag-ecosystem)|

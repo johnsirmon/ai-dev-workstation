@@ -107,6 +107,16 @@
       "crew-ai"
     ]
   },
-  "trending_tools": [],
+  "trending_tools": [
+    {
+      "name": "rag-ecosystem",
+      "url": "https://github.com/FareedKhan-dev/rag-ecosystem",
+      "description": "Understand and code every important component of RAG architecture",
+      "stars": 89,
+      "language": "Jupyter Notebook",
+      "topic": "ai-agents",
+      "created_at": "2025-08-07T07:30:59Z"
+    }
+  ],
   "last_update_check": "2025-08-13"
 }

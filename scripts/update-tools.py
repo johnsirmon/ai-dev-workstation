@@ -65,22 +65,27 @@ class ToolVersionChecker:
 
         tracked_tools = self.config_manager.config['tracked_tools']
         for category, tools in tracked_tools.items():
-            logging.info(f"Checking {category}...")
+            logging.info("Checking %s...", category)
 
             for tool_name, tool_info in tools.items():
                 latest_version = self._get_latest_version(tool_info)
 
                 current_version = tool_info['current_version']
-                if (latest_version and
-                        self._is_newer_version(latest_version, current_version)):
+                if (
+                    latest_version and
+                    self._is_newer_version(latest_version, current_version)
+                ):
                     self._record_update(
                         tool_name, category, tool_info, latest_version)
                     logging.info(
-                        f"Update found for {tool_name}: {current_version} "
-                        f"→ {latest_version}")
+                        "Update found for %s: %s → %s",
+                        tool_name,
+                        current_version,
+                        latest_version,
+                    )
                 else:
                     logging.debug(
-                        f"{tool_name} is up to date: {current_version}")
+                        "%s is up to date: %s", tool_name, current_version)
 
     def _get_latest_version(self, tool_info: Dict) -> Optional[str]:
         """Get latest version from available sources"""
@@ -102,7 +107,11 @@ class ToolVersionChecker:
 
         return None
 
-    def _is_newer_version(self, new_version: str, current_version: str) -> bool:
+    def _is_newer_version(
+        self,
+        new_version: str,
+        current_version: str
+    ) -> bool:
         """Compare versions to determine if new version is newer"""
         try:
             # Try importing packaging if available
@@ -115,10 +124,13 @@ class ToolVersionChecker:
                 logging.warning(
                     "packaging library not available, using string comparison")
                 return new_version != current_version
-        except Exception as e:
+        except Exception as exc:  # noqa: BLE001 keep broad fallback
             logging.warning(
-                f"Error comparing versions {current_version} vs "
-                f"{new_version}: {e}")
+                "Error comparing versions %s vs %s: %s",
+                current_version,
+                new_version,
+                exc,
+            )
             return new_version != current_version
 
     def _record_update(
@@ -141,26 +153,34 @@ class ToolVersionChecker:
         tool_info['last_updated'] = get_current_timestamp()
 
     def search_trending_tools(self) -> None:
-        """Search for trending tools on GitHub"""
+        """Search for trending tools on GitHub (last 7 days)"""
         logging.info("Searching for trending tools...")
 
         sources = self.config_manager.config['monitoring_sources']
         topics = sources['github_topics']
+        seen_urls: set[str] = set()
 
         for topic in topics:
             try:
                 # Search for recent repositories with stars
-                created_since = datetime.now().strftime('%Y-%m-%d')
+                # within the last 7 days
+                from datetime import timedelta
+                seven_days_ago = datetime.now() - timedelta(days=7)
+                created_since = seven_days_ago.strftime('%Y-%m-%d')
                 query = f"topic:{topic} created:>={created_since}"
                 url = (
                     "https://api.github.com/search/repositories?"
-                    f"q={query}&sort=stars&order=desc&per_page=5")
+                    f"q={query}&sort=stars&order=desc&per_page=10")
 
                 data = self.http_client.get(url)
                 if data and 'items' in data:
                     for repo in data['items']:
                         # Minimum stars threshold
-                        if repo['stargazers_count'] > 50:
+                        if (
+                            repo['stargazers_count'] >= 30 and
+                            repo['html_url'] not in seen_urls
+                        ):
+                            seen_urls.add(repo['html_url'])
                             self.trending_tools.append({
                                 'name': repo['name'],
                                 'url': repo['html_url'],
@@ -172,8 +192,9 @@ class ToolVersionChecker:
                                 'topic': topic,
                                 'created_at': repo['created_at']
                             })
-            except Exception as e:
-                logging.warning(f"Error searching topic {topic}: {e}")
+            except Exception as exc:  # noqa: BLE001 keep resilient
+                logging.warning(
+                    "Error searching topic %s: %s", topic, exc)
 
     def update_readme(self) -> None:
         """Update README.md with latest tool versions"""
@@ -184,21 +205,31 @@ class ToolVersionChecker:
             logging.error("README.md not found!")
             return
 
-        with open(readme_path, 'r') as f:
+        with open(readme_path, 'r', encoding='utf-8') as f:
             content = f.read()
 
         # Update version numbers in framework table
         for update in self.updates_found:
             if update['category'] == 'ai_frameworks':
+                # Allow both regular spaces and non-breaking spaces
+                # in tool name
+                tool_name = update['tool']
+                tool_pattern = re.escape(tool_name).replace(
+                    r"\ ", r"(?:\s|\xa0)"
+                )
                 pattern = (
-                    rf"(\*\*{re.escape(update['tool'])}\*\*\|)"
-                    r"([^|]+)(\|)")
+                    rf"(\*\*{tool_pattern}\*\*\|)" r"([^|]+)(\|)"
+                )
                 timestamp = get_current_timestamp()
                 replacement = (
                     rf"\g<1>{update['new_version']} "
                     rf"(Updated {timestamp})\g<3>")
                 content = re.sub(
-                    pattern, replacement, content, flags=re.IGNORECASE)
+                    pattern,
+                    replacement,
+                    content,
+                    flags=re.IGNORECASE | re.UNICODE,
+                )
 
         # Add trending tools section if new tools found
         if self.trending_tools:
@@ -206,18 +237,21 @@ class ToolVersionChecker:
 
         # Update timestamps
         today = datetime.now().strftime('%B %d, %Y')
-        
+
         # Update main header date
         content = re.sub(
-            r'(# Modern AI Agent Development Toolkit.*?)([A-Z][a-z]+ \d{1,2}, \d{4})',
+            (
+                r'(# Modern AI Agent Development Toolkit.*?)'
+                r'([A-Z][a-z]+ \d{1,2}, \d{4})'
+            ),
             rf'\1{today}',
             content
         )
-        
+
         # Update footer timestamp
         content = re.sub(r'Generated.*?–', f'Generated {today} –', content)
 
-        with open(readme_path, 'w') as f:
+        with open(readme_path, 'w', encoding='utf-8') as f:
             f.write(content)
 
         logging.info("README.md updated successfully")
@@ -329,8 +363,8 @@ def main():
         else:
             logging.info("Update check completed - everything is up to date!")
 
-    except Exception as e:
-        logging.error(f"Error during update check: {e}")
+    except (RuntimeError, ValueError, OSError) as err:
+        logging.error("Error during update check: %s", err)
         sys.exit(1)
 
 
