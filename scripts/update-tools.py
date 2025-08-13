@@ -208,7 +208,7 @@ class ToolVersionChecker:
         with open(readme_path, 'r', encoding='utf-8') as f:
             content = f.read()
 
-        # Update version numbers in framework table
+        # Update version numbers in framework table based on updates_found
         for update in self.updates_found:
             if update['category'] == 'ai_frameworks':
                 # Allow both regular spaces and non-breaking spaces
@@ -230,6 +230,26 @@ class ToolVersionChecker:
                     content,
                     flags=re.IGNORECASE | re.UNICODE,
                 )
+
+        # Also ensure README is synchronized with current config versions
+        frameworks = self.config_manager.config['tracked_tools'][
+            'ai_frameworks'
+        ]
+        for tool_name, meta in frameworks.items():
+            tool_pattern = re.escape(tool_name).replace(
+                r"\ ", r"(?:\s|\xa0)"
+            )
+            pattern = (
+                rf"(\*\*{tool_pattern}\*\*\|)" r"([^|]+)(\|)"
+            )
+            timestamp = get_current_timestamp()
+            replacement = (
+                rf"\g<1>{meta['current_version']} "
+                rf"(Updated {timestamp})\g<3>"
+            )
+            content = re.sub(
+                pattern, replacement, content, flags=re.IGNORECASE | re.UNICODE
+            )
 
         # Add trending tools section if new tools found
         if self.trending_tools:
