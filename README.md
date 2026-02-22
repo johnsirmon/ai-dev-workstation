@@ -1,9 +1,7 @@
 # ai-dev-workstation
-basic setup for development on a Windows machine with WSL and vscode
+Modern AI Agent Development Toolkit — Windows 11 · WSL 2 · VS Code Insiders · GitHub Copilot Agent Mode
 
 > **Automation Notice:** This repository includes a weekly automation pipeline that can research ecosystem changes and update tracked tool data plus selected README sections.
-
-# Modern AI Agent Development Toolkit — August 13, 2025
 
 > **Audience:** Developers using **VS Code Insiders** on Windows 11 with GitHub Copilot (agent mode), Claude Code, WSL 2, and Azure resources.
 
@@ -13,7 +11,7 @@ basic setup for development on a Windows machine with WSL and vscode
 
 | Step | What to do | Why |
 |------|------------|-----|
-|1|Install **VS Code Insiders** and enable **Auto‑update** (Settings → *Update: Mode* → `none` so it pulls the **daily** build automatically).|Daily insiders now ship improved chat‑mode diagnostics and tool‑hover support citeturn0search4|
+|1|Install **VS Code Insiders** and enable **Auto‑update** (Settings → *Update: Mode* → `none` so it pulls the **daily** build automatically).|Daily insiders now ship improved chat‑mode diagnostics and tool‑hover support|
 |2|Create a *Profile* called **“Agent‑Dev”** to isolate your extensions and settings from regular coding.|Keeps MCP servers and agent‑specific snippets from cluttering other workspaces.|
 |3|Install **GitHub Copilot Nightly** and enable *Agent Mode* (`"github.copilot.chat.enable": true`).|Gives you model/tool routing in the chat sidebar.|
 
@@ -22,32 +20,41 @@ basic setup for development on a Windows machine with WSL and vscode
 ```jsonc
 // .vscode/mcp.json
 {
-  "inputs": [
-    {
-      "id": "github-token",
-      "type": "promptString",
-      "description": "GitHub Personal Access Token",
-      "password": true
-    }
-  ],
   "servers": {
     "context7": {
       "command": "npx",
-      "args": ["-y", "@upstash/context7-mcp@latest"],
-      "type": "stdio"
+      "args": ["-y", "@upstash/context7-mcp"],
+      "type": "stdio",
+      "env": {
+        "UPSTASH_REDIS_REST_URL": "${UPSTASH_REDIS_REST_URL}",
+        "UPSTASH_REDIS_REST_TOKEN": "${UPSTASH_REDIS_REST_TOKEN}"
+      }
     },
     "memory": {
       "command": "npx",
       "args": ["-y", "@modelcontextprotocol/server-memory"],
       "type": "stdio"
     },
+    "brave-search": {
+      "command": "npx",
+      "args": ["-y", "@brave/brave-search-mcp-server", "--transport", "stdio"],
+      "type": "stdio",
+      "env": {
+        "BRAVE_API_KEY": "${BRAVE_API_KEY}"
+      }
+    },
     "github": {
       "command": "npx",
       "args": ["-y", "@modelcontextprotocol/server-github"],
       "type": "stdio",
       "env": {
-        "GITHUB_PERSONAL_ACCESS_TOKEN": "${input:github-token}"
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_TOKEN}"
       }
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "--allowed-directory", "${workspaceFolder}"],
+      "type": "stdio"
     }
   }
 }
@@ -60,7 +67,7 @@ basic setup for development on a Windows machine with WSL and vscode
 |You need a custom tool (e.g., call an internal REST API, run a Kusto query).|You just need vector search, retrieval, or memory that a generic server already exposes.|
 |Security requires you to run on localhost and audit code.|You trust the community‑maintained implementation.|
 
-GitHub’s docs outline editing `mcp.json` in the *Tools* panel citeturn0search0turn0search5.
+GitHub’s docs outline editing `mcp.json` in the *Tools* panel.
 
 > **Gotcha ⚠️**: Two servers listening on the **same port (3917)** will silently fail; always increment the port or kill the other process first.
 
@@ -70,9 +77,9 @@ GitHub’s docs outline editing `mcp.json` in the *Tools* panel citeturn0
 
 | Tool | Strengths | Watch‑outs |
 |------|-----------|-----------|
-|**GitHub Copilot** (agent mode) | Deep VS Code integration, Azure SRE agent preview announced at Build 2025 citeturn1news32 | Chat context limited to ~16 k tokens unless MCP tooling expands it.|
+|**GitHub Copilot** (agent mode) | Deep VS Code integration, Azure SRE agent preview announced at Build 2025 | Chat context limited to ~16 k tokens unless MCP tooling expands it.|
 |**Claude Code** extension | 200 k+ context, excels at refactors; can share MCP servers. | Must select the **Claude** sidebar; easy to think you’re still in Copilot.|
-|**Cursor** | Whole‑file edit commands, great for “make this async”.|Adds a separate forked VS Code; ingesting large repos can cause battery drain. User reports of “bugs from AI patches” citeturn0news79.|
+|**Cursor** | Whole‑file edit commands, great for “make this async”.|Adds a separate forked VS Code; ingesting large repos can cause battery drain. User reports of “bugs from AI patches”.|
 
 ---
 
@@ -84,17 +91,17 @@ GitHub’s docs outline editing `mcp.json` in the *Tools* panel citeturn0
 |**Microsoft Autogen**|0.7.2 (Updated 2025-08-13)|Replay analytics, compliance hooks, VS Code debug adapter.|
 |**LangGraph**|0.6.4 (Updated 2025-08-13)|Graph‑style branching flows; easy to plug into LangChain tools.|
 |**Semantic Kernel**|1.35.2 (Updated 2025-08-13)|Process Framework (durable orchestration) + C#/**Python** parity.|
-|**GPTScript Agents**|Bleeding‑edge citeturn1search5|Script agents in 10 lines; great for Kubernetes ops.|
-|**Clio (CLI Copilot)**|Active citeturn1search8|Executes shell commands safely with confirm step.|
+|**GPTScript Agents**|Bleeding‑edge|Script agents in 10 lines; great for Kubernetes ops.|
+|**Clio (CLI Copilot)**|Active|Executes shell commands safely with confirm step.|
 
-See the ODSC roundup for nine more frameworks citeturn1search2.
+See the ODSC roundup for nine more frameworks.
 
 ---
 
 ## 4 · Azure‑centric Agent Tooling  
 
-* **Azure AI Foundry**—“agent factory” announced at Build 2025. Adds governed deployment, Deep Research API (public preview) citeturn1search0turn1search6  
-* **Project Amelie**—auto‑builds ML pipelines from one prompt citeturn1search3  
+* **Azure AI Foundry**—“agent factory” announced at Build 2025. Adds governed deployment, Deep Research API (public preview)  
+* **Project Amelie**—auto‑builds ML pipelines from one prompt  
 
 Integrate via the new `azure-ai-foundry` Python SDK:
 
@@ -122,7 +129,7 @@ wsl --install Ubuntu-24.04
 sudo apt update && sudo apt full-upgrade
 ```
 
-(Install custom ISOs if 24.04 hasn’t hit the Store yet citeturn0search7.)
+(Install custom ISOs if 24.04 hasn’t hit the Store yet.)
 
 ---
 
@@ -141,7 +148,7 @@ sudo apt update && sudo apt full-upgrade
 |**OpenAI Developer Forum** | Early docs on Assistants API & function calling updates.|
 |**LangChain Slack / Discord** | Rapid Q&A on LangGraph templates.|
 |**Autogen GitHub Discussions** | Microsoft engineers share design patterns weekly.|
-|**Azure AI Foundry Blog** | Enterprise agent governance & roadmap citeturn1search0.|
+|**Azure AI Foundry Blog** | Enterprise agent governance & roadmap.|
 
 ---
 
@@ -177,11 +184,9 @@ This workstation includes automated weekly research and update jobs to keep your
 Your `.vscode/mcp.json` is configured with:
 - **Context7** for enhanced AI context management
 - **Memory server** for persistent agent sessions
-- **Brave Search** for real-time web search (requires `BRAVE_API_KEY`)
+- **Brave Search** for real-time information access
 - **GitHub integration** for repository management
-- **Filesystem access** for local development (scoped to `${workspaceFolder}`)
-
-Secrets are managed via `inputs` in `.vscode/mcp.json` — VS Code will prompt you once per session.
+- **Filesystem access** for local development
 
 ### Running Updates
 
@@ -192,6 +197,7 @@ Secrets are managed via `inputs` in `.vscode/mcp.json` — VS Code will prompt y
 # Check individual components
 python3 scripts/update-tools.py
 python3 scripts/forum-monitor.py
+python3 scripts/validate-mcp-config.py
 ```
 
 ### Setup Automation
@@ -215,7 +221,7 @@ Create a `.env` file in your project root:
 UPSTASH_REDIS_REST_URL=your_redis_url
 UPSTASH_REDIS_REST_TOKEN=your_redis_token
 
-# Brave Search API (for brave-search MCP)
+# Brave Search API (for Brave Search MCP)
 BRAVE_API_KEY=your_brave_search_api_key
 
 # GitHub integration

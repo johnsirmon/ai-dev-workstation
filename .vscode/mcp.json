@@ -1,63 +1,57 @@
 {
-  "inputs": [
-    {
-      "id": "upstash-redis-url",
-      "type": "promptString",
-      "description": "Upstash Redis REST URL (for Context7 MCP)"
-    },
-    {
-      "id": "upstash-redis-token",
-      "type": "promptString",
-      "description": "Upstash Redis REST token (for Context7 MCP)",
-      "password": true
-    },
-    {
-      "id": "github-token",
-      "type": "promptString",
-      "description": "GitHub Personal Access Token",
-      "password": true
-    },
-    {
-      "id": "brave-api-key",
-      "type": "promptString",
-      "description": "Brave Search API key",
-      "password": true
-    }
-  ],
   "servers": {
     "context7": {
       "command": "npx",
-      "args": ["-y", "@upstash/context7-mcp@latest"],
+      "args": [
+        "-y",
+        "@upstash/context7-mcp"
+      ],
       "type": "stdio",
       "env": {
-        "UPSTASH_REDIS_REST_URL": "${input:upstash-redis-url}",
-        "UPSTASH_REDIS_REST_TOKEN": "${input:upstash-redis-token}"
+        "UPSTASH_REDIS_REST_URL": "${UPSTASH_REDIS_REST_URL}",
+        "UPSTASH_REDIS_REST_TOKEN": "${UPSTASH_REDIS_REST_TOKEN}"
       }
     },
     "memory": {
       "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-memory"],
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-memory"
+      ],
       "type": "stdio"
     },
     "brave-search": {
       "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-brave-search"],
-      "type": "stdio",
+      "args": [
+        "-y",
+        "@brave/brave-search-mcp-server",
+        "--transport",
+        "stdio"
+      ],
       "env": {
-        "BRAVE_API_KEY": "${input:brave-api-key}"
-      }
+        "BRAVE_API_KEY": "${BRAVE_API_KEY}"
+      },
+      "type": "stdio"
     },
     "github": {
       "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-github"
+      ],
       "type": "stdio",
       "env": {
-        "GITHUB_PERSONAL_ACCESS_TOKEN": "${input:github-token}"
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_TOKEN}"
       }
     },
     "filesystem": {
       "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-filesystem", "--allowed-directory", "${workspaceFolder}"],
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "--allowed-directory",
+        "${workspaceFolder}"
+      ],
       "type": "stdio"
     }
   }
