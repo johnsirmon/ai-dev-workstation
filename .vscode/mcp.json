@@ -33,7 +33,7 @@
     },
     "filesystem": {
       "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-filesystem", "--allowed-directory", "/home/johnsirmon/projects/ai-dev-workstation"],
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "--allowed-directory", "${workspaceFolder}"],
       "type": "stdio"
     }
   }
