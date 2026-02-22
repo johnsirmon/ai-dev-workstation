@@ -71,44 +71,78 @@ GitHub’s docs outline editing `mcp.json` in the *Tools* panel.
 
 > **Gotcha ⚠️**: Two servers listening on the **same port (3917)** will silently fail; always increment the port or kill the other process first.
 
+> **MCP Ecosystem (Jan 2026):** Over 1,000 servers now available. Transport has evolved from local STDIO to **Streamable HTTP** for distributed, cloud-scale deployments. See [blog.modelcontextprotocol.io](https://blog.modelcontextprotocol.io) for the latest spec and server registry.
+
 ---
 
 ## 2 · Choosing Your Coding Copilot  
 
 | Tool | Strengths | Watch‑outs |
 |------|-----------|-----------|
-|**GitHub Copilot** (agent mode) | Deep VS Code integration, Azure SRE agent preview announced at Build 2025 | Chat context limited to ~16 k tokens unless MCP tooling expands it.|
-|**Claude Code** extension | 200 k+ context, excels at refactors; can share MCP servers. | Must select the **Claude** sidebar; easy to think you’re still in Copilot.|
-|**Cursor** | Whole‑file edit commands, great for “make this async”.|Adds a separate forked VS Code; ingesting large repos can cause battery drain. User reports of “bugs from AI patches”.|
+|**GitHub Copilot** (agent mode) | Deep VS Code integration, multi-model sessions, Agent Skills via SKILL.md | Chat context limited to ~16k tokens unless MCP tooling expands it.|
+|**Claude Code** extension | 200k+ context, excels at refactors; can share MCP servers. | Must select the **Claude** sidebar; easy to think you’re still in Copilot.|
+|**Cursor** | Whole‑file edit commands, great for “make this async”, Agent Mode for autonomous coding.|Adds a separate forked VS Code; ingesting large repos can cause battery drain.|
+|**Windsurf** | $15/mo premium AI coding with broad model support including Claude and GPT-5.|Separate IDE fork; may lag behind core VS Code releases.|
+
+### New in VS Code Insiders (Jan–Feb 2026)
+
+| Feature | What it does |
+|---------|-------------|
+|**Agent Sessions view** | Monitor and manage Copilot, Claude, and background/cloud agents from a single dashboard. Subagents run in parallel for complex workflows.|
+|**Copilot Memory** | Remembers relevant context and learnings within a repository (expires after 28 days). Improves code completion and review quality across sessions.|
+|**SKILL.md Agent Skills** | Define custom agent capabilities with `SKILL.md` files (invoked as slash commands). Share skills org-wide for consistent team tooling.|
+|**Multi-model side-by-side** | Run Anthropic Claude, OpenAI Codex, and GitHub Copilot in the same IDE with shared prompts and tools.|
+|**Copilot SDK** (technical preview) | Programmatic access to Copilot for Node.js/TypeScript, Python, Go, and .NET. Enables custom AI platforms and automation pipelines.|
+|**Terminal sandboxing** | Prevents agents from executing unsafe commands (macOS/Linux). Auto-approval rules reduce unnecessary prompts while keeping you in control.|
 
 ---
 
-## 3 · Leading Agent Frameworks (Last 6 Months)
+## 3 · Leading Agent Frameworks (Feb 2026)
 
 | Framework / Lib | Latest ver. | Killer features |
 |-----------------|------------|-----------------|
-|**CrewAI**|0.157.0 (Updated 2025-08-13)|Declarative YAML mission files, vector‑based memory, Agents → Roles → Tasks hierarchy.|
-|**Microsoft Autogen**|0.7.2 (Updated 2025-08-13)|Replay analytics, compliance hooks, VS Code debug adapter.|
-|**LangGraph**|0.6.4 (Updated 2025-08-13)|Graph‑style branching flows; easy to plug into LangChain tools.|
-|**Semantic Kernel**|1.35.2 (Updated 2025-08-13)|Process Framework (durable orchestration) + C#/**Python** parity.|
-|**GPTScript Agents**|Bleeding‑edge|Script agents in 10 lines; great for Kubernetes ops.|
-|**Clio (CLI Copilot)**|Active|Executes shell commands safely with confirm step.|
+|**CrewAI**|0.157.0|Declarative YAML mission files, vector‑based memory, Agents → Roles → Tasks hierarchy. Fast multi-agent prototyping.|
+|**Microsoft Autogen**|0.7.2|Event-driven multi-agent; human-in-the-loop support. Merging with Semantic Kernel into unified Microsoft Agent Framework (GA Q1 2026).|
+|**LangGraph**|1.0 (GA)|**Stable v1.0** reached Oct 2025. Graph‑style state machine orchestration; check-pointing, audit trails. Best for production compliance workloads.|
+|**Semantic Kernel**|1.35.2|Enterprise Azure integration, planners, function-calling. Converging with AutoGen into unified Microsoft Agent Framework.|
+|**OpenAI Agents SDK**|latest|Official open-source SDK for orchestrating multi-agent workflows; supports handoffs, guardrails, tracing, and the new Responses API (replaces Assistants API by Aug 2026).|
+|**smolagents** (HF)|1.24.0|Ultra-minimal Hugging Face agents; CodeAgent paradigm, sandboxed execution, model-agnostic. Great for research/lightweight use.|
+|**Agno**|2.5.3|High-performance runtime for large-scale multi-agent systems; streaming, governance, approval workflows, and audit logs built in.|
+|**LlamaIndex**|latest|Data/knowledge-centric framework; excels at RAG workflows, document agents, and retrieval-augmented production pipelines.|
+|**Google ADK**|latest|Google’s Agent Development Kit with native A2A protocol support; deploy on Cloud Run, GKE, or Vertex AI.|
+|**GPTScript Agents**|Bleeding‑edge|Script agents in 10 lines; great for Kubernetes ops.|
 
-See the ODSC roundup for nine more frameworks.
+### Choosing the Right Framework
+
+| Goal | Best choice |
+|------|------------|
+|Complex stateful workflows, compliance, audit | **LangGraph** |
+|Role-driven multi-agent collaboration | **CrewAI** |
+|Enterprise Azure integration, .NET/Java | **Semantic Kernel / AutoGen** |
+|OpenAI ecosystem, production agent pipelines | **OpenAI Agents SDK** |
+|RAG, document-intensive knowledge workflows | **LlamaIndex** |
+|Lightweight research / open-source models | **smolagents** |
+|Cross-vendor interoperable agent networks | **Google ADK + A2A** |
 
 ---
 
-## 4 · Azure‑centric Agent Tooling  
+## 4 · Azure-centric Agent Tooling  
 
 * **Azure AI Foundry**—“agent factory” announced at Build 2025. Adds governed deployment, Deep Research API (public preview)  
+* **Azure Functions MCP Support** (GA Jan 2026)—native, secure, scalable hosting for MCP servers with built-in authentication, Streamable HTTP, and Microsoft Entra/OAuth enterprise integration  
 * **Project Amelie**—auto‑builds ML pipelines from one prompt  
 
-Integrate via the new `azure-ai-foundry` Python SDK:
+Integrate via the Azure AI Foundry SDK and MCP:
 
 ```bash
 pip install azure-ai-foundry
 foundry run --config foundry.yaml
+
+# Host your own MCP server on Azure Functions (now GA)
+az functionapp create --runtime python --name my-mcp-server ...
 ```
+
+> **Azure MCP Tip:** Azure Functions MCP support uses on-behalf-of (OBO) authentication so agents access downstream systems with user identity, not shared credentials.
 
 ---
 
@@ -144,11 +178,14 @@ sudo apt update && sudo apt full-upgrade
 ## 7 · Where to Watch the Frontier  
 
 | Community | Why follow |
-|-----------|-----------|
-|**OpenAI Developer Forum** | Early docs on Assistants API & function calling updates.|
-|**LangChain Slack / Discord** | Rapid Q&A on LangGraph templates.|
-|**Autogen GitHub Discussions** | Microsoft engineers share design patterns weekly.|
-|**Azure AI Foundry Blog** | Enterprise agent governance & roadmap.|
+|-----------|----------|
+|**OpenAI Developer Forum** | Responses API, Agents SDK, and Assistants API deprecation (Aug 2026) updates.|
+|**LangChain Slack / Discord** | Rapid Q&A on LangGraph 1.0 templates and production patterns.|
+|**Autogen / Semantic Kernel GitHub** | Microsoft unified Agent Framework (GA Q1 2026) design patterns.|
+|**Azure AI Foundry Blog** | Enterprise agent governance, Azure Functions MCP, and roadmap.|
+|**Hugging Face Discord** | smolagents, open-source models (Llama 4, Qwen 3.5, DeepSeek v4) benchmarks.|
+|**MCP Blog** (blog.modelcontextprotocol.io) | Spec updates, new server registry, Streamable HTTP transport.|
+|**Google Developer Blog** | A2A protocol upgrades, Agent Development Kit (ADK) releases.|
 
 ---
 
@@ -159,9 +196,64 @@ sudo apt update && sudo apt full-upgrade
 - [ ] WSL 2 Ubuntu 24.04 fully upgraded  
 - [ ] Docker Desktop with WSL integration ON  
 - [ ] `crewAI`, `autogen`, `semantic-kernel` installed in chosen environment  
+- [ ] `openai-agents` or `smolagents` installed for agent orchestration  
 - [ ] Azure credentials in `az login` & `foundry auth`  
+- [ ] Review Copilot Agent Skills (SKILL.md) and enable Copilot Memory in VS Code settings  
 
-> **Done!** You’re ready to build and ship multi‑agent apps on your Windows workstation without surprises.
+> **Done!** You're ready to build and ship multi‑agent apps on your Windows workstation without surprises.
+
+---
+
+## 9 · Key AI Models (Feb 2026)
+
+Knowing which models to reach for is as important as knowing which framework to use.
+
+| Model | Provider | Highlights |
+|-------|----------|-----------|
+|**GPT-5.x** (5.2/5.3)|OpenAI|Best-in-class reasoning, multimodal, function-calling accuracy. Default for OpenAI Agents SDK.|
+|**Claude Opus 4.6 / Sonnet 5**|Anthropic|Opus 4.6 for long-context analytical tasks (200k tokens); Sonnet 5 for coding + creative balance.|
+|**Gemini 3 Pro**|Google DeepMind|Advanced multimodal (text/audio/vision), GA Feb 2026 with stable APIs and competitive pricing.|
+|**Llama 4**|Meta|Leading open-source choice; ideal for private/local deployments and fine-tuning.|
+|**DeepSeek v4 / R1**|DeepSeek|Advanced reasoning, cost-effective self-hosted alternative in open-source AI.|
+|**Qwen 3.5**|Alibaba Cloud|Strong multilingual + coding; fast-growing open-source competitor.|
+
+> **Tip:** The OpenAI Assistants API is deprecated in favour of the **Responses API** (announced Mar 2025, sunset Aug 2026). Migrate new projects to the Responses API + Agents SDK stack.
+
+---
+
+## 10 · Agent Interoperability: MCP & A2A
+
+### Model Context Protocol (MCP)
+
+MCP is now the **universal connector** for AI tools and data (“USB for AI”), with 1,000+ available servers and adoption by OpenAI, Google, Microsoft, Hugging Face, and more.
+
+| Update | Details |
+|--------|---------|
+|**1,000+ server ecosystem** | Servers for databases, REST APIs, IDEs, cloud services, and more.|
+|**Streamable HTTP transport** | Replaces early STDIO-only approach; supports millions of requests/day in distributed deployments.|
+|**Azure Functions MCP (GA Jan 2026)** | Secure, scalable MCP hosting with built-in Entra/OAuth and OBO authentication.|
+|**MCP Registry** | Official server registry for discovery; SDKs for Python, TypeScript, Go, Java.|
+
+### Google Agent2Agent (A2A) Protocol
+
+An open, vendor-neutral standard (now Linux Foundation‑governed) letting agents from any platform discover, authenticate, and collaborate:
+
+```bash
+# Each agent publishes a discoverable "agent card"
+GET /.well-known/agent.json
+
+# Agents communicate via JSON-RPC 2.0 over HTTPS
+# Supports sync results and async task streams
+```
+
+| Feature | Details |
+|---------|---------|
+|**Agent cards** | JSON discovery doc at `/.well-known/agent.json` describing identity and capabilities.|
+|**Google ADK** | Open-source Agent Development Kit with native A2A support; deploy on Cloud Run / GKE.|
+|**150+ enterprise adopters** | Atlassian, Salesforce, SAP, Shopify, Box, and more.|
+|**A2A Inspector** | Web UI for debugging, inspecting, and validating A2A endpoints.|
+
+> **MCP vs A2A:** MCP connects agents to *tools/data*; A2A connects *agents to agents*. Use both for fully interoperable multi-agent systems.
 
 ---
 
@@ -230,7 +322,7 @@ GITHUB_TOKEN=your_github_personal_access_token
 
 ---
 
-*Generated August 13, 2025 - updated by weekly automation or manual runs.*  
+*Generated February 22, 2026 - updated by weekly automation or manual runs.*  
 
 
 ---
