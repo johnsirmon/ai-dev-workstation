@@ -119,12 +119,14 @@ This weekly update includes:
 - \`config/tools-tracking.json\` - Tool version tracking
 - \`README.md\` - Updated with latest versions and trending tools
 - \`reports/community-insights-$(date +%Y-%m-%d).md\` - Community insights
+- \`reports/community-insights-$(date +%Y-%m-%d).json\` - Ranked discussion signals
 
 ## Next Steps
 1. Review the community insights report for emerging trends
-2. Evaluate any new trending tools for potential inclusion
-3. Test any updated tool versions in development environment
-4. Consider updating development workflow based on new findings
+2. Use the JSON insights report for automation or dashboards
+3. Evaluate any new trending tools for potential inclusion
+4. Test any updated tool versions in development environment
+5. Consider updating development workflow based on new findings
 
 ## Automation Status
 - **Automated**: Tool version checking

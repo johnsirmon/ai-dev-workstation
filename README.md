@@ -1,7 +1,7 @@
 # ai-dev-workstation
 basic setup for development on a Windows machine with WSL and vscode
 
-> **Living Document Notice:** This document automatically updates itself nightly with the latest tool versions, community trends, and emerging frameworks. Changes are committed automatically in addition to manual updates.
+> **Automation Notice:** This repository includes a weekly automation pipeline that can research ecosystem changes and update tracked tool data plus selected README sections.
 
 # Modern AI Agent Development Toolkit — August 13, 2025
 
@@ -143,16 +143,17 @@ sudo apt update && sudo apt full-upgrade
 
 ## Self-Updating Documentation System
 
-This workstation now includes automated weekly updates to keep your AI agent development environment current:
+This workstation includes automated weekly research and update jobs to keep your AI agent development environment current:
 
 ### Automated Update Features
 
 | Component | What it does | Frequency |
 |-----------|-------------|-----------|
 |**Tool Version Tracking**|Checks PyPI, npm, and GitHub for updates to all tracked frameworks|Weekly|
-|**Community Monitoring**|Scans OpenAI forums, GitHub discussions, and Reddit for trending topics|Weekly|
+|**Community Monitoring**|Scans GitHub conversations, Reddit, and Hacker News for trending topics|Weekly|
 |**Trending Tool Discovery**|Identifies new AI agent tools and frameworks gaining popularity|Weekly|
-|**README Auto-Updates**|Updates version numbers and adds new trending tools to this document|Weekly|
+|**Signal Ranking + Dedup**|Ranks topics by relevance, freshness, and engagement and removes near-duplicates|Weekly|
+|**README Auto-Updates**|Updates version numbers and trending tools section in this document|Weekly|
 
 ### MCP Server Configuration
 
@@ -177,6 +178,9 @@ python3 scripts/forum-monitor.py
 ### Setup Automation
 
 ```bash
+# GitHub Actions automation (already configured)
+# .github/workflows/auto-update.yml runs every Monday at 09:00 UTC
+
 # Set up weekly cron job (Linux/WSL)
 echo "0 9 * * 1 cd /path/to/ai-dev-workstation && ./scripts/weekly-update.sh" | crontab -
 
@@ -202,7 +206,7 @@ GITHUB_TOKEN=your_github_personal_access_token
 
 ---
 
-*Generated August 13, 2025 – automatically updating weekly to keep pace with the evolving agentic toolbox.*  
+*Generated August 13, 2025 - updated by weekly automation or manual runs.*  
 
 
 ---

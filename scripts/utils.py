@@ -195,6 +195,11 @@ class ReportGenerator:
     """Generates reports in various formats"""
 
     @staticmethod
+    def to_json(payload: Dict[str, Any]) -> str:
+        """Serialize report payload as pretty JSON text."""
+        return json.dumps(payload, indent=2, ensure_ascii=False)
+
+    @staticmethod
     def generate_markdown_report(title: str, sections: List[Dict]) -> str:
         """Generate markdown report from sections"""
         report = [f"# {title}"]
