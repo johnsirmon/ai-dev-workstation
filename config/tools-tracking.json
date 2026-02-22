@@ -47,11 +47,11 @@
         "source": "https://github.com/modelcontextprotocol/servers",
         "description": "Persistent memory across AI agent sessions"
       },
-      "@modelcontextprotocol/server-web-search": {
-        "current_version": "2025.8.4",
+      "@brave/brave-search-mcp-server": {
+        "current_version": "2.0.72",
         "last_updated": "2025-08-13",
-        "source": "https://github.com/modelcontextprotocol/servers",
-        "description": "Web search capabilities for AI agents"
+        "source": "https://www.npmjs.com/package/@brave/brave-search-mcp-server",
+        "description": "Brave Search MCP server for web search and rich search results"
       },
       "@modelcontextprotocol/server-github": {
         "current_version": "2025.8.4",

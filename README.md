@@ -35,13 +35,12 @@ Modern AI Agent Development Toolkit — Windows 11 · WSL 2 · VS Code Ins
       "args": ["-y", "@modelcontextprotocol/server-memory"],
       "type": "stdio"
     },
-    "web-search": {
+    "brave-search": {
       "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-web-search"],
+      "args": ["-y", "@brave/brave-search-mcp-server", "--transport", "stdio"],
       "type": "stdio",
       "env": {
-        "SEARCH_API_KEY": "${SEARCH_API_KEY}",
-        "SEARCH_ENGINE_ID": "${SEARCH_ENGINE_ID}"
+        "BRAVE_API_KEY": "${BRAVE_API_KEY}"
       }
     },
     "github": {
@@ -185,7 +184,7 @@ This workstation includes automated weekly research and update jobs to keep your
 Your `.vscode/mcp.json` is configured with:
 - **Context7** for enhanced AI context management
 - **Memory server** for persistent agent sessions
-- **Web search** for real-time information access
+- **Brave Search** for real-time information access
 - **GitHub integration** for repository management
 - **Filesystem access** for local development
 
@@ -221,9 +220,8 @@ Create a `.env` file in your project root:
 UPSTASH_REDIS_REST_URL=your_redis_url
 UPSTASH_REDIS_REST_TOKEN=your_redis_token
 
-# Search API (for web search MCP)
-SEARCH_API_KEY=your_google_search_api_key
-SEARCH_ENGINE_ID=your_search_engine_id
+# Brave Search API (for Brave Search MCP)
+BRAVE_API_KEY=your_brave_search_api_key
 
 # GitHub integration
 GITHUB_TOKEN=your_github_personal_access_token
