@@ -197,6 +197,7 @@ Your `.vscode/mcp.json` is configured with:
 # Check individual components
 python3 scripts/update-tools.py
 python3 scripts/forum-monitor.py
+python3 scripts/validate-mcp-config.py
 ```
 
 ### Setup Automation
