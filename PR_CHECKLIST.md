@@ -23,6 +23,12 @@ git diff main...HEAD -- <file1>
 git diff main...HEAD -- <file2>
 ```
 
+Validate MCP config consistency (when MCP files are touched):
+
+```powershell
+python scripts/validate-mcp-config.py
+```
+
 ## 3. Approve PR
 
 ```powershell

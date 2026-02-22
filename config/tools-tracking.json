@@ -58,6 +58,12 @@
         "last_updated": "2025-08-13",
         "source": "https://github.com/modelcontextprotocol/servers",
         "description": "GitHub integration for repository management"
+      },
+      "@modelcontextprotocol/server-filesystem": {
+        "current_version": "2025.8.4",
+        "last_updated": "2025-08-13",
+        "source": "https://github.com/modelcontextprotocol/servers",
+        "description": "Filesystem access for workspace-local agent operations"
       }
     },
     "dev_tools": {
