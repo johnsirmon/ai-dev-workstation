@@ -1,5 +1,5 @@
 
-# Modern AI Agent Development Toolkit — July 18, 2025
+# Modern AI Agent Development Toolkit
 
 > **Audience:** Developers using **VS Code Insiders** on Windows 11 with GitHub Copilot (agent mode), Claude Code, WSL 2, and Azure resources.
 
@@ -9,7 +9,7 @@
 
 | Step | What to do | Why |
 |------|------------|-----|
-|1|Install **VS Code Insiders** and enable **Auto‑update** (Settings → *Update: Mode* → `none` so it pulls the **daily** build automatically).|Daily insiders now ship improved chat‑mode diagnostics and tool‑hover support citeturn0search4|
+|1|Install **VS Code Insiders** and enable **Auto‑update** (Settings → *Update: Mode* → `none` so it pulls the **daily** build automatically).|Daily insiders now ship improved chat‑mode diagnostics and tool‑hover support|
 |2|Create a *Profile* called **“Agent‑Dev”** to isolate your extensions and settings from regular coding.|Keeps MCP servers and agent‑specific snippets from cluttering other workspaces.|
 |3|Install **GitHub Copilot Nightly** and enable *Agent Mode* (`"github.copilot.chat.enable": true`).|Gives you model/tool routing in the chat sidebar.|
 
@@ -39,7 +39,7 @@
 |You need a custom tool (e.g., call an internal REST API, run a Kusto query).|You just need vector search, retrieval, or memory that a generic server already exposes.|
 |Security requires you to run on localhost and audit code.|You trust the community‑maintained implementation.|
 
-GitHub’s docs outline editing `mcp.json` in the *Tools* panel citeturn0search0turn0search5.
+GitHub’s docs outline editing `mcp.json` in the *Tools* panel.
 
 > **Gotcha ⚠️**: Two servers listening on the **same port (3917)** will silently fail; always increment the port or kill the other process first.
 
@@ -49,9 +49,9 @@ GitHub’s docs outline editing `mcp.json` in the *Tools* panel citeturn0
 
 | Tool | Strengths | Watch‑outs |
 |------|-----------|-----------|
-|**GitHub Copilot** (agent mode) | Deep VS Code integration, Azure SRE agent preview announced at Build 2025 citeturn1news32 | Chat context limited to ~16 k tokens unless MCP tooling expands it.|
+|**GitHub Copilot** (agent mode) | Deep VS Code integration, Azure SRE agent preview announced at Build 2025 | Chat context limited to ~16 k tokens unless MCP tooling expands it.|
 |**Claude Code** extension | 200 k+ context, excels at refactors; can share MCP servers. | Must select the **Claude** sidebar; easy to think you’re still in Copilot.|
-|**Cursor** | Whole‑file edit commands, great for “make this async”.|Adds a separate forked VS Code; ingesting large repos can cause battery drain. User reports of “bugs from AI patches” citeturn0news79.|
+|**Cursor** | Whole‑file edit commands, great for “make this async”.|Adds a separate forked VS Code; ingesting large repos can cause battery drain. User reports of “bugs from AI patches”.|
 
 ---
 
@@ -59,21 +59,21 @@ GitHub’s docs outline editing `mcp.json` in the *Tools* panel citeturn0
 
 | Framework / Lib | Latest ver. | Killer features |
 |-----------------|------------|-----------------|
-|**CrewAI**|0.140.0 (Jul 9 2025) citeturn0search1|Declarative YAML mission files, vector‑based memory, Agents → Roles → Tasks hierarchy.|
-|**Microsoft Autogen**|0.2 (major rewrite) citeturn0search2|Replay analytics, compliance hooks, VS Code debug adapter.|
-|**LangGraph**|Templates & perf boosts citeturn0search3|Graph‑style branching flows; easy to plug into LangChain tools.|
-|**Semantic Kernel**|1.35.0 (Jul 15) citeturn1search7|Process Framework (durable orchestration) + C#/**Python** parity.|
-|**GPTScript Agents**|Bleeding‑edge citeturn1search5|Script agents in 10 lines; great for Kubernetes ops.|
-|**Clio (CLI Copilot)**|Active citeturn1search8|Executes shell commands safely with confirm step.|
+|**CrewAI**|0.157.0|Declarative YAML mission files, vector‑based memory, Agents → Roles → Tasks hierarchy.|
+|**Microsoft Autogen**|0.7.2|Replay analytics, compliance hooks, VS Code debug adapter.|
+|**LangGraph**|0.6.4|Graph‑style branching flows; easy to plug into LangChain tools.|
+|**Semantic Kernel**|1.35.2|Process Framework (durable orchestration) + C#/**Python** parity.|
+|**GPTScript Agents**|Bleeding‑edge|Script agents in 10 lines; great for Kubernetes ops.|
+|**Clio (CLI Copilot)**|Active|Executes shell commands safely with confirm step.|
 
-See the ODSC roundup for nine more frameworks citeturn1search2.
+See the ODSC roundup for nine more frameworks.
 
 ---
 
 ## 4 · Azure‑centric Agent Tooling  
 
-* **Azure AI Foundry**—“agent factory” announced at Build 2025. Adds governed deployment, Deep Research API (public preview) citeturn1search0turn1search6  
-* **Project Amelie**—auto‑builds ML pipelines from one prompt citeturn1search3  
+* **Azure AI Foundry**—“agent factory” announced at Build 2025. Adds governed deployment, Deep Research API (public preview)  
+* **Project Amelie**—auto‑builds ML pipelines from one prompt  
 
 Integrate via the new `azure-ai-foundry` Python SDK:
 
@@ -101,7 +101,7 @@ wsl --install Ubuntu-24.04
 sudo apt update && sudo apt full-upgrade
 ```
 
-(Install custom ISOs if 24.04 hasn’t hit the Store yet citeturn0search7.)
+(Install custom ISOs if 24.04 hasn’t hit the Store yet.)
 
 ---
 
@@ -120,7 +120,7 @@ sudo apt update && sudo apt full-upgrade
 |**OpenAI Developer Forum** | Early docs on Assistants API & function calling updates.|
 |**LangChain Slack / Discord** | Rapid Q&A on LangGraph templates.|
 |**Autogen GitHub Discussions** | Microsoft engineers share design patterns weekly.|
-|**Azure AI Foundry Blog** | Enterprise agent governance & roadmap citeturn1search0.|
+|**Azure AI Foundry Blog** | Enterprise agent governance & roadmap.|
 
 ---
 
@@ -137,4 +137,4 @@ sudo apt update && sudo apt full-upgrade
 
 ---
 
-*Generated July 18, 2025 – keep exploring; the agentic toolbox grows daily.*  
+*For the latest versions, see [config/tools-tracking.json](config/tools-tracking.json). Run `bash scripts/weekly-update.sh` (or trigger the GitHub Actions workflow) to refresh versions and trending tools automatically.*  
