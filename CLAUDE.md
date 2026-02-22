@@ -19,13 +19,18 @@ This is an AI development workstation setup repository focused on modern AI agen
 The repository references MCP server setup in `.vscode/mcp.json` with servers like:
 - `context7` for enhanced context management
 - `memory` for persistent memory across sessions
+- `brave-search` for real-time web search
+- `github` for repository management
+- `filesystem` for local file access (scoped to `${workspaceFolder}`)
+
+Secrets (API keys and tokens) are managed via the `inputs` array in `.vscode/mcp.json`, which prompts VS Code to request values from the user at first use.
 
 ### Supported AI Frameworks
 The documentation covers multiple agent frameworks:
-- **CrewAI** (0.140.0) - Declarative YAML mission files
-- **Microsoft Autogen** (0.2) - Replay analytics and compliance hooks
-- **LangGraph** - Graph-style branching flows
-- **Semantic Kernel** (1.35.0) - Process Framework with C#/Python parity
+- **CrewAI** (0.157.0) - Declarative YAML mission files
+- **Microsoft Autogen** (0.7.2) - Replay analytics and compliance hooks
+- **LangGraph** (0.6.4) - Graph-style branching flows
+- **Semantic Kernel** (1.35.2) - Process Framework with C#/Python parity
 - **GPTScript Agents** - Script agents for Kubernetes operations
 
 ## Environment Setup Commands
