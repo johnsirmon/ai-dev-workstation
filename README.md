@@ -22,15 +22,32 @@ basic setup for development on a Windows machine with WSL and vscode
 ```jsonc
 // .vscode/mcp.json
 {
+  "inputs": [
+    {
+      "id": "github-token",
+      "type": "promptString",
+      "description": "GitHub Personal Access Token",
+      "password": true
+    }
+  ],
   "servers": {
     "context7": {
       "command": "npx",
-      "args": ["-y", "@upstash/context7-mcp"],
+      "args": ["-y", "@upstash/context7-mcp@latest"],
       "type": "stdio"
     },
     "memory": {
       "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-memory"]
+      "args": ["-y", "@modelcontextprotocol/server-memory"],
+      "type": "stdio"
+    },
+    "github": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "type": "stdio",
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "${input:github-token}"
+      }
     }
   }
 }
@@ -160,9 +177,11 @@ This workstation includes automated weekly research and update jobs to keep your
 Your `.vscode/mcp.json` is configured with:
 - **Context7** for enhanced AI context management
 - **Memory server** for persistent agent sessions
-- **Web search** for real-time information access
+- **Brave Search** for real-time web search (requires `BRAVE_API_KEY`)
 - **GitHub integration** for repository management
-- **Filesystem access** for local development
+- **Filesystem access** for local development (scoped to `${workspaceFolder}`)
+
+Secrets are managed via `inputs` in `.vscode/mcp.json` — VS Code will prompt you once per session.
 
 ### Running Updates
 
@@ -196,9 +215,8 @@ Create a `.env` file in your project root:
 UPSTASH_REDIS_REST_URL=your_redis_url
 UPSTASH_REDIS_REST_TOKEN=your_redis_token
 
-# Search API (for web search MCP)
-SEARCH_API_KEY=your_google_search_api_key
-SEARCH_ENGINE_ID=your_search_engine_id
+# Brave Search API (for brave-search MCP)
+BRAVE_API_KEY=your_brave_search_api_key
 
 # GitHub integration
 GITHUB_TOKEN=your_github_personal_access_token

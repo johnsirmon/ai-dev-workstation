@@ -7,8 +7,8 @@ This repository is a modular, self-updating AI Agent developer environment. It a
 ## Key Components & Structure
 
 - **scripts/**: Automation scripts for monitoring, updating, and utility functions.  
-  - trend_monitor.py: Scans external sources for trending AI tools.
-  - update_readme.py: Updates documentation with new findings.
+  - update-tools.py: Checks tool versions and updates README with new findings.
+  - forum-monitor.py: Scans GitHub, Reddit, and Hacker News for trending AI topics.
   - utils.py: Shared helpers for scripts.
 - **config/**: Configuration files for tool tracking and MCP server setup.
 - **README.md**: Main documentation, auto-updated with tool trends and setup instructions.
@@ -19,13 +19,13 @@ This repository is a modular, self-updating AI Agent developer environment. It a
 ## Architecture & Data Flow
 
 - **Trend Monitoring**:  
-  - trend_monitor.py fetches data from GitHub, Hacker News, and other sources.
+  - forum-monitor.py fetches data from GitHub, Hacker News, and other sources.
   - Results are analyzed and categorized by priority.
-  - update_readme.py merges new trends into README.md.
+  - update-tools.py checks version updates and merges new trends into README.md.
 - **Self-Updating Documentation**:  
   - GitHub Actions (auto-update.yml) runs scripts weekly, commits changes if updates are found.
 - **MCP Server Integration**:  
-  - Configuration in config/tools-tracking.json and claude_desktop_config.json.
+  - Configuration in config/tools-tracking.json and .vscode/mcp.json.
   - Enables file system, web search, and GitHub access for automation.
 
 ## Developer Workflows
@@ -35,10 +35,10 @@ This repository is a modular, self-updating AI Agent developer environment. It a
   - Use Makefile targets (setup, install, update, start, stop, clean) for common tasks.
 - **Automation**:  
   - Weekly updates are triggered by GitHub Actions.
-  - Manual update: make update or python scripts/update_readme.py.
+  - Manual update: `bash scripts/weekly-update.sh` or `python3 scripts/update-tools.py`.
 - **Configuration**:  
   - MCP servers require API keys in environment variables or config files.
-  - Update config/claude_desktop_config.json to add/modify MCP servers.
+  - Update .vscode/mcp.json to add/modify MCP servers (use `inputs` for secrets).
 
 ## Project-Specific Patterns
 
@@ -63,16 +63,16 @@ This repository is a modular, self-updating AI Agent developer environment. It a
 ## Examples
 
 - **Add a new MCP server**:  
-  Update config/claude_desktop_config.json and restart Claude Desktop.
+  Update .vscode/mcp.json, add an `inputs` entry for any required secrets, and reload VS Code.
 - **Run trend monitoring manually**:  
-  python scripts/trend_monitor.py
+  python3 scripts/forum-monitor.py
 - **Update documentation**:  
-  python scripts/update_readme.py
+  python3 scripts/update-tools.py
 
 ## Key Files & Directories
 
-- scripts/trend_monitor.py – External tool discovery logic
-- scripts/update_readme.py – Documentation update logic
-- config/claude_desktop_config.json – MCP server configuration
+- scripts/update-tools.py – Tool version checking and README update logic
+- scripts/forum-monitor.py – External community and trend discovery logic
+- .vscode/mcp.json – MCP server configuration (use `inputs` for secrets)
 - README.md – Main documentation, auto-updated
 - .github/workflows/auto-update.yml – Automation workflow

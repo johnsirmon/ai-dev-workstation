@@ -1,12 +1,37 @@
 {
+  "inputs": [
+    {
+      "id": "upstash-redis-url",
+      "type": "promptString",
+      "description": "Upstash Redis REST URL (for Context7 MCP)"
+    },
+    {
+      "id": "upstash-redis-token",
+      "type": "promptString",
+      "description": "Upstash Redis REST token (for Context7 MCP)",
+      "password": true
+    },
+    {
+      "id": "github-token",
+      "type": "promptString",
+      "description": "GitHub Personal Access Token",
+      "password": true
+    },
+    {
+      "id": "brave-api-key",
+      "type": "promptString",
+      "description": "Brave Search API key",
+      "password": true
+    }
+  ],
   "servers": {
     "context7": {
       "command": "npx",
-      "args": ["-y", "@upstash/context7-mcp"],
+      "args": ["-y", "@upstash/context7-mcp@latest"],
       "type": "stdio",
       "env": {
-        "UPSTASH_REDIS_REST_URL": "${UPSTASH_REDIS_REST_URL}",
-        "UPSTASH_REDIS_REST_TOKEN": "${UPSTASH_REDIS_REST_TOKEN}"
+        "UPSTASH_REDIS_REST_URL": "${input:upstash-redis-url}",
+        "UPSTASH_REDIS_REST_TOKEN": "${input:upstash-redis-token}"
       }
     },
     "memory": {
@@ -14,13 +39,12 @@
       "args": ["-y", "@modelcontextprotocol/server-memory"],
       "type": "stdio"
     },
-    "web-search": {
+    "brave-search": {
       "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-web-search"],
+      "args": ["-y", "@modelcontextprotocol/server-brave-search"],
       "type": "stdio",
       "env": {
-        "SEARCH_API_KEY": "${SEARCH_API_KEY}",
-        "SEARCH_ENGINE_ID": "${SEARCH_ENGINE_ID}"
+        "BRAVE_API_KEY": "${input:brave-api-key}"
       }
     },
     "github": {
@@ -28,12 +52,12 @@
       "args": ["-y", "@modelcontextprotocol/server-github"],
       "type": "stdio",
       "env": {
-        "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_TOKEN}"
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "${input:github-token}"
       }
     },
     "filesystem": {
       "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-filesystem", "--allowed-directory", "/home/johnsirmon/projects/ai-dev-workstation"],
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "--allowed-directory", "${workspaceFolder}"],
       "type": "stdio"
     }
   }
