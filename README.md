@@ -87,10 +87,10 @@ GitHub’s docs outline editing `mcp.json` in the *Tools* panel.
 
 | Framework / Lib | Latest ver. | Killer features |
 |-----------------|------------|-----------------|
-|**CrewAI**|0.157.0 (Updated 2025-08-13)|Declarative YAML mission files, vector‑based memory, Agents → Roles → Tasks hierarchy.|
-|**Microsoft Autogen**|0.7.2 (Updated 2025-08-13)|Replay analytics, compliance hooks, VS Code debug adapter.|
-|**LangGraph**|0.6.4 (Updated 2025-08-13)|Graph‑style branching flows; easy to plug into LangChain tools.|
-|**Semantic Kernel**|1.35.2 (Updated 2025-08-13)|Process Framework (durable orchestration) + C#/**Python** parity.|
+|**CrewAI**|1.9.3 (Updated 2026-02-23)|Declarative YAML mission files, vector‑based memory, Agents → Roles → Tasks hierarchy.|
+|**Microsoft Autogen**|0.7.5 (Updated 2026-02-23)|Replay analytics, compliance hooks, VS Code debug adapter.|
+|**LangGraph**|1.0.9 (Updated 2026-02-23)|Graph‑style branching flows; easy to plug into LangChain tools.|
+|**Semantic Kernel**|1.39.4 (Updated 2026-02-23)|Process Framework (durable orchestration) + C#/**Python** parity.|
 |**GPTScript Agents**|Bleeding‑edge|Script agents in 10 lines; great for Kubernetes ops.|
 |**Clio (CLI Copilot)**|Active|Executes shell commands safely with confirm step.|
 
@@ -239,4 +239,13 @@ GITHUB_TOKEN=your_github_personal_access_token
 
 | Tool | Stars | Language | Use Case | Repository |
 |------|-------|----------|----------|------------|
-|**rag-ecosystem**|89|Jupyter Notebook|Understand and code every important component of RAG architecture|[GitHub](https://github.com/FareedKhan-dev/rag-ecosystem)|
+|**parallel-code**|199|TypeScript|Run Claude Code, Codex, and Gemini side by side — each in      its own git worktree|[GitHub](https://github.com/johannesjo/parallel-code)|
+|**conductor-orchestrator-superpowers**|193|Python|Multi-agent orchestration system for Claude Code with parallel execution, automated quality gates, B...|[GitHub](https://github.com/Ibrahim-3d/conductor-orchestrator-superpowers)|
+|**BMAD_Openclaw**|130|N/A|Bridging the BMad Method to OpenClaw: 12-agent AI dev team using sessions_spawn|[GitHub](https://github.com/ErwanLorteau/BMAD_Openclaw)|
+|**pantalk**|97|Go|Give your AI agent a voice on every chat platform.|[GitHub](https://github.com/pantalk/pantalk)|
+|**librarium**|89|TypeScript|Multi-provider deep research CLI — fans out queries to multiple search/AI APIs in parallel|[GitHub](https://github.com/jkudish/librarium)|
+|**CommonGround**|88|Python|The Sociotechnical OS for Multi-Agent Collaboration|[GitHub](https://github.com/Intelligent-Internet/CommonGround)|
+|**openbrowserclaw**|87|TypeScript|Browser-native personal AI assistant. Zero infrastructure, the browser is the server.|[GitHub](https://github.com/sachaa/openbrowserclaw)|
+|**aqua**|82|Go|Aqua, a cli message tool for AI agents |[GitHub](https://github.com/quailyquaily/aqua)|
+|**OpenClaw-Book**|75|N/A|《深入 OpenClaw》。全网第一本介绍 OpenClaw 的书，用 OpenClaw + OpenCode + Opus 4.6 写成。A book introducing OpenClaw, w...|[GitHub](https://github.com/0xtresser/OpenClaw-Book)|
+|**clawapp**|67|JavaScript|📱 ClawApp — Mobile H5 chat client for OpenClaw AI Agent platform. 用手机和你的 AI 智能体聊天。|[GitHub](https://github.com/qingchencloud/clawapp)|

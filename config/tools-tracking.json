@@ -2,32 +2,32 @@
   "tracked_tools": {
     "ai_frameworks": {
       "CrewAI": {
-        "current_version": "0.157.0",
-        "last_updated": "2025-08-13",
+        "current_version": "1.9.3",
+        "last_updated": "2026-02-23",
         "source": "https://github.com/crewAIInc/crewAI",
         "npm_package": null,
         "pypi_package": "crewai",
         "description": "Declarative YAML mission files, vector‑based memory, Agents → Roles → Tasks hierarchy"
       },
       "Microsoft Autogen": {
-        "current_version": "0.7.2",
-        "last_updated": "2025-08-13",
+        "current_version": "0.7.5",
+        "last_updated": "2026-02-23",
         "source": "https://github.com/microsoft/autogen",
         "npm_package": null,
         "pypi_package": "autogen-agentchat",
         "description": "Replay analytics, compliance hooks, VS Code debug adapter"
       },
       "LangGraph": {
-        "current_version": "0.6.4",
-        "last_updated": "2025-08-13",
+        "current_version": "1.0.9",
+        "last_updated": "2026-02-23",
         "source": "https://github.com/langchain-ai/langgraph",
         "npm_package": "@langchain/langgraph",
         "pypi_package": "langgraph",
         "description": "Graph‑style branching flows; easy to plug into LangChain tools"
       },
       "Semantic Kernel": {
-        "current_version": "1.35.2",
-        "last_updated": "2025-08-13",
+        "current_version": "1.39.4",
+        "last_updated": "2026-02-23",
         "source": "https://github.com/microsoft/semantic-kernel",
         "npm_package": "@microsoft/semantic-kernel",
         "pypi_package": "semantic-kernel",
@@ -36,14 +36,14 @@
     },
     "mcp_servers": {
       "@upstash/context7-mcp": {
-        "current_version": "1.0.14",
-        "last_updated": "2025-07-20",
+        "current_version": "ctx7@0.3.1",
+        "last_updated": "2026-02-23",
         "source": "https://github.com/upstash/context7-mcp",
         "description": "Enhanced context management for AI agents"
       },
       "@modelcontextprotocol/server-memory": {
-        "current_version": "2025.8.4",
-        "last_updated": "2025-08-13",
+        "current_version": "2026.1.26",
+        "last_updated": "2026-02-23",
         "source": "https://github.com/modelcontextprotocol/servers",
         "description": "Persistent memory across AI agent sessions"
       },
@@ -54,14 +54,14 @@
         "description": "Brave Search MCP server for web search and rich search results"
       },
       "@modelcontextprotocol/server-github": {
-        "current_version": "2025.8.4",
-        "last_updated": "2025-08-13",
+        "current_version": "2026.1.26",
+        "last_updated": "2026-02-23",
         "source": "https://github.com/modelcontextprotocol/servers",
         "description": "GitHub integration for repository management"
       },
       "@modelcontextprotocol/server-filesystem": {
-        "current_version": "2025.8.4",
-        "last_updated": "2025-08-13",
+        "current_version": "2026.1.26",
+        "last_updated": "2026-02-23",
         "source": "https://github.com/modelcontextprotocol/servers",
         "description": "Filesystem access for workspace-local agent operations"
       }
@@ -115,14 +115,95 @@
   },
   "trending_tools": [
     {
-      "name": "rag-ecosystem",
-      "url": "https://github.com/FareedKhan-dev/rag-ecosystem",
-      "description": "Understand and code every important component of RAG architecture",
-      "stars": 89,
-      "language": "Jupyter Notebook",
+      "name": "parallel-code",
+      "url": "https://github.com/johannesjo/parallel-code",
+      "description": "Run Claude Code, Codex, and Gemini side by side — each in      its own git worktree",
+      "stars": 199,
+      "language": "TypeScript",
       "topic": "ai-agents",
-      "created_at": "2025-08-07T07:30:59Z"
+      "created_at": "2026-02-18T09:53:27Z"
+    },
+    {
+      "name": "conductor-orchestrator-superpowers",
+      "url": "https://github.com/Ibrahim-3d/conductor-orchestrator-superpowers",
+      "description": "Multi-agent orchestration system for Claude Code with parallel execution, automated quality gates, Board of Directors, and bundled Superpowers skills",
+      "stars": 193,
+      "language": "Python",
+      "topic": "ai-agents",
+      "created_at": "2026-02-17T16:01:09Z"
+    },
+    {
+      "name": "BMAD_Openclaw",
+      "url": "https://github.com/ErwanLorteau/BMAD_Openclaw",
+      "description": "Bridging the BMad Method to OpenClaw: 12-agent AI dev team using sessions_spawn",
+      "stars": 130,
+      "language": null,
+      "topic": "ai-agents",
+      "created_at": "2026-02-16T11:07:09Z"
+    },
+    {
+      "name": "pantalk",
+      "url": "https://github.com/pantalk/pantalk",
+      "description": "Give your AI agent a voice on every chat platform.",
+      "stars": 97,
+      "language": "Go",
+      "topic": "ai-agents",
+      "created_at": "2026-02-16T11:15:16Z"
+    },
+    {
+      "name": "librarium",
+      "url": "https://github.com/jkudish/librarium",
+      "description": "Multi-provider deep research CLI — fans out queries to multiple search/AI APIs in parallel",
+      "stars": 89,
+      "language": "TypeScript",
+      "topic": "ai-agents",
+      "created_at": "2026-02-20T18:24:21Z"
+    },
+    {
+      "name": "CommonGround",
+      "url": "https://github.com/Intelligent-Internet/CommonGround",
+      "description": "The Sociotechnical OS for Multi-Agent Collaboration",
+      "stars": 88,
+      "language": "Python",
+      "topic": "ai-agents",
+      "created_at": "2026-02-16T16:40:43Z"
+    },
+    {
+      "name": "openbrowserclaw",
+      "url": "https://github.com/sachaa/openbrowserclaw",
+      "description": "Browser-native personal AI assistant. Zero infrastructure, the browser is the server.",
+      "stars": 87,
+      "language": "TypeScript",
+      "topic": "ai-agents",
+      "created_at": "2026-02-21T20:52:49Z"
+    },
+    {
+      "name": "aqua",
+      "url": "https://github.com/quailyquaily/aqua",
+      "description": "Aqua, a cli message tool for AI agents ",
+      "stars": 82,
+      "language": "Go",
+      "topic": "ai-agents",
+      "created_at": "2026-02-21T19:04:48Z"
+    },
+    {
+      "name": "OpenClaw-Book",
+      "url": "https://github.com/0xtresser/OpenClaw-Book",
+      "description": "《深入 OpenClaw》。全网第一本介绍 OpenClaw 的书，用 OpenClaw + OpenCode + Opus 4.6 写成。A book introducing OpenClaw, written by OpenClaw + OpenCode + Opus 4.6",
+      "stars": 75,
+      "language": null,
+      "topic": "ai-agents",
+      "created_at": "2026-02-19T07:56:39Z"
+    },
+    {
+      "name": "clawapp",
+      "url": "https://github.com/qingchencloud/clawapp",
+      "description": "📱 ClawApp — Mobile H5 chat client for OpenClaw AI Agent platform. 用手机和你的 AI 智能体聊天。",
+      "stars": 67,
+      "language": "JavaScript",
+      "topic": "ai-agents",
+      "created_at": "2026-02-16T18:34:43Z"
     }
   ],
-  "last_update_check": "2025-08-13"
+  "last_update_check": "2026-02-23"
 }
