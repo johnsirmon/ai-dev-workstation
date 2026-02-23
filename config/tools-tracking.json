@@ -18,12 +18,12 @@
         "description": "Replay analytics, compliance hooks, VS Code debug adapter"
       },
       "LangGraph": {
-        "current_version": "1.0.9",
-        "last_updated": "2026-02-23",
+        "current_version": "1.0.0",
+        "last_updated": "2026-02-22",
         "source": "https://github.com/langchain-ai/langgraph",
         "npm_package": "@langchain/langgraph",
         "pypi_package": "langgraph",
-        "description": "Graph‑style branching flows; easy to plug into LangChain tools"
+        "description": "Graph-style state machine orchestration; v1.0 GA Oct 2025. Check-pointing, audit trails, production-grade compliance workloads."
       },
       "Semantic Kernel": {
         "current_version": "1.39.4",
@@ -32,6 +32,46 @@
         "npm_package": "@microsoft/semantic-kernel",
         "pypi_package": "semantic-kernel",
         "description": "Process Framework (durable orchestration) + C#/Python parity"
+      },
+      "OpenAI Agents SDK": {
+        "current_version": "latest",
+        "last_updated": "2026-02-22",
+        "source": "https://github.com/openai/agents-python",
+        "npm_package": null,
+        "pypi_package": "openai-agents",
+        "description": "Official open-source SDK for orchestrating multi-agent workflows; supports handoffs, guardrails, tracing, and Responses API"
+      },
+      "smolagents": {
+        "current_version": "1.24.0",
+        "last_updated": "2026-02-22",
+        "source": "https://github.com/huggingface/smolagents",
+        "npm_package": null,
+        "pypi_package": "smolagents",
+        "description": "Ultra-minimal Hugging Face agents; CodeAgent paradigm, sandboxed execution, model-agnostic"
+      },
+      "Agno": {
+        "current_version": "2.5.3",
+        "last_updated": "2026-02-22",
+        "source": "https://github.com/agno-agi/agno",
+        "npm_package": null,
+        "pypi_package": "agno",
+        "description": "High-performance runtime for large-scale multi-agent systems; streaming, governance, approval workflows"
+      },
+      "LlamaIndex": {
+        "current_version": "latest",
+        "last_updated": "2026-02-22",
+        "source": "https://github.com/run-llama/llama_index",
+        "npm_package": null,
+        "pypi_package": "llama-index",
+        "description": "Data/knowledge-centric framework; RAG workflows, document agents, retrieval-augmented production pipelines"
+      },
+      "Google ADK": {
+        "current_version": "latest",
+        "last_updated": "2026-02-22",
+        "source": "https://github.com/google/genai-toolbox",
+        "npm_package": null,
+        "pypi_package": "google-adk",
+        "description": "Google Agent Development Kit with native A2A protocol support; deploy on Cloud Run, GKE, or Vertex AI"
       }
     },
     "mcp_servers": {
@@ -79,6 +119,52 @@
         "source": "https://azure.microsoft.com/en-us/products/ai-foundry",
         "description": "Agent factory with governed deployment, Deep Research API"
       }
+    },
+    "ai_models": {
+      "GPT-5.x": {
+        "current_version": "gpt-5.3",
+        "last_updated": "2026-02-22",
+        "source": "https://platform.openai.com/docs/models",
+        "description": "OpenAI flagship; best-in-class reasoning, multimodal, function-calling accuracy"
+      },
+      "Claude Opus 4.6 / Sonnet 5": {
+        "current_version": "claude-opus-4-6",
+        "last_updated": "2026-02-22",
+        "source": "https://docs.anthropic.com/en/docs/models-overview",
+        "description": "Opus 4.6 for long-context analytical tasks (200k tokens); Sonnet 5 for coding + creative balance"
+      },
+      "Gemini 3 Pro": {
+        "current_version": "gemini-3-pro",
+        "last_updated": "2026-02-22",
+        "source": "https://ai.google.dev/gemini-api/docs/models/gemini",
+        "description": "Google DeepMind; advanced multimodal (text/audio/vision), GA Feb 2026"
+      },
+      "Llama 4": {
+        "current_version": "llama-4",
+        "last_updated": "2026-02-22",
+        "source": "https://huggingface.co/meta-llama",
+        "description": "Meta; leading open-source choice for private/local deployments and fine-tuning"
+      },
+      "DeepSeek v4": {
+        "current_version": "deepseek-v4",
+        "last_updated": "2026-02-22",
+        "source": "https://github.com/deepseek-ai/DeepSeek-V3",
+        "description": "Advanced reasoning; cost-effective self-hosted open-source alternative"
+      }
+    },
+    "interoperability_protocols": {
+      "MCP": {
+        "current_version": "2026-01",
+        "last_updated": "2026-02-22",
+        "source": "https://blog.modelcontextprotocol.io",
+        "description": "Model Context Protocol; universal connector for AI tools and data. 1000+ servers, Streamable HTTP transport"
+      },
+      "Google A2A": {
+        "current_version": "latest",
+        "last_updated": "2026-02-22",
+        "source": "https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/",
+        "description": "Agent2Agent protocol (Linux Foundation); open standard for cross-vendor agent-to-agent communication"
+      }
     }
   },
   "monitoring_sources": {
@@ -102,6 +188,21 @@
         "name": "Azure AI Foundry Blog",
         "url": "https://azure.microsoft.com/en-us/blog/",
         "focus": "Enterprise agent governance & roadmap"
+      },
+      {
+        "name": "Hugging Face Discord",
+        "url": "https://discord.com/invite/hugging-face-879548962464493619",
+        "focus": "smolagents, open-source models, Llama 4, Qwen 3.5 benchmarks"
+      },
+      {
+        "name": "MCP Blog",
+        "url": "https://blog.modelcontextprotocol.io",
+        "focus": "Spec updates, new server registry, Streamable HTTP transport"
+      },
+      {
+        "name": "Google Developer Blog",
+        "url": "https://developers.googleblog.com",
+        "focus": "A2A protocol updates, Agent Development Kit (ADK) releases"
       }
     ],
     "github_topics": [
@@ -110,7 +211,12 @@
       "langchain",
       "autogen",
       "semantic-kernel",
-      "crew-ai"
+      "crew-ai",
+      "openai-agents",
+      "smolagents",
+      "agno",
+      "a2a-protocol",
+      "llama-index"
     ]
   },
   "trending_tools": [
@@ -205,5 +311,5 @@
       "created_at": "2026-02-16T18:34:43Z"
     }
   ],
-  "last_update_check": "2026-02-23"
+  "last_update_check": "2026-02-22"
 }
