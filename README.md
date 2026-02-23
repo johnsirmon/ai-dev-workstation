@@ -331,4 +331,13 @@ GITHUB_TOKEN=your_github_personal_access_token
 
 | Tool | Stars | Language | Use Case | Repository |
 |------|-------|----------|----------|------------|
-|**rag-ecosystem**|89|Jupyter Notebook|Understand and code every important component of RAG architecture|[GitHub](https://github.com/FareedKhan-dev/rag-ecosystem)|
+|**parallel-code**|199|TypeScript|Run Claude Code, Codex, and Gemini side by side — each in      its own git worktree|[GitHub](https://github.com/johannesjo/parallel-code)|
+|**conductor-orchestrator-superpowers**|193|Python|Multi-agent orchestration system for Claude Code with parallel execution, automated quality gates, B...|[GitHub](https://github.com/Ibrahim-3d/conductor-orchestrator-superpowers)|
+|**BMAD_Openclaw**|130|N/A|Bridging the BMad Method to OpenClaw: 12-agent AI dev team using sessions_spawn|[GitHub](https://github.com/ErwanLorteau/BMAD_Openclaw)|
+|**pantalk**|97|Go|Give your AI agent a voice on every chat platform.|[GitHub](https://github.com/pantalk/pantalk)|
+|**librarium**|89|TypeScript|Multi-provider deep research CLI — fans out queries to multiple search/AI APIs in parallel|[GitHub](https://github.com/jkudish/librarium)|
+|**CommonGround**|88|Python|The Sociotechnical OS for Multi-Agent Collaboration|[GitHub](https://github.com/Intelligent-Internet/CommonGround)|
+|**openbrowserclaw**|87|TypeScript|Browser-native personal AI assistant. Zero infrastructure, the browser is the server.|[GitHub](https://github.com/sachaa/openbrowserclaw)|
+|**aqua**|82|Go|Aqua, a cli message tool for AI agents |[GitHub](https://github.com/quailyquaily/aqua)|
+|**OpenClaw-Book**|75|N/A|《深入 OpenClaw》。全网第一本介绍 OpenClaw 的书，用 OpenClaw + OpenCode + Opus 4.6 写成。A book introducing OpenClaw, w...|[GitHub](https://github.com/0xtresser/OpenClaw-Book)|
+|**clawapp**|67|JavaScript|📱 ClawApp — Mobile H5 chat client for OpenClaw AI Agent platform. 用手机和你的 AI 智能体聊天。|[GitHub](https://github.com/qingchencloud/clawapp)|
