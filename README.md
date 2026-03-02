@@ -101,15 +101,15 @@ GitHub’s docs outline editing `mcp.json` in the *Tools* panel.
 
 | Framework / Lib | Latest ver. | Killer features |
 |-----------------|------------|-----------------|
-|**CrewAI**|0.157.0|Declarative YAML mission files, vector‑based memory, Agents → Roles → Tasks hierarchy. Fast multi-agent prototyping.|
-|**Microsoft Autogen**|0.7.2|Event-driven multi-agent; human-in-the-loop support. Merging with Semantic Kernel into unified Microsoft Agent Framework (GA Q1 2026).|
-|**LangGraph**|1.0 (GA)|**Stable v1.0** reached Oct 2025. Graph‑style state machine orchestration; check-pointing, audit trails. Best for production compliance workloads.|
-|**Semantic Kernel**|1.35.2|Enterprise Azure integration, planners, function-calling. Converging with AutoGen into unified Microsoft Agent Framework.|
-|**OpenAI Agents SDK**|latest|Official open-source SDK for orchestrating multi-agent workflows; supports handoffs, guardrails, tracing, and the new Responses API (replaces Assistants API by Aug 2026).|
+|**CrewAI**|1.9.3 (Updated 2026-03-02)|Declarative YAML mission files, vector‑based memory, Agents → Roles → Tasks hierarchy. Fast multi-agent prototyping.|
+|**Microsoft Autogen**|0.7.5 (Updated 2026-03-02)|Event-driven multi-agent; human-in-the-loop support. Merging with Semantic Kernel into unified Microsoft Agent Framework (GA Q1 2026).|
+|**LangGraph**|1.0.10 (Updated 2026-03-02)|**Stable v1.0** reached Oct 2025. Graph‑style state machine orchestration; check-pointing, audit trails. Best for production compliance workloads.|
+|**Semantic Kernel**|1.39.4 (Updated 2026-03-02)|Enterprise Azure integration, planners, function-calling. Converging with AutoGen into unified Microsoft Agent Framework.|
+|**OpenAI Agents SDK**|0.10.3 (Updated 2026-03-02)|Official open-source SDK for orchestrating multi-agent workflows; supports handoffs, guardrails, tracing, and the new Responses API (replaces Assistants API by Aug 2026).|
 |**smolagents** (HF)|1.24.0|Ultra-minimal Hugging Face agents; CodeAgent paradigm, sandboxed execution, model-agnostic. Great for research/lightweight use.|
-|**Agno**|2.5.3|High-performance runtime for large-scale multi-agent systems; streaming, governance, approval workflows, and audit logs built in.|
-|**LlamaIndex**|latest|Data/knowledge-centric framework; excels at RAG workflows, document agents, and retrieval-augmented production pipelines.|
-|**Google ADK**|latest|Google’s Agent Development Kit with native A2A protocol support; deploy on Cloud Run, GKE, or Vertex AI.|
+|**Agno**|2.5.5 (Updated 2026-03-02)|High-performance runtime for large-scale multi-agent systems; streaming, governance, approval workflows, and audit logs built in.|
+|**LlamaIndex**|0.14.15 (Updated 2026-03-02)|Data/knowledge-centric framework; excels at RAG workflows, document agents, and retrieval-augmented production pipelines.|
+|**Google ADK**|1.26.0 (Updated 2026-03-02)|Google’s Agent Development Kit with native A2A protocol support; deploy on Cloud Run, GKE, or Vertex AI.|
 |**GPTScript Agents**|Bleeding‑edge|Script agents in 10 lines; great for Kubernetes ops.|
 
 ### Choosing the Right Framework
@@ -331,13 +331,13 @@ GITHUB_TOKEN=your_github_personal_access_token
 
 | Tool | Stars | Language | Use Case | Repository |
 |------|-------|----------|----------|------------|
-|**parallel-code**|199|TypeScript|Run Claude Code, Codex, and Gemini side by side — each in      its own git worktree|[GitHub](https://github.com/johannesjo/parallel-code)|
-|**conductor-orchestrator-superpowers**|193|Python|Multi-agent orchestration system for Claude Code with parallel execution, automated quality gates, B...|[GitHub](https://github.com/Ibrahim-3d/conductor-orchestrator-superpowers)|
-|**BMAD_Openclaw**|130|N/A|Bridging the BMad Method to OpenClaw: 12-agent AI dev team using sessions_spawn|[GitHub](https://github.com/ErwanLorteau/BMAD_Openclaw)|
-|**pantalk**|97|Go|Give your AI agent a voice on every chat platform.|[GitHub](https://github.com/pantalk/pantalk)|
-|**librarium**|89|TypeScript|Multi-provider deep research CLI — fans out queries to multiple search/AI APIs in parallel|[GitHub](https://github.com/jkudish/librarium)|
-|**CommonGround**|88|Python|The Sociotechnical OS for Multi-Agent Collaboration|[GitHub](https://github.com/Intelligent-Internet/CommonGround)|
-|**openbrowserclaw**|87|TypeScript|Browser-native personal AI assistant. Zero infrastructure, the browser is the server.|[GitHub](https://github.com/sachaa/openbrowserclaw)|
-|**aqua**|82|Go|Aqua, a cli message tool for AI agents |[GitHub](https://github.com/quailyquaily/aqua)|
-|**OpenClaw-Book**|75|N/A|《深入 OpenClaw》。全网第一本介绍 OpenClaw 的书，用 OpenClaw + OpenCode + Opus 4.6 写成。A book introducing OpenClaw, w...|[GitHub](https://github.com/0xtresser/OpenClaw-Book)|
-|**clawapp**|67|JavaScript|📱 ClawApp — Mobile H5 chat client for OpenClaw AI Agent platform. 用手机和你的 AI 智能体聊天。|[GitHub](https://github.com/qingchencloud/clawapp)|
+|**openfang**|8488|Rust|Open-source Agent Operating System|[GitHub](https://github.com/RightNow-AI/openfang)|
+|**real-world-rails**|376|Shell|200+ production open source Rails apps & engines in one repo. Search across real codebases with AI a...|[GitHub](https://github.com/steveclarke/real-world-rails)|
+|**edict**|229|Python|🏛️ 三省六部制 · OpenClaw Multi-Agent Orchestration System — 9 specialized AI agents with real-time dashbo...|[GitHub](https://github.com/cft0808/edict)|
+|**forgemax**|126|Rust|Code Mode inspired local sandboxed MCP Gateway - collapses N servers x M tools into 2 tools (~1,000 ...|[GitHub](https://github.com/postrv/forgemax)|
+|**agentkeeper**|106|Python|Cognitive persistence layer for AI agents — cross-model memory continuity. Your agent's memory survi...|[GitHub](https://github.com/Thinklanceai/agentkeeper)|
+|**mco**|96|Python|Orchestrate AI coding agents. Any prompt. Any agent. Any IDE. Neutral orchestration layer for Claude...|[GitHub](https://github.com/mco-org/mco)|
+|**DeepSeek-Claw**|90|Shell|No description available|[GitHub](https://github.com/TriangleMagistrate/DeepSeek-Claw)|
+|**ClawBio**|90|Python|🦖 ClawBio — The first bioinformatics-native AI agent skill library. Local-first. Reproducible. Built...|[GitHub](https://github.com/ClawBio/ClawBio)|
+|**software-factory**|55|Python|Multi-Agent Software Factory — Autonomous AI agents orchestrating the full product lifecycle with SA...|[GitHub](https://github.com/macaron-software/software-factory)|
+|**beehive**|48|Rust|Orchestrate coding agents across isolated git workspaces|[GitHub](https://github.com/storozhenko98/beehive)|

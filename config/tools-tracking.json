@@ -18,8 +18,8 @@
         "description": "Replay analytics, compliance hooks, VS Code debug adapter"
       },
       "LangGraph": {
-        "current_version": "1.0.0",
-        "last_updated": "2026-02-22",
+        "current_version": "1.0.10",
+        "last_updated": "2026-03-02",
         "source": "https://github.com/langchain-ai/langgraph",
         "npm_package": "@langchain/langgraph",
         "pypi_package": "langgraph",
@@ -34,8 +34,8 @@
         "description": "Process Framework (durable orchestration) + C#/Python parity"
       },
       "OpenAI Agents SDK": {
-        "current_version": "latest",
-        "last_updated": "2026-02-22",
+        "current_version": "0.10.3",
+        "last_updated": "2026-03-02",
         "source": "https://github.com/openai/agents-python",
         "npm_package": null,
         "pypi_package": "openai-agents",
@@ -50,24 +50,24 @@
         "description": "Ultra-minimal Hugging Face agents; CodeAgent paradigm, sandboxed execution, model-agnostic"
       },
       "Agno": {
-        "current_version": "2.5.3",
-        "last_updated": "2026-02-22",
+        "current_version": "2.5.5",
+        "last_updated": "2026-03-02",
         "source": "https://github.com/agno-agi/agno",
         "npm_package": null,
         "pypi_package": "agno",
         "description": "High-performance runtime for large-scale multi-agent systems; streaming, governance, approval workflows"
       },
       "LlamaIndex": {
-        "current_version": "latest",
-        "last_updated": "2026-02-22",
+        "current_version": "0.14.15",
+        "last_updated": "2026-03-02",
         "source": "https://github.com/run-llama/llama_index",
         "npm_package": null,
         "pypi_package": "llama-index",
         "description": "Data/knowledge-centric framework; RAG workflows, document agents, retrieval-augmented production pipelines"
       },
       "Google ADK": {
-        "current_version": "latest",
-        "last_updated": "2026-02-22",
+        "current_version": "1.26.0",
+        "last_updated": "2026-03-02",
         "source": "https://github.com/google/genai-toolbox",
         "npm_package": null,
         "pypi_package": "google-adk",
@@ -76,8 +76,8 @@
     },
     "mcp_servers": {
       "@upstash/context7-mcp": {
-        "current_version": "ctx7@0.3.1",
-        "last_updated": "2026-02-23",
+        "current_version": "@upstash/context7-mcp@2.1.2",
+        "last_updated": "2026-03-02",
         "source": "https://github.com/upstash/context7-mcp",
         "description": "Enhanced context management for AI agents"
       },
@@ -146,8 +146,8 @@
         "description": "Meta; leading open-source choice for private/local deployments and fine-tuning"
       },
       "DeepSeek v4": {
-        "current_version": "deepseek-v4",
-        "last_updated": "2026-02-22",
+        "current_version": "1.0.0",
+        "last_updated": "2026-03-02",
         "source": "https://github.com/deepseek-ai/DeepSeek-V3",
         "description": "Advanced reasoning; cost-effective self-hosted open-source alternative"
       }
@@ -221,95 +221,95 @@
   },
   "trending_tools": [
     {
-      "name": "parallel-code",
-      "url": "https://github.com/johannesjo/parallel-code",
-      "description": "Run Claude Code, Codex, and Gemini side by side — each in      its own git worktree",
-      "stars": 199,
-      "language": "TypeScript",
+      "name": "openfang",
+      "url": "https://github.com/RightNow-AI/openfang",
+      "description": "Open-source Agent Operating System",
+      "stars": 8488,
+      "language": "Rust",
       "topic": "ai-agents",
-      "created_at": "2026-02-18T09:53:27Z"
+      "created_at": "2026-02-24T23:12:38Z"
     },
     {
-      "name": "conductor-orchestrator-superpowers",
-      "url": "https://github.com/Ibrahim-3d/conductor-orchestrator-superpowers",
-      "description": "Multi-agent orchestration system for Claude Code with parallel execution, automated quality gates, Board of Directors, and bundled Superpowers skills",
-      "stars": 193,
+      "name": "real-world-rails",
+      "url": "https://github.com/steveclarke/real-world-rails",
+      "description": "200+ production open source Rails apps & engines in one repo. Search across real codebases with AI agents to research architectural patterns.",
+      "stars": 376,
+      "language": "Shell",
+      "topic": "ai-agents",
+      "created_at": "2026-02-23T17:02:02Z"
+    },
+    {
+      "name": "edict",
+      "url": "https://github.com/cft0808/edict",
+      "description": "🏛️ 三省六部制 · OpenClaw Multi-Agent Orchestration System — 9 specialized AI agents with real-time dashboard, model config, and full audit trails",
+      "stars": 229,
       "language": "Python",
       "topic": "ai-agents",
-      "created_at": "2026-02-17T16:01:09Z"
+      "created_at": "2026-02-23T14:35:04Z"
     },
     {
-      "name": "BMAD_Openclaw",
-      "url": "https://github.com/ErwanLorteau/BMAD_Openclaw",
-      "description": "Bridging the BMad Method to OpenClaw: 12-agent AI dev team using sessions_spawn",
-      "stars": 130,
-      "language": null,
+      "name": "forgemax",
+      "url": "https://github.com/postrv/forgemax",
+      "description": "Code Mode inspired local sandboxed MCP Gateway - collapses N servers x M tools into 2 tools (~1,000 tokens)",
+      "stars": 126,
+      "language": "Rust",
       "topic": "ai-agents",
-      "created_at": "2026-02-16T11:07:09Z"
+      "created_at": "2026-02-23T23:58:24Z"
     },
     {
-      "name": "pantalk",
-      "url": "https://github.com/pantalk/pantalk",
-      "description": "Give your AI agent a voice on every chat platform.",
-      "stars": 97,
-      "language": "Go",
-      "topic": "ai-agents",
-      "created_at": "2026-02-16T11:15:16Z"
-    },
-    {
-      "name": "librarium",
-      "url": "https://github.com/jkudish/librarium",
-      "description": "Multi-provider deep research CLI — fans out queries to multiple search/AI APIs in parallel",
-      "stars": 89,
-      "language": "TypeScript",
-      "topic": "ai-agents",
-      "created_at": "2026-02-20T18:24:21Z"
-    },
-    {
-      "name": "CommonGround",
-      "url": "https://github.com/Intelligent-Internet/CommonGround",
-      "description": "The Sociotechnical OS for Multi-Agent Collaboration",
-      "stars": 88,
+      "name": "agentkeeper",
+      "url": "https://github.com/Thinklanceai/agentkeeper",
+      "description": "Cognitive persistence layer for AI agents — cross-model memory continuity. Your agent's memory survives provider switches, crashes and restarts.",
+      "stars": 106,
       "language": "Python",
       "topic": "ai-agents",
-      "created_at": "2026-02-16T16:40:43Z"
+      "created_at": "2026-02-24T21:13:57Z"
     },
     {
-      "name": "openbrowserclaw",
-      "url": "https://github.com/sachaa/openbrowserclaw",
-      "description": "Browser-native personal AI assistant. Zero infrastructure, the browser is the server.",
-      "stars": 87,
-      "language": "TypeScript",
+      "name": "mco",
+      "url": "https://github.com/mco-org/mco",
+      "description": "Orchestrate AI coding agents. Any prompt. Any agent. Any IDE. Neutral orchestration layer for Claude Code, Codex CLI, Gemini CLI, OpenCode, Qwen Code — works from Cursor, Trae, Copilot, Windsurf, or plain shell.",
+      "stars": 96,
+      "language": "Python",
       "topic": "ai-agents",
-      "created_at": "2026-02-21T20:52:49Z"
+      "created_at": "2026-02-26T07:25:48Z"
     },
     {
-      "name": "aqua",
-      "url": "https://github.com/quailyquaily/aqua",
-      "description": "Aqua, a cli message tool for AI agents ",
-      "stars": 82,
-      "language": "Go",
+      "name": "DeepSeek-Claw",
+      "url": "https://github.com/TriangleMagistrate/DeepSeek-Claw",
+      "description": "No description available",
+      "stars": 90,
+      "language": "Shell",
       "topic": "ai-agents",
-      "created_at": "2026-02-21T19:04:48Z"
+      "created_at": "2026-03-02T00:19:33Z"
     },
     {
-      "name": "OpenClaw-Book",
-      "url": "https://github.com/0xtresser/OpenClaw-Book",
-      "description": "《深入 OpenClaw》。全网第一本介绍 OpenClaw 的书，用 OpenClaw + OpenCode + Opus 4.6 写成。A book introducing OpenClaw, written by OpenClaw + OpenCode + Opus 4.6",
-      "stars": 75,
-      "language": null,
+      "name": "ClawBio",
+      "url": "https://github.com/ClawBio/ClawBio",
+      "description": "🦖 ClawBio — The first bioinformatics-native AI agent skill library. Local-first. Reproducible. Built on OpenClaw.",
+      "stars": 90,
+      "language": "Python",
       "topic": "ai-agents",
-      "created_at": "2026-02-19T07:56:39Z"
+      "created_at": "2026-02-25T17:43:22Z"
     },
     {
-      "name": "clawapp",
-      "url": "https://github.com/qingchencloud/clawapp",
-      "description": "📱 ClawApp — Mobile H5 chat client for OpenClaw AI Agent platform. 用手机和你的 AI 智能体聊天。",
-      "stars": 67,
-      "language": "JavaScript",
+      "name": "software-factory",
+      "url": "https://github.com/macaron-software/software-factory",
+      "description": "Multi-Agent Software Factory — Autonomous AI agents orchestrating the full product lifecycle with SAFe, TDD, and auto-heal capabilities",
+      "stars": 55,
+      "language": "Python",
       "topic": "ai-agents",
-      "created_at": "2026-02-16T18:34:43Z"
+      "created_at": "2026-02-23T22:00:57Z"
+    },
+    {
+      "name": "beehive",
+      "url": "https://github.com/storozhenko98/beehive",
+      "description": "Orchestrate coding agents across isolated git workspaces",
+      "stars": 48,
+      "language": "Rust",
+      "topic": "ai-agents",
+      "created_at": "2026-02-23T06:17:19Z"
     }
   ],
-  "last_update_check": "2026-02-22"
+  "last_update_check": "2026-03-02"
 }
