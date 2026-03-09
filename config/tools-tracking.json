@@ -2,8 +2,8 @@
   "tracked_tools": {
     "ai_frameworks": {
       "CrewAI": {
-        "current_version": "1.9.3",
-        "last_updated": "2026-02-23",
+        "current_version": "1.10.1",
+        "last_updated": "2026-03-09",
         "source": "https://github.com/crewAIInc/crewAI",
         "npm_package": null,
         "pypi_package": "crewai",
@@ -26,16 +26,16 @@
         "description": "Graph-style state machine orchestration; v1.0 GA Oct 2025. Check-pointing, audit trails, production-grade compliance workloads."
       },
       "Semantic Kernel": {
-        "current_version": "1.39.4",
-        "last_updated": "2026-02-23",
+        "current_version": "1.40.0",
+        "last_updated": "2026-03-09",
         "source": "https://github.com/microsoft/semantic-kernel",
         "npm_package": "@microsoft/semantic-kernel",
         "pypi_package": "semantic-kernel",
         "description": "Process Framework (durable orchestration) + C#/Python parity"
       },
       "OpenAI Agents SDK": {
-        "current_version": "0.10.3",
-        "last_updated": "2026-03-02",
+        "current_version": "0.11.1",
+        "last_updated": "2026-03-09",
         "source": "https://github.com/openai/agents-python",
         "npm_package": null,
         "pypi_package": "openai-agents",
@@ -50,8 +50,8 @@
         "description": "Ultra-minimal Hugging Face agents; CodeAgent paradigm, sandboxed execution, model-agnostic"
       },
       "Agno": {
-        "current_version": "2.5.5",
-        "last_updated": "2026-03-02",
+        "current_version": "2.5.8",
+        "last_updated": "2026-03-09",
         "source": "https://github.com/agno-agi/agno",
         "npm_package": null,
         "pypi_package": "agno",
@@ -76,8 +76,8 @@
     },
     "mcp_servers": {
       "@upstash/context7-mcp": {
-        "current_version": "@upstash/context7-mcp@2.1.2",
-        "last_updated": "2026-03-02",
+        "current_version": "ctx7@0.3.2",
+        "last_updated": "2026-03-09",
         "source": "https://github.com/upstash/context7-mcp",
         "description": "Enhanced context management for AI agents"
       },
@@ -219,97 +219,6 @@
       "llama-index"
     ]
   },
-  "trending_tools": [
-    {
-      "name": "openfang",
-      "url": "https://github.com/RightNow-AI/openfang",
-      "description": "Open-source Agent Operating System",
-      "stars": 8488,
-      "language": "Rust",
-      "topic": "ai-agents",
-      "created_at": "2026-02-24T23:12:38Z"
-    },
-    {
-      "name": "real-world-rails",
-      "url": "https://github.com/steveclarke/real-world-rails",
-      "description": "200+ production open source Rails apps & engines in one repo. Search across real codebases with AI agents to research architectural patterns.",
-      "stars": 376,
-      "language": "Shell",
-      "topic": "ai-agents",
-      "created_at": "2026-02-23T17:02:02Z"
-    },
-    {
-      "name": "edict",
-      "url": "https://github.com/cft0808/edict",
-      "description": "🏛️ 三省六部制 · OpenClaw Multi-Agent Orchestration System — 9 specialized AI agents with real-time dashboard, model config, and full audit trails",
-      "stars": 229,
-      "language": "Python",
-      "topic": "ai-agents",
-      "created_at": "2026-02-23T14:35:04Z"
-    },
-    {
-      "name": "forgemax",
-      "url": "https://github.com/postrv/forgemax",
-      "description": "Code Mode inspired local sandboxed MCP Gateway - collapses N servers x M tools into 2 tools (~1,000 tokens)",
-      "stars": 126,
-      "language": "Rust",
-      "topic": "ai-agents",
-      "created_at": "2026-02-23T23:58:24Z"
-    },
-    {
-      "name": "agentkeeper",
-      "url": "https://github.com/Thinklanceai/agentkeeper",
-      "description": "Cognitive persistence layer for AI agents — cross-model memory continuity. Your agent's memory survives provider switches, crashes and restarts.",
-      "stars": 106,
-      "language": "Python",
-      "topic": "ai-agents",
-      "created_at": "2026-02-24T21:13:57Z"
-    },
-    {
-      "name": "mco",
-      "url": "https://github.com/mco-org/mco",
-      "description": "Orchestrate AI coding agents. Any prompt. Any agent. Any IDE. Neutral orchestration layer for Claude Code, Codex CLI, Gemini CLI, OpenCode, Qwen Code — works from Cursor, Trae, Copilot, Windsurf, or plain shell.",
-      "stars": 96,
-      "language": "Python",
-      "topic": "ai-agents",
-      "created_at": "2026-02-26T07:25:48Z"
-    },
-    {
-      "name": "DeepSeek-Claw",
-      "url": "https://github.com/TriangleMagistrate/DeepSeek-Claw",
-      "description": "No description available",
-      "stars": 90,
-      "language": "Shell",
-      "topic": "ai-agents",
-      "created_at": "2026-03-02T00:19:33Z"
-    },
-    {
-      "name": "ClawBio",
-      "url": "https://github.com/ClawBio/ClawBio",
-      "description": "🦖 ClawBio — The first bioinformatics-native AI agent skill library. Local-first. Reproducible. Built on OpenClaw.",
-      "stars": 90,
-      "language": "Python",
-      "topic": "ai-agents",
-      "created_at": "2026-02-25T17:43:22Z"
-    },
-    {
-      "name": "software-factory",
-      "url": "https://github.com/macaron-software/software-factory",
-      "description": "Multi-Agent Software Factory — Autonomous AI agents orchestrating the full product lifecycle with SAFe, TDD, and auto-heal capabilities",
-      "stars": 55,
-      "language": "Python",
-      "topic": "ai-agents",
-      "created_at": "2026-02-23T22:00:57Z"
-    },
-    {
-      "name": "beehive",
-      "url": "https://github.com/storozhenko98/beehive",
-      "description": "Orchestrate coding agents across isolated git workspaces",
-      "stars": 48,
-      "language": "Rust",
-      "topic": "ai-agents",
-      "created_at": "2026-02-23T06:17:19Z"
-    }
-  ],
-  "last_update_check": "2026-03-02"
+  "trending_tools": [],
+  "last_update_check": "2026-03-09"
 }
