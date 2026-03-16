@@ -18,24 +18,24 @@
         "description": "Replay analytics, compliance hooks, VS Code debug adapter"
       },
       "LangGraph": {
-        "current_version": "1.0.10",
-        "last_updated": "2026-03-02",
+        "current_version": "1.1.2",
+        "last_updated": "2026-03-16",
         "source": "https://github.com/langchain-ai/langgraph",
         "npm_package": "@langchain/langgraph",
         "pypi_package": "langgraph",
         "description": "Graph-style state machine orchestration; v1.0 GA Oct 2025. Check-pointing, audit trails, production-grade compliance workloads."
       },
       "Semantic Kernel": {
-        "current_version": "1.40.0",
-        "last_updated": "2026-03-09",
+        "current_version": "1.41.0",
+        "last_updated": "2026-03-16",
         "source": "https://github.com/microsoft/semantic-kernel",
         "npm_package": "@microsoft/semantic-kernel",
         "pypi_package": "semantic-kernel",
         "description": "Process Framework (durable orchestration) + C#/Python parity"
       },
       "OpenAI Agents SDK": {
-        "current_version": "0.11.1",
-        "last_updated": "2026-03-09",
+        "current_version": "0.12.3",
+        "last_updated": "2026-03-16",
         "source": "https://github.com/openai/agents-python",
         "npm_package": null,
         "pypi_package": "openai-agents",
@@ -50,24 +50,24 @@
         "description": "Ultra-minimal Hugging Face agents; CodeAgent paradigm, sandboxed execution, model-agnostic"
       },
       "Agno": {
-        "current_version": "2.5.8",
-        "last_updated": "2026-03-09",
+        "current_version": "2.5.9",
+        "last_updated": "2026-03-16",
         "source": "https://github.com/agno-agi/agno",
         "npm_package": null,
         "pypi_package": "agno",
         "description": "High-performance runtime for large-scale multi-agent systems; streaming, governance, approval workflows"
       },
       "LlamaIndex": {
-        "current_version": "0.14.15",
-        "last_updated": "2026-03-02",
+        "current_version": "0.14.16",
+        "last_updated": "2026-03-16",
         "source": "https://github.com/run-llama/llama_index",
         "npm_package": null,
         "pypi_package": "llama-index",
         "description": "Data/knowledge-centric framework; RAG workflows, document agents, retrieval-augmented production pipelines"
       },
       "Google ADK": {
-        "current_version": "1.26.0",
-        "last_updated": "2026-03-02",
+        "current_version": "1.27.1",
+        "last_updated": "2026-03-16",
         "source": "https://github.com/google/genai-toolbox",
         "npm_package": null,
         "pypi_package": "google-adk",
@@ -76,8 +76,8 @@
     },
     "mcp_servers": {
       "@upstash/context7-mcp": {
-        "current_version": "ctx7@0.3.2",
-        "last_updated": "2026-03-09",
+        "current_version": "ctx7@0.3.5",
+        "last_updated": "2026-03-16",
         "source": "https://github.com/upstash/context7-mcp",
         "description": "Enhanced context management for AI agents"
       },
@@ -219,6 +219,115 @@
       "llama-index"
     ]
   },
-  "trending_tools": [],
-  "last_update_check": "2026-03-09"
+  "trending_tools": [
+    {
+      "name": "OpenGenerativeUI",
+      "url": "https://github.com/CopilotKit/OpenGenerativeUI",
+      "description": "Open-Source Generative UI Framework",
+      "stars": 406,
+      "language": "TypeScript",
+      "topic": "ai-agents",
+      "created_at": "2026-03-12T20:40:06Z"
+    },
+    {
+      "name": "OB1",
+      "url": "https://github.com/NateBJones-Projects/OB1",
+      "description": "Open Brain — The infrastructure layer for your thinking. One database, one AI gateway, one chat channel — any AI plugs in. No middleware, no SaaS.",
+      "stars": 255,
+      "language": "TypeScript",
+      "topic": "ai-agents",
+      "created_at": "2026-03-11T17:59:59Z"
+    },
+    {
+      "name": "Aave-Claw",
+      "url": "https://github.com/susanudgzf/Aave-Claw",
+      "description": "No description available",
+      "stars": 201,
+      "language": "Rust",
+      "topic": "ai-agents",
+      "created_at": "2026-03-14T14:04:08Z"
+    },
+    {
+      "name": "ai-night-shift",
+      "url": "https://github.com/JudyaiLab/ai-night-shift",
+      "description": "Multi-agent autonomous framework — let your AI work while you sleep 🌙",
+      "stars": 174,
+      "language": "Shell",
+      "topic": "ai-agents",
+      "created_at": "2026-03-12T03:35:06Z"
+    },
+    {
+      "name": "product-architect",
+      "url": "https://github.com/ankitjha67/product-architect",
+      "description": "The most comprehensive open-source product development system. 31 AI agents. 23 frameworks. Solo founder Day 0 → IPO.",
+      "stars": 87,
+      "language": "JavaScript",
+      "topic": "ai-agents",
+      "created_at": "2026-03-11T03:31:37Z"
+    },
+    {
+      "name": "opencove",
+      "url": "https://github.com/DeadWaveWave/opencove",
+      "description": "Your infinite canvas workspace for agents, tasks, knowledge, and research.",
+      "stars": 77,
+      "language": "TypeScript",
+      "topic": "ai-agents",
+      "created_at": "2026-03-09T11:56:55Z"
+    },
+    {
+      "name": "dpro-polymarket",
+      "url": "https://github.com/dProLabs/dpro-polymarket",
+      "description": "🧠 dPro + Polymarket operational toolkit for market/account reads, YES/NO trading, order book access, readiness checks, and secure credential-backed execution.",
+      "stars": 65,
+      "language": "JavaScript",
+      "topic": "ai-agents",
+      "created_at": "2026-03-11T09:46:21Z"
+    },
+    {
+      "name": "akka",
+      "url": "https://github.com/living-stream/akka",
+      "description": "🍊 Akka（阿卡）- Self-learning, 24/7 Creator AI Agent",
+      "stars": 47,
+      "language": "Python",
+      "topic": "ai-agents",
+      "created_at": "2026-03-09T15:13:21Z"
+    },
+    {
+      "name": "learn-claude-code-js",
+      "url": "https://github.com/i5ting/learn-claude-code-js",
+      "description": "learn-claude-code  js version 且只保留中文",
+      "stars": 45,
+      "language": "JavaScript",
+      "topic": "ai-agents",
+      "created_at": "2026-03-14T15:30:23Z"
+    },
+    {
+      "name": "zapcode",
+      "url": "https://github.com/TheUncharted/zapcode",
+      "description": "TypeScript interpreter for AI agents. Written in Rust. 2µs cold start. Sandboxed. Alternative to MCP tool calling.",
+      "stars": 40,
+      "language": "Rust",
+      "topic": "ai-agents",
+      "created_at": "2026-03-11T07:57:08Z"
+    },
+    {
+      "name": "M-Cube",
+      "url": "https://github.com/yycyyv/M-Cube",
+      "description": "M-Cube (M³) — Multi-thinking, Multimodal, Multi-verification Patent Drafting Assistant",
+      "stars": 78,
+      "language": "Python",
+      "topic": "langchain",
+      "created_at": "2026-03-13T13:59:20Z"
+    },
+    {
+      "name": "shellward",
+      "url": "https://github.com/jnMetaCode/shellward",
+      "description": "AI Agent Security Middleware — 8-layer defense against prompt injection, data exfiltration & dangerous commands. DLP data flow tracking, PII detection, zero deps. Works with Claude Code, Cursor, OpenClaw, LangChain. 中文支持",
+      "stars": 42,
+      "language": "TypeScript",
+      "topic": "langchain",
+      "created_at": "2026-03-12T07:54:33Z"
+    }
+  ],
+  "last_update_check": "2026-03-16"
 }
