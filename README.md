@@ -101,15 +101,15 @@ GitHub’s docs outline editing `mcp.json` in the *Tools* panel.
 
 | Framework / Lib | Latest ver. | Killer features |
 |-----------------|------------|-----------------|
-|**CrewAI**|1.10.1 (Updated 2026-03-16)|Declarative YAML mission files, vector‑based memory, Agents → Roles → Tasks hierarchy. Fast multi-agent prototyping.|
-|**Microsoft Autogen**|0.7.5 (Updated 2026-03-16)|Event-driven multi-agent; human-in-the-loop support. Merging with Semantic Kernel into unified Microsoft Agent Framework (GA Q1 2026).|
-|**LangGraph**|1.1.2 (Updated 2026-03-16)|**Stable v1.0** reached Oct 2025. Graph‑style state machine orchestration; check-pointing, audit trails. Best for production compliance workloads.|
-|**Semantic Kernel**|1.41.0 (Updated 2026-03-16)|Enterprise Azure integration, planners, function-calling. Converging with AutoGen into unified Microsoft Agent Framework.|
-|**OpenAI Agents SDK**|0.12.3 (Updated 2026-03-16)|Official open-source SDK for orchestrating multi-agent workflows; supports handoffs, guardrails, tracing, and the new Responses API (replaces Assistants API by Aug 2026).|
+|**CrewAI**|1.11.0 (Updated 2026-03-23)|Declarative YAML mission files, vector‑based memory, Agents → Roles → Tasks hierarchy. Fast multi-agent prototyping.|
+|**Microsoft Autogen**|0.7.5 (Updated 2026-03-23)|Event-driven multi-agent; human-in-the-loop support. Merging with Semantic Kernel into unified Microsoft Agent Framework (GA Q1 2026).|
+|**LangGraph**|1.1.3 (Updated 2026-03-23)|**Stable v1.0** reached Oct 2025. Graph‑style state machine orchestration; check-pointing, audit trails. Best for production compliance workloads.|
+|**Semantic Kernel**|1.41.0 (Updated 2026-03-23)|Enterprise Azure integration, planners, function-calling. Converging with AutoGen into unified Microsoft Agent Framework.|
+|**OpenAI Agents SDK**|0.13.0 (Updated 2026-03-23)|Official open-source SDK for orchestrating multi-agent workflows; supports handoffs, guardrails, tracing, and the new Responses API (replaces Assistants API by Aug 2026).|
 |**smolagents** (HF)|1.24.0|Ultra-minimal Hugging Face agents; CodeAgent paradigm, sandboxed execution, model-agnostic. Great for research/lightweight use.|
-|**Agno**|2.5.9 (Updated 2026-03-16)|High-performance runtime for large-scale multi-agent systems; streaming, governance, approval workflows, and audit logs built in.|
-|**LlamaIndex**|0.14.16 (Updated 2026-03-16)|Data/knowledge-centric framework; excels at RAG workflows, document agents, and retrieval-augmented production pipelines.|
-|**Google ADK**|1.27.1 (Updated 2026-03-16)|Google’s Agent Development Kit with native A2A protocol support; deploy on Cloud Run, GKE, or Vertex AI.|
+|**Agno**|2.5.10 (Updated 2026-03-23)|High-performance runtime for large-scale multi-agent systems; streaming, governance, approval workflows, and audit logs built in.|
+|**LlamaIndex**|0.14.18 (Updated 2026-03-23)|Data/knowledge-centric framework; excels at RAG workflows, document agents, and retrieval-augmented production pipelines.|
+|**Google ADK**|1.27.2 (Updated 2026-03-23)|Google’s Agent Development Kit with native A2A protocol support; deploy on Cloud Run, GKE, or Vertex AI.|
 |**GPTScript Agents**|Bleeding‑edge|Script agents in 10 lines; great for Kubernetes ops.|
 
 ### Choosing the Right Framework
@@ -331,13 +331,13 @@ GITHUB_TOKEN=your_github_personal_access_token
 
 | Tool | Stars | Language | Use Case | Repository |
 |------|-------|----------|----------|------------|
-|**OpenGenerativeUI**|406|TypeScript|Open-Source Generative UI Framework|[GitHub](https://github.com/CopilotKit/OpenGenerativeUI)|
-|**OB1**|255|TypeScript|Open Brain — The infrastructure layer for your thinking. One database, one AI gateway, one chat chan...|[GitHub](https://github.com/NateBJones-Projects/OB1)|
-|**Aave-Claw**|201|Rust|No description available|[GitHub](https://github.com/susanudgzf/Aave-Claw)|
-|**ai-night-shift**|174|Shell|Multi-agent autonomous framework — let your AI work while you sleep 🌙|[GitHub](https://github.com/JudyaiLab/ai-night-shift)|
-|**product-architect**|87|JavaScript|The most comprehensive open-source product development system. 31 AI agents. 23 frameworks. Solo fou...|[GitHub](https://github.com/ankitjha67/product-architect)|
-|**opencove**|77|TypeScript|Your infinite canvas workspace for agents, tasks, knowledge, and research.|[GitHub](https://github.com/DeadWaveWave/opencove)|
-|**dpro-polymarket**|65|JavaScript|🧠 dPro + Polymarket operational toolkit for market/account reads, YES/NO trading, order book access,...|[GitHub](https://github.com/dProLabs/dpro-polymarket)|
-|**akka**|47|Python|🍊 Akka（阿卡）- Self-learning, 24/7 Creator AI Agent|[GitHub](https://github.com/living-stream/akka)|
-|**learn-claude-code-js**|45|JavaScript|learn-claude-code  js version 且只保留中文|[GitHub](https://github.com/i5ting/learn-claude-code-js)|
-|**zapcode**|40|Rust|TypeScript interpreter for AI agents. Written in Rust. 2µs cold start. Sandboxed. Alternative to MCP...|[GitHub](https://github.com/TheUncharted/zapcode)|
+|**awesome-codex-subagents**|2163|N/A|A collection of 130+ specialized Codex subagents covering a wide range of development use cases.|[GitHub](https://github.com/VoltAgent/awesome-codex-subagents)|
+|**ClawTeam-OpenClaw**|558|Python|ClawTeam fork fully adapted for OpenClaw — multi-agent swarm coordination with OpenClaw as the defau...|[GitHub](https://github.com/win4r/ClawTeam-OpenClaw)|
+|**ai-engineering-from-scratch**|356|Python|Learn it. Build it. Ship it for others.|[GitHub](https://github.com/rohitg00/ai-engineering-from-scratch)|
+|**Psters_AI_Workflow**|252|JavaScript|An auto-documenting, model-agnostic AI workflow for any project, framework, and language. It reduces...|[GitHub](https://github.com/J-Pster/Psters_AI_Workflow)|
+|**NanoResearch**|199|Python|🦞+🔬: NanoResearch: The Autonomous AI Research Assistant|[GitHub](https://github.com/OpenRaiser/NanoResearch)|
+|**awesome-free-llm-apis**|184|N/A|Permanent Free LLM API List (API Keys) 😎🔑|[GitHub](https://github.com/mnfst/awesome-free-llm-apis)|
+|**agent-skill-bus**|129|JavaScript|The missing runtime for Agent Skills — health monitoring, self-improvement, and dependency managemen...|[GitHub](https://github.com/ShunsukeHayashi/agent-skill-bus)|
+|**clawless**|99|TypeScript|ClawLess — A serverless browser-based runtime for Claw AI Agents powered by WebContainers|[GitHub](https://github.com/open-gitagent/clawless)|
+|**ai-engineering-interview-questions**|82|Markdown|Your Cheat Sheet for AI Engineering Interview – Questions and Answers.|[GitHub](https://github.com/amitshekhariitbhu/ai-engineering-interview-questions)|
+|**openclaw-agent-feeds**|79|JavaScript|Standardized agent data feeds and automation instruction sets for the OpenClaw framework. 專為 OpenCla...|[GitHub](https://github.com/mkhsu2002/openclaw-agent-feeds)|
