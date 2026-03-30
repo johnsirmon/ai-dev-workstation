@@ -101,15 +101,15 @@ GitHub’s docs outline editing `mcp.json` in the *Tools* panel.
 
 | Framework / Lib | Latest ver. | Killer features |
 |-----------------|------------|-----------------|
-|**CrewAI**|1.11.0 (Updated 2026-03-23)|Declarative YAML mission files, vector‑based memory, Agents → Roles → Tasks hierarchy. Fast multi-agent prototyping.|
-|**Microsoft Autogen**|0.7.5 (Updated 2026-03-23)|Event-driven multi-agent; human-in-the-loop support. Merging with Semantic Kernel into unified Microsoft Agent Framework (GA Q1 2026).|
-|**LangGraph**|1.1.3 (Updated 2026-03-23)|**Stable v1.0** reached Oct 2025. Graph‑style state machine orchestration; check-pointing, audit trails. Best for production compliance workloads.|
-|**Semantic Kernel**|1.41.0 (Updated 2026-03-23)|Enterprise Azure integration, planners, function-calling. Converging with AutoGen into unified Microsoft Agent Framework.|
-|**OpenAI Agents SDK**|0.13.0 (Updated 2026-03-23)|Official open-source SDK for orchestrating multi-agent workflows; supports handoffs, guardrails, tracing, and the new Responses API (replaces Assistants API by Aug 2026).|
+|**CrewAI**|1.12.2 (Updated 2026-03-30)|Declarative YAML mission files, vector‑based memory, Agents → Roles → Tasks hierarchy. Fast multi-agent prototyping.|
+|**Microsoft Autogen**|0.7.5 (Updated 2026-03-30)|Event-driven multi-agent; human-in-the-loop support. Merging with Semantic Kernel into unified Microsoft Agent Framework (GA Q1 2026).|
+|**LangGraph**|1.1.3 (Updated 2026-03-30)|**Stable v1.0** reached Oct 2025. Graph‑style state machine orchestration; check-pointing, audit trails. Best for production compliance workloads.|
+|**Semantic Kernel**|1.41.1 (Updated 2026-03-30)|Enterprise Azure integration, planners, function-calling. Converging with AutoGen into unified Microsoft Agent Framework.|
+|**OpenAI Agents SDK**|0.13.2 (Updated 2026-03-30)|Official open-source SDK for orchestrating multi-agent workflows; supports handoffs, guardrails, tracing, and the new Responses API (replaces Assistants API by Aug 2026).|
 |**smolagents** (HF)|1.24.0|Ultra-minimal Hugging Face agents; CodeAgent paradigm, sandboxed execution, model-agnostic. Great for research/lightweight use.|
-|**Agno**|2.5.10 (Updated 2026-03-23)|High-performance runtime for large-scale multi-agent systems; streaming, governance, approval workflows, and audit logs built in.|
-|**LlamaIndex**|0.14.18 (Updated 2026-03-23)|Data/knowledge-centric framework; excels at RAG workflows, document agents, and retrieval-augmented production pipelines.|
-|**Google ADK**|1.27.2 (Updated 2026-03-23)|Google’s Agent Development Kit with native A2A protocol support; deploy on Cloud Run, GKE, or Vertex AI.|
+|**Agno**|2.5.11 (Updated 2026-03-30)|High-performance runtime for large-scale multi-agent systems; streaming, governance, approval workflows, and audit logs built in.|
+|**LlamaIndex**|0.14.19 (Updated 2026-03-30)|Data/knowledge-centric framework; excels at RAG workflows, document agents, and retrieval-augmented production pipelines.|
+|**Google ADK**|1.28.0 (Updated 2026-03-30)|Google’s Agent Development Kit with native A2A protocol support; deploy on Cloud Run, GKE, or Vertex AI.|
 |**GPTScript Agents**|Bleeding‑edge|Script agents in 10 lines; great for Kubernetes ops.|
 
 ### Choosing the Right Framework
@@ -331,13 +331,13 @@ GITHUB_TOKEN=your_github_personal_access_token
 
 | Tool | Stars | Language | Use Case | Repository |
 |------|-------|----------|----------|------------|
-|**awesome-codex-subagents**|2163|N/A|A collection of 130+ specialized Codex subagents covering a wide range of development use cases.|[GitHub](https://github.com/VoltAgent/awesome-codex-subagents)|
-|**ClawTeam-OpenClaw**|558|Python|ClawTeam fork fully adapted for OpenClaw — multi-agent swarm coordination with OpenClaw as the defau...|[GitHub](https://github.com/win4r/ClawTeam-OpenClaw)|
-|**ai-engineering-from-scratch**|356|Python|Learn it. Build it. Ship it for others.|[GitHub](https://github.com/rohitg00/ai-engineering-from-scratch)|
-|**Psters_AI_Workflow**|252|JavaScript|An auto-documenting, model-agnostic AI workflow for any project, framework, and language. It reduces...|[GitHub](https://github.com/J-Pster/Psters_AI_Workflow)|
-|**NanoResearch**|199|Python|🦞+🔬: NanoResearch: The Autonomous AI Research Assistant|[GitHub](https://github.com/OpenRaiser/NanoResearch)|
-|**awesome-free-llm-apis**|184|N/A|Permanent Free LLM API List (API Keys) 😎🔑|[GitHub](https://github.com/mnfst/awesome-free-llm-apis)|
-|**agent-skill-bus**|129|JavaScript|The missing runtime for Agent Skills — health monitoring, self-improvement, and dependency managemen...|[GitHub](https://github.com/ShunsukeHayashi/agent-skill-bus)|
-|**clawless**|99|TypeScript|ClawLess — A serverless browser-based runtime for Claw AI Agents powered by WebContainers|[GitHub](https://github.com/open-gitagent/clawless)|
-|**ai-engineering-interview-questions**|82|Markdown|Your Cheat Sheet for AI Engineering Interview – Questions and Answers.|[GitHub](https://github.com/amitshekhariitbhu/ai-engineering-interview-questions)|
-|**openclaw-agent-feeds**|79|JavaScript|Standardized agent data feeds and automation instruction sets for the OpenClaw framework. 專為 OpenCla...|[GitHub](https://github.com/mkhsu2002/openclaw-agent-feeds)|
+|**mcp-brasil**|885|Python|MCP Server para 41 APIs públicas brasileiras|[GitHub](https://github.com/jxnxts/mcp-brasil)|
+|**awesome-hermes-agent**|488|N/A|A curated list of awesome skills, tools, integrations, and resources for Hermes Agent by Nous Resear...|[GitHub](https://github.com/0xNyk/awesome-hermes-agent)|
+|**awesome-openclaw**|223|N/A|A curated list of the best OpenClaw resources: official projects, skills, plugins, dashboards, deplo...|[GitHub](https://github.com/alvinunreal/awesome-openclaw)|
+|**agentfiles**|207|TypeScript|Discover, organize, and edit AI coding agent skills across Claude Code, Cursor, Codex, Windsurf, and...|[GitHub](https://github.com/Railly/agentfiles)|
+|**awesome-copilot-studio-agents**|185|N/A|73 paste-ready declarative agents for Microsoft 365 Copilot. No coding. No Azure. Deploy in minutes.|[GitHub](https://github.com/kesslernity/awesome-copilot-studio-agents)|
+|**pentest-ai**|141|N/A|Turn Claude Code into your offensive security research assistant. Specialized AI subagents for autho...|[GitHub](https://github.com/0xSteph/pentest-ai)|
+|**qiushi-skill**|132|PowerShell|求是Skill——从教员思想中提炼出一条总原则和九大方法论工具，系统性地武装 AI 的大脑。|[GitHub](https://github.com/HughYau/qiushi-skill)|
+|**nanostack**|104|Shell|Minimal AI coding agent team skills for the full engineering workflow. |[GitHub](https://github.com/garagon/nanostack)|
+|**free-video-downloader**|63|Vue|2026 年编程导航 AI 编程实战新项目，基于 Vue 3 + FastAPI + yt-dlp + DeepSeek + Stripe 的 AI 万能视频下载总结器，支持 1800+ 平台视频下载...|[GitHub](https://github.com/liyupi/free-video-downloader)|
+|**indxr**|43|Rust|A fast codebase indexer and MCP server for AI coding agents.|[GitHub](https://github.com/bahdotsh/indxr)|

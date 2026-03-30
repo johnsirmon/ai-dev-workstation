@@ -2,8 +2,8 @@
   "tracked_tools": {
     "ai_frameworks": {
       "CrewAI": {
-        "current_version": "1.11.0",
-        "last_updated": "2026-03-23",
+        "current_version": "1.12.2",
+        "last_updated": "2026-03-30",
         "source": "https://github.com/crewAIInc/crewAI",
         "npm_package": null,
         "pypi_package": "crewai",
@@ -26,16 +26,16 @@
         "description": "Graph-style state machine orchestration; v1.0 GA Oct 2025. Check-pointing, audit trails, production-grade compliance workloads."
       },
       "Semantic Kernel": {
-        "current_version": "1.41.0",
-        "last_updated": "2026-03-16",
+        "current_version": "1.41.1",
+        "last_updated": "2026-03-30",
         "source": "https://github.com/microsoft/semantic-kernel",
         "npm_package": "@microsoft/semantic-kernel",
         "pypi_package": "semantic-kernel",
         "description": "Process Framework (durable orchestration) + C#/Python parity"
       },
       "OpenAI Agents SDK": {
-        "current_version": "0.13.0",
-        "last_updated": "2026-03-23",
+        "current_version": "0.13.2",
+        "last_updated": "2026-03-30",
         "source": "https://github.com/openai/agents-python",
         "npm_package": null,
         "pypi_package": "openai-agents",
@@ -50,24 +50,24 @@
         "description": "Ultra-minimal Hugging Face agents; CodeAgent paradigm, sandboxed execution, model-agnostic"
       },
       "Agno": {
-        "current_version": "2.5.10",
-        "last_updated": "2026-03-23",
+        "current_version": "2.5.11",
+        "last_updated": "2026-03-30",
         "source": "https://github.com/agno-agi/agno",
         "npm_package": null,
         "pypi_package": "agno",
         "description": "High-performance runtime for large-scale multi-agent systems; streaming, governance, approval workflows"
       },
       "LlamaIndex": {
-        "current_version": "0.14.18",
-        "last_updated": "2026-03-23",
+        "current_version": "0.14.19",
+        "last_updated": "2026-03-30",
         "source": "https://github.com/run-llama/llama_index",
         "npm_package": null,
         "pypi_package": "llama-index",
         "description": "Data/knowledge-centric framework; RAG workflows, document agents, retrieval-augmented production pipelines"
       },
       "Google ADK": {
-        "current_version": "1.27.2",
-        "last_updated": "2026-03-23",
+        "current_version": "1.28.0",
+        "last_updated": "2026-03-30",
         "source": "https://github.com/google/genai-toolbox",
         "npm_package": null,
         "pypi_package": "google-adk",
@@ -76,8 +76,8 @@
     },
     "mcp_servers": {
       "@upstash/context7-mcp": {
-        "current_version": "ctx7@0.3.6",
-        "last_updated": "2026-03-23",
+        "current_version": "ctx7@0.3.9",
+        "last_updated": "2026-03-30",
         "source": "https://github.com/upstash/context7-mcp",
         "description": "Enhanced context management for AI agents"
       },
@@ -221,95 +221,104 @@
   },
   "trending_tools": [
     {
-      "name": "awesome-codex-subagents",
-      "url": "https://github.com/VoltAgent/awesome-codex-subagents",
-      "description": "A collection of 130+ specialized Codex subagents covering a wide range of development use cases.",
-      "stars": 2163,
+      "name": "mcp-brasil",
+      "url": "https://github.com/jxnxts/mcp-brasil",
+      "description": "MCP Server para 41 APIs públicas brasileiras",
+      "stars": 885,
+      "language": "Python",
+      "topic": "ai-agents",
+      "created_at": "2026-03-26T00:38:54Z"
+    },
+    {
+      "name": "awesome-hermes-agent",
+      "url": "https://github.com/0xNyk/awesome-hermes-agent",
+      "description": "A curated list of awesome skills, tools, integrations, and resources for Hermes Agent by Nous Research",
+      "stars": 488,
       "language": null,
       "topic": "ai-agents",
-      "created_at": "2026-03-17T12:26:20Z"
+      "created_at": "2026-03-23T05:34:37Z"
     },
     {
-      "name": "ClawTeam-OpenClaw",
-      "url": "https://github.com/win4r/ClawTeam-OpenClaw",
-      "description": "ClawTeam fork fully adapted for OpenClaw — multi-agent swarm coordination with OpenClaw as the default agent",
-      "stars": 558,
-      "language": "Python",
-      "topic": "ai-agents",
-      "created_at": "2026-03-18T09:52:54Z"
-    },
-    {
-      "name": "ai-engineering-from-scratch",
-      "url": "https://github.com/rohitg00/ai-engineering-from-scratch",
-      "description": "Learn it. Build it. Ship it for others.",
-      "stars": 356,
-      "language": "Python",
-      "topic": "ai-agents",
-      "created_at": "2026-03-18T18:38:02Z"
-    },
-    {
-      "name": "Psters_AI_Workflow",
-      "url": "https://github.com/J-Pster/Psters_AI_Workflow",
-      "description": "An auto-documenting, model-agnostic AI workflow for any project, framework, and language. It reduces hallucination and keeps delivery predictable: the developer controls the path, AI executes the steps, and project standards stay consistent.",
-      "stars": 252,
-      "language": "JavaScript",
-      "topic": "ai-agents",
-      "created_at": "2026-03-16T20:55:01Z"
-    },
-    {
-      "name": "NanoResearch",
-      "url": "https://github.com/OpenRaiser/NanoResearch",
-      "description": "🦞+🔬: NanoResearch: The Autonomous AI Research Assistant",
-      "stars": 199,
-      "language": "Python",
-      "topic": "ai-agents",
-      "created_at": "2026-03-17T10:20:31Z"
-    },
-    {
-      "name": "awesome-free-llm-apis",
-      "url": "https://github.com/mnfst/awesome-free-llm-apis",
-      "description": "Permanent Free LLM API List (API Keys) 😎🔑",
-      "stars": 184,
+      "name": "awesome-openclaw",
+      "url": "https://github.com/alvinunreal/awesome-openclaw",
+      "description": "A curated list of the best OpenClaw resources: official projects, skills, plugins, dashboards, deployment tooling, memory systems, and guides.",
+      "stars": 223,
       "language": null,
       "topic": "ai-agents",
-      "created_at": "2026-03-21T18:14:07Z"
+      "created_at": "2026-03-27T11:07:09Z"
     },
     {
-      "name": "agent-skill-bus",
-      "url": "https://github.com/ShunsukeHayashi/agent-skill-bus",
-      "description": "The missing runtime for Agent Skills — health monitoring, self-improvement, and dependency management for any AI agent framework. Zero dependencies.",
-      "stars": 129,
-      "language": "JavaScript",
-      "topic": "ai-agents",
-      "created_at": "2026-03-17T23:43:59Z"
-    },
-    {
-      "name": "clawless",
-      "url": "https://github.com/open-gitagent/clawless",
-      "description": "ClawLess — A serverless browser-based runtime for Claw AI Agents powered by WebContainers",
-      "stars": 99,
+      "name": "agentfiles",
+      "url": "https://github.com/Railly/agentfiles",
+      "description": "Discover, organize, and edit AI coding agent skills across Claude Code, Cursor, Codex, Windsurf, and more, from inside Obsidian.",
+      "stars": 207,
       "language": "TypeScript",
       "topic": "ai-agents",
-      "created_at": "2026-03-19T00:42:58Z"
+      "created_at": "2026-03-28T13:17:02Z"
     },
     {
-      "name": "ai-engineering-interview-questions",
-      "url": "https://github.com/amitshekhariitbhu/ai-engineering-interview-questions",
-      "description": "Your Cheat Sheet for AI Engineering Interview – Questions and Answers.",
-      "stars": 82,
-      "language": "Markdown",
+      "name": "awesome-copilot-studio-agents",
+      "url": "https://github.com/kesslernity/awesome-copilot-studio-agents",
+      "description": "73 paste-ready declarative agents for Microsoft 365 Copilot. No coding. No Azure. Deploy in minutes.",
+      "stars": 185,
+      "language": null,
       "topic": "ai-agents",
-      "created_at": "2026-03-21T07:28:38Z"
+      "created_at": "2026-03-24T11:05:53Z"
     },
     {
-      "name": "openclaw-agent-feeds",
-      "url": "https://github.com/mkhsu2002/openclaw-agent-feeds",
-      "description": "Standardized agent data feeds and automation instruction sets for the OpenClaw framework. 專為 OpenClaw 框架設計的標準化代理資料流與自動化指令集。",
-      "stars": 79,
-      "language": "JavaScript",
+      "name": "pentest-ai",
+      "url": "https://github.com/0xSteph/pentest-ai",
+      "description": "Turn Claude Code into your offensive security research assistant. Specialized AI subagents for authorized penetration testing plan engagements, analyze recon, research exploits, build detections, audit STIGs, and write reports.",
+      "stars": 141,
+      "language": null,
       "topic": "ai-agents",
-      "created_at": "2026-03-16T17:44:35Z"
+      "created_at": "2026-03-28T15:21:59Z"
+    },
+    {
+      "name": "qiushi-skill",
+      "url": "https://github.com/HughYau/qiushi-skill",
+      "description": "求是Skill——从教员思想中提炼出一条总原则和九大方法论工具，系统性地武装 AI 的大脑。",
+      "stars": 132,
+      "language": "PowerShell",
+      "topic": "ai-agents",
+      "created_at": "2026-03-25T10:24:01Z"
+    },
+    {
+      "name": "nanostack",
+      "url": "https://github.com/garagon/nanostack",
+      "description": "Minimal AI coding agent team skills for the full engineering workflow. ",
+      "stars": 104,
+      "language": "Shell",
+      "topic": "ai-agents",
+      "created_at": "2026-03-25T14:25:10Z"
+    },
+    {
+      "name": "free-video-downloader",
+      "url": "https://github.com/liyupi/free-video-downloader",
+      "description": "2026 年编程导航 AI 编程实战新项目，基于 Vue 3 + FastAPI + yt-dlp + DeepSeek + Stripe 的 AI 万能视频下载总结器，支持 1800+ 平台视频下载、AI 视频总结摘要、思维导图生成、AI 问答、字幕导出、Stripe 国际支付。覆盖 SSE 流式传输、JWT 认证、SEO/GEO 优化。用一套教程掌握 AI 编程全流程，从需求分析到商业变现，不到一周学完，给你的简历增加竞争力",
+      "stars": 63,
+      "language": "Vue",
+      "topic": "ai-agents",
+      "created_at": "2026-03-23T06:19:11Z"
+    },
+    {
+      "name": "indxr",
+      "url": "https://github.com/bahdotsh/indxr",
+      "description": "A fast codebase indexer and MCP server for AI coding agents.",
+      "stars": 43,
+      "language": "Rust",
+      "topic": "ai-agents",
+      "created_at": "2026-03-23T08:51:53Z"
+    },
+    {
+      "name": "dexter-jp",
+      "url": "https://github.com/edinetdb/dexter-jp",
+      "description": "日本株の自律型リサーチAIエージェント｜AI agent for deep financial research on Japanese listed companies. Powered by EDINET DB + J-Quants.",
+      "stars": 182,
+      "language": "TypeScript",
+      "topic": "langchain",
+      "created_at": "2026-03-26T13:41:12Z"
     }
   ],
-  "last_update_check": "2026-03-23"
+  "last_update_check": "2026-03-30"
 }
