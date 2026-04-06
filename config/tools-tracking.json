@@ -2,8 +2,8 @@
   "tracked_tools": {
     "ai_frameworks": {
       "CrewAI": {
-        "current_version": "1.12.2",
-        "last_updated": "2026-03-30",
+        "current_version": "1.13.0",
+        "last_updated": "2026-04-06",
         "source": "https://github.com/crewAIInc/crewAI",
         "npm_package": null,
         "pypi_package": "crewai",
@@ -18,8 +18,8 @@
         "description": "Replay analytics, compliance hooks, VS Code debug adapter"
       },
       "LangGraph": {
-        "current_version": "1.1.3",
-        "last_updated": "2026-03-23",
+        "current_version": "1.1.6",
+        "last_updated": "2026-04-06",
         "source": "https://github.com/langchain-ai/langgraph",
         "npm_package": "@langchain/langgraph",
         "pypi_package": "langgraph",
@@ -34,8 +34,8 @@
         "description": "Process Framework (durable orchestration) + C#/Python parity"
       },
       "OpenAI Agents SDK": {
-        "current_version": "0.13.2",
-        "last_updated": "2026-03-30",
+        "current_version": "0.13.5",
+        "last_updated": "2026-04-06",
         "source": "https://github.com/openai/agents-python",
         "npm_package": null,
         "pypi_package": "openai-agents",
@@ -50,24 +50,24 @@
         "description": "Ultra-minimal Hugging Face agents; CodeAgent paradigm, sandboxed execution, model-agnostic"
       },
       "Agno": {
-        "current_version": "2.5.11",
-        "last_updated": "2026-03-30",
+        "current_version": "2.5.14",
+        "last_updated": "2026-04-06",
         "source": "https://github.com/agno-agi/agno",
         "npm_package": null,
         "pypi_package": "agno",
         "description": "High-performance runtime for large-scale multi-agent systems; streaming, governance, approval workflows"
       },
       "LlamaIndex": {
-        "current_version": "0.14.19",
-        "last_updated": "2026-03-30",
+        "current_version": "0.14.20",
+        "last_updated": "2026-04-06",
         "source": "https://github.com/run-llama/llama_index",
         "npm_package": null,
         "pypi_package": "llama-index",
         "description": "Data/knowledge-centric framework; RAG workflows, document agents, retrieval-augmented production pipelines"
       },
       "Google ADK": {
-        "current_version": "1.28.0",
-        "last_updated": "2026-03-30",
+        "current_version": "1.28.1",
+        "last_updated": "2026-04-06",
         "source": "https://github.com/google/genai-toolbox",
         "npm_package": null,
         "pypi_package": "google-adk",
@@ -221,104 +221,104 @@
   },
   "trending_tools": [
     {
-      "name": "mcp-brasil",
-      "url": "https://github.com/jxnxts/mcp-brasil",
-      "description": "MCP Server para 41 APIs públicas brasileiras",
-      "stars": 885,
-      "language": "Python",
-      "topic": "ai-agents",
-      "created_at": "2026-03-26T00:38:54Z"
-    },
-    {
-      "name": "awesome-hermes-agent",
-      "url": "https://github.com/0xNyk/awesome-hermes-agent",
-      "description": "A curated list of awesome skills, tools, integrations, and resources for Hermes Agent by Nous Research",
-      "stars": 488,
-      "language": null,
-      "topic": "ai-agents",
-      "created_at": "2026-03-23T05:34:37Z"
-    },
-    {
-      "name": "awesome-openclaw",
-      "url": "https://github.com/alvinunreal/awesome-openclaw",
-      "description": "A curated list of the best OpenClaw resources: official projects, skills, plugins, dashboards, deployment tooling, memory systems, and guides.",
-      "stars": 223,
-      "language": null,
-      "topic": "ai-agents",
-      "created_at": "2026-03-27T11:07:09Z"
-    },
-    {
-      "name": "agentfiles",
-      "url": "https://github.com/Railly/agentfiles",
-      "description": "Discover, organize, and edit AI coding agent skills across Claude Code, Cursor, Codex, Windsurf, and more, from inside Obsidian.",
-      "stars": 207,
+      "name": "open-multi-agent",
+      "url": "https://github.com/JackChen-me/open-multi-agent",
+      "description": "TypeScript multi-agent framework — one runTeam() call from goal to result. Auto task decomposition, parallel execution. 3 dependencies, deploys anywhere Node.js runs.",
+      "stars": 5011,
       "language": "TypeScript",
       "topic": "ai-agents",
-      "created_at": "2026-03-28T13:17:02Z"
+      "created_at": "2026-03-31T19:07:34Z"
     },
     {
-      "name": "awesome-copilot-studio-agents",
-      "url": "https://github.com/kesslernity/awesome-copilot-studio-agents",
-      "description": "73 paste-ready declarative agents for Microsoft 365 Copilot. No coding. No Azure. Deploy in minutes.",
-      "stars": 185,
+      "name": "claude-code-source-code",
+      "url": "https://github.com/777genius/claude-code-source-code",
+      "description": "Claude code source code",
+      "stars": 880,
       "language": null,
       "topic": "ai-agents",
-      "created_at": "2026-03-24T11:05:53Z"
+      "created_at": "2026-03-31T15:57:14Z"
     },
     {
-      "name": "pentest-ai",
-      "url": "https://github.com/0xSteph/pentest-ai",
-      "description": "Turn Claude Code into your offensive security research assistant. Specialized AI subagents for authorized penetration testing plan engagements, analyze recon, research exploits, build detections, audit STIGs, and write reports.",
-      "stars": 141,
-      "language": null,
-      "topic": "ai-agents",
-      "created_at": "2026-03-28T15:21:59Z"
-    },
-    {
-      "name": "qiushi-skill",
-      "url": "https://github.com/HughYau/qiushi-skill",
-      "description": "求是Skill——从教员思想中提炼出一条总原则和九大方法论工具，系统性地武装 AI 的大脑。",
-      "stars": 132,
-      "language": "PowerShell",
-      "topic": "ai-agents",
-      "created_at": "2026-03-25T10:24:01Z"
-    },
-    {
-      "name": "nanostack",
-      "url": "https://github.com/garagon/nanostack",
-      "description": "Minimal AI coding agent team skills for the full engineering workflow. ",
-      "stars": 104,
+      "name": "three-man-team",
+      "url": "https://github.com/russelleNVy/three-man-team",
+      "description": "A structured 3-agent AI dev team — Architect, Builder, Reviewer. Built from production use. Token-optimized. Works with Claude Code, VS Code, Cursor, and any AI that supports context files.",
+      "stars": 284,
       "language": "Shell",
       "topic": "ai-agents",
-      "created_at": "2026-03-25T14:25:10Z"
+      "created_at": "2026-03-31T18:38:09Z"
     },
     {
-      "name": "free-video-downloader",
-      "url": "https://github.com/liyupi/free-video-downloader",
-      "description": "2026 年编程导航 AI 编程实战新项目，基于 Vue 3 + FastAPI + yt-dlp + DeepSeek + Stripe 的 AI 万能视频下载总结器，支持 1800+ 平台视频下载、AI 视频总结摘要、思维导图生成、AI 问答、字幕导出、Stripe 国际支付。覆盖 SSE 流式传输、JWT 认证、SEO/GEO 优化。用一套教程掌握 AI 编程全流程，从需求分析到商业变现，不到一周学完，给你的简历增加竞争力",
-      "stars": 63,
-      "language": "Vue",
+      "name": "yao-meta-skill",
+      "url": "https://github.com/yaojingang/yao-meta-skill",
+      "description": "YAO = Yielding AI Outcomes. A lightweight but rigorous system for creating, evaluating, packaging, and governing reusable agent skills.",
+      "stars": 255,
+      "language": "Python",
       "topic": "ai-agents",
-      "created_at": "2026-03-23T06:19:11Z"
+      "created_at": "2026-03-31T11:59:35Z"
     },
     {
-      "name": "indxr",
-      "url": "https://github.com/bahdotsh/indxr",
-      "description": "A fast codebase indexer and MCP server for AI coding agents.",
-      "stars": 43,
-      "language": "Rust",
+      "name": "AutoHarness",
+      "url": "https://github.com/aiming-lab/AutoHarness",
+      "description": "AutoHarness: Automated Harness Engineering for AI Agents",
+      "stars": 196,
+      "language": "Python",
       "topic": "ai-agents",
-      "created_at": "2026-03-23T08:51:53Z"
+      "created_at": "2026-04-02T00:25:20Z"
     },
     {
-      "name": "dexter-jp",
-      "url": "https://github.com/edinetdb/dexter-jp",
-      "description": "日本株の自律型リサーチAIエージェント｜AI agent for deep financial research on Japanese listed companies. Powered by EDINET DB + J-Quants.",
-      "stars": 182,
+      "name": "the-dev-squad",
+      "url": "https://github.com/johnkf5-ops/the-dev-squad",
+      "description": "Give Claude its own dev team: one supervisor, four specialists, and bulletproof plans/builds without losing context.",
+      "stars": 140,
       "language": "TypeScript",
+      "topic": "ai-agents",
+      "created_at": "2026-04-01T15:46:31Z"
+    },
+    {
+      "name": "vice",
+      "url": "https://github.com/Webba-Creative-Technologies/vice",
+      "description": "VICE - Security auditing CLI for web applications",
+      "stars": 121,
+      "language": "JavaScript",
+      "topic": "ai-agents",
+      "created_at": "2026-03-30T00:44:25Z"
+    },
+    {
+      "name": "zhiying",
+      "url": "https://github.com/tubecreate/zhiying",
+      "description": "⚡ ZhiYing — 终极开源 AI Agents 生态协同系统 | Agents Browser · Agents Workflow · Agents Studio World",
+      "stars": 48,
+      "language": "JavaScript",
+      "topic": "ai-agents",
+      "created_at": "2026-03-30T11:14:02Z"
+    },
+    {
+      "name": "cskill-agents",
+      "url": "https://github.com/ychampion/cskill-agents",
+      "description": "Agent skills for coding CLIs, multi-agent runtimes, context engines, MCP extensions, and terminal tooling. Instead of using claude code's source code, give your agent skills to create your own!",
+      "stars": 31,
+      "language": "PowerShell",
+      "topic": "ai-agents",
+      "created_at": "2026-04-03T07:43:12Z"
+    },
+    {
+      "name": "ai-office",
+      "url": "https://github.com/Gaurav2693/ai-office",
+      "description": "A miniature isometric 3D office where 9 AI agents work, walk, talk, and hold meetings. Built with React 19 + Three.js.",
+      "stars": 30,
+      "language": "JavaScript",
+      "topic": "ai-agents",
+      "created_at": "2026-03-31T06:20:50Z"
+    },
+    {
+      "name": "agent-harness",
+      "url": "https://github.com/haorui-harry/agent-harness",
+      "description": "A LangChain-powered multi-agent system with agent routing, skill routing, and execution harness.",
+      "stars": 33,
+      "language": "Python",
       "topic": "langchain",
-      "created_at": "2026-03-26T13:41:12Z"
+      "created_at": "2026-04-01T03:36:49Z"
     }
   ],
-  "last_update_check": "2026-03-30"
+  "last_update_check": "2026-04-06"
 }
