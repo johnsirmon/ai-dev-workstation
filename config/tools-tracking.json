@@ -2,8 +2,8 @@
   "tracked_tools": {
     "ai_frameworks": {
       "CrewAI": {
-        "current_version": "1.13.0",
-        "last_updated": "2026-04-06",
+        "current_version": "1.14.1",
+        "last_updated": "2026-04-13",
         "source": "https://github.com/crewAIInc/crewAI",
         "npm_package": null,
         "pypi_package": "crewai",
@@ -26,16 +26,16 @@
         "description": "Graph-style state machine orchestration; v1.0 GA Oct 2025. Check-pointing, audit trails, production-grade compliance workloads."
       },
       "Semantic Kernel": {
-        "current_version": "1.41.1",
-        "last_updated": "2026-03-30",
+        "current_version": "1.41.2",
+        "last_updated": "2026-04-13",
         "source": "https://github.com/microsoft/semantic-kernel",
         "npm_package": "@microsoft/semantic-kernel",
         "pypi_package": "semantic-kernel",
         "description": "Process Framework (durable orchestration) + C#/Python parity"
       },
       "OpenAI Agents SDK": {
-        "current_version": "0.13.5",
-        "last_updated": "2026-04-06",
+        "current_version": "0.13.6",
+        "last_updated": "2026-04-13",
         "source": "https://github.com/openai/agents-python",
         "npm_package": null,
         "pypi_package": "openai-agents",
@@ -50,8 +50,8 @@
         "description": "Ultra-minimal Hugging Face agents; CodeAgent paradigm, sandboxed execution, model-agnostic"
       },
       "Agno": {
-        "current_version": "2.5.14",
-        "last_updated": "2026-04-06",
+        "current_version": "2.5.16",
+        "last_updated": "2026-04-13",
         "source": "https://github.com/agno-agi/agno",
         "npm_package": null,
         "pypi_package": "agno",
@@ -66,8 +66,8 @@
         "description": "Data/knowledge-centric framework; RAG workflows, document agents, retrieval-augmented production pipelines"
       },
       "Google ADK": {
-        "current_version": "1.28.1",
-        "last_updated": "2026-04-06",
+        "current_version": "1.29.0",
+        "last_updated": "2026-04-13",
         "source": "https://github.com/google/genai-toolbox",
         "npm_package": null,
         "pypi_package": "google-adk",
@@ -76,8 +76,8 @@
     },
     "mcp_servers": {
       "@upstash/context7-mcp": {
-        "current_version": "ctx7@0.3.9",
-        "last_updated": "2026-03-30",
+        "current_version": "@upstash/context7-mcp@2.1.8",
+        "last_updated": "2026-04-13",
         "source": "https://github.com/upstash/context7-mcp",
         "description": "Enhanced context management for AI agents"
       },
@@ -221,104 +221,113 @@
   },
   "trending_tools": [
     {
-      "name": "open-multi-agent",
-      "url": "https://github.com/JackChen-me/open-multi-agent",
-      "description": "TypeScript multi-agent framework — one runTeam() call from goal to result. Auto task decomposition, parallel execution. 3 dependencies, deploys anywhere Node.js runs.",
-      "stars": 5011,
-      "language": "TypeScript",
+      "name": "agentic-ai-apis",
+      "url": "https://github.com/cporter202/agentic-ai-apis",
+      "description": "The ultimate collection of APIs for building autonomous AI agents — 2,036 production-ready APIs across Agents, AI Models, and MCP Servers. Stop wasting weeks building infrastructure. Plug these in and ship your agent today.",
+      "stars": 274,
+      "language": "JavaScript",
       "topic": "ai-agents",
-      "created_at": "2026-03-31T19:07:34Z"
+      "created_at": "2026-04-06T18:55:04Z"
     },
     {
-      "name": "claude-code-source-code",
-      "url": "https://github.com/777genius/claude-code-source-code",
-      "description": "Claude code source code",
-      "stars": 880,
+      "name": "evo-nexus",
+      "url": "https://github.com/EvolutionAPI/evo-nexus",
+      "description": "The open source operating system for AI-powered businesses — built on Claude Code",
+      "stars": 230,
+      "language": "Python",
+      "topic": "ai-agents",
+      "created_at": "2026-04-08T20:40:58Z"
+    },
+    {
+      "name": "hermes-ecosystem",
+      "url": "https://github.com/ksimback/hermes-ecosystem",
+      "description": "🗺️ Hermes Atlas — the community map of every tool, skill, and integration for Hermes Agent by Nous Research. Live at hermesatlas.com",
+      "stars": 190,
+      "language": "HTML",
+      "topic": "ai-agents",
+      "created_at": "2026-04-08T17:07:13Z"
+    },
+    {
+      "name": "hermes-control-interface",
+      "url": "https://github.com/xaspx/hermes-control-interface",
+      "description": "A self-hosted web dashboard for the Hermes AI agent stack. Provides a browser-based terminal, file explorer, session overview, cron management, system metrics, and an agent status panel — all behind a single password gate.",
+      "stars": 128,
+      "language": "JavaScript",
+      "topic": "ai-agents",
+      "created_at": "2026-04-08T17:13:25Z"
+    },
+    {
+      "name": "agentic-ai-starters",
+      "url": "https://github.com/cporter202/agentic-ai-starters",
+      "description": "A practical collection of plug-and-play starter blueprints for building autonomous AI apps with real APIs. Discover ready-to-build agent workflows, API stacks, architecture patterns, prompts, and monetization ideas for research agents, lead gen systems, SEO automations, MCP toolchains, and more.",
+      "stars": 92,
       "language": null,
       "topic": "ai-agents",
-      "created_at": "2026-03-31T15:57:14Z"
+      "created_at": "2026-04-07T13:28:33Z"
     },
     {
-      "name": "three-man-team",
-      "url": "https://github.com/russelleNVy/three-man-team",
-      "description": "A structured 3-agent AI dev team — Architect, Builder, Reviewer. Built from production use. Token-optimized. Works with Claude Code, VS Code, Cursor, and any AI that supports context files.",
-      "stars": 284,
+      "name": "my-claude-devteam",
+      "url": "https://github.com/NYCU-Chung/my-claude-devteam",
+      "description": "An engineering team in a box for Claude Code — 12 specialized agents, 15 automation hooks, and the P7/P9/P10 methodology.",
+      "stars": 75,
+      "language": "JavaScript",
+      "topic": "ai-agents",
+      "created_at": "2026-04-11T07:16:14Z"
+    },
+    {
+      "name": "claude-alloy",
+      "url": "https://github.com/OMARVII/claude-alloy",
+      "description": "Multi-agent orchestration for Claude Code — pure config, no wrapper, no runtime.",
+      "stars": 73,
       "language": "Shell",
       "topic": "ai-agents",
-      "created_at": "2026-03-31T18:38:09Z"
+      "created_at": "2026-04-07T21:15:31Z"
     },
     {
-      "name": "yao-meta-skill",
-      "url": "https://github.com/yaojingang/yao-meta-skill",
-      "description": "YAO = Yielding AI Outcomes. A lightweight but rigorous system for creating, evaluating, packaging, and governing reusable agent skills.",
-      "stars": 255,
+      "name": "DeepZero",
+      "url": "https://github.com/416rehman/DeepZero",
+      "description": "Find zero-days while you sleep. DeepZero is an automated vulnerability research framework that parses, decompiles, and analyzes thousands of Windows kernel drivers for exploitable IOCTLs natively using AI agents.",
+      "stars": 70,
       "language": "Python",
       "topic": "ai-agents",
-      "created_at": "2026-03-31T11:59:35Z"
+      "created_at": "2026-04-07T01:51:34Z"
     },
     {
-      "name": "AutoHarness",
-      "url": "https://github.com/aiming-lab/AutoHarness",
-      "description": "AutoHarness: Automated Harness Engineering for AI Agents",
-      "stars": 196,
-      "language": "Python",
-      "topic": "ai-agents",
-      "created_at": "2026-04-02T00:25:20Z"
-    },
-    {
-      "name": "the-dev-squad",
-      "url": "https://github.com/johnkf5-ops/the-dev-squad",
-      "description": "Give Claude its own dev team: one supervisor, four specialists, and bulletproof plans/builds without losing context.",
-      "stars": 140,
+      "name": "free-ai-tools",
+      "url": "https://github.com/ShaikhWarsi/free-ai-tools",
+      "description": "Curated list of free and low cost AI tools, LLM APIs, IDEs, agents, and infrastructure for building real AI apps",
+      "stars": 57,
       "language": "TypeScript",
       "topic": "ai-agents",
-      "created_at": "2026-04-01T15:46:31Z"
+      "created_at": "2026-04-11T10:46:47Z"
     },
     {
-      "name": "vice",
-      "url": "https://github.com/Webba-Creative-Technologies/vice",
-      "description": "VICE - Security auditing CLI for web applications",
-      "stars": 121,
-      "language": "JavaScript",
+      "name": "Agent-Architecture",
+      "url": "https://github.com/TheJacksonCode/Agent-Architecture",
+      "description": "Visual multi-agent system designer for Claude Code. 28 agents, Five Minds Protocol, HITL gates, Live Simulation. Zero dependencies, single HTML file.",
+      "stars": 55,
+      "language": "HTML",
       "topic": "ai-agents",
-      "created_at": "2026-03-30T00:44:25Z"
+      "created_at": "2026-04-07T12:07:20Z"
     },
     {
-      "name": "zhiying",
-      "url": "https://github.com/tubecreate/zhiying",
-      "description": "⚡ ZhiYing — 终极开源 AI Agents 生态协同系统 | Agents Browser · Agents Workflow · Agents Studio World",
-      "stars": 48,
-      "language": "JavaScript",
-      "topic": "ai-agents",
-      "created_at": "2026-03-30T11:14:02Z"
-    },
-    {
-      "name": "cskill-agents",
-      "url": "https://github.com/ychampion/cskill-agents",
-      "description": "Agent skills for coding CLIs, multi-agent runtimes, context engines, MCP extensions, and terminal tooling. Instead of using claude code's source code, give your agent skills to create your own!",
-      "stars": 31,
-      "language": "PowerShell",
-      "topic": "ai-agents",
-      "created_at": "2026-04-03T07:43:12Z"
-    },
-    {
-      "name": "ai-office",
-      "url": "https://github.com/Gaurav2693/ai-office",
-      "description": "A miniature isometric 3D office where 9 AI agents work, walk, talk, and hold meetings. Built with React 19 + Three.js.",
-      "stars": 30,
-      "language": "JavaScript",
-      "topic": "ai-agents",
-      "created_at": "2026-03-31T06:20:50Z"
-    },
-    {
-      "name": "agent-harness",
-      "url": "https://github.com/haorui-harry/agent-harness",
-      "description": "A LangChain-powered multi-agent system with agent routing, skill routing, and execution harness.",
-      "stars": 33,
+      "name": "zero-to-ai-fullstack",
+      "url": "https://github.com/yanhua1010/zero-to-ai-fullstack",
+      "description": "A Java backend engineer learning AI full-stack in public — Python · FastAPI · RAG · pgvector · Next.js",
+      "stars": 139,
       "language": "Python",
       "topic": "langchain",
-      "created_at": "2026-04-01T03:36:49Z"
+      "created_at": "2026-04-08T02:49:32Z"
+    },
+    {
+      "name": "CyberClaw",
+      "url": "https://github.com/ttguy0707/CyberClaw",
+      "description": "👾 下一代透明智能体架构 | Next-Gen Transparent Agent Architecture 🔍 全行为审计 | 🛡️ 两段式安全调用 | 🧠 双水位记忆 | ⏰ 心跳任务 📊 P0 级事故率降低 80% | 兼容 OpenClaw + Claude Code 技能生态",
+      "stars": 80,
+      "language": "Python",
+      "topic": "langchain",
+      "created_at": "2026-04-07T04:07:04Z"
     }
   ],
-  "last_update_check": "2026-04-06"
+  "last_update_check": "2026-04-13"
 }
