@@ -2,8 +2,8 @@
   "tracked_tools": {
     "ai_frameworks": {
       "CrewAI": {
-        "current_version": "1.14.1",
-        "last_updated": "2026-04-13",
+        "current_version": "1.14.2",
+        "last_updated": "2026-04-20",
         "source": "https://github.com/crewAIInc/crewAI",
         "npm_package": null,
         "pypi_package": "crewai",
@@ -18,8 +18,8 @@
         "description": "Replay analytics, compliance hooks, VS Code debug adapter"
       },
       "LangGraph": {
-        "current_version": "1.1.6",
-        "last_updated": "2026-04-06",
+        "current_version": "1.1.8",
+        "last_updated": "2026-04-20",
         "source": "https://github.com/langchain-ai/langgraph",
         "npm_package": "@langchain/langgraph",
         "pypi_package": "langgraph",
@@ -34,8 +34,8 @@
         "description": "Process Framework (durable orchestration) + C#/Python parity"
       },
       "OpenAI Agents SDK": {
-        "current_version": "0.13.6",
-        "last_updated": "2026-04-13",
+        "current_version": "0.14.2",
+        "last_updated": "2026-04-20",
         "source": "https://github.com/openai/agents-python",
         "npm_package": null,
         "pypi_package": "openai-agents",
@@ -50,8 +50,8 @@
         "description": "Ultra-minimal Hugging Face agents; CodeAgent paradigm, sandboxed execution, model-agnostic"
       },
       "Agno": {
-        "current_version": "2.5.16",
-        "last_updated": "2026-04-13",
+        "current_version": "2.5.17",
+        "last_updated": "2026-04-20",
         "source": "https://github.com/agno-agi/agno",
         "npm_package": null,
         "pypi_package": "agno",
@@ -66,8 +66,8 @@
         "description": "Data/knowledge-centric framework; RAG workflows, document agents, retrieval-augmented production pipelines"
       },
       "Google ADK": {
-        "current_version": "1.29.0",
-        "last_updated": "2026-04-13",
+        "current_version": "1.31.0",
+        "last_updated": "2026-04-20",
         "source": "https://github.com/google/genai-toolbox",
         "npm_package": null,
         "pypi_package": "google-adk",
@@ -76,8 +76,8 @@
     },
     "mcp_servers": {
       "@upstash/context7-mcp": {
-        "current_version": "@upstash/context7-mcp@2.1.8",
-        "last_updated": "2026-04-13",
+        "current_version": "ctx7@0.3.13",
+        "last_updated": "2026-04-20",
         "source": "https://github.com/upstash/context7-mcp",
         "description": "Enhanced context management for AI agents"
       },
@@ -221,113 +221,95 @@
   },
   "trending_tools": [
     {
-      "name": "agentic-ai-apis",
-      "url": "https://github.com/cporter202/agentic-ai-apis",
-      "description": "The ultimate collection of APIs for building autonomous AI agents — 2,036 production-ready APIs across Agents, AI Models, and MCP Servers. Stop wasting weeks building infrastructure. Plug these in and ship your agent today.",
-      "stars": 274,
-      "language": "JavaScript",
-      "topic": "ai-agents",
-      "created_at": "2026-04-06T18:55:04Z"
-    },
-    {
-      "name": "evo-nexus",
-      "url": "https://github.com/EvolutionAPI/evo-nexus",
-      "description": "The open source operating system for AI-powered businesses — built on Claude Code",
-      "stars": 230,
+      "name": "AutoProber",
+      "url": "https://github.com/GainSec/AutoProber",
+      "description": "Hardware hacker’s flying probe automation stack for agent-driven   target discovery, microscope mapping, safety-monitored CNC motion, probe review, and   controlled pin probing.",
+      "stars": 251,
       "language": "Python",
       "topic": "ai-agents",
-      "created_at": "2026-04-08T20:40:58Z"
+      "created_at": "2026-04-16T06:18:47Z"
     },
     {
-      "name": "hermes-ecosystem",
-      "url": "https://github.com/ksimback/hermes-ecosystem",
-      "description": "🗺️ Hermes Atlas — the community map of every tool, skill, and integration for Hermes Agent by Nous Research. Live at hermesatlas.com",
-      "stars": 190,
-      "language": "HTML",
+      "name": "WorldSeed",
+      "url": "https://github.com/AIScientists-Dev/WorldSeed",
+      "description": "A world engine where AI agents live autonomously — physical rules, information asymmetry, any agent can plug in. Define scenarios in YAML, watch stories emerge.",
+      "stars": 154,
+      "language": "Python",
       "topic": "ai-agents",
-      "created_at": "2026-04-08T17:07:13Z"
+      "created_at": "2026-04-15T03:47:21Z"
     },
     {
-      "name": "hermes-control-interface",
-      "url": "https://github.com/xaspx/hermes-control-interface",
-      "description": "A self-hosted web dashboard for the Hermes AI agent stack. Provides a browser-based terminal, file explorer, session overview, cron management, system metrics, and an agent status panel — all behind a single password gate.",
-      "stars": 128,
-      "language": "JavaScript",
+      "name": "agent-style",
+      "url": "https://github.com/yzhao062/agent-style",
+      "description": "21 writing rules for AI coding and writing agents. Drop-in for Claude Code, Codex, Copilot, Cursor, and Aider, so their output reads like a tech pro.",
+      "stars": 84,
+      "language": "Python",
       "topic": "ai-agents",
-      "created_at": "2026-04-08T17:13:25Z"
+      "created_at": "2026-04-19T08:12:16Z"
     },
     {
-      "name": "agentic-ai-starters",
-      "url": "https://github.com/cporter202/agentic-ai-starters",
-      "description": "A practical collection of plug-and-play starter blueprints for building autonomous AI apps with real APIs. Discover ready-to-build agent workflows, API stacks, architecture patterns, prompts, and monetization ideas for research agents, lead gen systems, SEO automations, MCP toolchains, and more.",
-      "stars": 92,
+      "name": "awesome-claude-code-skills",
+      "url": "https://github.com/helloianneo/awesome-claude-code-skills",
+      "description": "Claude Code 最实用的 Skills / Agents / Plugins 精选合集 | 50+ 精选 | 按场景分类 | 带推荐等级 | 复制即装",
+      "stars": 81,
       "language": null,
       "topic": "ai-agents",
-      "created_at": "2026-04-07T13:28:33Z"
+      "created_at": "2026-04-13T15:19:44Z"
     },
     {
-      "name": "my-claude-devteam",
-      "url": "https://github.com/NYCU-Chung/my-claude-devteam",
-      "description": "An engineering team in a box for Claude Code — 12 specialized agents, 15 automation hooks, and the P7/P9/P10 methodology.",
-      "stars": 75,
-      "language": "JavaScript",
+      "name": "idea-validation-agents",
+      "url": "https://github.com/MaxKmet/idea-validation-agents",
+      "description": "AI agents that act as your personal venture analyst - from startup idea brainstorming to full validation and go-to-market strategy. Built for developers who'd rather validate in 10 minutes than regret in six months. Powered by Claude Code, OpenAI Codex, and Cursor.",
+      "stars": 81,
+      "language": null,
       "topic": "ai-agents",
-      "created_at": "2026-04-11T07:16:14Z"
+      "created_at": "2026-04-13T22:13:08Z"
     },
     {
-      "name": "claude-alloy",
-      "url": "https://github.com/OMARVII/claude-alloy",
-      "description": "Multi-agent orchestration for Claude Code — pure config, no wrapper, no runtime.",
-      "stars": 73,
+      "name": "london-property-hunt-public",
+      "url": "https://github.com/mikepapadim/london-property-hunt-public",
+      "description": "Automated London flat/room hunt powered by Claude Code + Claude in Chrome + Gmail MCP. Scrapes 4 rental platforms on a cron, deduplicates via spreadsheet, prioritises HIGH/MED/LOW, and emails ready-to-send outreach.",
+      "stars": 66,
+      "language": null,
+      "topic": "ai-agents",
+      "created_at": "2026-04-15T16:12:02Z"
+    },
+    {
+      "name": "anywhere-agents",
+      "url": "https://github.com/yzhao062/anywhere-agents",
+      "description": "One config to rule all your AI agents: portable (every project, every session), effective (curated writing, routing, skills), and safer (destructive-command guard).",
+      "stars": 64,
+      "language": "Python",
+      "topic": "ai-agents",
+      "created_at": "2026-04-16T17:44:59Z"
+    },
+    {
+      "name": "superseo-skills",
+      "url": "https://github.com/inhouseseo/superseo-skills",
+      "description": "11 Claude skills for SEO: page audits, linkbuilding, article writing, E-E-A-T audits, semantic gap analysis, link building. Methodology from Koray   Tuğberk, Kyle Roof, and Lily Ray, plus a generation-time anti-AI-slop ruleset. Production-tested at InhouseSEO",
+      "stars": 52,
+      "language": null,
+      "topic": "ai-agents",
+      "created_at": "2026-04-13T11:54:39Z"
+    },
+    {
+      "name": "asynkor",
+      "url": "https://github.com/asynkor/asynkor",
+      "description": "File leasing for AI agent teams. One MCP server. Any IDE. Zero merge conflicts.",
+      "stars": 33,
+      "language": "Go",
+      "topic": "ai-agents",
+      "created_at": "2026-04-13T08:39:20Z"
+    },
+    {
+      "name": "drupal-ai",
+      "url": "https://github.com/edutrul/drupal-ai",
+      "description": "Drupal AI skills, agents, rules, hooks, commands for claude, codex, etc.",
+      "stars": 31,
       "language": "Shell",
       "topic": "ai-agents",
-      "created_at": "2026-04-07T21:15:31Z"
-    },
-    {
-      "name": "DeepZero",
-      "url": "https://github.com/416rehman/DeepZero",
-      "description": "Find zero-days while you sleep. DeepZero is an automated vulnerability research framework that parses, decompiles, and analyzes thousands of Windows kernel drivers for exploitable IOCTLs natively using AI agents.",
-      "stars": 70,
-      "language": "Python",
-      "topic": "ai-agents",
-      "created_at": "2026-04-07T01:51:34Z"
-    },
-    {
-      "name": "free-ai-tools",
-      "url": "https://github.com/ShaikhWarsi/free-ai-tools",
-      "description": "Curated list of free and low cost AI tools, LLM APIs, IDEs, agents, and infrastructure for building real AI apps",
-      "stars": 57,
-      "language": "TypeScript",
-      "topic": "ai-agents",
-      "created_at": "2026-04-11T10:46:47Z"
-    },
-    {
-      "name": "Agent-Architecture",
-      "url": "https://github.com/TheJacksonCode/Agent-Architecture",
-      "description": "Visual multi-agent system designer for Claude Code. 28 agents, Five Minds Protocol, HITL gates, Live Simulation. Zero dependencies, single HTML file.",
-      "stars": 55,
-      "language": "HTML",
-      "topic": "ai-agents",
-      "created_at": "2026-04-07T12:07:20Z"
-    },
-    {
-      "name": "zero-to-ai-fullstack",
-      "url": "https://github.com/yanhua1010/zero-to-ai-fullstack",
-      "description": "A Java backend engineer learning AI full-stack in public — Python · FastAPI · RAG · pgvector · Next.js",
-      "stars": 139,
-      "language": "Python",
-      "topic": "langchain",
-      "created_at": "2026-04-08T02:49:32Z"
-    },
-    {
-      "name": "CyberClaw",
-      "url": "https://github.com/ttguy0707/CyberClaw",
-      "description": "👾 下一代透明智能体架构 | Next-Gen Transparent Agent Architecture 🔍 全行为审计 | 🛡️ 两段式安全调用 | 🧠 双水位记忆 | ⏰ 心跳任务 📊 P0 级事故率降低 80% | 兼容 OpenClaw + Claude Code 技能生态",
-      "stars": 80,
-      "language": "Python",
-      "topic": "langchain",
-      "created_at": "2026-04-07T04:07:04Z"
+      "created_at": "2026-04-15T15:40:49Z"
     }
   ],
-  "last_update_check": "2026-04-13"
+  "last_update_check": "2026-04-20"
 }

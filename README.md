@@ -101,15 +101,15 @@ GitHub’s docs outline editing `mcp.json` in the *Tools* panel.
 
 | Framework / Lib | Latest ver. | Killer features |
 |-----------------|------------|-----------------|
-|**CrewAI**|1.14.1 (Updated 2026-04-13)|Declarative YAML mission files, vector‑based memory, Agents → Roles → Tasks hierarchy. Fast multi-agent prototyping.|
-|**Microsoft Autogen**|0.7.5 (Updated 2026-04-13)|Event-driven multi-agent; human-in-the-loop support. Merging with Semantic Kernel into unified Microsoft Agent Framework (GA Q1 2026).|
-|**LangGraph**|1.1.6 (Updated 2026-04-13)|**Stable v1.0** reached Oct 2025. Graph‑style state machine orchestration; check-pointing, audit trails. Best for production compliance workloads.|
-|**Semantic Kernel**|1.41.2 (Updated 2026-04-13)|Enterprise Azure integration, planners, function-calling. Converging with AutoGen into unified Microsoft Agent Framework.|
-|**OpenAI Agents SDK**|0.13.6 (Updated 2026-04-13)|Official open-source SDK for orchestrating multi-agent workflows; supports handoffs, guardrails, tracing, and the new Responses API (replaces Assistants API by Aug 2026).|
+|**CrewAI**|1.14.2 (Updated 2026-04-20)|Declarative YAML mission files, vector‑based memory, Agents → Roles → Tasks hierarchy. Fast multi-agent prototyping.|
+|**Microsoft Autogen**|0.7.5 (Updated 2026-04-20)|Event-driven multi-agent; human-in-the-loop support. Merging with Semantic Kernel into unified Microsoft Agent Framework (GA Q1 2026).|
+|**LangGraph**|1.1.8 (Updated 2026-04-20)|**Stable v1.0** reached Oct 2025. Graph‑style state machine orchestration; check-pointing, audit trails. Best for production compliance workloads.|
+|**Semantic Kernel**|1.41.2 (Updated 2026-04-20)|Enterprise Azure integration, planners, function-calling. Converging with AutoGen into unified Microsoft Agent Framework.|
+|**OpenAI Agents SDK**|0.14.2 (Updated 2026-04-20)|Official open-source SDK for orchestrating multi-agent workflows; supports handoffs, guardrails, tracing, and the new Responses API (replaces Assistants API by Aug 2026).|
 |**smolagents** (HF)|1.24.0|Ultra-minimal Hugging Face agents; CodeAgent paradigm, sandboxed execution, model-agnostic. Great for research/lightweight use.|
-|**Agno**|2.5.16 (Updated 2026-04-13)|High-performance runtime for large-scale multi-agent systems; streaming, governance, approval workflows, and audit logs built in.|
-|**LlamaIndex**|0.14.20 (Updated 2026-04-13)|Data/knowledge-centric framework; excels at RAG workflows, document agents, and retrieval-augmented production pipelines.|
-|**Google ADK**|1.29.0 (Updated 2026-04-13)|Google’s Agent Development Kit with native A2A protocol support; deploy on Cloud Run, GKE, or Vertex AI.|
+|**Agno**|2.5.17 (Updated 2026-04-20)|High-performance runtime for large-scale multi-agent systems; streaming, governance, approval workflows, and audit logs built in.|
+|**LlamaIndex**|0.14.20 (Updated 2026-04-20)|Data/knowledge-centric framework; excels at RAG workflows, document agents, and retrieval-augmented production pipelines.|
+|**Google ADK**|1.31.0 (Updated 2026-04-20)|Google’s Agent Development Kit with native A2A protocol support; deploy on Cloud Run, GKE, or Vertex AI.|
 |**GPTScript Agents**|Bleeding‑edge|Script agents in 10 lines; great for Kubernetes ops.|
 
 ### Choosing the Right Framework
@@ -331,13 +331,13 @@ GITHUB_TOKEN=your_github_personal_access_token
 
 | Tool | Stars | Language | Use Case | Repository |
 |------|-------|----------|----------|------------|
-|**agentic-ai-apis**|274|JavaScript|The ultimate collection of APIs for building autonomous AI agents — 2,036 production-ready APIs acro...|[GitHub](https://github.com/cporter202/agentic-ai-apis)|
-|**evo-nexus**|230|Python|The open source operating system for AI-powered businesses — built on Claude Code|[GitHub](https://github.com/EvolutionAPI/evo-nexus)|
-|**hermes-ecosystem**|190|HTML|🗺️ Hermes Atlas — the community map of every tool, skill, and integration for Hermes Agent by Nous R...|[GitHub](https://github.com/ksimback/hermes-ecosystem)|
-|**hermes-control-interface**|128|JavaScript|A self-hosted web dashboard for the Hermes AI agent stack. Provides a browser-based terminal, file e...|[GitHub](https://github.com/xaspx/hermes-control-interface)|
-|**agentic-ai-starters**|92|N/A|A practical collection of plug-and-play starter blueprints for building autonomous AI apps with real...|[GitHub](https://github.com/cporter202/agentic-ai-starters)|
-|**my-claude-devteam**|75|JavaScript|An engineering team in a box for Claude Code — 12 specialized agents, 15 automation hooks, and the P...|[GitHub](https://github.com/NYCU-Chung/my-claude-devteam)|
-|**claude-alloy**|73|Shell|Multi-agent orchestration for Claude Code — pure config, no wrapper, no runtime.|[GitHub](https://github.com/OMARVII/claude-alloy)|
-|**DeepZero**|70|Python|Find zero-days while you sleep. DeepZero is an automated vulnerability research framework that parse...|[GitHub](https://github.com/416rehman/DeepZero)|
-|**free-ai-tools**|57|TypeScript|Curated list of free and low cost AI tools, LLM APIs, IDEs, agents, and infrastructure for building ...|[GitHub](https://github.com/ShaikhWarsi/free-ai-tools)|
-|**Agent-Architecture**|55|HTML|Visual multi-agent system designer for Claude Code. 28 agents, Five Minds Protocol, HITL gates, Live...|[GitHub](https://github.com/TheJacksonCode/Agent-Architecture)|
+|**AutoProber**|251|Python|Hardware hacker’s flying probe automation stack for agent-driven   target discovery, microscope mapp...|[GitHub](https://github.com/GainSec/AutoProber)|
+|**WorldSeed**|154|Python|A world engine where AI agents live autonomously — physical rules, information asymmetry, any agent ...|[GitHub](https://github.com/AIScientists-Dev/WorldSeed)|
+|**agent-style**|84|Python|21 writing rules for AI coding and writing agents. Drop-in for Claude Code, Codex, Copilot, Cursor, ...|[GitHub](https://github.com/yzhao062/agent-style)|
+|**awesome-claude-code-skills**|81|N/A|Claude Code 最实用的 Skills / Agents / Plugins 精选合集 | 50+ 精选 | 按场景分类 | 带推荐等级 | 复制即装|[GitHub](https://github.com/helloianneo/awesome-claude-code-skills)|
+|**idea-validation-agents**|81|N/A|AI agents that act as your personal venture analyst - from startup idea brainstorming to full valida...|[GitHub](https://github.com/MaxKmet/idea-validation-agents)|
+|**london-property-hunt-public**|66|N/A|Automated London flat/room hunt powered by Claude Code + Claude in Chrome + Gmail MCP. Scrapes 4 ren...|[GitHub](https://github.com/mikepapadim/london-property-hunt-public)|
+|**anywhere-agents**|64|Python|One config to rule all your AI agents: portable (every project, every session), effective (curated w...|[GitHub](https://github.com/yzhao062/anywhere-agents)|
+|**superseo-skills**|52|N/A|11 Claude skills for SEO: page audits, linkbuilding, article writing, E-E-A-T audits, semantic gap a...|[GitHub](https://github.com/inhouseseo/superseo-skills)|
+|**asynkor**|33|Go|File leasing for AI agent teams. One MCP server. Any IDE. Zero merge conflicts.|[GitHub](https://github.com/asynkor/asynkor)|
+|**drupal-ai**|31|Shell|Drupal AI skills, agents, rules, hooks, commands for claude, codex, etc.|[GitHub](https://github.com/edutrul/drupal-ai)|
