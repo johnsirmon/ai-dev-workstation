@@ -2,8 +2,8 @@
   "tracked_tools": {
     "ai_frameworks": {
       "CrewAI": {
-        "current_version": "1.14.2",
-        "last_updated": "2026-04-20",
+        "current_version": "1.14.3",
+        "last_updated": "2026-04-27",
         "source": "https://github.com/crewAIInc/crewAI",
         "npm_package": null,
         "pypi_package": "crewai",
@@ -18,8 +18,8 @@
         "description": "Replay analytics, compliance hooks, VS Code debug adapter"
       },
       "LangGraph": {
-        "current_version": "1.1.8",
-        "last_updated": "2026-04-20",
+        "current_version": "1.1.9",
+        "last_updated": "2026-04-27",
         "source": "https://github.com/langchain-ai/langgraph",
         "npm_package": "@langchain/langgraph",
         "pypi_package": "langgraph",
@@ -34,8 +34,8 @@
         "description": "Process Framework (durable orchestration) + C#/Python parity"
       },
       "OpenAI Agents SDK": {
-        "current_version": "0.14.2",
-        "last_updated": "2026-04-20",
+        "current_version": "0.14.6",
+        "last_updated": "2026-04-27",
         "source": "https://github.com/openai/agents-python",
         "npm_package": null,
         "pypi_package": "openai-agents",
@@ -50,24 +50,24 @@
         "description": "Ultra-minimal Hugging Face agents; CodeAgent paradigm, sandboxed execution, model-agnostic"
       },
       "Agno": {
-        "current_version": "2.5.17",
-        "last_updated": "2026-04-20",
+        "current_version": "2.6.1",
+        "last_updated": "2026-04-27",
         "source": "https://github.com/agno-agi/agno",
         "npm_package": null,
         "pypi_package": "agno",
         "description": "High-performance runtime for large-scale multi-agent systems; streaming, governance, approval workflows"
       },
       "LlamaIndex": {
-        "current_version": "0.14.20",
-        "last_updated": "2026-04-06",
+        "current_version": "0.14.21",
+        "last_updated": "2026-04-27",
         "source": "https://github.com/run-llama/llama_index",
         "npm_package": null,
         "pypi_package": "llama-index",
         "description": "Data/knowledge-centric framework; RAG workflows, document agents, retrieval-augmented production pipelines"
       },
       "Google ADK": {
-        "current_version": "1.31.0",
-        "last_updated": "2026-04-20",
+        "current_version": "1.31.1",
+        "last_updated": "2026-04-27",
         "source": "https://github.com/google/genai-toolbox",
         "npm_package": null,
         "pypi_package": "google-adk",
@@ -76,8 +76,8 @@
     },
     "mcp_servers": {
       "@upstash/context7-mcp": {
-        "current_version": "ctx7@0.3.13",
-        "last_updated": "2026-04-20",
+        "current_version": "@upstash/context7-mcp@2.2.0",
+        "last_updated": "2026-04-27",
         "source": "https://github.com/upstash/context7-mcp",
         "description": "Enhanced context management for AI agents"
       },
@@ -221,95 +221,95 @@
   },
   "trending_tools": [
     {
-      "name": "AutoProber",
-      "url": "https://github.com/GainSec/AutoProber",
-      "description": "Hardware hacker’s flying probe automation stack for agent-driven   target discovery, microscope mapping, safety-monitored CNC motion, probe review, and   controlled pin probing.",
-      "stars": 251,
+      "name": "text-to-cad",
+      "url": "https://github.com/earthtojake/text-to-cad",
+      "description": "An open source harness for generating CAD models",
+      "stars": 807,
+      "language": "JavaScript",
+      "topic": "ai-agents",
+      "created_at": "2026-04-22T01:09:45Z"
+    },
+    {
+      "name": "harmonist",
+      "url": "https://github.com/GammaLabTechnologies/harmonist",
+      "description": "Portable AI agent orchestration with mechanical protocol enforcement. 186 agents, zero runtime dependencies.",
+      "stars": 708,
       "language": "Python",
       "topic": "ai-agents",
-      "created_at": "2026-04-16T06:18:47Z"
+      "created_at": "2026-04-23T05:42:29Z"
     },
     {
-      "name": "WorldSeed",
-      "url": "https://github.com/AIScientists-Dev/WorldSeed",
-      "description": "A world engine where AI agents live autonomously — physical rules, information asymmetry, any agent can plug in. Define scenarios in YAML, watch stories emerge.",
-      "stars": 154,
-      "language": "Python",
+      "name": "thClaws",
+      "url": "https://github.com/thClaws/thClaws",
+      "description": "Open-source agent harness platform. Native Rust, multi-provider, runs on your own machine. Sovereign by design.",
+      "stars": 541,
+      "language": "Rust",
       "topic": "ai-agents",
-      "created_at": "2026-04-15T03:47:21Z"
+      "created_at": "2026-04-20T01:27:39Z"
     },
     {
-      "name": "agent-style",
-      "url": "https://github.com/yzhao062/agent-style",
-      "description": "21 writing rules for AI coding and writing agents. Drop-in for Claude Code, Codex, Copilot, Cursor, and Aider, so their output reads like a tech pro.",
-      "stars": 84,
-      "language": "Python",
-      "topic": "ai-agents",
-      "created_at": "2026-04-19T08:12:16Z"
-    },
-    {
-      "name": "awesome-claude-code-skills",
-      "url": "https://github.com/helloianneo/awesome-claude-code-skills",
-      "description": "Claude Code 最实用的 Skills / Agents / Plugins 精选合集 | 50+ 精选 | 按场景分类 | 带推荐等级 | 复制即装",
-      "stars": 81,
-      "language": null,
-      "topic": "ai-agents",
-      "created_at": "2026-04-13T15:19:44Z"
-    },
-    {
-      "name": "idea-validation-agents",
-      "url": "https://github.com/MaxKmet/idea-validation-agents",
-      "description": "AI agents that act as your personal venture analyst - from startup idea brainstorming to full validation and go-to-market strategy. Built for developers who'd rather validate in 10 minutes than regret in six months. Powered by Claude Code, OpenAI Codex, and Cursor.",
-      "stars": 81,
-      "language": null,
-      "topic": "ai-agents",
-      "created_at": "2026-04-13T22:13:08Z"
-    },
-    {
-      "name": "london-property-hunt-public",
-      "url": "https://github.com/mikepapadim/london-property-hunt-public",
-      "description": "Automated London flat/room hunt powered by Claude Code + Claude in Chrome + Gmail MCP. Scrapes 4 rental platforms on a cron, deduplicates via spreadsheet, prioritises HIGH/MED/LOW, and emails ready-to-send outreach.",
-      "stars": 66,
-      "language": null,
-      "topic": "ai-agents",
-      "created_at": "2026-04-15T16:12:02Z"
-    },
-    {
-      "name": "anywhere-agents",
-      "url": "https://github.com/yzhao062/anywhere-agents",
-      "description": "One config to rule all your AI agents: portable (every project, every session), effective (curated writing, routing, skills), and safer (destructive-command guard).",
-      "stars": 64,
-      "language": "Python",
-      "topic": "ai-agents",
-      "created_at": "2026-04-16T17:44:59Z"
-    },
-    {
-      "name": "superseo-skills",
-      "url": "https://github.com/inhouseseo/superseo-skills",
-      "description": "11 Claude skills for SEO: page audits, linkbuilding, article writing, E-E-A-T audits, semantic gap analysis, link building. Methodology from Koray   Tuğberk, Kyle Roof, and Lily Ray, plus a generation-time anti-AI-slop ruleset. Production-tested at InhouseSEO",
-      "stars": 52,
-      "language": null,
-      "topic": "ai-agents",
-      "created_at": "2026-04-13T11:54:39Z"
-    },
-    {
-      "name": "asynkor",
-      "url": "https://github.com/asynkor/asynkor",
-      "description": "File leasing for AI agent teams. One MCP server. Any IDE. Zero merge conflicts.",
-      "stars": 33,
+      "name": "stash",
+      "url": "https://github.com/alash3al/stash",
+      "description": "Stash — persistent memory layer for AI agents. Episodes, facts, and working context stored in Postgres. MCP server included. Self-hosted, single binary, no cloud required.",
+      "stars": 299,
       "language": "Go",
       "topic": "ai-agents",
-      "created_at": "2026-04-13T08:39:20Z"
+      "created_at": "2026-04-24T22:05:12Z"
     },
     {
-      "name": "drupal-ai",
-      "url": "https://github.com/edutrul/drupal-ai",
-      "description": "Drupal AI skills, agents, rules, hooks, commands for claude, codex, etc.",
-      "stars": 31,
-      "language": "Shell",
+      "name": "OneResearchClaw",
+      "url": "https://github.com/gaotiexinqu/OneResearchClaw",
+      "description": "Any research. One Claw. 🦞 From any materials to research with fully autonomous & skill-driven researcher.",
+      "stars": 135,
+      "language": "Python",
       "topic": "ai-agents",
-      "created_at": "2026-04-15T15:40:49Z"
+      "created_at": "2026-04-20T08:39:50Z"
+    },
+    {
+      "name": "kiwifs",
+      "url": "https://github.com/kiwifs/kiwifs",
+      "description": "The knowledge server — PocketBase for knowledge. One Go binary, zero config.",
+      "stars": 122,
+      "language": "Go",
+      "topic": "ai-agents",
+      "created_at": "2026-04-22T04:27:55Z"
+    },
+    {
+      "name": "ctf-super-hub",
+      "url": "https://github.com/asdfgh1445/ctf-super-hub",
+      "description": " 面向小白用户的 CTF / 逆向 Skills 整合包：自动分流、头脑风暴、教学模式、比赛模式、只提示模式",
+      "stars": 109,
+      "language": "JavaScript",
+      "topic": "ai-agents",
+      "created_at": "2026-04-23T15:24:35Z"
+    },
+    {
+      "name": "intro-agentic-ai",
+      "url": "https://github.com/riverscn/intro-agentic-ai",
+      "description": "认识 Agentic AI：从神经网络到智能体",
+      "stars": 107,
+      "language": "Vue",
+      "topic": "ai-agents",
+      "created_at": "2026-04-21T08:03:14Z"
+    },
+    {
+      "name": "vlnr",
+      "url": "https://github.com/nandrzej/vlnr",
+      "description": "AI security agent for the Python supply chain: scans packages, generates exploits, and validates them in Docker, autonomously.",
+      "stars": 43,
+      "language": "Python",
+      "topic": "ai-agents",
+      "created_at": "2026-04-23T06:51:23Z"
+    },
+    {
+      "name": "agentodyssey",
+      "url": "https://github.com/agentodyssey/agentodyssey",
+      "description": "Open-Ended Long-Horizon Text Game Generation for Test-Time Continual Learning Agents",
+      "stars": 37,
+      "language": "Python",
+      "topic": "ai-agents",
+      "created_at": "2026-04-20T04:50:41Z"
     }
   ],
-  "last_update_check": "2026-04-20"
+  "last_update_check": "2026-04-27"
 }
