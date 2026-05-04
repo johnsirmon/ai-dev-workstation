@@ -101,15 +101,15 @@ GitHub’s docs outline editing `mcp.json` in the *Tools* panel.
 
 | Framework / Lib | Latest ver. | Killer features |
 |-----------------|------------|-----------------|
-|**CrewAI**|1.14.3 (Updated 2026-04-27)|Declarative YAML mission files, vector‑based memory, Agents → Roles → Tasks hierarchy. Fast multi-agent prototyping.|
-|**Microsoft Autogen**|0.7.5 (Updated 2026-04-27)|Event-driven multi-agent; human-in-the-loop support. Merging with Semantic Kernel into unified Microsoft Agent Framework (GA Q1 2026).|
-|**LangGraph**|1.1.9 (Updated 2026-04-27)|**Stable v1.0** reached Oct 2025. Graph‑style state machine orchestration; check-pointing, audit trails. Best for production compliance workloads.|
-|**Semantic Kernel**|1.41.2 (Updated 2026-04-27)|Enterprise Azure integration, planners, function-calling. Converging with AutoGen into unified Microsoft Agent Framework.|
-|**OpenAI Agents SDK**|0.14.6 (Updated 2026-04-27)|Official open-source SDK for orchestrating multi-agent workflows; supports handoffs, guardrails, tracing, and the new Responses API (replaces Assistants API by Aug 2026).|
+|**CrewAI**|1.14.4 (Updated 2026-05-04)|Declarative YAML mission files, vector‑based memory, Agents → Roles → Tasks hierarchy. Fast multi-agent prototyping.|
+|**Microsoft Autogen**|0.7.5 (Updated 2026-05-04)|Event-driven multi-agent; human-in-the-loop support. Merging with Semantic Kernel into unified Microsoft Agent Framework (GA Q1 2026).|
+|**LangGraph**|1.1.10 (Updated 2026-05-04)|**Stable v1.0** reached Oct 2025. Graph‑style state machine orchestration; check-pointing, audit trails. Best for production compliance workloads.|
+|**Semantic Kernel**|1.41.3 (Updated 2026-05-04)|Enterprise Azure integration, planners, function-calling. Converging with AutoGen into unified Microsoft Agent Framework.|
+|**OpenAI Agents SDK**|0.15.1 (Updated 2026-05-04)|Official open-source SDK for orchestrating multi-agent workflows; supports handoffs, guardrails, tracing, and the new Responses API (replaces Assistants API by Aug 2026).|
 |**smolagents** (HF)|1.24.0|Ultra-minimal Hugging Face agents; CodeAgent paradigm, sandboxed execution, model-agnostic. Great for research/lightweight use.|
-|**Agno**|2.6.1 (Updated 2026-04-27)|High-performance runtime for large-scale multi-agent systems; streaming, governance, approval workflows, and audit logs built in.|
-|**LlamaIndex**|0.14.21 (Updated 2026-04-27)|Data/knowledge-centric framework; excels at RAG workflows, document agents, and retrieval-augmented production pipelines.|
-|**Google ADK**|1.31.1 (Updated 2026-04-27)|Google’s Agent Development Kit with native A2A protocol support; deploy on Cloud Run, GKE, or Vertex AI.|
+|**Agno**|2.6.4 (Updated 2026-05-04)|High-performance runtime for large-scale multi-agent systems; streaming, governance, approval workflows, and audit logs built in.|
+|**LlamaIndex**|0.14.21 (Updated 2026-05-04)|Data/knowledge-centric framework; excels at RAG workflows, document agents, and retrieval-augmented production pipelines.|
+|**Google ADK**|1.32.0 (Updated 2026-05-04)|Google’s Agent Development Kit with native A2A protocol support; deploy on Cloud Run, GKE, or Vertex AI.|
 |**GPTScript Agents**|Bleeding‑edge|Script agents in 10 lines; great for Kubernetes ops.|
 
 ### Choosing the Right Framework
@@ -331,13 +331,12 @@ GITHUB_TOKEN=your_github_personal_access_token
 
 | Tool | Stars | Language | Use Case | Repository |
 |------|-------|----------|----------|------------|
-|**text-to-cad**|807|JavaScript|An open source harness for generating CAD models|[GitHub](https://github.com/earthtojake/text-to-cad)|
-|**harmonist**|708|Python|Portable AI agent orchestration with mechanical protocol enforcement. 186 agents, zero runtime depen...|[GitHub](https://github.com/GammaLabTechnologies/harmonist)|
-|**thClaws**|541|Rust|Open-source agent harness platform. Native Rust, multi-provider, runs on your own machine. Sovereign...|[GitHub](https://github.com/thClaws/thClaws)|
-|**stash**|299|Go|Stash — persistent memory layer for AI agents. Episodes, facts, and working context stored in Postgr...|[GitHub](https://github.com/alash3al/stash)|
-|**OneResearchClaw**|135|Python|Any research. One Claw. 🦞 From any materials to research with fully autonomous & skill-driven resear...|[GitHub](https://github.com/gaotiexinqu/OneResearchClaw)|
-|**kiwifs**|122|Go|The knowledge server — PocketBase for knowledge. One Go binary, zero config.|[GitHub](https://github.com/kiwifs/kiwifs)|
-|**ctf-super-hub**|109|JavaScript| 面向小白用户的 CTF / 逆向 Skills 整合包：自动分流、头脑风暴、教学模式、比赛模式、只提示模式|[GitHub](https://github.com/asdfgh1445/ctf-super-hub)|
-|**intro-agentic-ai**|107|Vue|认识 Agentic AI：从神经网络到智能体|[GitHub](https://github.com/riverscn/intro-agentic-ai)|
-|**vlnr**|43|Python|AI security agent for the Python supply chain: scans packages, generates exploits, and validates the...|[GitHub](https://github.com/nandrzej/vlnr)|
-|**agentodyssey**|37|Python|Open-Ended Long-Horizon Text Game Generation for Test-Time Continual Learning Agents|[GitHub](https://github.com/agentodyssey/agentodyssey)|
+|**open-design**|21519|TypeScript|🎨 Local-first, open-source alternative to Anthropic's Claude Design. ⚡ 19 Skills · ✨ 71 brand-grade ...|[GitHub](https://github.com/nexu-io/open-design)|
+|**composio**|206|TypeScript|typescript python sdk ai-agents anthropic openapi langchain openai-agents llamaindex mastra vercel-a...|[GitHub](https://github.com/warpdot-dev/composio)|
+|**craft-agents-oss**|138|TypeScript|electron anthropic claude-agent-sdk mcp bun websocket thin-client multi-llm openapi skills automatio...|[GitHub](https://github.com/warpdot-dev/craft-agents-oss)|
+|**agent-skills-in-practice**|58|N/A|Learn what AI skills are and how to design, structure, and use them in real-world agent systems.|[GitHub](https://github.com/elisaterumi-ai/agent-skills-in-practice)|
+|**counsel**|56|Python|An AI defense attorney for high-profile public disputes. Pick a side. Counsel builds the defense.|[GitHub](https://github.com/asdff342ae/counsel)|
+|**product-idea-excavator**|52|N/A|Open-source bilingual Claude Skill for product discovery interviews and high-quality PRDs.|[GitHub](https://github.com/derrickgong87/product-idea-excavator)|
+|**ai-agent-skills**|51|Python|AI agent skills for production grade applications|[GitHub](https://github.com/DevelopersGlobal/ai-agent-skills)|
+|**agent-safety-eval-lab**|49|Python|Agent trace and tool-use safety evaluation lab.|[GitHub](https://github.com/YutoTerashima/agent-safety-eval-lab)|
+|**brain**|48|Rust|Git-backed long-term memory for AI coding agents|[GitHub](https://github.com/codejunkie99/brain)|

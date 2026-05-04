@@ -2,8 +2,8 @@
   "tracked_tools": {
     "ai_frameworks": {
       "CrewAI": {
-        "current_version": "1.14.3",
-        "last_updated": "2026-04-27",
+        "current_version": "1.14.4",
+        "last_updated": "2026-05-04",
         "source": "https://github.com/crewAIInc/crewAI",
         "npm_package": null,
         "pypi_package": "crewai",
@@ -18,24 +18,24 @@
         "description": "Replay analytics, compliance hooks, VS Code debug adapter"
       },
       "LangGraph": {
-        "current_version": "1.1.9",
-        "last_updated": "2026-04-27",
+        "current_version": "1.1.10",
+        "last_updated": "2026-05-04",
         "source": "https://github.com/langchain-ai/langgraph",
         "npm_package": "@langchain/langgraph",
         "pypi_package": "langgraph",
         "description": "Graph-style state machine orchestration; v1.0 GA Oct 2025. Check-pointing, audit trails, production-grade compliance workloads."
       },
       "Semantic Kernel": {
-        "current_version": "1.41.2",
-        "last_updated": "2026-04-13",
+        "current_version": "1.41.3",
+        "last_updated": "2026-05-04",
         "source": "https://github.com/microsoft/semantic-kernel",
         "npm_package": "@microsoft/semantic-kernel",
         "pypi_package": "semantic-kernel",
         "description": "Process Framework (durable orchestration) + C#/Python parity"
       },
       "OpenAI Agents SDK": {
-        "current_version": "0.14.6",
-        "last_updated": "2026-04-27",
+        "current_version": "0.15.1",
+        "last_updated": "2026-05-04",
         "source": "https://github.com/openai/agents-python",
         "npm_package": null,
         "pypi_package": "openai-agents",
@@ -50,8 +50,8 @@
         "description": "Ultra-minimal Hugging Face agents; CodeAgent paradigm, sandboxed execution, model-agnostic"
       },
       "Agno": {
-        "current_version": "2.6.1",
-        "last_updated": "2026-04-27",
+        "current_version": "2.6.4",
+        "last_updated": "2026-05-04",
         "source": "https://github.com/agno-agi/agno",
         "npm_package": null,
         "pypi_package": "agno",
@@ -66,8 +66,8 @@
         "description": "Data/knowledge-centric framework; RAG workflows, document agents, retrieval-augmented production pipelines"
       },
       "Google ADK": {
-        "current_version": "1.31.1",
-        "last_updated": "2026-04-27",
+        "current_version": "1.32.0",
+        "last_updated": "2026-05-04",
         "source": "https://github.com/google/genai-toolbox",
         "npm_package": null,
         "pypi_package": "google-adk",
@@ -76,8 +76,8 @@
     },
     "mcp_servers": {
       "@upstash/context7-mcp": {
-        "current_version": "@upstash/context7-mcp@2.2.0",
-        "last_updated": "2026-04-27",
+        "current_version": "@upstash/context7-mcp@2.2.3",
+        "last_updated": "2026-05-04",
         "source": "https://github.com/upstash/context7-mcp",
         "description": "Enhanced context management for AI agents"
       },
@@ -221,95 +221,86 @@
   },
   "trending_tools": [
     {
-      "name": "text-to-cad",
-      "url": "https://github.com/earthtojake/text-to-cad",
-      "description": "An open source harness for generating CAD models",
-      "stars": 807,
-      "language": "JavaScript",
+      "name": "open-design",
+      "url": "https://github.com/nexu-io/open-design",
+      "description": "🎨 Local-first, open-source alternative to Anthropic's Claude Design. ⚡ 19 Skills · ✨ 71 brand-grade Design Systems 🖼 Generate web · desktop · mobile prototypes · slides · images · videos · HyperFrames 📦 Sandboxed preview · HTML/PDF/PPTX/MP4 export 🤖 Runs on Claude Code / Codex / Cursor / Gemini / OpenCode / Qwen / Copilot / Hermes / Kimi CLI.",
+      "stars": 21519,
+      "language": "TypeScript",
       "topic": "ai-agents",
-      "created_at": "2026-04-22T01:09:45Z"
+      "created_at": "2026-04-28T04:25:20Z"
     },
     {
-      "name": "harmonist",
-      "url": "https://github.com/GammaLabTechnologies/harmonist",
-      "description": "Portable AI agent orchestration with mechanical protocol enforcement. 186 agents, zero runtime dependencies.",
-      "stars": 708,
+      "name": "composio",
+      "url": "https://github.com/warpdot-dev/composio",
+      "description": "typescript python sdk ai-agents anthropic openapi langchain openai-agents llamaindex mastra vercel-ai mcp oauth saas llm integrations agent-tools automation cloudflare google-gemini tooling rag multi-provider developer-sdk composable-actions webhook-triggers",
+      "stars": 206,
+      "language": "TypeScript",
+      "topic": "ai-agents",
+      "created_at": "2026-05-01T07:19:17Z"
+    },
+    {
+      "name": "craft-agents-oss",
+      "url": "https://github.com/warpdot-dev/craft-agents-oss",
+      "description": "electron anthropic claude-agent-sdk mcp bun websocket thin-client multi-llm openapi skills automations oauth desktop-ai github-copilot google-ai chatgpt devtools apache-2 headless-server pi-sdk vscode-alternative linux macos windows",
+      "stars": 138,
+      "language": "TypeScript",
+      "topic": "ai-agents",
+      "created_at": "2026-05-01T07:19:21Z"
+    },
+    {
+      "name": "agent-skills-in-practice",
+      "url": "https://github.com/elisaterumi-ai/agent-skills-in-practice",
+      "description": "Learn what AI skills are and how to design, structure, and use them in real-world agent systems.",
+      "stars": 58,
+      "language": null,
+      "topic": "ai-agents",
+      "created_at": "2026-04-27T14:29:45Z"
+    },
+    {
+      "name": "counsel",
+      "url": "https://github.com/asdff342ae/counsel",
+      "description": "An AI defense attorney for high-profile public disputes. Pick a side. Counsel builds the defense.",
+      "stars": 56,
       "language": "Python",
       "topic": "ai-agents",
-      "created_at": "2026-04-23T05:42:29Z"
+      "created_at": "2026-04-28T01:26:25Z"
     },
     {
-      "name": "thClaws",
-      "url": "https://github.com/thClaws/thClaws",
-      "description": "Open-source agent harness platform. Native Rust, multi-provider, runs on your own machine. Sovereign by design.",
-      "stars": 541,
+      "name": "product-idea-excavator",
+      "url": "https://github.com/derrickgong87/product-idea-excavator",
+      "description": "Open-source bilingual Claude Skill for product discovery interviews and high-quality PRDs.",
+      "stars": 52,
+      "language": null,
+      "topic": "ai-agents",
+      "created_at": "2026-04-28T16:21:11Z"
+    },
+    {
+      "name": "ai-agent-skills",
+      "url": "https://github.com/DevelopersGlobal/ai-agent-skills",
+      "description": "AI agent skills for production grade applications",
+      "stars": 51,
+      "language": "Python",
+      "topic": "ai-agents",
+      "created_at": "2026-05-01T09:27:28Z"
+    },
+    {
+      "name": "agent-safety-eval-lab",
+      "url": "https://github.com/YutoTerashima/agent-safety-eval-lab",
+      "description": "Agent trace and tool-use safety evaluation lab.",
+      "stars": 49,
+      "language": "Python",
+      "topic": "ai-agents",
+      "created_at": "2026-05-01T18:32:15Z"
+    },
+    {
+      "name": "brain",
+      "url": "https://github.com/codejunkie99/brain",
+      "description": "Git-backed long-term memory for AI coding agents",
+      "stars": 48,
       "language": "Rust",
       "topic": "ai-agents",
-      "created_at": "2026-04-20T01:27:39Z"
-    },
-    {
-      "name": "stash",
-      "url": "https://github.com/alash3al/stash",
-      "description": "Stash — persistent memory layer for AI agents. Episodes, facts, and working context stored in Postgres. MCP server included. Self-hosted, single binary, no cloud required.",
-      "stars": 299,
-      "language": "Go",
-      "topic": "ai-agents",
-      "created_at": "2026-04-24T22:05:12Z"
-    },
-    {
-      "name": "OneResearchClaw",
-      "url": "https://github.com/gaotiexinqu/OneResearchClaw",
-      "description": "Any research. One Claw. 🦞 From any materials to research with fully autonomous & skill-driven researcher.",
-      "stars": 135,
-      "language": "Python",
-      "topic": "ai-agents",
-      "created_at": "2026-04-20T08:39:50Z"
-    },
-    {
-      "name": "kiwifs",
-      "url": "https://github.com/kiwifs/kiwifs",
-      "description": "The knowledge server — PocketBase for knowledge. One Go binary, zero config.",
-      "stars": 122,
-      "language": "Go",
-      "topic": "ai-agents",
-      "created_at": "2026-04-22T04:27:55Z"
-    },
-    {
-      "name": "ctf-super-hub",
-      "url": "https://github.com/asdfgh1445/ctf-super-hub",
-      "description": " 面向小白用户的 CTF / 逆向 Skills 整合包：自动分流、头脑风暴、教学模式、比赛模式、只提示模式",
-      "stars": 109,
-      "language": "JavaScript",
-      "topic": "ai-agents",
-      "created_at": "2026-04-23T15:24:35Z"
-    },
-    {
-      "name": "intro-agentic-ai",
-      "url": "https://github.com/riverscn/intro-agentic-ai",
-      "description": "认识 Agentic AI：从神经网络到智能体",
-      "stars": 107,
-      "language": "Vue",
-      "topic": "ai-agents",
-      "created_at": "2026-04-21T08:03:14Z"
-    },
-    {
-      "name": "vlnr",
-      "url": "https://github.com/nandrzej/vlnr",
-      "description": "AI security agent for the Python supply chain: scans packages, generates exploits, and validates them in Docker, autonomously.",
-      "stars": 43,
-      "language": "Python",
-      "topic": "ai-agents",
-      "created_at": "2026-04-23T06:51:23Z"
-    },
-    {
-      "name": "agentodyssey",
-      "url": "https://github.com/agentodyssey/agentodyssey",
-      "description": "Open-Ended Long-Horizon Text Game Generation for Test-Time Continual Learning Agents",
-      "stars": 37,
-      "language": "Python",
-      "topic": "ai-agents",
-      "created_at": "2026-04-20T04:50:41Z"
+      "created_at": "2026-04-27T11:01:58Z"
     }
   ],
-  "last_update_check": "2026-04-27"
+  "last_update_check": "2026-05-04"
 }
