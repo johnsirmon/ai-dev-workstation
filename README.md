@@ -101,15 +101,15 @@ GitHub’s docs outline editing `mcp.json` in the *Tools* panel.
 
 | Framework / Lib | Latest ver. | Killer features |
 |-----------------|------------|-----------------|
-|**CrewAI**|1.14.4 (Updated 2026-05-11)|Declarative YAML mission files, vector‑based memory, Agents → Roles → Tasks hierarchy. Fast multi-agent prototyping.|
-|**Microsoft Autogen**|0.7.5 (Updated 2026-05-11)|Event-driven multi-agent; human-in-the-loop support. Merging with Semantic Kernel into unified Microsoft Agent Framework (GA Q1 2026).|
-|**LangGraph**|1.1.10 (Updated 2026-05-11)|**Stable v1.0** reached Oct 2025. Graph‑style state machine orchestration; check-pointing, audit trails. Best for production compliance workloads.|
-|**Semantic Kernel**|1.41.3 (Updated 2026-05-11)|Enterprise Azure integration, planners, function-calling. Converging with AutoGen into unified Microsoft Agent Framework.|
-|**OpenAI Agents SDK**|0.17.1 (Updated 2026-05-11)|Official open-source SDK for orchestrating multi-agent workflows; supports handoffs, guardrails, tracing, and the new Responses API (replaces Assistants API by Aug 2026).|
+|**CrewAI**|1.14.4 (Updated 2026-05-18)|Declarative YAML mission files, vector‑based memory, Agents → Roles → Tasks hierarchy. Fast multi-agent prototyping.|
+|**Microsoft Autogen**|0.7.5 (Updated 2026-05-18)|Event-driven multi-agent; human-in-the-loop support. Merging with Semantic Kernel into unified Microsoft Agent Framework (GA Q1 2026).|
+|**LangGraph**|1.2.0 (Updated 2026-05-18)|**Stable v1.0** reached Oct 2025. Graph‑style state machine orchestration; check-pointing, audit trails. Best for production compliance workloads.|
+|**Semantic Kernel**|1.42.0 (Updated 2026-05-18)|Enterprise Azure integration, planners, function-calling. Converging with AutoGen into unified Microsoft Agent Framework.|
+|**OpenAI Agents SDK**|0.17.2 (Updated 2026-05-18)|Official open-source SDK for orchestrating multi-agent workflows; supports handoffs, guardrails, tracing, and the new Responses API (replaces Assistants API by Aug 2026).|
 |**smolagents** (HF)|1.24.0|Ultra-minimal Hugging Face agents; CodeAgent paradigm, sandboxed execution, model-agnostic. Great for research/lightweight use.|
-|**Agno**|2.6.5 (Updated 2026-05-11)|High-performance runtime for large-scale multi-agent systems; streaming, governance, approval workflows, and audit logs built in.|
-|**LlamaIndex**|0.14.21 (Updated 2026-05-11)|Data/knowledge-centric framework; excels at RAG workflows, document agents, and retrieval-augmented production pipelines.|
-|**Google ADK**|1.33.0 (Updated 2026-05-11)|Google’s Agent Development Kit with native A2A protocol support; deploy on Cloud Run, GKE, or Vertex AI.|
+|**Agno**|2.6.7 (Updated 2026-05-18)|High-performance runtime for large-scale multi-agent systems; streaming, governance, approval workflows, and audit logs built in.|
+|**LlamaIndex**|0.14.22 (Updated 2026-05-18)|Data/knowledge-centric framework; excels at RAG workflows, document agents, and retrieval-augmented production pipelines.|
+|**Google ADK**|1.33.0 (Updated 2026-05-18)|Google’s Agent Development Kit with native A2A protocol support; deploy on Cloud Run, GKE, or Vertex AI.|
 |**GPTScript Agents**|Bleeding‑edge|Script agents in 10 lines; great for Kubernetes ops.|
 
 ### Choosing the Right Framework
@@ -331,12 +331,13 @@ GITHUB_TOKEN=your_github_personal_access_token
 
 | Tool | Stars | Language | Use Case | Repository |
 |------|-------|----------|----------|------------|
-|**open-design**|21519|TypeScript|🎨 Local-first, open-source alternative to Anthropic's Claude Design. ⚡ 19 Skills · ✨ 71 brand-grade ...|[GitHub](https://github.com/nexu-io/open-design)|
-|**composio**|206|TypeScript|typescript python sdk ai-agents anthropic openapi langchain openai-agents llamaindex mastra vercel-a...|[GitHub](https://github.com/warpdot-dev/composio)|
-|**craft-agents-oss**|138|TypeScript|electron anthropic claude-agent-sdk mcp bun websocket thin-client multi-llm openapi skills automatio...|[GitHub](https://github.com/warpdot-dev/craft-agents-oss)|
-|**agent-skills-in-practice**|58|N/A|Learn what AI skills are and how to design, structure, and use them in real-world agent systems.|[GitHub](https://github.com/elisaterumi-ai/agent-skills-in-practice)|
-|**counsel**|56|Python|An AI defense attorney for high-profile public disputes. Pick a side. Counsel builds the defense.|[GitHub](https://github.com/asdff342ae/counsel)|
-|**product-idea-excavator**|52|N/A|Open-source bilingual Claude Skill for product discovery interviews and high-quality PRDs.|[GitHub](https://github.com/derrickgong87/product-idea-excavator)|
-|**ai-agent-skills**|51|Python|AI agent skills for production grade applications|[GitHub](https://github.com/DevelopersGlobal/ai-agent-skills)|
-|**agent-safety-eval-lab**|49|Python|Agent trace and tool-use safety evaluation lab.|[GitHub](https://github.com/YutoTerashima/agent-safety-eval-lab)|
-|**brain**|48|Rust|Git-backed long-term memory for AI coding agents|[GitHub](https://github.com/codejunkie99/brain)|
+|**html-anything**|3085|HTML|✨ The agentic HTML editor — your local AI agent writes the HTML, you ship it. 🚀 75 Skills × 9 Surfac...|[GitHub](https://github.com/nexu-io/html-anything)|
+|**agents-best-practices**|781|N/A|Provider-neutral Agent Skill for Codex, Claude Code, and agentic harness design.|[GitHub](https://github.com/DenisSergeevitch/agents-best-practices)|
+|**harmonist-orchestral**|421|N/A|🚀 Multi-Agent Orchestration Engine 2026 – Build & Deploy AI Swarms with Claude Code|[GitHub](https://github.com/2508965-ship-it/harmonist-orchestral)|
+|**forkd**|340|Rust|Fork microVMs sandbox from a warmed parent in 101 ms.|[GitHub](https://github.com/deeplethe/forkd)|
+|**hermes-agent-control-room**|303|Shell|Control Room-first template for managing Hermes agents from one VPS agent to specialist teams and or...|[GitHub](https://github.com/shannhk/hermes-agent-control-room)|
+|**pgGraph**|227|Rust|Open-source graph database superpowers for your existing Postgres data.|[GitHub](https://github.com/Evokoa/pgGraph)|
+|**lab-rat-race**|185|N/A|AI Multi-Agent Market Lab 2026 - Auto-Research & Experiment Manager 🧪🤖|[GitHub](https://github.com/johnicassere/lab-rat-race)|
+|**shushu-internship-tool**|144|Python|把岗位描述变项目，把项目变简历，把简历变面试。|[GitHub](https://github.com/LiuMengxuan04/shushu-internship-tool)|
+|**google-ai-search-optimization**|88|N/A|Unofficial Agent Skill based on Google Search guidance for AI Overviews, AI Mode, and SEO audits.|[GitHub](https://github.com/deepakness/google-ai-search-optimization)|
+|**jupyter-studio**|49|TypeScript|The AI-native JupyterLab — open-source Cursor for notebooks. Cmd+K inline edit, multi-step agent wit...|[GitHub](https://github.com/deepelementlab/jupyter-studio)|
