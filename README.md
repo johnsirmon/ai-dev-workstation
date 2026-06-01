@@ -101,15 +101,15 @@ GitHub’s docs outline editing `mcp.json` in the *Tools* panel.
 
 | Framework / Lib | Latest ver. | Killer features |
 |-----------------|------------|-----------------|
-|**CrewAI**|1.14.5 (Updated 2026-05-25)|Declarative YAML mission files, vector‑based memory, Agents → Roles → Tasks hierarchy. Fast multi-agent prototyping.|
-|**Microsoft Autogen**|0.7.5 (Updated 2026-05-25)|Event-driven multi-agent; human-in-the-loop support. Merging with Semantic Kernel into unified Microsoft Agent Framework (GA Q1 2026).|
-|**LangGraph**|1.2.1 (Updated 2026-05-25)|**Stable v1.0** reached Oct 2025. Graph‑style state machine orchestration; check-pointing, audit trails. Best for production compliance workloads.|
-|**Semantic Kernel**|1.42.0 (Updated 2026-05-25)|Enterprise Azure integration, planners, function-calling. Converging with AutoGen into unified Microsoft Agent Framework.|
-|**OpenAI Agents SDK**|0.17.3 (Updated 2026-05-25)|Official open-source SDK for orchestrating multi-agent workflows; supports handoffs, guardrails, tracing, and the new Responses API (replaces Assistants API by Aug 2026).|
+|**CrewAI**|1.14.6 (Updated 2026-06-01)|Declarative YAML mission files, vector‑based memory, Agents → Roles → Tasks hierarchy. Fast multi-agent prototyping.|
+|**Microsoft Autogen**|0.7.5 (Updated 2026-06-01)|Event-driven multi-agent; human-in-the-loop support. Merging with Semantic Kernel into unified Microsoft Agent Framework (GA Q1 2026).|
+|**LangGraph**|1.2.2 (Updated 2026-06-01)|**Stable v1.0** reached Oct 2025. Graph‑style state machine orchestration; check-pointing, audit trails. Best for production compliance workloads.|
+|**Semantic Kernel**|1.42.0 (Updated 2026-06-01)|Enterprise Azure integration, planners, function-calling. Converging with AutoGen into unified Microsoft Agent Framework.|
+|**OpenAI Agents SDK**|0.17.4 (Updated 2026-06-01)|Official open-source SDK for orchestrating multi-agent workflows; supports handoffs, guardrails, tracing, and the new Responses API (replaces Assistants API by Aug 2026).|
 |**smolagents** (HF)|1.24.0|Ultra-minimal Hugging Face agents; CodeAgent paradigm, sandboxed execution, model-agnostic. Great for research/lightweight use.|
-|**Agno**|2.6.9 (Updated 2026-05-25)|High-performance runtime for large-scale multi-agent systems; streaming, governance, approval workflows, and audit logs built in.|
-|**LlamaIndex**|0.14.22 (Updated 2026-05-25)|Data/knowledge-centric framework; excels at RAG workflows, document agents, and retrieval-augmented production pipelines.|
-|**Google ADK**|2.1.0 (Updated 2026-05-25)|Google’s Agent Development Kit with native A2A protocol support; deploy on Cloud Run, GKE, or Vertex AI.|
+|**Agno**|2.6.9 (Updated 2026-06-01)|High-performance runtime for large-scale multi-agent systems; streaming, governance, approval workflows, and audit logs built in.|
+|**LlamaIndex**|0.14.22 (Updated 2026-06-01)|Data/knowledge-centric framework; excels at RAG workflows, document agents, and retrieval-augmented production pipelines.|
+|**Google ADK**|2.1.0 (Updated 2026-06-01)|Google’s Agent Development Kit with native A2A protocol support; deploy on Cloud Run, GKE, or Vertex AI.|
 |**GPTScript Agents**|Bleeding‑edge|Script agents in 10 lines; great for Kubernetes ops.|
 
 ### Choosing the Right Framework
@@ -331,13 +331,13 @@ GITHUB_TOKEN=your_github_personal_access_token
 
 | Tool | Stars | Language | Use Case | Repository |
 |------|-------|----------|----------|------------|
-|**html-anything**|3085|HTML|✨ The agentic HTML editor — your local AI agent writes the HTML, you ship it. 🚀 75 Skills × 9 Surfac...|[GitHub](https://github.com/nexu-io/html-anything)|
-|**agents-best-practices**|781|N/A|Provider-neutral Agent Skill for Codex, Claude Code, and agentic harness design.|[GitHub](https://github.com/DenisSergeevitch/agents-best-practices)|
-|**harmonist-orchestral**|421|N/A|🚀 Multi-Agent Orchestration Engine 2026 – Build & Deploy AI Swarms with Claude Code|[GitHub](https://github.com/2508965-ship-it/harmonist-orchestral)|
-|**forkd**|340|Rust|Fork microVMs sandbox from a warmed parent in 101 ms.|[GitHub](https://github.com/deeplethe/forkd)|
-|**hermes-agent-control-room**|303|Shell|Control Room-first template for managing Hermes agents from one VPS agent to specialist teams and or...|[GitHub](https://github.com/shannhk/hermes-agent-control-room)|
-|**pgGraph**|227|Rust|Open-source graph database superpowers for your existing Postgres data.|[GitHub](https://github.com/Evokoa/pgGraph)|
-|**lab-rat-race**|185|N/A|AI Multi-Agent Market Lab 2026 - Auto-Research & Experiment Manager 🧪🤖|[GitHub](https://github.com/johnicassere/lab-rat-race)|
-|**shushu-internship-tool**|144|Python|把岗位描述变项目，把项目变简历，把简历变面试。|[GitHub](https://github.com/LiuMengxuan04/shushu-internship-tool)|
-|**google-ai-search-optimization**|88|N/A|Unofficial Agent Skill based on Google Search guidance for AI Overviews, AI Mode, and SEO audits.|[GitHub](https://github.com/deepakness/google-ai-search-optimization)|
-|**jupyter-studio**|49|TypeScript|The AI-native JupyterLab — open-source Cursor for notebooks. Cmd+K inline edit, multi-step agent wit...|[GitHub](https://github.com/deepelementlab/jupyter-studio)|
+|**vibecode-pro-max-kit**|695|JavaScript|Your AI forgets. This remembers. Spec-driven coding harness for vibecoders, product owners, CEOs and...|[GitHub](https://github.com/withkynam/vibecode-pro-max-kit)|
+|**adhd**|675|TypeScript|ADHD — a skill for coding agents. Tree-of-thought with pruning, built on the Claude & Codex Agent SD...|[GitHub](https://github.com/UditAkhourii/adhd)|
+|**Duel-Agents**|620|TypeScript|CLI, SDK, and IDE plugins for Duel Agents|[GitHub](https://github.com/2aronS/Duel-Agents)|
+|**lazycodex**|249|TypeScript|LazyCodex: Codex for no-brainers. You don't need to think. Just prompt with ultrawork.|[GitHub](https://github.com/code-yeongyu/lazycodex)|
+|**ai-detector-skill**|190|Python| A free detector capable of identifying content generated by all advanced AI models.|[GitHub](https://github.com/lynote-ai/ai-detector-skill)|
+|**ShardBrowser**|166|TypeScript|Free, open-source anti-detect browser launcher for web scraping and multi-accounting. By the ProxySh...|[GitHub](https://github.com/ProxyShard/ShardBrowser)|
+|**gbase**|103|Python|GBase — Recursive Self-Improvement Agent Framework. Memory, evolution, quality gates, identity syste...|[GitHub](https://github.com/garyqlin/gbase)|
+|**pmb**|66|Python|Local-first persistent memory for AI coding agents (Claude Code, Cursor, Codex) via MCP. 94.5% LoCoM...|[GitHub](https://github.com/oleksiijko/pmb)|
+|**simulacra**|59|N/A|Ghost personas review your code before it ships. Find edge cases, race conditions, and business logi...|[GitHub](https://github.com/mturac/simulacra)|
+|**website-feedback-widget**|58|TypeScript|📬 Drop-in feedback widget for websites & apps. Turn submissions into structured email & webhook data...|[GitHub](https://github.com/Sendmux/website-feedback-widget)|
