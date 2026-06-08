@@ -18,16 +18,16 @@
         "description": "Replay analytics, compliance hooks, VS Code debug adapter"
       },
       "LangGraph": {
-        "current_version": "1.2.2",
-        "last_updated": "2026-06-01",
+        "current_version": "1.2.4",
+        "last_updated": "2026-06-08",
         "source": "https://github.com/langchain-ai/langgraph",
         "npm_package": "@langchain/langgraph",
         "pypi_package": "langgraph",
         "description": "Graph-style state machine orchestration; v1.0 GA Oct 2025. Check-pointing, audit trails, production-grade compliance workloads."
       },
       "Semantic Kernel": {
-        "current_version": "1.42.0",
-        "last_updated": "2026-05-18",
+        "current_version": "1.43.0",
+        "last_updated": "2026-06-08",
         "source": "https://github.com/microsoft/semantic-kernel",
         "npm_package": "@microsoft/semantic-kernel",
         "pypi_package": "semantic-kernel",
@@ -50,8 +50,8 @@
         "description": "Ultra-minimal Hugging Face agents; CodeAgent paradigm, sandboxed execution, model-agnostic"
       },
       "Agno": {
-        "current_version": "2.6.9",
-        "last_updated": "2026-05-25",
+        "current_version": "2.6.12",
+        "last_updated": "2026-06-08",
         "source": "https://github.com/agno-agi/agno",
         "npm_package": null,
         "pypi_package": "agno",
@@ -66,8 +66,8 @@
         "description": "Data/knowledge-centric framework; RAG workflows, document agents, retrieval-augmented production pipelines"
       },
       "Google ADK": {
-        "current_version": "2.1.0",
-        "last_updated": "2026-05-25",
+        "current_version": "2.2.0",
+        "last_updated": "2026-06-08",
         "source": "https://github.com/google/genai-toolbox",
         "npm_package": null,
         "pypi_package": "google-adk",
@@ -76,8 +76,8 @@
     },
     "mcp_servers": {
       "@upstash/context7-mcp": {
-        "current_version": "@upstash/context7-mcp@3.1.0",
-        "last_updated": "2026-06-01",
+        "current_version": "ctx7@0.5.1",
+        "last_updated": "2026-06-08",
         "source": "https://github.com/upstash/context7-mcp",
         "description": "Enhanced context management for AI agents"
       },
@@ -221,113 +221,86 @@
   },
   "trending_tools": [
     {
-      "name": "vibecode-pro-max-kit",
-      "url": "https://github.com/withkynam/vibecode-pro-max-kit",
-      "description": "Your AI forgets. This remembers. Spec-driven coding harness for vibecoders, product owners, CEOs and real builders — self-improving context memory, 12 agents, 32 skills. Kills context rot, ships features, not spaghetti. Claude Code & Codex. Any stack. 30 seconds",
-      "stars": 695,
+      "name": "good-question",
+      "url": "https://github.com/Rimagination/good-question",
+      "description": "A portable agent skill for sharpening research questions.",
+      "stars": 104,
+      "language": "PowerShell",
+      "topic": "ai-agents",
+      "created_at": "2026-06-01T08:48:11Z"
+    },
+    {
+      "name": "forsy-trace-skill",
+      "url": "https://github.com/Forsy-AI/forsy-trace-skill",
+      "description": "Open skill for capturing AI agent work as structured traces.",
+      "stars": 102,
+      "language": "Python",
+      "topic": "ai-agents",
+      "created_at": "2026-06-05T08:31:53Z"
+    },
+    {
+      "name": "paperjury",
+      "url": "https://github.com/u7079256/paperjury",
+      "description": "Pre-submission AI review stress-test for research papers. A Claude Code skill: review, verdict, revise, verify.",
+      "stars": 95,
       "language": "JavaScript",
       "topic": "ai-agents",
-      "created_at": "2026-05-27T05:46:25Z"
+      "created_at": "2026-06-02T06:45:10Z"
     },
     {
-      "name": "adhd",
-      "url": "https://github.com/UditAkhourii/adhd",
-      "description": "ADHD — a skill for coding agents. Tree-of-thought with pruning, built on the Claude & Codex Agent SDK. Fans out parallel divergent thoughts under different cognitive frames, scores, prunes traps, deepens the survivors. The no-brainer skill for creative and interdisciplinary work.",
-      "stars": 675,
-      "language": "TypeScript",
+      "name": "hermes-link-curator",
+      "url": "https://github.com/dodo-reach/hermes-link-curator",
+      "description": "Hermes profile pack for archiving and browsing curated links + web dashboard app",
+      "stars": 70,
+      "language": "HTML",
       "topic": "ai-agents",
-      "created_at": "2026-05-25T11:06:35Z"
+      "created_at": "2026-06-05T09:36:50Z"
     },
     {
-      "name": "Duel-Agents",
-      "url": "https://github.com/2aronS/Duel-Agents",
-      "description": "CLI, SDK, and IDE plugins for Duel Agents",
-      "stars": 620,
-      "language": "TypeScript",
-      "topic": "ai-agents",
-      "created_at": "2026-05-28T10:45:44Z"
-    },
-    {
-      "name": "lazycodex",
-      "url": "https://github.com/code-yeongyu/lazycodex",
-      "description": "LazyCodex: Codex for no-brainers. You don't need to think. Just prompt with ultrawork.",
-      "stars": 249,
-      "language": "TypeScript",
-      "topic": "ai-agents",
-      "created_at": "2026-05-25T07:56:45Z"
-    },
-    {
-      "name": "ai-detector-skill",
-      "url": "https://github.com/lynote-ai/ai-detector-skill",
-      "description": " A free detector capable of identifying content generated by all advanced AI models.",
-      "stars": 190,
+      "name": "kimiko",
+      "url": "https://github.com/spearchucker667/kimiko",
+      "description": "Bypass all api restraints within Kimi-CLI",
+      "stars": 69,
       "language": "Python",
       "topic": "ai-agents",
-      "created_at": "2026-05-25T13:55:03Z"
+      "created_at": "2026-06-01T08:27:16Z"
     },
     {
-      "name": "ShardBrowser",
-      "url": "https://github.com/ProxyShard/ShardBrowser",
-      "description": "Free, open-source anti-detect browser launcher for web scraping and multi-accounting. By the ProxyShard team. Engine-level fingerprint spoofing in Chromium 148 (WebGL / WebGPU / Client Hints / fonts / TLS), 170+ device profiles bundled, stable QUIC + WebRTC over SOCKS5.",
-      "stars": 166,
-      "language": "TypeScript",
+      "name": "pi-infobar",
+      "url": "https://github.com/phun333/pi-infobar",
+      "description": "Native macOS (menu bar) & Windows (system tray) dashboard for Pi agent usage, cost, languages, models, projects & tokens. Local-first, optional SSH sync.",
+      "stars": 58,
+      "language": "C#",
       "topic": "ai-agents",
-      "created_at": "2026-05-30T23:05:14Z"
+      "created_at": "2026-06-05T07:42:20Z"
     },
     {
-      "name": "gbase",
-      "url": "https://github.com/garyqlin/gbase",
-      "description": "GBase — Recursive Self-Improvement Agent Framework. Memory, evolution, quality gates, identity system, and 40+ auto-registered tools.",
-      "stars": 103,
-      "language": "Python",
-      "topic": "ai-agents",
-      "created_at": "2026-05-25T02:55:26Z"
-    },
-    {
-      "name": "pmb",
-      "url": "https://github.com/oleksiijko/pmb",
-      "description": "Local-first persistent memory for AI coding agents (Claude Code, Cursor, Codex) via MCP. 94.5% LoCoMo recall@10, 70ms p50, multilingual, zero API keys.",
-      "stars": 66,
-      "language": "Python",
-      "topic": "ai-agents",
-      "created_at": "2026-05-25T00:05:59Z"
-    },
-    {
-      "name": "simulacra",
-      "url": "https://github.com/mturac/simulacra",
-      "description": "Ghost personas review your code before it ships. Find edge cases, race conditions, and business logic bugs before production.",
-      "stars": 59,
+      "name": "scientific-agents",
+      "url": "https://github.com/K-Dense-AI/scientific-agents",
+      "description": "Expert-thinking AGENTS.md profiles that teach AI agents to reason like senior scientists and engineers.",
+      "stars": 50,
       "language": null,
       "topic": "ai-agents",
-      "created_at": "2026-05-26T16:23:15Z"
+      "created_at": "2026-06-03T02:43:24Z"
     },
     {
-      "name": "website-feedback-widget",
-      "url": "https://github.com/Sendmux/website-feedback-widget",
-      "description": "📬 Drop-in feedback widget for websites & apps. Turn submissions into structured email & webhook data for AI agents. Framework-agnostic Web Component. Accessible, customisable, zero deps.",
-      "stars": 58,
-      "language": "TypeScript",
+      "name": "omnistack-agent",
+      "url": "https://github.com/Ricar66/omnistack-agent",
+      "description": "Platform-agnostic AI agent: one Full-Stack Software Engineer brain, compiled into ready-to-paste adapters for ChatGPT, Claude, Copilot, Gemini & Cursor. Zero-dependency, MIT.",
+      "stars": 49,
+      "language": "JavaScript",
       "topic": "ai-agents",
-      "created_at": "2026-05-25T06:09:24Z"
+      "created_at": "2026-06-03T18:25:02Z"
     },
     {
-      "name": "DocPaws",
-      "url": "https://github.com/biao994/DocPaws",
-      "description": "工程化 RAG 文档助手：知识库、PDF 索引、Agent 工具编排、scope 检索、引用溯源与拒答阈值。FastAPI + Vue3",
-      "stars": 60,
-      "language": "Python",
-      "topic": "langchain",
-      "created_at": "2026-05-26T07:45:13Z"
-    },
-    {
-      "name": "predikit",
-      "url": "https://github.com/Tejas-TA/predikit",
-      "description": "The missing bridge between your ML models and your AI agents.",
-      "stars": 37,
-      "language": "Python",
-      "topic": "langchain",
-      "created_at": "2026-05-25T20:26:22Z"
+      "name": "dox",
+      "url": "https://github.com/agent0ai/dox",
+      "description": "Self-documenting AGENTS.md",
+      "stars": 41,
+      "language": null,
+      "topic": "ai-agents",
+      "created_at": "2026-06-01T08:25:21Z"
     }
   ],
-  "last_update_check": "2026-06-01"
+  "last_update_check": "2026-06-08"
 }
