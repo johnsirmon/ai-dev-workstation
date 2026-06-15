@@ -2,8 +2,8 @@
   "tracked_tools": {
     "ai_frameworks": {
       "CrewAI": {
-        "current_version": "1.14.6",
-        "last_updated": "2026-06-01",
+        "current_version": "1.14.7",
+        "last_updated": "2026-06-15",
         "source": "https://github.com/crewAIInc/crewAI",
         "npm_package": null,
         "pypi_package": "crewai",
@@ -18,8 +18,8 @@
         "description": "Replay analytics, compliance hooks, VS Code debug adapter"
       },
       "LangGraph": {
-        "current_version": "1.2.4",
-        "last_updated": "2026-06-08",
+        "current_version": "1.2.5",
+        "last_updated": "2026-06-15",
         "source": "https://github.com/langchain-ai/langgraph",
         "npm_package": "@langchain/langgraph",
         "pypi_package": "langgraph",
@@ -34,8 +34,8 @@
         "description": "Process Framework (durable orchestration) + C#/Python parity"
       },
       "OpenAI Agents SDK": {
-        "current_version": "0.17.4",
-        "last_updated": "2026-06-01",
+        "current_version": "0.17.5",
+        "last_updated": "2026-06-15",
         "source": "https://github.com/openai/agents-python",
         "npm_package": null,
         "pypi_package": "openai-agents",
@@ -50,8 +50,8 @@
         "description": "Ultra-minimal Hugging Face agents; CodeAgent paradigm, sandboxed execution, model-agnostic"
       },
       "Agno": {
-        "current_version": "2.6.12",
-        "last_updated": "2026-06-08",
+        "current_version": "2.6.14",
+        "last_updated": "2026-06-15",
         "source": "https://github.com/agno-agi/agno",
         "npm_package": null,
         "pypi_package": "agno",
@@ -76,8 +76,8 @@
     },
     "mcp_servers": {
       "@upstash/context7-mcp": {
-        "current_version": "ctx7@0.5.1",
-        "last_updated": "2026-06-08",
+        "current_version": "@upstash/context7-mcp@3.2.1",
+        "last_updated": "2026-06-15",
         "source": "https://github.com/upstash/context7-mcp",
         "description": "Enhanced context management for AI agents"
       },
@@ -221,86 +221,95 @@
   },
   "trending_tools": [
     {
-      "name": "good-question",
-      "url": "https://github.com/Rimagination/good-question",
-      "description": "A portable agent skill for sharpening research questions.",
-      "stars": 104,
-      "language": "PowerShell",
-      "topic": "ai-agents",
-      "created_at": "2026-06-01T08:48:11Z"
-    },
-    {
-      "name": "forsy-trace-skill",
-      "url": "https://github.com/Forsy-AI/forsy-trace-skill",
-      "description": "Open skill for capturing AI agent work as structured traces.",
-      "stars": 102,
-      "language": "Python",
-      "topic": "ai-agents",
-      "created_at": "2026-06-05T08:31:53Z"
-    },
-    {
-      "name": "paperjury",
-      "url": "https://github.com/u7079256/paperjury",
-      "description": "Pre-submission AI review stress-test for research papers. A Claude Code skill: review, verdict, revise, verify.",
-      "stars": 95,
+      "name": "ponytail",
+      "url": "https://github.com/DietrichGebert/ponytail",
+      "description": "Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.",
+      "stars": 12895,
       "language": "JavaScript",
       "topic": "ai-agents",
-      "created_at": "2026-06-02T06:45:10Z"
+      "created_at": "2026-06-12T00:52:37Z"
     },
     {
-      "name": "hermes-link-curator",
-      "url": "https://github.com/dodo-reach/hermes-link-curator",
-      "description": "Hermes profile pack for archiving and browsing curated links + web dashboard app",
-      "stars": 70,
-      "language": "HTML",
-      "topic": "ai-agents",
-      "created_at": "2026-06-05T09:36:50Z"
-    },
-    {
-      "name": "kimiko",
-      "url": "https://github.com/spearchucker667/kimiko",
-      "description": "Bypass all api restraints within Kimi-CLI",
-      "stars": 69,
+      "name": "chubbyskills",
+      "url": "https://github.com/chubbyguan/chubbyskills",
+      "description": "把中文全渠道内容（抖音 / B站 / 小红书 / 公众号 / X / 播客）采集进个人知识库的 13 个 AI Skill：图文存图、视频转文字稿、字幕优先免 GPU，附带知识库 MCP server。 ｜ Ingest Chinese content into your personal knowledge base — image/video routing, subtitle-first transcription, and a KB MCP server.",
+      "stars": 353,
       "language": "Python",
       "topic": "ai-agents",
-      "created_at": "2026-06-01T08:27:16Z"
+      "created_at": "2026-06-08T09:22:13Z"
     },
     {
-      "name": "pi-infobar",
-      "url": "https://github.com/phun333/pi-infobar",
-      "description": "Native macOS (menu bar) & Windows (system tray) dashboard for Pi agent usage, cost, languages, models, projects & tokens. Local-first, optional SSH sync.",
-      "stars": 58,
-      "language": "C#",
-      "topic": "ai-agents",
-      "created_at": "2026-06-05T07:42:20Z"
-    },
-    {
-      "name": "scientific-agents",
-      "url": "https://github.com/K-Dense-AI/scientific-agents",
-      "description": "Expert-thinking AGENTS.md profiles that teach AI agents to reason like senior scientists and engineers.",
-      "stars": 50,
-      "language": null,
-      "topic": "ai-agents",
-      "created_at": "2026-06-03T02:43:24Z"
-    },
-    {
-      "name": "omnistack-agent",
-      "url": "https://github.com/Ricar66/omnistack-agent",
-      "description": "Platform-agnostic AI agent: one Full-Stack Software Engineer brain, compiled into ready-to-paste adapters for ChatGPT, Claude, Copilot, Gemini & Cursor. Zero-dependency, MIT.",
-      "stars": 49,
+      "name": "loop-engineering",
+      "url": "https://github.com/cobusgreyling/loop-engineering",
+      "description": "Practical patterns, starters & CLI tools for loop engineering with AI coding agents. Design systems that prompt and orchestrate agents (inspired by Addy Osmani and Boris Cherny). Includes loop-audit, loop-init, loop-cost.",
+      "stars": 243,
       "language": "JavaScript",
       "topic": "ai-agents",
-      "created_at": "2026-06-03T18:25:02Z"
+      "created_at": "2026-06-09T06:28:20Z"
     },
     {
-      "name": "dox",
-      "url": "https://github.com/agent0ai/dox",
-      "description": "Self-documenting AGENTS.md",
-      "stars": 41,
+      "name": "clarilayer",
+      "url": "https://github.com/clarilayer/clarilayer",
+      "description": "Stop re-explaining your data to your AI every session. The individual-analyst context layer, delivered over MCP (Claude Code / Cursor / Codex).",
+      "stars": 124,
+      "language": "TypeScript",
+      "topic": "ai-agents",
+      "created_at": "2026-06-08T13:17:43Z"
+    },
+    {
+      "name": "ghostwork",
+      "url": "https://github.com/hvardhan878/ghostwork",
+      "description": "Your personal AI worker. Watches your screen, learns your workflows, automates the repetitive parts. Built on Screenpipe. All local, no cloud, no setup. It gets better every day without you doing anything differently.",
+      "stars": 123,
+      "language": "TypeScript",
+      "topic": "ai-agents",
+      "created_at": "2026-06-09T13:34:34Z"
+    },
+    {
+      "name": "Trend2Video-Pro",
+      "url": "https://github.com/2417467487-hub/Trend2Video-Pro",
+      "description": "Trend-to-Video Agent Framework for publish-ready content packages",
+      "stars": 122,
+      "language": "Python",
+      "topic": "ai-agents",
+      "created_at": "2026-06-08T08:50:25Z"
+    },
+    {
+      "name": "microsoft-security-skills",
+      "url": "https://github.com/vinayaklatthe/microsoft-security-skills",
+      "description": "Curated Microsoft Security skills for AI agents - Defender, Sentinel, Entra, Purview, Intune, Security Copilot",
+      "stars": 100,
+      "language": "JavaScript",
+      "topic": "ai-agents",
+      "created_at": "2026-06-10T11:39:11Z"
+    },
+    {
+      "name": "awesome-agent-loops",
+      "url": "https://github.com/serenakeyitan/awesome-agent-loops",
+      "description": "A curated collection of the best /loop, /goal, and /schedule uses for Claude Code & Codex — real commands sourced from Twitter/X. The awesome-list of agent loops.",
+      "stars": 84,
       "language": null,
       "topic": "ai-agents",
-      "created_at": "2026-06-01T08:25:21Z"
+      "created_at": "2026-06-09T01:26:51Z"
+    },
+    {
+      "name": "Nubase",
+      "url": "https://github.com/OtterMind/Nubase",
+      "description": "Turn AI-written code into real apps. Nubase is an open-source, AI-native backend platform for AI Coding, agentic applications, and modern product teams: Memory, Database, Storage, and Auth in one self-hostable service",
+      "stars": 71,
+      "language": "Java",
+      "topic": "ai-agents",
+      "created_at": "2026-06-08T08:42:51Z"
+    },
+    {
+      "name": "agentic-engineering-handbook",
+      "url": "https://github.com/keyuchen21/agentic-engineering-handbook",
+      "description": "The definitive OpenAI, Claude, MCP, Harness, Evals, and Production Agent Systems learning roadmap.",
+      "stars": 68,
+      "language": "Python",
+      "topic": "ai-agents",
+      "created_at": "2026-06-09T15:25:00Z"
     }
   ],
-  "last_update_check": "2026-06-08"
+  "last_update_check": "2026-06-15"
 }

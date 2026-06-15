@@ -101,15 +101,15 @@ GitHub’s docs outline editing `mcp.json` in the *Tools* panel.
 
 | Framework / Lib | Latest ver. | Killer features |
 |-----------------|------------|-----------------|
-|**CrewAI**|1.14.6 (Updated 2026-06-08)|Declarative YAML mission files, vector‑based memory, Agents → Roles → Tasks hierarchy. Fast multi-agent prototyping.|
-|**Microsoft Autogen**|0.7.5 (Updated 2026-06-08)|Event-driven multi-agent; human-in-the-loop support. Merging with Semantic Kernel into unified Microsoft Agent Framework (GA Q1 2026).|
-|**LangGraph**|1.2.4 (Updated 2026-06-08)|**Stable v1.0** reached Oct 2025. Graph‑style state machine orchestration; check-pointing, audit trails. Best for production compliance workloads.|
-|**Semantic Kernel**|1.43.0 (Updated 2026-06-08)|Enterprise Azure integration, planners, function-calling. Converging with AutoGen into unified Microsoft Agent Framework.|
-|**OpenAI Agents SDK**|0.17.4 (Updated 2026-06-08)|Official open-source SDK for orchestrating multi-agent workflows; supports handoffs, guardrails, tracing, and the new Responses API (replaces Assistants API by Aug 2026).|
+|**CrewAI**|1.14.7 (Updated 2026-06-15)|Declarative YAML mission files, vector‑based memory, Agents → Roles → Tasks hierarchy. Fast multi-agent prototyping.|
+|**Microsoft Autogen**|0.7.5 (Updated 2026-06-15)|Event-driven multi-agent; human-in-the-loop support. Merging with Semantic Kernel into unified Microsoft Agent Framework (GA Q1 2026).|
+|**LangGraph**|1.2.5 (Updated 2026-06-15)|**Stable v1.0** reached Oct 2025. Graph‑style state machine orchestration; check-pointing, audit trails. Best for production compliance workloads.|
+|**Semantic Kernel**|1.43.0 (Updated 2026-06-15)|Enterprise Azure integration, planners, function-calling. Converging with AutoGen into unified Microsoft Agent Framework.|
+|**OpenAI Agents SDK**|0.17.5 (Updated 2026-06-15)|Official open-source SDK for orchestrating multi-agent workflows; supports handoffs, guardrails, tracing, and the new Responses API (replaces Assistants API by Aug 2026).|
 |**smolagents** (HF)|1.24.0|Ultra-minimal Hugging Face agents; CodeAgent paradigm, sandboxed execution, model-agnostic. Great for research/lightweight use.|
-|**Agno**|2.6.12 (Updated 2026-06-08)|High-performance runtime for large-scale multi-agent systems; streaming, governance, approval workflows, and audit logs built in.|
-|**LlamaIndex**|0.14.22 (Updated 2026-06-08)|Data/knowledge-centric framework; excels at RAG workflows, document agents, and retrieval-augmented production pipelines.|
-|**Google ADK**|2.2.0 (Updated 2026-06-08)|Google’s Agent Development Kit with native A2A protocol support; deploy on Cloud Run, GKE, or Vertex AI.|
+|**Agno**|2.6.14 (Updated 2026-06-15)|High-performance runtime for large-scale multi-agent systems; streaming, governance, approval workflows, and audit logs built in.|
+|**LlamaIndex**|0.14.22 (Updated 2026-06-15)|Data/knowledge-centric framework; excels at RAG workflows, document agents, and retrieval-augmented production pipelines.|
+|**Google ADK**|2.2.0 (Updated 2026-06-15)|Google’s Agent Development Kit with native A2A protocol support; deploy on Cloud Run, GKE, or Vertex AI.|
 |**GPTScript Agents**|Bleeding‑edge|Script agents in 10 lines; great for Kubernetes ops.|
 
 ### Choosing the Right Framework
@@ -331,12 +331,13 @@ GITHUB_TOKEN=your_github_personal_access_token
 
 | Tool | Stars | Language | Use Case | Repository |
 |------|-------|----------|----------|------------|
-|**good-question**|104|PowerShell|A portable agent skill for sharpening research questions.|[GitHub](https://github.com/Rimagination/good-question)|
-|**forsy-trace-skill**|102|Python|Open skill for capturing AI agent work as structured traces.|[GitHub](https://github.com/Forsy-AI/forsy-trace-skill)|
-|**paperjury**|95|JavaScript|Pre-submission AI review stress-test for research papers. A Claude Code skill: review, verdict, revi...|[GitHub](https://github.com/u7079256/paperjury)|
-|**hermes-link-curator**|70|HTML|Hermes profile pack for archiving and browsing curated links + web dashboard app|[GitHub](https://github.com/dodo-reach/hermes-link-curator)|
-|**kimiko**|69|Python|Bypass all api restraints within Kimi-CLI|[GitHub](https://github.com/spearchucker667/kimiko)|
-|**pi-infobar**|58|C#|Native macOS (menu bar) & Windows (system tray) dashboard for Pi agent usage, cost, languages, model...|[GitHub](https://github.com/phun333/pi-infobar)|
-|**scientific-agents**|50|N/A|Expert-thinking AGENTS.md profiles that teach AI agents to reason like senior scientists and enginee...|[GitHub](https://github.com/K-Dense-AI/scientific-agents)|
-|**omnistack-agent**|49|JavaScript|Platform-agnostic AI agent: one Full-Stack Software Engineer brain, compiled into ready-to-paste ada...|[GitHub](https://github.com/Ricar66/omnistack-agent)|
-|**dox**|41|N/A|Self-documenting AGENTS.md|[GitHub](https://github.com/agent0ai/dox)|
+|**ponytail**|12895|JavaScript|Makes your AI agent think like the laziest senior dev in the room. The best code is the code you nev...|[GitHub](https://github.com/DietrichGebert/ponytail)|
+|**chubbyskills**|353|Python|把中文全渠道内容（抖音 / B站 / 小红书 / 公众号 / X / 播客）采集进个人知识库的 13 个 AI Skill：图文存图、视频转文字稿、字幕优先免 GPU，附带知识库 MCP server...|[GitHub](https://github.com/chubbyguan/chubbyskills)|
+|**loop-engineering**|243|JavaScript|Practical patterns, starters & CLI tools for loop engineering with AI coding agents. Design systems ...|[GitHub](https://github.com/cobusgreyling/loop-engineering)|
+|**clarilayer**|124|TypeScript|Stop re-explaining your data to your AI every session. The individual-analyst context layer, deliver...|[GitHub](https://github.com/clarilayer/clarilayer)|
+|**ghostwork**|123|TypeScript|Your personal AI worker. Watches your screen, learns your workflows, automates the repetitive parts....|[GitHub](https://github.com/hvardhan878/ghostwork)|
+|**Trend2Video-Pro**|122|Python|Trend-to-Video Agent Framework for publish-ready content packages|[GitHub](https://github.com/2417467487-hub/Trend2Video-Pro)|
+|**microsoft-security-skills**|100|JavaScript|Curated Microsoft Security skills for AI agents - Defender, Sentinel, Entra, Purview, Intune, Securi...|[GitHub](https://github.com/vinayaklatthe/microsoft-security-skills)|
+|**awesome-agent-loops**|84|N/A|A curated collection of the best /loop, /goal, and /schedule uses for Claude Code & Codex — real com...|[GitHub](https://github.com/serenakeyitan/awesome-agent-loops)|
+|**Nubase**|71|Java|Turn AI-written code into real apps. Nubase is an open-source, AI-native backend platform for AI Cod...|[GitHub](https://github.com/OtterMind/Nubase)|
+|**agentic-engineering-handbook**|68|Python|The definitive OpenAI, Claude, MCP, Harness, Evals, and Production Agent Systems learning roadmap.|[GitHub](https://github.com/keyuchen21/agentic-engineering-handbook)|
