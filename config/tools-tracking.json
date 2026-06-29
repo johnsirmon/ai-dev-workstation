@@ -2,8 +2,8 @@
   "tracked_tools": {
     "ai_frameworks": {
       "CrewAI": {
-        "current_version": "1.14.7",
-        "last_updated": "2026-06-15",
+        "current_version": "1.15.1",
+        "last_updated": "2026-06-29",
         "source": "https://github.com/crewAIInc/crewAI",
         "npm_package": null,
         "pypi_package": "crewai",
@@ -34,8 +34,8 @@
         "description": "Process Framework (durable orchestration) + C#/Python parity"
       },
       "OpenAI Agents SDK": {
-        "current_version": "0.17.6",
-        "last_updated": "2026-06-22",
+        "current_version": "0.17.7",
+        "last_updated": "2026-06-29",
         "source": "https://github.com/openai/agents-python",
         "npm_package": null,
         "pypi_package": "openai-agents",
@@ -50,16 +50,16 @@
         "description": "Ultra-minimal Hugging Face agents; CodeAgent paradigm, sandboxed execution, model-agnostic"
       },
       "Agno": {
-        "current_version": "2.6.18",
-        "last_updated": "2026-06-22",
+        "current_version": "2.6.20",
+        "last_updated": "2026-06-29",
         "source": "https://github.com/agno-agi/agno",
         "npm_package": null,
         "pypi_package": "agno",
         "description": "High-performance runtime for large-scale multi-agent systems; streaming, governance, approval workflows"
       },
       "LlamaIndex": {
-        "current_version": "0.14.22",
-        "last_updated": "2026-05-18",
+        "current_version": "0.14.23",
+        "last_updated": "2026-06-29",
         "source": "https://github.com/run-llama/llama_index",
         "npm_package": null,
         "pypi_package": "llama-index",
@@ -76,8 +76,8 @@
     },
     "mcp_servers": {
       "@upstash/context7-mcp": {
-        "current_version": "@upstash/context7-mcp@3.2.1",
-        "last_updated": "2026-06-15",
+        "current_version": "@upstash/context7-mcp@3.2.2",
+        "last_updated": "2026-06-29",
         "source": "https://github.com/upstash/context7-mcp",
         "description": "Enhanced context management for AI agents"
       },
@@ -220,5 +220,5 @@
     ]
   },
   "trending_tools": [],
-  "last_update_check": "2026-06-22"
+  "last_update_check": "2026-06-29"
 }
