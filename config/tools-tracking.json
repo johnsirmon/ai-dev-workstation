@@ -18,8 +18,8 @@
         "description": "Replay analytics, compliance hooks, VS Code debug adapter"
       },
       "LangGraph": {
-        "current_version": "1.2.6",
-        "last_updated": "2026-06-22",
+        "current_version": "1.2.7",
+        "last_updated": "2026-07-06",
         "source": "https://github.com/langchain-ai/langgraph",
         "npm_package": "@langchain/langgraph",
         "pypi_package": "langgraph",
@@ -50,8 +50,8 @@
         "description": "Ultra-minimal Hugging Face agents; CodeAgent paradigm, sandboxed execution, model-agnostic"
       },
       "Agno": {
-        "current_version": "2.6.20",
-        "last_updated": "2026-06-29",
+        "current_version": "2.6.22",
+        "last_updated": "2026-07-06",
         "source": "https://github.com/agno-agi/agno",
         "npm_package": null,
         "pypi_package": "agno",
@@ -76,14 +76,14 @@
     },
     "mcp_servers": {
       "@upstash/context7-mcp": {
-        "current_version": "@upstash/context7-mcp@3.2.2",
-        "last_updated": "2026-06-29",
+        "current_version": "ctx7@0.5.4",
+        "last_updated": "2026-07-06",
         "source": "https://github.com/upstash/context7-mcp",
         "description": "Enhanced context management for AI agents"
       },
       "@modelcontextprotocol/server-memory": {
-        "current_version": "2026.1.26",
-        "last_updated": "2026-02-23",
+        "current_version": "2026.7.4",
+        "last_updated": "2026-07-06",
         "source": "https://github.com/modelcontextprotocol/servers",
         "description": "Persistent memory across AI agent sessions"
       },
@@ -94,14 +94,14 @@
         "description": "Brave Search MCP server for web search and rich search results"
       },
       "@modelcontextprotocol/server-github": {
-        "current_version": "2026.1.26",
-        "last_updated": "2026-02-23",
+        "current_version": "2026.7.4",
+        "last_updated": "2026-07-06",
         "source": "https://github.com/modelcontextprotocol/servers",
         "description": "GitHub integration for repository management"
       },
       "@modelcontextprotocol/server-filesystem": {
-        "current_version": "2026.1.26",
-        "last_updated": "2026-02-23",
+        "current_version": "2026.7.4",
+        "last_updated": "2026-07-06",
         "source": "https://github.com/modelcontextprotocol/servers",
         "description": "Filesystem access for workspace-local agent operations"
       }
@@ -219,6 +219,97 @@
       "llama-index"
     ]
   },
-  "trending_tools": [],
-  "last_update_check": "2026-06-29"
+  "trending_tools": [
+    {
+      "name": "Fundamental-Ava",
+      "url": "https://github.com/TianhangZhuzth/Fundamental-Ava",
+      "description": "Build digital human beings — autonomous, collaborative, and socially intelligent agents. FNzgGxU31RWiDgLr3GvxxSa42nRntvZNSG6aBMQ1pump",
+      "stars": 525,
+      "language": "Python",
+      "topic": "ai-agents",
+      "created_at": "2026-06-30T01:04:13Z"
+    },
+    {
+      "name": "open-connector",
+      "url": "https://github.com/oomol-lab/open-connector",
+      "description": "Open-source auth gateway connecting 1000+ SaaS providers to AI agents through SDK, CLI, MCP, HTTP, and OpenAPI.",
+      "stars": 435,
+      "language": "TypeScript",
+      "topic": "ai-agents",
+      "created_at": "2026-06-29T10:49:36Z"
+    },
+    {
+      "name": "boring-computers",
+      "url": "https://github.com/michaelshimeles/boring-computers",
+      "description": "On-demand Linux computers you can hand to an AI — real Firecracker microVMs with a browser, terminal, coding agents, and an AI that drives them.",
+      "stars": 119,
+      "language": "Go",
+      "topic": "ai-agents",
+      "created_at": "2026-06-30T04:25:16Z"
+    },
+    {
+      "name": "claude-mega-brain",
+      "url": "https://github.com/guhcostan/claude-mega-brain",
+      "description": "OKF-powered knowledge context for Claude Code — injects your project's knowledge base at every session",
+      "stars": 110,
+      "language": "Python",
+      "topic": "ai-agents",
+      "created_at": "2026-06-29T14:10:41Z"
+    },
+    {
+      "name": "ai-agents-tutorial",
+      "url": "https://github.com/amitshekhariitbhu/ai-agents-tutorial",
+      "description": "Learn AI Agents step by step, from scratch - from function calling to agent loops to multi-agent systems, orchestration, and evaluation.",
+      "stars": 92,
+      "language": null,
+      "topic": "ai-agents",
+      "created_at": "2026-07-02T04:58:22Z"
+    },
+    {
+      "name": "superloopy",
+      "url": "https://github.com/beefiker/superloopy",
+      "description": "Lightweight Codex/Claude loop harness with strict evidence gates.",
+      "stars": 76,
+      "language": "JavaScript",
+      "topic": "ai-agents",
+      "created_at": "2026-06-29T04:32:17Z"
+    },
+    {
+      "name": "awesome-ai-companion",
+      "url": "https://github.com/DasterProkio/awesome-ai-companion",
+      "description": "A curated list of open-source projects for building long-term AI companion relationships: frontends, backends, memory systems, hardware carriers, and world integrations.",
+      "stars": 73,
+      "language": null,
+      "topic": "ai-agents",
+      "created_at": "2026-07-03T04:24:24Z"
+    },
+    {
+      "name": "agent-skills",
+      "url": "https://github.com/Misaka-Mikoto-Tech/agent-skills",
+      "description": "Reusable AI agent skills for Codex, including a PowerShell skill for safe Windows command invocation and optional MCP utilities.",
+      "stars": 70,
+      "language": "Python",
+      "topic": "ai-agents",
+      "created_at": "2026-06-29T02:47:03Z"
+    },
+    {
+      "name": "claude-project-ops",
+      "url": "https://github.com/walkpod1007/claude-project-ops",
+      "description": "Battle-tested model-dispatch doctrine for Claude Code — portable ops rules that let Sonnet/Haiku reliably run projects. Iterated in real deployments, not one-shot generated.",
+      "stars": 62,
+      "language": null,
+      "topic": "ai-agents",
+      "created_at": "2026-07-04T06:44:34Z"
+    },
+    {
+      "name": "sous-chef",
+      "url": "https://github.com/tomascupr/sous-chef",
+      "description": "Claude orchestrates and reviews; Codex CLI implements. A Claude Code plugin for the two-model kitchen: /serve tasks end to end, /simmer goals until green. Your head chef doesn't chop onions.",
+      "stars": 48,
+      "language": null,
+      "topic": "ai-agents",
+      "created_at": "2026-07-02T22:38:10Z"
+    }
+  ],
+  "last_update_check": "2026-07-06"
 }
