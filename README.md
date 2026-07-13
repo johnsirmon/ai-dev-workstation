@@ -101,15 +101,15 @@ GitHub’s docs outline editing `mcp.json` in the *Tools* panel.
 
 | Framework / Lib | Latest ver. | Killer features |
 |-----------------|------------|-----------------|
-|**CrewAI**|1.15.1 (Updated 2026-07-06)|Declarative YAML mission files, vector‑based memory, Agents → Roles → Tasks hierarchy. Fast multi-agent prototyping.|
-|**Microsoft Autogen**|0.7.5 (Updated 2026-07-06)|Event-driven multi-agent; human-in-the-loop support. Merging with Semantic Kernel into unified Microsoft Agent Framework (GA Q1 2026).|
-|**LangGraph**|1.2.7 (Updated 2026-07-06)|**Stable v1.0** reached Oct 2025. Graph‑style state machine orchestration; check-pointing, audit trails. Best for production compliance workloads.|
-|**Semantic Kernel**|1.43.1 (Updated 2026-07-06)|Enterprise Azure integration, planners, function-calling. Converging with AutoGen into unified Microsoft Agent Framework.|
-|**OpenAI Agents SDK**|0.17.7 (Updated 2026-07-06)|Official open-source SDK for orchestrating multi-agent workflows; supports handoffs, guardrails, tracing, and the new Responses API (replaces Assistants API by Aug 2026).|
+|**CrewAI**|1.15.2 (Updated 2026-07-13)|Declarative YAML mission files, vector‑based memory, Agents → Roles → Tasks hierarchy. Fast multi-agent prototyping.|
+|**Microsoft Autogen**|0.7.5 (Updated 2026-07-13)|Event-driven multi-agent; human-in-the-loop support. Merging with Semantic Kernel into unified Microsoft Agent Framework (GA Q1 2026).|
+|**LangGraph**|1.2.9 (Updated 2026-07-13)|**Stable v1.0** reached Oct 2025. Graph‑style state machine orchestration; check-pointing, audit trails. Best for production compliance workloads.|
+|**Semantic Kernel**|1.44.0 (Updated 2026-07-13)|Enterprise Azure integration, planners, function-calling. Converging with AutoGen into unified Microsoft Agent Framework.|
+|**OpenAI Agents SDK**|0.18.2 (Updated 2026-07-13)|Official open-source SDK for orchestrating multi-agent workflows; supports handoffs, guardrails, tracing, and the new Responses API (replaces Assistants API by Aug 2026).|
 |**smolagents** (HF)|1.24.0|Ultra-minimal Hugging Face agents; CodeAgent paradigm, sandboxed execution, model-agnostic. Great for research/lightweight use.|
-|**Agno**|2.6.22 (Updated 2026-07-06)|High-performance runtime for large-scale multi-agent systems; streaming, governance, approval workflows, and audit logs built in.|
-|**LlamaIndex**|0.14.23 (Updated 2026-07-06)|Data/knowledge-centric framework; excels at RAG workflows, document agents, and retrieval-augmented production pipelines.|
-|**Google ADK**|2.3.0 (Updated 2026-07-06)|Google’s Agent Development Kit with native A2A protocol support; deploy on Cloud Run, GKE, or Vertex AI.|
+|**Agno**|2.7.2 (Updated 2026-07-13)|High-performance runtime for large-scale multi-agent systems; streaming, governance, approval workflows, and audit logs built in.|
+|**LlamaIndex**|0.14.23 (Updated 2026-07-13)|Data/knowledge-centric framework; excels at RAG workflows, document agents, and retrieval-augmented production pipelines.|
+|**Google ADK**|2.4.0 (Updated 2026-07-13)|Google’s Agent Development Kit with native A2A protocol support; deploy on Cloud Run, GKE, or Vertex AI.|
 |**GPTScript Agents**|Bleeding‑edge|Script agents in 10 lines; great for Kubernetes ops.|
 
 ### Choosing the Right Framework
@@ -331,13 +331,13 @@ GITHUB_TOKEN=your_github_personal_access_token
 
 | Tool | Stars | Language | Use Case | Repository |
 |------|-------|----------|----------|------------|
-|**Fundamental-Ava**|525|Python|Build digital human beings — autonomous, collaborative, and socially intelligent agents. FNzgGxU31RW...|[GitHub](https://github.com/TianhangZhuzth/Fundamental-Ava)|
-|**open-connector**|435|TypeScript|Open-source auth gateway connecting 1000+ SaaS providers to AI agents through SDK, CLI, MCP, HTTP, a...|[GitHub](https://github.com/oomol-lab/open-connector)|
-|**boring-computers**|119|Go|On-demand Linux computers you can hand to an AI — real Firecracker microVMs with a browser, terminal...|[GitHub](https://github.com/michaelshimeles/boring-computers)|
-|**claude-mega-brain**|110|Python|OKF-powered knowledge context for Claude Code — injects your project's knowledge base at every sessi...|[GitHub](https://github.com/guhcostan/claude-mega-brain)|
-|**ai-agents-tutorial**|92|N/A|Learn AI Agents step by step, from scratch - from function calling to agent loops to multi-agent sys...|[GitHub](https://github.com/amitshekhariitbhu/ai-agents-tutorial)|
-|**superloopy**|76|JavaScript|Lightweight Codex/Claude loop harness with strict evidence gates.|[GitHub](https://github.com/beefiker/superloopy)|
-|**awesome-ai-companion**|73|N/A|A curated list of open-source projects for building long-term AI companion relationships: frontends,...|[GitHub](https://github.com/DasterProkio/awesome-ai-companion)|
-|**agent-skills**|70|Python|Reusable AI agent skills for Codex, including a PowerShell skill for safe Windows command invocation...|[GitHub](https://github.com/Misaka-Mikoto-Tech/agent-skills)|
-|**claude-project-ops**|62|N/A|Battle-tested model-dispatch doctrine for Claude Code — portable ops rules that let Sonnet/Haiku rel...|[GitHub](https://github.com/walkpod1007/claude-project-ops)|
-|**sous-chef**|48|N/A|Claude orchestrates and reviews; Codex CLI implements. A Claude Code plugin for the two-model kitche...|[GitHub](https://github.com/tomascupr/sous-chef)|
+|**clodex-ide**|693|TypeScript|Local-first, zero-trust agentic IDE for verifiable autonomous software development.|[GitHub](https://github.com/mereyabdenbekuly-ctrl/clodex-ide)|
+|**pilotfish**|402|Python|Multi-model orchestration layer for Claude Code — the frontier model plans, cheaper models execute, ...|[GitHub](https://github.com/Nanako0129/pilotfish)|
+|**fable-method**|309|JavaScript|The Fable Workflow: how Claude Fable 5 worked, distilled into skills any model can run, with the eva...|[GitHub](https://github.com/Sahir619/fable-method)|
+|**ditto**|151|Python|Mine your Claude Code and Codex logs into a local you.md agent profile.|[GitHub](https://github.com/ohad6k/ditto)|
+|**project-r0x**|123|TypeScript|Official SDK, Claude Code plugin and facilitator docs for r0x, the x402 facilitator for Robinhood Ch...|[GitHub](https://github.com/nhevers/project-r0x)|
+|**fable5-mode**|106|Python|Fable 5-grade work discipline for any Claude model — a Claude Code skill + guard hooks (plan gate, m...|[GitHub](https://github.com/cozytab/fable5-mode)|
+|**claude-antigravity-agents**|102|N/A|A Claude Code skill that delegates coding, review, analysis, and research jobs to Google Antigravity...|[GitHub](https://github.com/markfulton/claude-antigravity-agents)|
+|**Avernet**|98|Python|Distributed agent coordination platform where agents live, connect, coordinate, execute, and evolve ...|[GitHub](https://github.com/inclusionAI/Avernet)|
+|**marketing-studio**|82|JavaScript|Agent-driven marketing studio for Claude Code: one /marketing command renders your product's full la...|[GitHub](https://github.com/ucsandman/marketing-studio)|
+|**loop.js**|76|TypeScript|A loop engineering framework — state a Goal; Rounds run until a skeptical, read-only Verify agent se...|[GitHub](https://github.com/loop-js/loop.js)|
