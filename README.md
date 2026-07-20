@@ -101,15 +101,15 @@ GitHub’s docs outline editing `mcp.json` in the *Tools* panel.
 
 | Framework / Lib | Latest ver. | Killer features |
 |-----------------|------------|-----------------|
-|**CrewAI**|1.15.2 (Updated 2026-07-13)|Declarative YAML mission files, vector‑based memory, Agents → Roles → Tasks hierarchy. Fast multi-agent prototyping.|
-|**Microsoft Autogen**|0.7.5 (Updated 2026-07-13)|Event-driven multi-agent; human-in-the-loop support. Merging with Semantic Kernel into unified Microsoft Agent Framework (GA Q1 2026).|
-|**LangGraph**|1.2.9 (Updated 2026-07-13)|**Stable v1.0** reached Oct 2025. Graph‑style state machine orchestration; check-pointing, audit trails. Best for production compliance workloads.|
-|**Semantic Kernel**|1.44.0 (Updated 2026-07-13)|Enterprise Azure integration, planners, function-calling. Converging with AutoGen into unified Microsoft Agent Framework.|
-|**OpenAI Agents SDK**|0.18.2 (Updated 2026-07-13)|Official open-source SDK for orchestrating multi-agent workflows; supports handoffs, guardrails, tracing, and the new Responses API (replaces Assistants API by Aug 2026).|
+|**CrewAI**|1.15.4 (Updated 2026-07-20)|Declarative YAML mission files, vector‑based memory, Agents → Roles → Tasks hierarchy. Fast multi-agent prototyping.|
+|**Microsoft Autogen**|0.7.5 (Updated 2026-07-20)|Event-driven multi-agent; human-in-the-loop support. Merging with Semantic Kernel into unified Microsoft Agent Framework (GA Q1 2026).|
+|**LangGraph**|1.2.9 (Updated 2026-07-20)|**Stable v1.0** reached Oct 2025. Graph‑style state machine orchestration; check-pointing, audit trails. Best for production compliance workloads.|
+|**Semantic Kernel**|1.44.0 (Updated 2026-07-20)|Enterprise Azure integration, planners, function-calling. Converging with AutoGen into unified Microsoft Agent Framework.|
+|**OpenAI Agents SDK**|0.18.3 (Updated 2026-07-20)|Official open-source SDK for orchestrating multi-agent workflows; supports handoffs, guardrails, tracing, and the new Responses API (replaces Assistants API by Aug 2026).|
 |**smolagents** (HF)|1.24.0|Ultra-minimal Hugging Face agents; CodeAgent paradigm, sandboxed execution, model-agnostic. Great for research/lightweight use.|
-|**Agno**|2.7.2 (Updated 2026-07-13)|High-performance runtime for large-scale multi-agent systems; streaming, governance, approval workflows, and audit logs built in.|
-|**LlamaIndex**|0.14.23 (Updated 2026-07-13)|Data/knowledge-centric framework; excels at RAG workflows, document agents, and retrieval-augmented production pipelines.|
-|**Google ADK**|2.4.0 (Updated 2026-07-13)|Google’s Agent Development Kit with native A2A protocol support; deploy on Cloud Run, GKE, or Vertex AI.|
+|**Agno**|2.7.4 (Updated 2026-07-20)|High-performance runtime for large-scale multi-agent systems; streaming, governance, approval workflows, and audit logs built in.|
+|**LlamaIndex**|0.14.23 (Updated 2026-07-20)|Data/knowledge-centric framework; excels at RAG workflows, document agents, and retrieval-augmented production pipelines.|
+|**Google ADK**|2.5.0 (Updated 2026-07-20)|Google’s Agent Development Kit with native A2A protocol support; deploy on Cloud Run, GKE, or Vertex AI.|
 |**GPTScript Agents**|Bleeding‑edge|Script agents in 10 lines; great for Kubernetes ops.|
 
 ### Choosing the Right Framework
@@ -331,13 +331,13 @@ GITHUB_TOKEN=your_github_personal_access_token
 
 | Tool | Stars | Language | Use Case | Repository |
 |------|-------|----------|----------|------------|
-|**clodex-ide**|693|TypeScript|Local-first, zero-trust agentic IDE for verifiable autonomous software development.|[GitHub](https://github.com/mereyabdenbekuly-ctrl/clodex-ide)|
-|**pilotfish**|402|Python|Multi-model orchestration layer for Claude Code — the frontier model plans, cheaper models execute, ...|[GitHub](https://github.com/Nanako0129/pilotfish)|
-|**fable-method**|309|JavaScript|The Fable Workflow: how Claude Fable 5 worked, distilled into skills any model can run, with the eva...|[GitHub](https://github.com/Sahir619/fable-method)|
-|**ditto**|151|Python|Mine your Claude Code and Codex logs into a local you.md agent profile.|[GitHub](https://github.com/ohad6k/ditto)|
-|**project-r0x**|123|TypeScript|Official SDK, Claude Code plugin and facilitator docs for r0x, the x402 facilitator for Robinhood Ch...|[GitHub](https://github.com/nhevers/project-r0x)|
-|**fable5-mode**|106|Python|Fable 5-grade work discipline for any Claude model — a Claude Code skill + guard hooks (plan gate, m...|[GitHub](https://github.com/cozytab/fable5-mode)|
-|**claude-antigravity-agents**|102|N/A|A Claude Code skill that delegates coding, review, analysis, and research jobs to Google Antigravity...|[GitHub](https://github.com/markfulton/claude-antigravity-agents)|
-|**Avernet**|98|Python|Distributed agent coordination platform where agents live, connect, coordinate, execute, and evolve ...|[GitHub](https://github.com/inclusionAI/Avernet)|
-|**marketing-studio**|82|JavaScript|Agent-driven marketing studio for Claude Code: one /marketing command renders your product's full la...|[GitHub](https://github.com/ucsandman/marketing-studio)|
-|**loop.js**|76|TypeScript|A loop engineering framework — state a Goal; Rounds run until a skeptical, read-only Verify agent se...|[GitHub](https://github.com/loop-js/loop.js)|
+|**img2threejs**|703|Python|Rebuild the object in a reference image as a code-only, procedural, quality-gated, animation-ready T...|[GitHub](https://github.com/hoainho/img2threejs)|
+|**agentsmith**|308|Shell|Universal, model-agnostic operating harness for AI agents (Claude, Codex, Gemini, …) — a lean core +...|[GitHub](https://github.com/PromptPartner/agentsmith)|
+|**skills**|214|CSS|Agent Skills for theming AI desktop apps: reference image → reversible Codex/WorkBuddy skin → verify...|[GitHub](https://github.com/CodeDrobe/skills)|
+|**klaatcode**|148|TypeScript|Open-source AI coding agent for the terminal. Claude Code-grade accuracy with smart model routing — ...|[GitHub](https://github.com/KlaatAI/klaatcode)|
+|**blitzos**|131|JavaScript|BlitzOS allows cloud agents to boot already knowing your work, and keep working with your laptop clo...|[GitHub](https://github.com/blitzdotdev/blitzos)|
+|**restaurant-digitalization-blueprint**|109|N/A|餐饮连锁数字化 + AI 全景蓝图:原串(平价烤串连锁)的架构决策、业务口径、踩坑实录与可直接喂给 AI 的复刻指令。纯自然语言方案,不含代码与任何真实经营数据。|[GitHub](https://github.com/lofty14/restaurant-digitalization-blueprint)|
+|**gridgeist**|90|HTML|Gridgeist turns product intent into a rigorous visual system—without the generic AI SaaS aftertaste.|[GitHub](https://github.com/ohmiler/gridgeist)|
+|**raytsystem-public-os**|69|Python|Local-first agent workspace for knowledge, tasks, documents and verifiable workflows · Локальная аге...|[GitHub](https://github.com/romarayt/raytsystem-public-os)|
+|**hermespace**|67|Python|Pocket workbench for Hermes Agent — limited FOA desk, dual decode, skills+MEMORY fabric, neural FOA....|[GitHub](https://github.com/PabloTheThinker/hermespace)|
+|**ReflectWorld**|67|TypeScript|ReflectWorld-MM: An Entity-Oriented Multimodal Memory System for Open-Ended Video Stream|[GitHub](https://github.com/addxai/ReflectWorld)|

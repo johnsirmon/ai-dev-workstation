@@ -2,8 +2,8 @@
   "tracked_tools": {
     "ai_frameworks": {
       "CrewAI": {
-        "current_version": "1.15.2",
-        "last_updated": "2026-07-13",
+        "current_version": "1.15.4",
+        "last_updated": "2026-07-20",
         "source": "https://github.com/crewAIInc/crewAI",
         "npm_package": null,
         "pypi_package": "crewai",
@@ -34,8 +34,8 @@
         "description": "Process Framework (durable orchestration) + C#/Python parity"
       },
       "OpenAI Agents SDK": {
-        "current_version": "0.18.2",
-        "last_updated": "2026-07-13",
+        "current_version": "0.18.3",
+        "last_updated": "2026-07-20",
         "source": "https://github.com/openai/agents-python",
         "npm_package": null,
         "pypi_package": "openai-agents",
@@ -50,8 +50,8 @@
         "description": "Ultra-minimal Hugging Face agents; CodeAgent paradigm, sandboxed execution, model-agnostic"
       },
       "Agno": {
-        "current_version": "2.7.2",
-        "last_updated": "2026-07-13",
+        "current_version": "2.7.4",
+        "last_updated": "2026-07-20",
         "source": "https://github.com/agno-agi/agno",
         "npm_package": null,
         "pypi_package": "agno",
@@ -66,8 +66,8 @@
         "description": "Data/knowledge-centric framework; RAG workflows, document agents, retrieval-augmented production pipelines"
       },
       "Google ADK": {
-        "current_version": "2.4.0",
-        "last_updated": "2026-07-13",
+        "current_version": "2.5.0",
+        "last_updated": "2026-07-20",
         "source": "https://github.com/google/genai-toolbox",
         "npm_package": null,
         "pypi_package": "google-adk",
@@ -76,8 +76,8 @@
     },
     "mcp_servers": {
       "@upstash/context7-mcp": {
-        "current_version": "ctx7@0.5.4",
-        "last_updated": "2026-07-06",
+        "current_version": "@upstash/context7-mcp@3.2.4",
+        "last_updated": "2026-07-20",
         "source": "https://github.com/upstash/context7-mcp",
         "description": "Enhanced context management for AI agents"
       },
@@ -221,95 +221,104 @@
   },
   "trending_tools": [
     {
-      "name": "clodex-ide",
-      "url": "https://github.com/mereyabdenbekuly-ctrl/clodex-ide",
-      "description": "Local-first, zero-trust agentic IDE for verifiable autonomous software development.",
-      "stars": 693,
-      "language": "TypeScript",
-      "topic": "ai-agents",
-      "created_at": "2026-07-12T10:35:44Z"
-    },
-    {
-      "name": "pilotfish",
-      "url": "https://github.com/Nanako0129/pilotfish",
-      "description": "Multi-model orchestration layer for Claude Code — the frontier model plans, cheaper models execute, verification guards quality. One-prompt install.",
-      "stars": 402,
+      "name": "img2threejs",
+      "url": "https://github.com/hoainho/img2threejs",
+      "description": "Rebuild the object in a reference image as a code-only, procedural, quality-gated, animation-ready Three.js model. Token-efficient image-to-3D.",
+      "stars": 703,
       "language": "Python",
       "topic": "ai-agents",
-      "created_at": "2026-07-08T10:53:34Z"
+      "created_at": "2026-07-15T02:58:39Z"
     },
     {
-      "name": "fable-method",
-      "url": "https://github.com/Sahir619/fable-method",
-      "description": "The Fable Workflow: how Claude Fable 5 worked, distilled into skills any model can run, with the eval that keeps it honest. Think / act / prove.",
-      "stars": 309,
+      "name": "agentsmith",
+      "url": "https://github.com/PromptPartner/agentsmith",
+      "description": "Universal, model-agnostic operating harness for AI agents (Claude, Codex, Gemini, …) — a lean core + work-type profiles assembled by one setup script.",
+      "stars": 308,
+      "language": "Shell",
+      "topic": "ai-agents",
+      "created_at": "2026-07-16T11:37:15Z"
+    },
+    {
+      "name": "skills",
+      "url": "https://github.com/CodeDrobe/skills",
+      "description": "Agent Skills for theming AI desktop apps: reference image → reversible Codex/WorkBuddy skin → verify, repair, publish. | 给 AI 桌面应用换肤的 Agent Skills：参考图 → 可逆皮肤 → 验证、修复、发布。",
+      "stars": 214,
+      "language": "CSS",
+      "topic": "ai-agents",
+      "created_at": "2026-07-15T20:36:32Z"
+    },
+    {
+      "name": "klaatcode",
+      "url": "https://github.com/KlaatAI/klaatcode",
+      "description": "Open-source AI coding agent for the terminal. Claude Code-grade accuracy with smart model routing — uses the right AI model for each task, cutting costs 10x. Supports Claude, GPT, Gemini, DeepSeek & more.",
+      "stars": 148,
+      "language": "TypeScript",
+      "topic": "ai-agents",
+      "created_at": "2026-07-17T11:38:10Z"
+    },
+    {
+      "name": "blitzos",
+      "url": "https://github.com/blitzdotdev/blitzos",
+      "description": "BlitzOS allows cloud agents to boot already knowing your work, and keep working with your laptop closed",
+      "stars": 131,
       "language": "JavaScript",
       "topic": "ai-agents",
-      "created_at": "2026-07-06T22:35:18Z"
+      "created_at": "2026-07-13T23:44:04Z"
     },
     {
-      "name": "ditto",
-      "url": "https://github.com/ohad6k/ditto",
-      "description": "Mine your Claude Code and Codex logs into a local you.md agent profile.",
-      "stars": 151,
-      "language": "Python",
-      "topic": "ai-agents",
-      "created_at": "2026-07-08T11:42:32Z"
-    },
-    {
-      "name": "project-r0x",
-      "url": "https://github.com/nhevers/project-r0x",
-      "description": "Official SDK, Claude Code plugin and facilitator docs for r0x, the x402 facilitator for Robinhood Chain.",
-      "stars": 123,
-      "language": "TypeScript",
-      "topic": "ai-agents",
-      "created_at": "2026-07-11T10:12:16Z"
-    },
-    {
-      "name": "fable5-mode",
-      "url": "https://github.com/cozytab/fable5-mode",
-      "description": "Fable 5-grade work discipline for any Claude model — a Claude Code skill + guard hooks (plan gate, model ceiling, per-task enforcement) that make Opus 4.8 or any non-frontier model plan, self-verify, and route sub-agents like Fable 5, without Fable 5.",
-      "stars": 106,
-      "language": "Python",
-      "topic": "ai-agents",
-      "created_at": "2026-07-06T16:52:32Z"
-    },
-    {
-      "name": "claude-antigravity-agents",
-      "url": "https://github.com/markfulton/claude-antigravity-agents",
-      "description": "A Claude Code skill that delegates coding, review, analysis, and research jobs to Google Antigravity CLI (agy) sub-agents — save tokens, use a second model, work in parallel.",
-      "stars": 102,
+      "name": "restaurant-digitalization-blueprint",
+      "url": "https://github.com/lofty14/restaurant-digitalization-blueprint",
+      "description": "餐饮连锁数字化 + AI 全景蓝图:原串(平价烤串连锁)的架构决策、业务口径、踩坑实录与可直接喂给 AI 的复刻指令。纯自然语言方案,不含代码与任何真实经营数据。",
+      "stars": 109,
       "language": null,
       "topic": "ai-agents",
-      "created_at": "2026-07-07T11:02:47Z"
+      "created_at": "2026-07-16T05:53:33Z"
     },
     {
-      "name": "Avernet",
-      "url": "https://github.com/inclusionAI/Avernet",
-      "description": "Distributed agent coordination platform where agents live, connect, coordinate, execute, and evolve together.",
-      "stars": 98,
+      "name": "gridgeist",
+      "url": "https://github.com/ohmiler/gridgeist",
+      "description": "Gridgeist turns product intent into a rigorous visual system—without the generic AI SaaS aftertaste.",
+      "stars": 90,
+      "language": "HTML",
+      "topic": "ai-agents",
+      "created_at": "2026-07-13T11:41:52Z"
+    },
+    {
+      "name": "raytsystem-public-os",
+      "url": "https://github.com/romarayt/raytsystem-public-os",
+      "description": "Local-first agent workspace for knowledge, tasks, documents and verifiable workflows · Локальная агентная система для знаний, задач и проверяемых процессов · t.me/romarayt",
+      "stars": 69,
       "language": "Python",
       "topic": "ai-agents",
-      "created_at": "2026-07-06T03:52:54Z"
+      "created_at": "2026-07-13T13:37:01Z"
     },
     {
-      "name": "marketing-studio",
-      "url": "https://github.com/ucsandman/marketing-studio",
-      "description": "Agent-driven marketing studio for Claude Code: one /marketing command renders your product's full launch asset suite (logo reveal, demo, launch video, social clips, OG assets)",
-      "stars": 82,
-      "language": "JavaScript",
+      "name": "hermespace",
+      "url": "https://github.com/PabloTheThinker/hermespace",
+      "description": "Pocket workbench for Hermes Agent — limited FOA desk, dual decode, skills+MEMORY fabric, neural FOA. Not J-space. Not a second runtime.",
+      "stars": 67,
+      "language": "Python",
       "topic": "ai-agents",
-      "created_at": "2026-07-10T08:00:22Z"
+      "created_at": "2026-07-18T13:23:46Z"
     },
     {
-      "name": "loop.js",
-      "url": "https://github.com/loop-js/loop.js",
-      "description": "A loop engineering framework — state a Goal; Rounds run until a skeptical, read-only Verify agent settles it.",
-      "stars": 76,
+      "name": "ReflectWorld",
+      "url": "https://github.com/addxai/ReflectWorld",
+      "description": "ReflectWorld-MM: An Entity-Oriented Multimodal Memory System for Open-Ended Video Stream",
+      "stars": 67,
       "language": "TypeScript",
       "topic": "ai-agents",
-      "created_at": "2026-07-10T10:59:54Z"
+      "created_at": "2026-07-13T06:13:25Z"
+    },
+    {
+      "name": "mcptrustchecker",
+      "url": "https://github.com/illiahaidar/mcptrustchecker",
+      "description": "MCP security scanner — offline, deterministic A–F Trust Score for Model Context Protocol servers. Detects tool poisoning, prompt injection & toxic flows.",
+      "stars": 76,
+      "language": "TypeScript",
+      "topic": "mcp-servers",
+      "created_at": "2026-07-13T16:18:48Z"
     }
   ],
-  "last_update_check": "2026-07-13"
+  "last_update_check": "2026-07-20"
 }
