@@ -2,8 +2,8 @@
   "tracked_tools": {
     "ai_frameworks": {
       "CrewAI": {
-        "current_version": "1.15.7",
-        "last_updated": "2026-07-27",
+        "current_version": "1.15.10",
+        "last_updated": "2026-08-03",
         "source": "https://github.com/crewAIInc/crewAI",
         "npm_package": null,
         "pypi_package": "crewai",
@@ -18,8 +18,8 @@
         "description": "Replay analytics, compliance hooks, VS Code debug adapter"
       },
       "LangGraph": {
-        "current_version": "1.2.9",
-        "last_updated": "2026-07-13",
+        "current_version": "1.2.10",
+        "last_updated": "2026-08-03",
         "source": "https://github.com/langchain-ai/langgraph",
         "npm_package": "@langchain/langgraph",
         "pypi_package": "langgraph",
@@ -34,8 +34,8 @@
         "description": "Process Framework (durable orchestration) + C#/Python parity"
       },
       "OpenAI Agents SDK": {
-        "current_version": "0.18.3",
-        "last_updated": "2026-07-20",
+        "current_version": "0.19.2",
+        "last_updated": "2026-08-03",
         "source": "https://github.com/openai/agents-python",
         "npm_package": null,
         "pypi_package": "openai-agents",
@@ -50,8 +50,8 @@
         "description": "Ultra-minimal Hugging Face agents; CodeAgent paradigm, sandboxed execution, model-agnostic"
       },
       "Agno": {
-        "current_version": "2.8.5",
-        "last_updated": "2026-07-27",
+        "current_version": "2.8.6",
+        "last_updated": "2026-08-03",
         "source": "https://github.com/agno-agi/agno",
         "npm_package": null,
         "pypi_package": "agno",
@@ -66,8 +66,8 @@
         "description": "Data/knowledge-centric framework; RAG workflows, document agents, retrieval-augmented production pipelines"
       },
       "Google ADK": {
-        "current_version": "2.5.0",
-        "last_updated": "2026-07-20",
+        "current_version": "2.6.1",
+        "last_updated": "2026-08-03",
         "source": "https://github.com/google/genai-toolbox",
         "npm_package": null,
         "pypi_package": "google-adk",
@@ -76,8 +76,8 @@
     },
     "mcp_servers": {
       "@upstash/context7-mcp": {
-        "current_version": "@upstash/context7-mcp@3.2.5",
-        "last_updated": "2026-07-27",
+        "current_version": "ctx7@0.5.7",
+        "last_updated": "2026-08-03",
         "source": "https://github.com/upstash/context7-mcp",
         "description": "Enhanced context management for AI agents"
       },
@@ -219,6 +219,115 @@
       "llama-index"
     ]
   },
-  "trending_tools": [],
-  "last_update_check": "2026-07-27"
+  "trending_tools": [
+    {
+      "name": "skill-recorder",
+      "url": "https://github.com/microsoft/skill-recorder",
+      "description": "Desktop app that records your on-screen work session and uses the GitHub Copilot CLI to reconstruct it as an intent + ordered steps, then builds a reusable Skill or Automation for Microsoft Scout, Microsoft Copilot Cowork, or Copilot Studio.",
+      "stars": 1217,
+      "language": "TypeScript",
+      "topic": "ai-agents",
+      "created_at": "2026-07-29T18:16:14Z"
+    },
+    {
+      "name": "ratchet",
+      "url": "https://github.com/0xwilliamortiz/ratchet",
+      "description": "Your agent reads the rules. This checks whether it followed them.",
+      "stars": 415,
+      "language": "JavaScript",
+      "topic": "ai-agents",
+      "created_at": "2026-07-31T17:54:30Z"
+    },
+    {
+      "name": "old-coder",
+      "url": "https://github.com/AmazingAng/old-coder",
+      "description": "An old coder's strategy for the agent era: don't read the code — make it run the gauntlet. Evidence-first development skill for coding agents, inspired by Uncle Bob.",
+      "stars": 254,
+      "language": "Python",
+      "topic": "ai-agents",
+      "created_at": "2026-07-27T05:03:11Z"
+    },
+    {
+      "name": "trace-file-lineage",
+      "url": "https://github.com/uczltw6/trace-file-lineage",
+      "description": "Find which script, notebook, data, command, or AI agent produced a file — locally, with evidence and honest uncertainty.",
+      "stars": 203,
+      "language": "Python",
+      "topic": "ai-agents",
+      "created_at": "2026-07-29T22:05:47Z"
+    },
+    {
+      "name": "poirot",
+      "url": "https://github.com/HezaoHezao/poirot",
+      "description": "Poirot is a deep research agent kernel built for those who care about how agents are architected. ",
+      "stars": 107,
+      "language": "Python",
+      "topic": "ai-agents",
+      "created_at": "2026-07-28T17:36:07Z"
+    },
+    {
+      "name": "bullshit-detector",
+      "url": "https://github.com/SerhiiKorniienko/bullshit-detector",
+      "description": "Agent skills that fact-check the internet: claim-by-claim verification with sources and a 0-10 BS score for any YouTube video, article, tweet, or PDF",
+      "stars": 101,
+      "language": "Python",
+      "topic": "ai-agents",
+      "created_at": "2026-07-27T12:54:30Z"
+    },
+    {
+      "name": "DeterminFlow",
+      "url": "https://github.com/alikon-art/DeterminFlow",
+      "description": "A production-oriented AI workflow runtime for building, validating, recovering, and shipping complex AI workflows as dependable services. 面向生产的 AI 工作流运行时：快速开发、验证和恢复复杂 AI 工作流，并将其稳定交付为服务。",
+      "stars": 95,
+      "language": "Python",
+      "topic": "ai-agents",
+      "created_at": "2026-08-02T07:40:51Z"
+    },
+    {
+      "name": "kaas",
+      "url": "https://github.com/bybit-exchange/kaas",
+      "description": "Turn scattered notes, docs and transcripts into a queryable Markdown wiki — an LLM knowledge-base compiler with MCP access, no embeddings, self-hosted.",
+      "stars": 81,
+      "language": "Python",
+      "topic": "ai-agents",
+      "created_at": "2026-07-29T13:01:22Z"
+    },
+    {
+      "name": "council-lab",
+      "url": "https://github.com/loveramarois-byte/council-lab",
+      "description": "Local-first, human-participatory four-agent AI deliberation workspace",
+      "stars": 79,
+      "language": "Python",
+      "topic": "ai-agents",
+      "created_at": "2026-07-27T14:14:09Z"
+    },
+    {
+      "name": "stormy-cookbook",
+      "url": "https://github.com/OneInterface/stormy-cookbook",
+      "description": "Open-source cookbook for the Stormy Social Data API and MCP server (Model Context Protocol) — one REST API for the TikTok API, YouTube API, Instagram API, LinkedIn API, X (Twitter) API and Reddit API. Search creators, resolve profiles, read posts and find verified emails from Claude, Cursor, Codex, ChatGPT or curl. One key, no scrapers.",
+      "stars": 72,
+      "language": null,
+      "topic": "ai-agents",
+      "created_at": "2026-07-27T00:57:50Z"
+    },
+    {
+      "name": "atguigu-note",
+      "url": "https://github.com/xbsheng/atguigu-note",
+      "description": "尚硅谷 AI 课程笔记",
+      "stars": 44,
+      "language": "Jupyter Notebook",
+      "topic": "langchain",
+      "created_at": "2026-07-31T22:44:26Z"
+    },
+    {
+      "name": "clone-chat",
+      "url": "https://github.com/AFan4724/clone-chat",
+      "description": "用 AI 大模型复刻聊天对象的本地对话 Agent：导入真实聊天记录，LLM 学习 TA 的语气、表情和回复节奏并以人物身份延续对话，支持语音、主动联系与长期记忆，数据全在本地。 | Clone anyone's texting style from real chat history: a local-first LLM agent that learns their tone, stickers and reply rhythm, then chats as them — voice, proactive messages, long-term memory, fully private.",
+      "stars": 37,
+      "language": "JavaScript",
+      "topic": "openai-agents",
+      "created_at": "2026-08-01T21:19:13Z"
+    }
+  ],
+  "last_update_check": "2026-08-03"
 }

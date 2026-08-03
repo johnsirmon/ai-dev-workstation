@@ -101,15 +101,15 @@ GitHub’s docs outline editing `mcp.json` in the *Tools* panel.
 
 | Framework / Lib | Latest ver. | Killer features |
 |-----------------|------------|-----------------|
-|**CrewAI**|1.15.7 (Updated 2026-07-27)|Declarative YAML mission files, vector‑based memory, Agents → Roles → Tasks hierarchy. Fast multi-agent prototyping.|
-|**Microsoft Autogen**|0.7.5 (Updated 2026-07-27)|Event-driven multi-agent; human-in-the-loop support. Merging with Semantic Kernel into unified Microsoft Agent Framework (GA Q1 2026).|
-|**LangGraph**|1.2.9 (Updated 2026-07-27)|**Stable v1.0** reached Oct 2025. Graph‑style state machine orchestration; check-pointing, audit trails. Best for production compliance workloads.|
-|**Semantic Kernel**|1.44.0 (Updated 2026-07-27)|Enterprise Azure integration, planners, function-calling. Converging with AutoGen into unified Microsoft Agent Framework.|
-|**OpenAI Agents SDK**|0.18.3 (Updated 2026-07-27)|Official open-source SDK for orchestrating multi-agent workflows; supports handoffs, guardrails, tracing, and the new Responses API (replaces Assistants API by Aug 2026).|
+|**CrewAI**|1.15.10 (Updated 2026-08-03)|Declarative YAML mission files, vector‑based memory, Agents → Roles → Tasks hierarchy. Fast multi-agent prototyping.|
+|**Microsoft Autogen**|0.7.5 (Updated 2026-08-03)|Event-driven multi-agent; human-in-the-loop support. Merging with Semantic Kernel into unified Microsoft Agent Framework (GA Q1 2026).|
+|**LangGraph**|1.2.10 (Updated 2026-08-03)|**Stable v1.0** reached Oct 2025. Graph‑style state machine orchestration; check-pointing, audit trails. Best for production compliance workloads.|
+|**Semantic Kernel**|1.44.0 (Updated 2026-08-03)|Enterprise Azure integration, planners, function-calling. Converging with AutoGen into unified Microsoft Agent Framework.|
+|**OpenAI Agents SDK**|0.19.2 (Updated 2026-08-03)|Official open-source SDK for orchestrating multi-agent workflows; supports handoffs, guardrails, tracing, and the new Responses API (replaces Assistants API by Aug 2026).|
 |**smolagents** (HF)|1.24.0|Ultra-minimal Hugging Face agents; CodeAgent paradigm, sandboxed execution, model-agnostic. Great for research/lightweight use.|
-|**Agno**|2.8.5 (Updated 2026-07-27)|High-performance runtime for large-scale multi-agent systems; streaming, governance, approval workflows, and audit logs built in.|
-|**LlamaIndex**|0.14.23 (Updated 2026-07-27)|Data/knowledge-centric framework; excels at RAG workflows, document agents, and retrieval-augmented production pipelines.|
-|**Google ADK**|2.5.0 (Updated 2026-07-27)|Google’s Agent Development Kit with native A2A protocol support; deploy on Cloud Run, GKE, or Vertex AI.|
+|**Agno**|2.8.6 (Updated 2026-08-03)|High-performance runtime for large-scale multi-agent systems; streaming, governance, approval workflows, and audit logs built in.|
+|**LlamaIndex**|0.14.23 (Updated 2026-08-03)|Data/knowledge-centric framework; excels at RAG workflows, document agents, and retrieval-augmented production pipelines.|
+|**Google ADK**|2.6.1 (Updated 2026-08-03)|Google’s Agent Development Kit with native A2A protocol support; deploy on Cloud Run, GKE, or Vertex AI.|
 |**GPTScript Agents**|Bleeding‑edge|Script agents in 10 lines; great for Kubernetes ops.|
 
 ### Choosing the Right Framework
@@ -331,13 +331,13 @@ GITHUB_TOKEN=your_github_personal_access_token
 
 | Tool | Stars | Language | Use Case | Repository |
 |------|-------|----------|----------|------------|
-|**img2threejs**|703|Python|Rebuild the object in a reference image as a code-only, procedural, quality-gated, animation-ready T...|[GitHub](https://github.com/hoainho/img2threejs)|
-|**agentsmith**|308|Shell|Universal, model-agnostic operating harness for AI agents (Claude, Codex, Gemini, …) — a lean core +...|[GitHub](https://github.com/PromptPartner/agentsmith)|
-|**skills**|214|CSS|Agent Skills for theming AI desktop apps: reference image → reversible Codex/WorkBuddy skin → verify...|[GitHub](https://github.com/CodeDrobe/skills)|
-|**klaatcode**|148|TypeScript|Open-source AI coding agent for the terminal. Claude Code-grade accuracy with smart model routing — ...|[GitHub](https://github.com/KlaatAI/klaatcode)|
-|**blitzos**|131|JavaScript|BlitzOS allows cloud agents to boot already knowing your work, and keep working with your laptop clo...|[GitHub](https://github.com/blitzdotdev/blitzos)|
-|**restaurant-digitalization-blueprint**|109|N/A|餐饮连锁数字化 + AI 全景蓝图:原串(平价烤串连锁)的架构决策、业务口径、踩坑实录与可直接喂给 AI 的复刻指令。纯自然语言方案,不含代码与任何真实经营数据。|[GitHub](https://github.com/lofty14/restaurant-digitalization-blueprint)|
-|**gridgeist**|90|HTML|Gridgeist turns product intent into a rigorous visual system—without the generic AI SaaS aftertaste.|[GitHub](https://github.com/ohmiler/gridgeist)|
-|**raytsystem-public-os**|69|Python|Local-first agent workspace for knowledge, tasks, documents and verifiable workflows · Локальная аге...|[GitHub](https://github.com/romarayt/raytsystem-public-os)|
-|**hermespace**|67|Python|Pocket workbench for Hermes Agent — limited FOA desk, dual decode, skills+MEMORY fabric, neural FOA....|[GitHub](https://github.com/PabloTheThinker/hermespace)|
-|**ReflectWorld**|67|TypeScript|ReflectWorld-MM: An Entity-Oriented Multimodal Memory System for Open-Ended Video Stream|[GitHub](https://github.com/addxai/ReflectWorld)|
+|**skill-recorder**|1217|TypeScript|Desktop app that records your on-screen work session and uses the GitHub Copilot CLI to reconstruct ...|[GitHub](https://github.com/microsoft/skill-recorder)|
+|**ratchet**|415|JavaScript|Your agent reads the rules. This checks whether it followed them.|[GitHub](https://github.com/0xwilliamortiz/ratchet)|
+|**old-coder**|254|Python|An old coder's strategy for the agent era: don't read the code — make it run the gauntlet. Evidence-...|[GitHub](https://github.com/AmazingAng/old-coder)|
+|**trace-file-lineage**|203|Python|Find which script, notebook, data, command, or AI agent produced a file — locally, with evidence and...|[GitHub](https://github.com/uczltw6/trace-file-lineage)|
+|**poirot**|107|Python|Poirot is a deep research agent kernel built for those who care about how agents are architected. |[GitHub](https://github.com/HezaoHezao/poirot)|
+|**bullshit-detector**|101|Python|Agent skills that fact-check the internet: claim-by-claim verification with sources and a 0-10 BS sc...|[GitHub](https://github.com/SerhiiKorniienko/bullshit-detector)|
+|**DeterminFlow**|95|Python|A production-oriented AI workflow runtime for building, validating, recovering, and shipping complex...|[GitHub](https://github.com/alikon-art/DeterminFlow)|
+|**kaas**|81|Python|Turn scattered notes, docs and transcripts into a queryable Markdown wiki — an LLM knowledge-base co...|[GitHub](https://github.com/bybit-exchange/kaas)|
+|**council-lab**|79|Python|Local-first, human-participatory four-agent AI deliberation workspace|[GitHub](https://github.com/loveramarois-byte/council-lab)|
+|**stormy-cookbook**|72|N/A|Open-source cookbook for the Stormy Social Data API and MCP server (Model Context Protocol) — one RE...|[GitHub](https://github.com/OneInterface/stormy-cookbook)|
