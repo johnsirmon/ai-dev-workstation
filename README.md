@@ -101,15 +101,15 @@ GitHub’s docs outline editing `mcp.json` in the *Tools* panel.
 
 | Framework / Lib | Latest ver. | Killer features |
 |-----------------|------------|-----------------|
-|**CrewAI**|1.15.10 (Updated 2026-08-03)|Declarative YAML mission files, vector‑based memory, Agents → Roles → Tasks hierarchy. Fast multi-agent prototyping.|
-|**Microsoft Autogen**|0.7.5 (Updated 2026-08-03)|Event-driven multi-agent; human-in-the-loop support. Merging with Semantic Kernel into unified Microsoft Agent Framework (GA Q1 2026).|
-|**LangGraph**|1.2.10 (Updated 2026-08-03)|**Stable v1.0** reached Oct 2025. Graph‑style state machine orchestration; check-pointing, audit trails. Best for production compliance workloads.|
-|**Semantic Kernel**|1.44.0 (Updated 2026-08-03)|Enterprise Azure integration, planners, function-calling. Converging with AutoGen into unified Microsoft Agent Framework.|
-|**OpenAI Agents SDK**|0.19.2 (Updated 2026-08-03)|Official open-source SDK for orchestrating multi-agent workflows; supports handoffs, guardrails, tracing, and the new Responses API (replaces Assistants API by Aug 2026).|
+|**CrewAI**|1.15.14 (Updated 2026-08-10)|Declarative YAML mission files, vector‑based memory, Agents → Roles → Tasks hierarchy. Fast multi-agent prototyping.|
+|**Microsoft Autogen**|0.7.5 (Updated 2026-08-10)|Event-driven multi-agent; human-in-the-loop support. Merging with Semantic Kernel into unified Microsoft Agent Framework (GA Q1 2026).|
+|**LangGraph**|1.2.10 (Updated 2026-08-10)|**Stable v1.0** reached Oct 2025. Graph‑style state machine orchestration; check-pointing, audit trails. Best for production compliance workloads.|
+|**Semantic Kernel**|1.44.1 (Updated 2026-08-10)|Enterprise Azure integration, planners, function-calling. Converging with AutoGen into unified Microsoft Agent Framework.|
+|**OpenAI Agents SDK**|0.19.4 (Updated 2026-08-10)|Official open-source SDK for orchestrating multi-agent workflows; supports handoffs, guardrails, tracing, and the new Responses API (replaces Assistants API by Aug 2026).|
 |**smolagents** (HF)|1.24.0|Ultra-minimal Hugging Face agents; CodeAgent paradigm, sandboxed execution, model-agnostic. Great for research/lightweight use.|
-|**Agno**|2.8.6 (Updated 2026-08-03)|High-performance runtime for large-scale multi-agent systems; streaming, governance, approval workflows, and audit logs built in.|
-|**LlamaIndex**|0.14.23 (Updated 2026-08-03)|Data/knowledge-centric framework; excels at RAG workflows, document agents, and retrieval-augmented production pipelines.|
-|**Google ADK**|2.6.1 (Updated 2026-08-03)|Google’s Agent Development Kit with native A2A protocol support; deploy on Cloud Run, GKE, or Vertex AI.|
+|**Agno**|2.8.7 (Updated 2026-08-10)|High-performance runtime for large-scale multi-agent systems; streaming, governance, approval workflows, and audit logs built in.|
+|**LlamaIndex**|0.14.23 (Updated 2026-08-10)|Data/knowledge-centric framework; excels at RAG workflows, document agents, and retrieval-augmented production pipelines.|
+|**Google ADK**|2.6.3 (Updated 2026-08-10)|Google’s Agent Development Kit with native A2A protocol support; deploy on Cloud Run, GKE, or Vertex AI.|
 |**GPTScript Agents**|Bleeding‑edge|Script agents in 10 lines; great for Kubernetes ops.|
 
 ### Choosing the Right Framework
@@ -331,13 +331,13 @@ GITHUB_TOKEN=your_github_personal_access_token
 
 | Tool | Stars | Language | Use Case | Repository |
 |------|-------|----------|----------|------------|
-|**skill-recorder**|1217|TypeScript|Desktop app that records your on-screen work session and uses the GitHub Copilot CLI to reconstruct ...|[GitHub](https://github.com/microsoft/skill-recorder)|
-|**ratchet**|415|JavaScript|Your agent reads the rules. This checks whether it followed them.|[GitHub](https://github.com/0xwilliamortiz/ratchet)|
-|**old-coder**|254|Python|An old coder's strategy for the agent era: don't read the code — make it run the gauntlet. Evidence-...|[GitHub](https://github.com/AmazingAng/old-coder)|
-|**trace-file-lineage**|203|Python|Find which script, notebook, data, command, or AI agent produced a file — locally, with evidence and...|[GitHub](https://github.com/uczltw6/trace-file-lineage)|
-|**poirot**|107|Python|Poirot is a deep research agent kernel built for those who care about how agents are architected. |[GitHub](https://github.com/HezaoHezao/poirot)|
-|**bullshit-detector**|101|Python|Agent skills that fact-check the internet: claim-by-claim verification with sources and a 0-10 BS sc...|[GitHub](https://github.com/SerhiiKorniienko/bullshit-detector)|
-|**DeterminFlow**|95|Python|A production-oriented AI workflow runtime for building, validating, recovering, and shipping complex...|[GitHub](https://github.com/alikon-art/DeterminFlow)|
-|**kaas**|81|Python|Turn scattered notes, docs and transcripts into a queryable Markdown wiki — an LLM knowledge-base co...|[GitHub](https://github.com/bybit-exchange/kaas)|
-|**council-lab**|79|Python|Local-first, human-participatory four-agent AI deliberation workspace|[GitHub](https://github.com/loveramarois-byte/council-lab)|
-|**stormy-cookbook**|72|N/A|Open-source cookbook for the Stormy Social Data API and MCP server (Model Context Protocol) — one RE...|[GitHub](https://github.com/OneInterface/stormy-cookbook)|
+|**mcp-server**|430|JavaScript|MCP server for AI agents that need a phone number: order a private number in any country, read the S...|[GitHub](https://github.com/sv-number/mcp-server)|
+|**codex-bridge**|352|Shell|Image generation (gpt-image-2) and GPT-5 subagents for Claude Code — through the Codex CLI login you...|[GitHub](https://github.com/Sateezg/codex-bridge)|
+|**wai-play**|259|Python|WAI Play - AI web game testing and quality evaluation platform|[GitHub](https://github.com/waiterve/wai-play)|
+|**KADATH**|170|Python|Evolutionary multi-agent runtime that breeds, evaluates, and improves autonomous agents across repro...|[GitHub](https://github.com/i3T4AN/KADATH)|
+|**agent-skills-collection**|134|Python|Curated collection of modular agent skills for LLM-based agents|[GitHub](https://github.com/oliverb-io1902e8/agent-skills-collection)|
+|**skills**|91|Python|Give your AI agent a phone number: order a private number in any country over the API, read the SMS ...|[GitHub](https://github.com/sv-number/skills)|
+|**public-data-lens**|76|Python|MCP-based discovery and judgment layer for Korea’s open data portal—helping AI agents find, compare,...|[GitHub](https://github.com/hike-lab/public-data-lens)|
+|**juror**|66|TypeScript|Cheaper and better Greptile alternative runs on your own github actions.|[GitHub](https://github.com/Juror-AI/juror)|
+|**index**|40|TypeScript|Mintlify Index: retrieval engine and MCP server. Install: npx mint index|[GitHub](https://github.com/mintlify/index)|
+|**AI-Knowledge-Management-Platform**|36|Jupyter Notebook|An agentic LLM-powered knowledge assistant that enhances RAG capabilities through automated entity e...|[GitHub](https://github.com/TOPDEV99999/AI-Knowledge-Management-Platform)|
