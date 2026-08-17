@@ -101,15 +101,15 @@ GitHub’s docs outline editing `mcp.json` in the *Tools* panel.
 
 | Framework / Lib | Latest ver. | Killer features |
 |-----------------|------------|-----------------|
-|**CrewAI**|1.15.14 (Updated 2026-08-10)|Declarative YAML mission files, vector‑based memory, Agents → Roles → Tasks hierarchy. Fast multi-agent prototyping.|
-|**Microsoft Autogen**|0.7.5 (Updated 2026-08-10)|Event-driven multi-agent; human-in-the-loop support. Merging with Semantic Kernel into unified Microsoft Agent Framework (GA Q1 2026).|
-|**LangGraph**|1.2.10 (Updated 2026-08-10)|**Stable v1.0** reached Oct 2025. Graph‑style state machine orchestration; check-pointing, audit trails. Best for production compliance workloads.|
-|**Semantic Kernel**|1.44.1 (Updated 2026-08-10)|Enterprise Azure integration, planners, function-calling. Converging with AutoGen into unified Microsoft Agent Framework.|
-|**OpenAI Agents SDK**|0.19.4 (Updated 2026-08-10)|Official open-source SDK for orchestrating multi-agent workflows; supports handoffs, guardrails, tracing, and the new Responses API (replaces Assistants API by Aug 2026).|
+|**CrewAI**|1.15.16 (Updated 2026-08-17)|Declarative YAML mission files, vector‑based memory, Agents → Roles → Tasks hierarchy. Fast multi-agent prototyping.|
+|**Microsoft Autogen**|0.7.5 (Updated 2026-08-17)|Event-driven multi-agent; human-in-the-loop support. Merging with Semantic Kernel into unified Microsoft Agent Framework (GA Q1 2026).|
+|**LangGraph**|1.2.11 (Updated 2026-08-17)|**Stable v1.0** reached Oct 2025. Graph‑style state machine orchestration; check-pointing, audit trails. Best for production compliance workloads.|
+|**Semantic Kernel**|1.44.1 (Updated 2026-08-17)|Enterprise Azure integration, planners, function-calling. Converging with AutoGen into unified Microsoft Agent Framework.|
+|**OpenAI Agents SDK**|0.21.1 (Updated 2026-08-17)|Official open-source SDK for orchestrating multi-agent workflows; supports handoffs, guardrails, tracing, and the new Responses API (replaces Assistants API by Aug 2026).|
 |**smolagents** (HF)|1.24.0|Ultra-minimal Hugging Face agents; CodeAgent paradigm, sandboxed execution, model-agnostic. Great for research/lightweight use.|
-|**Agno**|2.8.7 (Updated 2026-08-10)|High-performance runtime for large-scale multi-agent systems; streaming, governance, approval workflows, and audit logs built in.|
-|**LlamaIndex**|0.14.23 (Updated 2026-08-10)|Data/knowledge-centric framework; excels at RAG workflows, document agents, and retrieval-augmented production pipelines.|
-|**Google ADK**|2.6.3 (Updated 2026-08-10)|Google’s Agent Development Kit with native A2A protocol support; deploy on Cloud Run, GKE, or Vertex AI.|
+|**Agno**|2.9.0 (Updated 2026-08-17)|High-performance runtime for large-scale multi-agent systems; streaming, governance, approval workflows, and audit logs built in.|
+|**LlamaIndex**|0.14.23 (Updated 2026-08-17)|Data/knowledge-centric framework; excels at RAG workflows, document agents, and retrieval-augmented production pipelines.|
+|**Google ADK**|2.7.0 (Updated 2026-08-17)|Google’s Agent Development Kit with native A2A protocol support; deploy on Cloud Run, GKE, or Vertex AI.|
 |**GPTScript Agents**|Bleeding‑edge|Script agents in 10 lines; great for Kubernetes ops.|
 
 ### Choosing the Right Framework
@@ -331,13 +331,13 @@ GITHUB_TOKEN=your_github_personal_access_token
 
 | Tool | Stars | Language | Use Case | Repository |
 |------|-------|----------|----------|------------|
-|**mcp-server**|430|JavaScript|MCP server for AI agents that need a phone number: order a private number in any country, read the S...|[GitHub](https://github.com/sv-number/mcp-server)|
-|**codex-bridge**|352|Shell|Image generation (gpt-image-2) and GPT-5 subagents for Claude Code — through the Codex CLI login you...|[GitHub](https://github.com/Sateezg/codex-bridge)|
-|**wai-play**|259|Python|WAI Play - AI web game testing and quality evaluation platform|[GitHub](https://github.com/waiterve/wai-play)|
-|**KADATH**|170|Python|Evolutionary multi-agent runtime that breeds, evaluates, and improves autonomous agents across repro...|[GitHub](https://github.com/i3T4AN/KADATH)|
-|**agent-skills-collection**|134|Python|Curated collection of modular agent skills for LLM-based agents|[GitHub](https://github.com/oliverb-io1902e8/agent-skills-collection)|
-|**skills**|91|Python|Give your AI agent a phone number: order a private number in any country over the API, read the SMS ...|[GitHub](https://github.com/sv-number/skills)|
-|**public-data-lens**|76|Python|MCP-based discovery and judgment layer for Korea’s open data portal—helping AI agents find, compare,...|[GitHub](https://github.com/hike-lab/public-data-lens)|
-|**juror**|66|TypeScript|Cheaper and better Greptile alternative runs on your own github actions.|[GitHub](https://github.com/Juror-AI/juror)|
-|**index**|40|TypeScript|Mintlify Index: retrieval engine and MCP server. Install: npx mint index|[GitHub](https://github.com/mintlify/index)|
-|**AI-Knowledge-Management-Platform**|36|Jupyter Notebook|An agentic LLM-powered knowledge assistant that enhances RAG capabilities through automated entity e...|[GitHub](https://github.com/TOPDEV99999/AI-Knowledge-Management-Platform)|
+|**deepseek-harness**|143643|TypeScript|DeepSeek Harness: Everything is a Plugin.|[GitHub](https://github.com/deepseek-ai/deepseek-harness)|
+|**book-to-skill**|1164|Python|Turn any technical book PDF into a Claude Code skill — ready to study, reference, and use while you ...|[GitHub](https://github.com/Leutenegger/book-to-skill)|
+|**dsh-desktop**|683|TypeScript|DeepSeek Harness Desktop|[GitHub](https://github.com/dataelement/dsh-desktop)|
+|**awesome-deepseek-harness**|661|Python|DeepSeek Harness (DSH) ecosystem: curated plugins, tools, and infrastructure from dsh-external/hub a...|[GitHub](https://github.com/0xsline/awesome-deepseek-harness)|
+|**rakazo**|615|TypeScript|Open-source Grok Bot alternative. Choose your own model and sandbox.|[GitHub](https://github.com/elie222/rakazo)|
+|**agent-safe-pipeline**|500|TypeScript|Reference architecture for AI agents that propose actions but cannot authorize them — immutable inte...|[GitHub](https://github.com/decionis/agent-safe-pipeline)|
+|**moli**|437|Rust|Best browser for AI agents, built in Rust.|[GitHub](https://github.com/lexmount/moli)|
+|**dsh-handbook**|429|HTML|DeepSeek Harness (dsh) 从 0 到 1 深度手册：安装/插件开发/性能调优/实测案例/同模型多 Agent 实测对比（中文 + 英文 PDF）|[GitHub](https://github.com/Electricitysheep/dsh-handbook)|
+|**HERO-Anti-OverDefense**|178|Markdown|HERO = Hashing · Edge cases · Rubrics · Overbuild — the four shapes coding agents over-defend in. A ...|[GitHub](https://github.com/wanshuiyin/HERO-Anti-OverDefense)|
+|**vibe-coding-toolkit**|153|N/A|A curated, battle-tested AI-coding toolkit: Claude Code plugins, subagent orchestration, quality gat...|[GitHub](https://github.com/soumatheusgomes/vibe-coding-toolkit)|

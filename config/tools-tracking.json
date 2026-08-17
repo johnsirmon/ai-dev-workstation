@@ -2,8 +2,8 @@
   "tracked_tools": {
     "ai_frameworks": {
       "CrewAI": {
-        "current_version": "1.15.14",
-        "last_updated": "2026-08-10",
+        "current_version": "1.15.16",
+        "last_updated": "2026-08-17",
         "source": "https://github.com/crewAIInc/crewAI",
         "npm_package": null,
         "pypi_package": "crewai",
@@ -18,8 +18,8 @@
         "description": "Replay analytics, compliance hooks, VS Code debug adapter"
       },
       "LangGraph": {
-        "current_version": "1.2.10",
-        "last_updated": "2026-08-03",
+        "current_version": "1.2.11",
+        "last_updated": "2026-08-17",
         "source": "https://github.com/langchain-ai/langgraph",
         "npm_package": "@langchain/langgraph",
         "pypi_package": "langgraph",
@@ -34,8 +34,8 @@
         "description": "Process Framework (durable orchestration) + C#/Python parity"
       },
       "OpenAI Agents SDK": {
-        "current_version": "0.19.4",
-        "last_updated": "2026-08-10",
+        "current_version": "0.21.1",
+        "last_updated": "2026-08-17",
         "source": "https://github.com/openai/agents-python",
         "npm_package": null,
         "pypi_package": "openai-agents",
@@ -50,8 +50,8 @@
         "description": "Ultra-minimal Hugging Face agents; CodeAgent paradigm, sandboxed execution, model-agnostic"
       },
       "Agno": {
-        "current_version": "2.8.7",
-        "last_updated": "2026-08-10",
+        "current_version": "2.9.0",
+        "last_updated": "2026-08-17",
         "source": "https://github.com/agno-agi/agno",
         "npm_package": null,
         "pypi_package": "agno",
@@ -66,8 +66,8 @@
         "description": "Data/knowledge-centric framework; RAG workflows, document agents, retrieval-augmented production pipelines"
       },
       "Google ADK": {
-        "current_version": "2.6.3",
-        "last_updated": "2026-08-10",
+        "current_version": "2.7.0",
+        "last_updated": "2026-08-17",
         "source": "https://github.com/google/genai-toolbox",
         "npm_package": null,
         "pypi_package": "google-adk",
@@ -76,8 +76,8 @@
     },
     "mcp_servers": {
       "@upstash/context7-mcp": {
-        "current_version": "@upstash/context7-mcp@4.0.0",
-        "last_updated": "2026-08-10",
+        "current_version": "@upstash/context7-mcp@4.0.2",
+        "last_updated": "2026-08-17",
         "source": "https://github.com/upstash/context7-mcp",
         "description": "Enhanced context management for AI agents"
       },
@@ -221,113 +221,95 @@
   },
   "trending_tools": [
     {
-      "name": "mcp-server",
-      "url": "https://github.com/sv-number/mcp-server",
-      "description": "MCP server for AI agents that need a phone number: order a private number in any country, read the SMS verification code, hand it back.",
-      "stars": 430,
-      "language": "JavaScript",
-      "topic": "ai-agents",
-      "created_at": "2026-08-07T11:13:26Z"
-    },
-    {
-      "name": "codex-bridge",
-      "url": "https://github.com/Sateezg/codex-bridge",
-      "description": "Image generation (gpt-image-2) and GPT-5 subagents for Claude Code — through the Codex CLI login you already have. No OpenAI API key.",
-      "stars": 352,
-      "language": "Shell",
-      "topic": "ai-agents",
-      "created_at": "2026-08-09T06:57:08Z"
-    },
-    {
-      "name": "wai-play",
-      "url": "https://github.com/waiterve/wai-play",
-      "description": "WAI Play - AI web game testing and quality evaluation platform",
-      "stars": 259,
-      "language": "Python",
-      "topic": "ai-agents",
-      "created_at": "2026-08-04T07:20:22Z"
-    },
-    {
-      "name": "KADATH",
-      "url": "https://github.com/i3T4AN/KADATH",
-      "description": "Evolutionary multi-agent runtime that breeds, evaluates, and improves autonomous agents across reproducible epochs to converge on optimization of a goal.",
-      "stars": 170,
-      "language": "Python",
-      "topic": "ai-agents",
-      "created_at": "2026-08-08T15:49:55Z"
-    },
-    {
-      "name": "agent-skills-collection",
-      "url": "https://github.com/oliverb-io1902e8/agent-skills-collection",
-      "description": "Curated collection of modular agent skills for LLM-based agents",
-      "stars": 134,
-      "language": "Python",
-      "topic": "ai-agents",
-      "created_at": "2026-08-06T14:07:02Z"
-    },
-    {
-      "name": "skills",
-      "url": "https://github.com/sv-number/skills",
-      "description": "Give your AI agent a phone number: order a private number in any country over the API, read the SMS verification code, hand the number back.",
-      "stars": 91,
-      "language": "Python",
-      "topic": "ai-agents",
-      "created_at": "2026-08-07T08:14:34Z"
-    },
-    {
-      "name": "public-data-lens",
-      "url": "https://github.com/hike-lab/public-data-lens",
-      "description": "MCP-based discovery and judgment layer for Korea’s open data portal—helping AI agents find, compare, and assess datasets with explicit evidence, JSON-LD/DCAT metadata, and versioned deterministic rules.",
-      "stars": 76,
-      "language": "Python",
-      "topic": "ai-agents",
-      "created_at": "2026-08-03T02:02:25Z"
-    },
-    {
-      "name": "juror",
-      "url": "https://github.com/Juror-AI/juror",
-      "description": "Cheaper and better Greptile alternative runs on your own github actions.",
-      "stars": 66,
+      "name": "deepseek-harness",
+      "url": "https://github.com/deepseek-ai/deepseek-harness",
+      "description": "DeepSeek Harness: Everything is a Plugin.",
+      "stars": 143643,
       "language": "TypeScript",
       "topic": "ai-agents",
-      "created_at": "2026-08-06T12:24:49Z"
+      "created_at": "2026-08-13T11:56:32Z"
     },
     {
-      "name": "index",
-      "url": "https://github.com/mintlify/index",
-      "description": "Mintlify Index: retrieval engine and MCP server. Install: npx mint index",
-      "stars": 40,
+      "name": "book-to-skill",
+      "url": "https://github.com/Leutenegger/book-to-skill",
+      "description": "Turn any technical book PDF into a Claude Code skill — ready to study, reference, and use while you work.",
+      "stars": 1164,
+      "language": "Python",
+      "topic": "ai-agents",
+      "created_at": "2026-08-13T13:15:23Z"
+    },
+    {
+      "name": "dsh-desktop",
+      "url": "https://github.com/dataelement/dsh-desktop",
+      "description": "DeepSeek Harness Desktop",
+      "stars": 683,
       "language": "TypeScript",
       "topic": "ai-agents",
-      "created_at": "2026-08-05T22:27:42Z"
+      "created_at": "2026-08-13T13:45:50Z"
     },
     {
-      "name": "AI-Knowledge-Management-Platform",
-      "url": "https://github.com/TOPDEV99999/AI-Knowledge-Management-Platform",
-      "description": "An agentic LLM-powered knowledge assistant that enhances RAG capabilities through automated entity extraction, structured data analysis, and SQL-based reasoning to deliver accurate answers for complex, multi-step, and analytical queries.",
-      "stars": 36,
-      "language": "Jupyter Notebook",
+      "name": "awesome-deepseek-harness",
+      "url": "https://github.com/0xsline/awesome-deepseek-harness",
+      "description": "DeepSeek Harness (DSH) ecosystem: curated plugins, tools, and infrastructure from dsh-external/hub and the public dsh-plugin topic.",
+      "stars": 661,
+      "language": "Python",
       "topic": "ai-agents",
-      "created_at": "2026-08-03T07:36:22Z"
+      "created_at": "2026-08-11T13:14:49Z"
     },
     {
-      "name": "goal-flow",
-      "url": "https://github.com/wanmol/goal-flow",
-      "description": "Graph-Orchestrated Agent Loop — a production-grade framework on LangGraph. Combine workflow graphs and agent loops, transpile Dify DSL to runnable code, swap wire protocols (Dify/OpenAI).",
-      "stars": 72,
-      "language": "Python",
-      "topic": "langchain",
-      "created_at": "2026-08-06T15:43:24Z"
+      "name": "rakazo",
+      "url": "https://github.com/elie222/rakazo",
+      "description": "Open-source Grok Bot alternative. Choose your own model and sandbox.",
+      "stars": 615,
+      "language": "TypeScript",
+      "topic": "ai-agents",
+      "created_at": "2026-08-13T06:28:56Z"
     },
     {
-      "name": "synthetic-gpa-agent",
-      "url": "https://github.com/zxxasdfrty/synthetic-gpa-agent",
-      "description": "Synthetic dual-reflection GPA benchmarks with optional OpenAI method-card agent",
-      "stars": 34,
-      "language": "Python",
-      "topic": "openai-agents",
-      "created_at": "2026-08-08T08:11:00Z"
+      "name": "agent-safe-pipeline",
+      "url": "https://github.com/decionis/agent-safe-pipeline",
+      "description": "Reference architecture for AI agents that propose actions but cannot authorize them — immutable intent capture, an independent Decionis policy verdict (ALLOW/ESCALATE/BLOCK), verified human approval, and a SafeExecutor that consumes a single-use intent-bound grant.",
+      "stars": 500,
+      "language": "TypeScript",
+      "topic": "ai-agents",
+      "created_at": "2026-08-13T21:36:19Z"
+    },
+    {
+      "name": "moli",
+      "url": "https://github.com/lexmount/moli",
+      "description": "Best browser for AI agents, built in Rust.",
+      "stars": 437,
+      "language": "Rust",
+      "topic": "ai-agents",
+      "created_at": "2026-08-10T13:20:30Z"
+    },
+    {
+      "name": "dsh-handbook",
+      "url": "https://github.com/Electricitysheep/dsh-handbook",
+      "description": "DeepSeek Harness (dsh) 从 0 到 1 深度手册：安装/插件开发/性能调优/实测案例/同模型多 Agent 实测对比（中文 + 英文 PDF）",
+      "stars": 429,
+      "language": "HTML",
+      "topic": "ai-agents",
+      "created_at": "2026-08-13T15:22:29Z"
+    },
+    {
+      "name": "HERO-Anti-OverDefense",
+      "url": "https://github.com/wanshuiyin/HERO-Anti-OverDefense",
+      "description": "HERO = Hashing · Edge cases · Rubrics · Overbuild — the four shapes coding agents over-defend in. A paste-in contract that stops them. Works with Claude Code, Codex, Antigravity, Cursor, Copilot, Windsurf, Gemini CLI.",
+      "stars": 178,
+      "language": "Markdown",
+      "topic": "ai-agents",
+      "created_at": "2026-08-11T05:08:30Z"
+    },
+    {
+      "name": "vibe-coding-toolkit",
+      "url": "https://github.com/soumatheusgomes/vibe-coding-toolkit",
+      "description": "A curated, battle-tested AI-coding toolkit: Claude Code plugins, subagent orchestration, quality gates, and ready-to-copy prompts, extracted from real production use.",
+      "stars": 153,
+      "language": null,
+      "topic": "ai-agents",
+      "created_at": "2026-08-14T23:41:31Z"
     }
   ],
-  "last_update_check": "2026-08-10"
+  "last_update_check": "2026-08-17"
 }
