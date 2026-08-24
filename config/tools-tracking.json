@@ -2,8 +2,8 @@
   "tracked_tools": {
     "ai_frameworks": {
       "CrewAI": {
-        "current_version": "1.15.16",
-        "last_updated": "2026-08-17",
+        "current_version": "1.15.17",
+        "last_updated": "2026-08-24",
         "source": "https://github.com/crewAIInc/crewAI",
         "npm_package": null,
         "pypi_package": "crewai",
@@ -34,8 +34,8 @@
         "description": "Process Framework (durable orchestration) + C#/Python parity"
       },
       "OpenAI Agents SDK": {
-        "current_version": "0.21.1",
-        "last_updated": "2026-08-17",
+        "current_version": "0.22.0",
+        "last_updated": "2026-08-24",
         "source": "https://github.com/openai/agents-python",
         "npm_package": null,
         "pypi_package": "openai-agents",
@@ -58,16 +58,16 @@
         "description": "High-performance runtime for large-scale multi-agent systems; streaming, governance, approval workflows"
       },
       "LlamaIndex": {
-        "current_version": "0.14.23",
-        "last_updated": "2026-06-29",
+        "current_version": "0.14.24",
+        "last_updated": "2026-08-24",
         "source": "https://github.com/run-llama/llama_index",
         "npm_package": null,
         "pypi_package": "llama-index",
         "description": "Data/knowledge-centric framework; RAG workflows, document agents, retrieval-augmented production pipelines"
       },
       "Google ADK": {
-        "current_version": "2.7.0",
-        "last_updated": "2026-08-17",
+        "current_version": "2.7.1",
+        "last_updated": "2026-08-24",
         "source": "https://github.com/google/genai-toolbox",
         "npm_package": null,
         "pypi_package": "google-adk",
@@ -76,14 +76,14 @@
     },
     "mcp_servers": {
       "@upstash/context7-mcp": {
-        "current_version": "@upstash/context7-mcp@4.0.2",
-        "last_updated": "2026-08-17",
+        "current_version": "@upstash/context7-mcp@4.0.3",
+        "last_updated": "2026-08-24",
         "source": "https://github.com/upstash/context7-mcp",
         "description": "Enhanced context management for AI agents"
       },
       "@modelcontextprotocol/server-memory": {
-        "current_version": "2026.7.10",
-        "last_updated": "2026-07-13",
+        "current_version": "2026.8.18",
+        "last_updated": "2026-08-24",
         "source": "https://github.com/modelcontextprotocol/servers",
         "description": "Persistent memory across AI agent sessions"
       },
@@ -94,14 +94,14 @@
         "description": "Brave Search MCP server for web search and rich search results"
       },
       "@modelcontextprotocol/server-github": {
-        "current_version": "2026.7.10",
-        "last_updated": "2026-07-13",
+        "current_version": "2026.8.18",
+        "last_updated": "2026-08-24",
         "source": "https://github.com/modelcontextprotocol/servers",
         "description": "GitHub integration for repository management"
       },
       "@modelcontextprotocol/server-filesystem": {
-        "current_version": "2026.7.10",
-        "last_updated": "2026-07-13",
+        "current_version": "2026.8.18",
+        "last_updated": "2026-08-24",
         "source": "https://github.com/modelcontextprotocol/servers",
         "description": "Filesystem access for workspace-local agent operations"
       }
@@ -221,95 +221,95 @@
   },
   "trending_tools": [
     {
-      "name": "deepseek-harness",
-      "url": "https://github.com/deepseek-ai/deepseek-harness",
-      "description": "DeepSeek Harness: Everything is a Plugin.",
-      "stars": 143643,
+      "name": "OpenBot",
+      "url": "https://github.com/CopilotKit/OpenBot",
+      "description": "Open-source AI coworkers that each get a computer of their own: a browser, files and tools, with every action decided before it happens and recorded after. Bring any AG-UI agent.",
+      "stars": 2564,
       "language": "TypeScript",
       "topic": "ai-agents",
-      "created_at": "2026-08-13T11:56:32Z"
+      "created_at": "2026-08-17T00:44:59Z"
     },
     {
-      "name": "book-to-skill",
-      "url": "https://github.com/Leutenegger/book-to-skill",
-      "description": "Turn any technical book PDF into a Claude Code skill — ready to study, reference, and use while you work.",
-      "stars": 1164,
+      "name": "sprix-sage-router",
+      "url": "https://github.com/wang2122/sprix-sage-router",
+      "description": "Sprix AI at 屿智同行 — state-aware SELF/COLLABORATE/HANDOFF routing for A2A agent networks.",
+      "stars": 1699,
       "language": "Python",
       "topic": "ai-agents",
-      "created_at": "2026-08-13T13:15:23Z"
+      "created_at": "2026-08-18T04:08:11Z"
     },
     {
-      "name": "dsh-desktop",
-      "url": "https://github.com/dataelement/dsh-desktop",
-      "description": "DeepSeek Harness Desktop",
-      "stars": 683,
+      "name": "x64dbg-mcp-server",
+      "url": "https://github.com/duty1g/x64dbg-mcp-server",
+      "description": "x64dbg-MCP Server is a native MCP (Model Context Protocol) plugin for x64dbg that exposes the debugger's full functionality over HTTP. Connect any MCP-compatible AI assistant and control x64dbg programmatically: set breakpoints, step through code, read memory, dump registers, and more.  Built with Zig — zero dependencies, single-binary output, cros",
+      "stars": 1062,
+      "language": "Zig",
+      "topic": "ai-agents",
+      "created_at": "2026-08-22T14:28:41Z"
+    },
+    {
+      "name": "autoprompt-skill",
+      "url": "https://github.com/Spielewoy/autoprompt-skill",
+      "description": "Autoprompt is a coding-agent skill that cuts failures by 45% on agentic coding tasks.",
+      "stars": 792,
+      "language": "JavaScript",
+      "topic": "ai-agents",
+      "created_at": "2026-08-17T22:40:47Z"
+    },
+    {
+      "name": "oc",
+      "url": "https://github.com/only-cli/oc",
+      "description": "Turn any website into a compact CLI tailored for AI agents. Browse the web in hundreds of tokens, not tens of thousands.",
+      "stars": 246,
+      "language": "JavaScript",
+      "topic": "ai-agents",
+      "created_at": "2026-08-18T13:00:30Z"
+    },
+    {
+      "name": "dsh-ios",
+      "url": "https://github.com/ZSeven-W/dsh-ios",
+      "description": "DeepSeek Harness (DSH) plugin: a live iOS Simulator — and a USB-connected iPhone — inside the conversation. 22 agent tools for booting, building, driving the UI by accessibility identity, OCR text or list rows, plus a streaming sidebar panel you can tap and drag on.",
+      "stars": 236,
       "language": "TypeScript",
       "topic": "ai-agents",
-      "created_at": "2026-08-13T13:45:50Z"
+      "created_at": "2026-08-19T18:02:50Z"
     },
     {
-      "name": "awesome-deepseek-harness",
-      "url": "https://github.com/0xsline/awesome-deepseek-harness",
-      "description": "DeepSeek Harness (DSH) ecosystem: curated plugins, tools, and infrastructure from dsh-external/hub and the public dsh-plugin topic.",
-      "stars": 661,
+      "name": "doop",
+      "url": "https://github.com/kgoedecke/doop",
+      "description": "The open-source alternative to Paper.design. A multiplayer design canvas where humans and AI agents design together, live. MCP built in.",
+      "stars": 229,
+      "language": "TypeScript",
+      "topic": "ai-agents",
+      "created_at": "2026-08-22T15:40:51Z"
+    },
+    {
+      "name": "oh-story-dsh",
+      "url": "https://github.com/worldwonderer/oh-story-dsh",
+      "description": "A DSH plugin for novel writing and short-drama production, powered by Oh Story and Drama Skills.",
+      "stars": 169,
       "language": "Python",
       "topic": "ai-agents",
-      "created_at": "2026-08-11T13:14:49Z"
+      "created_at": "2026-08-19T15:27:01Z"
     },
     {
-      "name": "rakazo",
-      "url": "https://github.com/elie222/rakazo",
-      "description": "Open-source Grok Bot alternative. Choose your own model and sandbox.",
-      "stars": 615,
+      "name": "botdirectory.ai",
+      "url": "https://github.com/elie222/botdirectory.ai",
+      "description": "Open-source directory of agent-bot prompts for Grok Bot, Rakazo, and any agent — botdirectory.ai",
+      "stars": 117,
+      "language": "Astro",
+      "topic": "ai-agents",
+      "created_at": "2026-08-17T18:23:44Z"
+    },
+    {
+      "name": "oa-design",
+      "url": "https://github.com/OpenLabs-so/oa-design",
+      "description": "The Open Analytics design language as an agent skill: component recipes with type-checked source, token CSS, and a CLI. Works with Claude Code, Cursor, or any agent.",
+      "stars": 113,
       "language": "TypeScript",
       "topic": "ai-agents",
-      "created_at": "2026-08-13T06:28:56Z"
-    },
-    {
-      "name": "agent-safe-pipeline",
-      "url": "https://github.com/decionis/agent-safe-pipeline",
-      "description": "Reference architecture for AI agents that propose actions but cannot authorize them — immutable intent capture, an independent Decionis policy verdict (ALLOW/ESCALATE/BLOCK), verified human approval, and a SafeExecutor that consumes a single-use intent-bound grant.",
-      "stars": 500,
-      "language": "TypeScript",
-      "topic": "ai-agents",
-      "created_at": "2026-08-13T21:36:19Z"
-    },
-    {
-      "name": "moli",
-      "url": "https://github.com/lexmount/moli",
-      "description": "Best browser for AI agents, built in Rust.",
-      "stars": 437,
-      "language": "Rust",
-      "topic": "ai-agents",
-      "created_at": "2026-08-10T13:20:30Z"
-    },
-    {
-      "name": "dsh-handbook",
-      "url": "https://github.com/Electricitysheep/dsh-handbook",
-      "description": "DeepSeek Harness (dsh) 从 0 到 1 深度手册：安装/插件开发/性能调优/实测案例/同模型多 Agent 实测对比（中文 + 英文 PDF）",
-      "stars": 429,
-      "language": "HTML",
-      "topic": "ai-agents",
-      "created_at": "2026-08-13T15:22:29Z"
-    },
-    {
-      "name": "HERO-Anti-OverDefense",
-      "url": "https://github.com/wanshuiyin/HERO-Anti-OverDefense",
-      "description": "HERO = Hashing · Edge cases · Rubrics · Overbuild — the four shapes coding agents over-defend in. A paste-in contract that stops them. Works with Claude Code, Codex, Antigravity, Cursor, Copilot, Windsurf, Gemini CLI.",
-      "stars": 178,
-      "language": "Markdown",
-      "topic": "ai-agents",
-      "created_at": "2026-08-11T05:08:30Z"
-    },
-    {
-      "name": "vibe-coding-toolkit",
-      "url": "https://github.com/soumatheusgomes/vibe-coding-toolkit",
-      "description": "A curated, battle-tested AI-coding toolkit: Claude Code plugins, subagent orchestration, quality gates, and ready-to-copy prompts, extracted from real production use.",
-      "stars": 153,
-      "language": null,
-      "topic": "ai-agents",
-      "created_at": "2026-08-14T23:41:31Z"
+      "created_at": "2026-08-20T18:28:10Z"
     }
   ],
-  "last_update_check": "2026-08-17"
+  "last_update_check": "2026-08-24"
 }
