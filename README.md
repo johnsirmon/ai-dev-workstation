@@ -101,15 +101,15 @@ GitHub’s docs outline editing `mcp.json` in the *Tools* panel.
 
 | Framework / Lib | Latest ver. | Killer features |
 |-----------------|------------|-----------------|
-|**CrewAI**|1.15.17 (Updated 2026-08-24)|Declarative YAML mission files, vector‑based memory, Agents → Roles → Tasks hierarchy. Fast multi-agent prototyping.|
-|**Microsoft Autogen**|0.7.5 (Updated 2026-08-24)|Event-driven multi-agent; human-in-the-loop support. Merging with Semantic Kernel into unified Microsoft Agent Framework (GA Q1 2026).|
-|**LangGraph**|1.2.11 (Updated 2026-08-24)|**Stable v1.0** reached Oct 2025. Graph‑style state machine orchestration; check-pointing, audit trails. Best for production compliance workloads.|
-|**Semantic Kernel**|1.44.1 (Updated 2026-08-24)|Enterprise Azure integration, planners, function-calling. Converging with AutoGen into unified Microsoft Agent Framework.|
-|**OpenAI Agents SDK**|0.22.0 (Updated 2026-08-24)|Official open-source SDK for orchestrating multi-agent workflows; supports handoffs, guardrails, tracing, and the new Responses API (replaces Assistants API by Aug 2026).|
+|**CrewAI**|1.15.18 (Updated 2026-08-31)|Declarative YAML mission files, vector‑based memory, Agents → Roles → Tasks hierarchy. Fast multi-agent prototyping.|
+|**Microsoft Autogen**|0.7.5 (Updated 2026-08-31)|Event-driven multi-agent; human-in-the-loop support. Merging with Semantic Kernel into unified Microsoft Agent Framework (GA Q1 2026).|
+|**LangGraph**|1.2.11 (Updated 2026-08-31)|**Stable v1.0** reached Oct 2025. Graph‑style state machine orchestration; check-pointing, audit trails. Best for production compliance workloads.|
+|**Semantic Kernel**|1.44.1 (Updated 2026-08-31)|Enterprise Azure integration, planners, function-calling. Converging with AutoGen into unified Microsoft Agent Framework.|
+|**OpenAI Agents SDK**|0.22.0 (Updated 2026-08-31)|Official open-source SDK for orchestrating multi-agent workflows; supports handoffs, guardrails, tracing, and the new Responses API (replaces Assistants API by Aug 2026).|
 |**smolagents** (HF)|1.24.0|Ultra-minimal Hugging Face agents; CodeAgent paradigm, sandboxed execution, model-agnostic. Great for research/lightweight use.|
-|**Agno**|2.9.0 (Updated 2026-08-24)|High-performance runtime for large-scale multi-agent systems; streaming, governance, approval workflows, and audit logs built in.|
-|**LlamaIndex**|0.14.24 (Updated 2026-08-24)|Data/knowledge-centric framework; excels at RAG workflows, document agents, and retrieval-augmented production pipelines.|
-|**Google ADK**|2.7.1 (Updated 2026-08-24)|Google’s Agent Development Kit with native A2A protocol support; deploy on Cloud Run, GKE, or Vertex AI.|
+|**Agno**|3.0.4 (Updated 2026-08-31)|High-performance runtime for large-scale multi-agent systems; streaming, governance, approval workflows, and audit logs built in.|
+|**LlamaIndex**|0.14.24 (Updated 2026-08-31)|Data/knowledge-centric framework; excels at RAG workflows, document agents, and retrieval-augmented production pipelines.|
+|**Google ADK**|2.8.0 (Updated 2026-08-31)|Google’s Agent Development Kit with native A2A protocol support; deploy on Cloud Run, GKE, or Vertex AI.|
 |**GPTScript Agents**|Bleeding‑edge|Script agents in 10 lines; great for Kubernetes ops.|
 
 ### Choosing the Right Framework
@@ -331,13 +331,13 @@ GITHUB_TOKEN=your_github_personal_access_token
 
 | Tool | Stars | Language | Use Case | Repository |
 |------|-------|----------|----------|------------|
-|**OpenBot**|2564|TypeScript|Open-source AI coworkers that each get a computer of their own: a browser, files and tools, with eve...|[GitHub](https://github.com/CopilotKit/OpenBot)|
-|**sprix-sage-router**|1699|Python|Sprix AI at 屿智同行 — state-aware SELF/COLLABORATE/HANDOFF routing for A2A agent networks.|[GitHub](https://github.com/wang2122/sprix-sage-router)|
-|**x64dbg-mcp-server**|1062|Zig|x64dbg-MCP Server is a native MCP (Model Context Protocol) plugin for x64dbg that exposes the debugg...|[GitHub](https://github.com/duty1g/x64dbg-mcp-server)|
-|**autoprompt-skill**|792|JavaScript|Autoprompt is a coding-agent skill that cuts failures by 45% on agentic coding tasks.|[GitHub](https://github.com/Spielewoy/autoprompt-skill)|
-|**oc**|246|JavaScript|Turn any website into a compact CLI tailored for AI agents. Browse the web in hundreds of tokens, no...|[GitHub](https://github.com/only-cli/oc)|
-|**dsh-ios**|236|TypeScript|DeepSeek Harness (DSH) plugin: a live iOS Simulator — and a USB-connected iPhone — inside the conver...|[GitHub](https://github.com/ZSeven-W/dsh-ios)|
-|**doop**|229|TypeScript|The open-source alternative to Paper.design. A multiplayer design canvas where humans and AI agents ...|[GitHub](https://github.com/kgoedecke/doop)|
-|**oh-story-dsh**|169|Python|A DSH plugin for novel writing and short-drama production, powered by Oh Story and Drama Skills.|[GitHub](https://github.com/worldwonderer/oh-story-dsh)|
-|**botdirectory.ai**|117|Astro|Open-source directory of agent-bot prompts for Grok Bot, Rakazo, and any agent — botdirectory.ai|[GitHub](https://github.com/elie222/botdirectory.ai)|
-|**oa-design**|113|TypeScript|The Open Analytics design language as an agent skill: component recipes with type-checked source, to...|[GitHub](https://github.com/OpenLabs-so/oa-design)|
+|**codex-with-chatgpt**|1753|TypeScript|ChatGPT thinks. Codex works. Use ChatGPT as the planning brain while keeping the Codex harness.|[GitHub](https://github.com/XiaoDuoYa/codex-with-chatgpt)|
+|**opengrok**|391|JavaScript|Run any model in Grok Bot — one-command setup, model picker UI, evidence-based provider wire maps, a...|[GitHub](https://github.com/OnlyTerp/opengrok)|
+|**simplify-codebase**|370|N/A|Prove and remove accidental codebase complexity without breaking behavior.|[GitHub](https://github.com/tt-a1i/simplify-codebase)|
+|**acryl**|231|TypeScript|ACRYL - Agent Context Relay Yielding Lifecycles. One persistent workspace, one canonical context, an...|[GitHub](https://github.com/acryldev/acryl)|
+|**OpenInstinct**|220|TypeScript|iMessage personal assistant + password vault|[GitHub](https://github.com/Merit-Systems/OpenInstinct)|
+|**forward-implementation-first**|150|Shell|Stop your coding agent from stalling real work on self-invented bookkeeping - receipts, hashes, lock...|[GitHub](https://github.com/Vuk97/forward-implementation-first)|
+|**open-steps**|134|Shell|Skills that translate your coding agent's output into plain language: honest reports, straight verdi...|[GitHub](https://github.com/kharmanskyi/open-steps)|
+|**useagent**|131|TypeScript|Hand off the work. Get back the result. The open-source AI coworker for your team: agents with their...|[GitHub](https://github.com/useagenthq/useagent)|
+|**kru**|126|Rust|Local-first MCP password and credential manager for AI agents. Use passwords, API keys, SSH identiti...|[GitHub](https://github.com/omaekumiko2-create/kru)|
+|**cdaf**|102|Python|CDAF (Cached Descriptive Asset Files) - open sidecar format for video so AI agents stop re-analyzing...|[GitHub](https://github.com/UditAkhourii/cdaf)|
