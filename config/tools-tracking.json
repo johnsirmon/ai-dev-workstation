@@ -2,8 +2,8 @@
   "tracked_tools": {
     "ai_frameworks": {
       "CrewAI": {
-        "current_version": "1.15.18",
-        "last_updated": "2026-08-31",
+        "current_version": "1.15.20",
+        "last_updated": "2026-09-07",
         "source": "https://github.com/crewAIInc/crewAI",
         "npm_package": null,
         "pypi_package": "crewai",
@@ -50,8 +50,8 @@
         "description": "Ultra-minimal Hugging Face agents; CodeAgent paradigm, sandboxed execution, model-agnostic"
       },
       "Agno": {
-        "current_version": "3.0.4",
-        "last_updated": "2026-08-31",
+        "current_version": "3.0.6",
+        "last_updated": "2026-09-07",
         "source": "https://github.com/agno-agi/agno",
         "npm_package": null,
         "pypi_package": "agno",
@@ -76,14 +76,14 @@
     },
     "mcp_servers": {
       "@upstash/context7-mcp": {
-        "current_version": "@upstash/context7-mcp@4.0.4",
-        "last_updated": "2026-08-31",
+        "current_version": "@upstash/context7-sdk@0.4.0",
+        "last_updated": "2026-09-07",
         "source": "https://github.com/upstash/context7-mcp",
         "description": "Enhanced context management for AI agents"
       },
       "@modelcontextprotocol/server-memory": {
-        "current_version": "2026.8.18",
-        "last_updated": "2026-08-24",
+        "current_version": "2026.8.31",
+        "last_updated": "2026-09-07",
         "source": "https://github.com/modelcontextprotocol/servers",
         "description": "Persistent memory across AI agent sessions"
       },
@@ -94,14 +94,14 @@
         "description": "Brave Search MCP server for web search and rich search results"
       },
       "@modelcontextprotocol/server-github": {
-        "current_version": "2026.8.18",
-        "last_updated": "2026-08-24",
+        "current_version": "2026.8.31",
+        "last_updated": "2026-09-07",
         "source": "https://github.com/modelcontextprotocol/servers",
         "description": "GitHub integration for repository management"
       },
       "@modelcontextprotocol/server-filesystem": {
-        "current_version": "2026.8.18",
-        "last_updated": "2026-08-24",
+        "current_version": "2026.8.31",
+        "last_updated": "2026-09-07",
         "source": "https://github.com/modelcontextprotocol/servers",
         "description": "Filesystem access for workspace-local agent operations"
       }
@@ -221,95 +221,113 @@
   },
   "trending_tools": [
     {
-      "name": "codex-with-chatgpt",
-      "url": "https://github.com/XiaoDuoYa/codex-with-chatgpt",
-      "description": "ChatGPT thinks. Codex works. Use ChatGPT as the planning brain while keeping the Codex harness.",
-      "stars": 1753,
-      "language": "TypeScript",
-      "topic": "ai-agents",
-      "created_at": "2026-08-28T12:57:24Z"
-    },
-    {
-      "name": "opengrok",
-      "url": "https://github.com/OnlyTerp/opengrok",
-      "description": "Run any model in Grok Bot — one-command setup, model picker UI, evidence-based provider wire maps, and an update-proof doctor. Not farming you, arming you.",
-      "stars": 391,
-      "language": "JavaScript",
-      "topic": "ai-agents",
-      "created_at": "2026-08-27T18:30:44Z"
-    },
-    {
-      "name": "simplify-codebase",
-      "url": "https://github.com/tt-a1i/simplify-codebase",
-      "description": "Prove and remove accidental codebase complexity without breaking behavior.",
-      "stars": 370,
-      "language": null,
-      "topic": "ai-agents",
-      "created_at": "2026-08-24T07:52:08Z"
-    },
-    {
-      "name": "acryl",
-      "url": "https://github.com/acryldev/acryl",
-      "description": "ACRYL - Agent Context Relay Yielding Lifecycles. One persistent workspace, one canonical context, any coding agent.",
-      "stars": 231,
-      "language": "TypeScript",
-      "topic": "ai-agents",
-      "created_at": "2026-08-25T15:53:56Z"
-    },
-    {
-      "name": "OpenInstinct",
-      "url": "https://github.com/Merit-Systems/OpenInstinct",
-      "description": "iMessage personal assistant + password vault",
-      "stars": 220,
-      "language": "TypeScript",
-      "topic": "ai-agents",
-      "created_at": "2026-08-25T14:42:47Z"
-    },
-    {
-      "name": "forward-implementation-first",
-      "url": "https://github.com/Vuk97/forward-implementation-first",
-      "description": "Stop your coding agent from stalling real work on self-invented bookkeeping - receipts, hashes, locks, certification rituals. Ship first, then verify. Skill for Claude Code, Codex, and other agents.",
-      "stars": 150,
-      "language": "Shell",
-      "topic": "ai-agents",
-      "created_at": "2026-08-29T23:16:12Z"
-    },
-    {
-      "name": "open-steps",
-      "url": "https://github.com/kharmanskyi/open-steps",
-      "description": "Skills that translate your coding agent's output into plain language: honest reports, straight verdicts, steps you can follow. MIT.",
-      "stars": 134,
-      "language": "Shell",
-      "topic": "ai-agents",
-      "created_at": "2026-08-25T14:24:24Z"
-    },
-    {
-      "name": "useagent",
-      "url": "https://github.com/useagenthq/useagent",
-      "description": "Hand off the work. Get back the result. The open-source AI coworker for your team: agents with their own cloud computer, your tools and context, handing back finished work - websites, decks, spreadsheets, reports, PRs. Runs Claude Code, Codex, OpenCode on your subscription.",
-      "stars": 131,
-      "language": "TypeScript",
-      "topic": "ai-agents",
-      "created_at": "2026-08-29T21:14:31Z"
-    },
-    {
-      "name": "kru",
-      "url": "https://github.com/omaekumiko2-create/kru",
-      "description": "Local-first MCP password and credential manager for AI agents. Use passwords, API keys, SSH identities, and TOTP without exposing hidden plaintext to the model.",
-      "stars": 126,
-      "language": "Rust",
-      "topic": "ai-agents",
-      "created_at": "2026-08-24T21:23:11Z"
-    },
-    {
-      "name": "cdaf",
-      "url": "https://github.com/UditAkhourii/cdaf",
-      "description": "CDAF (Cached Descriptive Asset Files) - open sidecar format for video so AI agents stop re-analyzing the same footage. Spec, CLI, agent skill, reproducible benchmark.",
-      "stars": 102,
+      "name": "reverify",
+      "url": "https://github.com/2akouwu/reverify",
+      "description": "Stop your AI from making things up — it proposes, deterministic tools decide, every claim checked against ground truth with evidence. Grounded facts and context survive resets. Reverse engineering is the proving ground. MCP server + CLI.",
+      "stars": 1002,
       "language": "Python",
       "topic": "ai-agents",
-      "created_at": "2026-08-26T09:12:41Z"
+      "created_at": "2026-08-31T01:02:18Z"
+    },
+    {
+      "name": "reef",
+      "url": "https://github.com/Human-Agent-Society/reef",
+      "description": "Continual learning infra for self-improving agents",
+      "stars": 677,
+      "language": "Python",
+      "topic": "ai-agents",
+      "created_at": "2026-08-31T01:39:18Z"
+    },
+    {
+      "name": "fable51-worlds",
+      "url": "https://github.com/PhiloLabs/fable51-worlds",
+      "description": "worlds via code, from fable 5.1",
+      "stars": 460,
+      "language": "JavaScript",
+      "topic": "ai-agents",
+      "created_at": "2026-09-02T18:19:55Z"
+    },
+    {
+      "name": "awesome-grokbot",
+      "url": "https://github.com/kydlikebtc/awesome-grokbot",
+      "description": "598 live x.ai/bot shares for Grok Bot — every link status-checked, every row attributed. Bilingual EN/中文 catalog with a JSON schema, CI, and a searchable site.",
+      "stars": 331,
+      "language": "Python",
+      "topic": "ai-agents",
+      "created_at": "2026-09-01T02:30:25Z"
+    },
+    {
+      "name": "awesome-ai-agent-platforms",
+      "url": "https://github.com/Agenta-AI/awesome-ai-agent-platforms",
+      "description": "A curated list of open-source AI agent platforms: AI coworkers and teammates, agent builders and frameworks, workflow automation platforms, browser agents, and coding agents, with licenses.",
+      "stars": 244,
+      "language": "Astro",
+      "topic": "ai-agents",
+      "created_at": "2026-09-02T16:32:59Z"
+    },
+    {
+      "name": "mobilecode",
+      "url": "https://github.com/hsandhu/mobilecode",
+      "description": "mobilecode is a fork of opencode that builds and previews iOS and Android projects",
+      "stars": 141,
+      "language": "TypeScript",
+      "topic": "ai-agents",
+      "created_at": "2026-09-05T03:26:31Z"
+    },
+    {
+      "name": "Apeireth",
+      "url": "https://github.com/Apeireth/Apeireth",
+      "description": "Apeireth — A Pure Safe Rust AGI Operating System & Cognitive Microkernel. 16 crates: continuous topological memory, causal world model, cognitive scheduler, Ember HUD, triple-onion security & portable USB agent.",
+      "stars": 99,
+      "language": "Rust",
+      "topic": "ai-agents",
+      "created_at": "2026-09-04T08:55:31Z"
+    },
+    {
+      "name": "papergraph-mcp",
+      "url": "https://github.com/lotchuazzz-crypto/papergraph-mcp",
+      "description": "Turn arXiv and LaTeX mathematical papers into theorem dependency graphs for AI agents through MCP.",
+      "stars": 93,
+      "language": "Python",
+      "topic": "ai-agents",
+      "created_at": "2026-09-02T05:59:46Z"
+    },
+    {
+      "name": "Penelopa.ai",
+      "url": "https://github.com/chigwell/Penelopa.ai",
+      "description": "Continuous improvement for AI coding agents: Penelopa analyzes real Codex and Claude Code sessions, finds repeated workflow patterns, and turns them into reusable skills, checks, prompts, and recommendations.",
+      "stars": 85,
+      "language": "JavaScript",
+      "topic": "ai-agents",
+      "created_at": "2026-09-03T15:52:25Z"
+    },
+    {
+      "name": "subpool",
+      "url": "https://github.com/gesta-run/subpool",
+      "description": "  A lightweight, self-hosted AI subscription pool for teams.",
+      "stars": 68,
+      "language": "Go",
+      "topic": "ai-agents",
+      "created_at": "2026-09-02T08:27:21Z"
+    },
+    {
+      "name": "awesome-seo-mcp",
+      "url": "https://github.com/RankSpotAI/awesome-seo-mcp",
+      "description": "A curated list of MCP servers for SEO. Search Console, keywords, backlinks, crawling, SERPs and AI search visibility, verified with install details and auth requirements.",
+      "stars": 86,
+      "language": "Python",
+      "topic": "mcp-servers",
+      "created_at": "2026-09-06T12:32:34Z"
+    },
+    {
+      "name": "france-mcp-servers",
+      "url": "https://github.com/bsab/france-mcp-servers",
+      "description": "A curated catalog of Model Context Protocol servers for French data, laws, and services.",
+      "stars": 76,
+      "language": "Python",
+      "topic": "mcp-servers",
+      "created_at": "2026-09-06T17:30:00Z"
     }
   ],
-  "last_update_check": "2026-08-31"
+  "last_update_check": "2026-09-07"
 }

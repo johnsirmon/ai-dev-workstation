@@ -101,15 +101,15 @@ GitHub’s docs outline editing `mcp.json` in the *Tools* panel.
 
 | Framework / Lib | Latest ver. | Killer features |
 |-----------------|------------|-----------------|
-|**CrewAI**|1.15.18 (Updated 2026-08-31)|Declarative YAML mission files, vector‑based memory, Agents → Roles → Tasks hierarchy. Fast multi-agent prototyping.|
-|**Microsoft Autogen**|0.7.5 (Updated 2026-08-31)|Event-driven multi-agent; human-in-the-loop support. Merging with Semantic Kernel into unified Microsoft Agent Framework (GA Q1 2026).|
-|**LangGraph**|1.2.11 (Updated 2026-08-31)|**Stable v1.0** reached Oct 2025. Graph‑style state machine orchestration; check-pointing, audit trails. Best for production compliance workloads.|
-|**Semantic Kernel**|1.44.1 (Updated 2026-08-31)|Enterprise Azure integration, planners, function-calling. Converging with AutoGen into unified Microsoft Agent Framework.|
-|**OpenAI Agents SDK**|0.22.0 (Updated 2026-08-31)|Official open-source SDK for orchestrating multi-agent workflows; supports handoffs, guardrails, tracing, and the new Responses API (replaces Assistants API by Aug 2026).|
+|**CrewAI**|1.15.20 (Updated 2026-09-07)|Declarative YAML mission files, vector‑based memory, Agents → Roles → Tasks hierarchy. Fast multi-agent prototyping.|
+|**Microsoft Autogen**|0.7.5 (Updated 2026-09-07)|Event-driven multi-agent; human-in-the-loop support. Merging with Semantic Kernel into unified Microsoft Agent Framework (GA Q1 2026).|
+|**LangGraph**|1.2.11 (Updated 2026-09-07)|**Stable v1.0** reached Oct 2025. Graph‑style state machine orchestration; check-pointing, audit trails. Best for production compliance workloads.|
+|**Semantic Kernel**|1.44.1 (Updated 2026-09-07)|Enterprise Azure integration, planners, function-calling. Converging with AutoGen into unified Microsoft Agent Framework.|
+|**OpenAI Agents SDK**|0.22.0 (Updated 2026-09-07)|Official open-source SDK for orchestrating multi-agent workflows; supports handoffs, guardrails, tracing, and the new Responses API (replaces Assistants API by Aug 2026).|
 |**smolagents** (HF)|1.24.0|Ultra-minimal Hugging Face agents; CodeAgent paradigm, sandboxed execution, model-agnostic. Great for research/lightweight use.|
-|**Agno**|3.0.4 (Updated 2026-08-31)|High-performance runtime for large-scale multi-agent systems; streaming, governance, approval workflows, and audit logs built in.|
-|**LlamaIndex**|0.14.24 (Updated 2026-08-31)|Data/knowledge-centric framework; excels at RAG workflows, document agents, and retrieval-augmented production pipelines.|
-|**Google ADK**|2.8.0 (Updated 2026-08-31)|Google’s Agent Development Kit with native A2A protocol support; deploy on Cloud Run, GKE, or Vertex AI.|
+|**Agno**|3.0.6 (Updated 2026-09-07)|High-performance runtime for large-scale multi-agent systems; streaming, governance, approval workflows, and audit logs built in.|
+|**LlamaIndex**|0.14.24 (Updated 2026-09-07)|Data/knowledge-centric framework; excels at RAG workflows, document agents, and retrieval-augmented production pipelines.|
+|**Google ADK**|2.8.0 (Updated 2026-09-07)|Google’s Agent Development Kit with native A2A protocol support; deploy on Cloud Run, GKE, or Vertex AI.|
 |**GPTScript Agents**|Bleeding‑edge|Script agents in 10 lines; great for Kubernetes ops.|
 
 ### Choosing the Right Framework
@@ -331,13 +331,13 @@ GITHUB_TOKEN=your_github_personal_access_token
 
 | Tool | Stars | Language | Use Case | Repository |
 |------|-------|----------|----------|------------|
-|**codex-with-chatgpt**|1753|TypeScript|ChatGPT thinks. Codex works. Use ChatGPT as the planning brain while keeping the Codex harness.|[GitHub](https://github.com/XiaoDuoYa/codex-with-chatgpt)|
-|**opengrok**|391|JavaScript|Run any model in Grok Bot — one-command setup, model picker UI, evidence-based provider wire maps, a...|[GitHub](https://github.com/OnlyTerp/opengrok)|
-|**simplify-codebase**|370|N/A|Prove and remove accidental codebase complexity without breaking behavior.|[GitHub](https://github.com/tt-a1i/simplify-codebase)|
-|**acryl**|231|TypeScript|ACRYL - Agent Context Relay Yielding Lifecycles. One persistent workspace, one canonical context, an...|[GitHub](https://github.com/acryldev/acryl)|
-|**OpenInstinct**|220|TypeScript|iMessage personal assistant + password vault|[GitHub](https://github.com/Merit-Systems/OpenInstinct)|
-|**forward-implementation-first**|150|Shell|Stop your coding agent from stalling real work on self-invented bookkeeping - receipts, hashes, lock...|[GitHub](https://github.com/Vuk97/forward-implementation-first)|
-|**open-steps**|134|Shell|Skills that translate your coding agent's output into plain language: honest reports, straight verdi...|[GitHub](https://github.com/kharmanskyi/open-steps)|
-|**useagent**|131|TypeScript|Hand off the work. Get back the result. The open-source AI coworker for your team: agents with their...|[GitHub](https://github.com/useagenthq/useagent)|
-|**kru**|126|Rust|Local-first MCP password and credential manager for AI agents. Use passwords, API keys, SSH identiti...|[GitHub](https://github.com/omaekumiko2-create/kru)|
-|**cdaf**|102|Python|CDAF (Cached Descriptive Asset Files) - open sidecar format for video so AI agents stop re-analyzing...|[GitHub](https://github.com/UditAkhourii/cdaf)|
+|**reverify**|1002|Python|Stop your AI from making things up — it proposes, deterministic tools decide, every claim checked ag...|[GitHub](https://github.com/2akouwu/reverify)|
+|**reef**|677|Python|Continual learning infra for self-improving agents|[GitHub](https://github.com/Human-Agent-Society/reef)|
+|**fable51-worlds**|460|JavaScript|worlds via code, from fable 5.1|[GitHub](https://github.com/PhiloLabs/fable51-worlds)|
+|**awesome-grokbot**|331|Python|598 live x.ai/bot shares for Grok Bot — every link status-checked, every row attributed. Bilingual E...|[GitHub](https://github.com/kydlikebtc/awesome-grokbot)|
+|**awesome-ai-agent-platforms**|244|Astro|A curated list of open-source AI agent platforms: AI coworkers and teammates, agent builders and fra...|[GitHub](https://github.com/Agenta-AI/awesome-ai-agent-platforms)|
+|**mobilecode**|141|TypeScript|mobilecode is a fork of opencode that builds and previews iOS and Android projects|[GitHub](https://github.com/hsandhu/mobilecode)|
+|**Apeireth**|99|Rust|Apeireth — A Pure Safe Rust AGI Operating System & Cognitive Microkernel. 16 crates: continuous topo...|[GitHub](https://github.com/Apeireth/Apeireth)|
+|**papergraph-mcp**|93|Python|Turn arXiv and LaTeX mathematical papers into theorem dependency graphs for AI agents through MCP.|[GitHub](https://github.com/lotchuazzz-crypto/papergraph-mcp)|
+|**Penelopa.ai**|85|JavaScript|Continuous improvement for AI coding agents: Penelopa analyzes real Codex and Claude Code sessions, ...|[GitHub](https://github.com/chigwell/Penelopa.ai)|
+|**subpool**|68|Go|  A lightweight, self-hosted AI subscription pool for teams.|[GitHub](https://github.com/gesta-run/subpool)|
