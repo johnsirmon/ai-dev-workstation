@@ -8,8 +8,7 @@
       ],
       "type": "stdio",
       "env": {
-        "UPSTASH_REDIS_REST_URL": "${UPSTASH_REDIS_REST_URL}",
-        "UPSTASH_REDIS_REST_TOKEN": "${UPSTASH_REDIS_REST_TOKEN}"
+        "CONTEXT7_API_KEY": "${CONTEXT7_API_KEY}"
       }
     },
     "memory": {

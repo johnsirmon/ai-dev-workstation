@@ -1,13 +1,6 @@
 # Environment variables (contains sensitive keys)
 .env
 
-# Logs
-logs/
-*.log
-
-# Reports (may contain sensitive data)
-reports/
-
 # Python cache
 __pycache__/
 *.py[cod]
@@ -29,7 +22,6 @@ Thumbs.db
 # Temporary files
 *.tmp
 *.temp
-sync-diff.txt
 
 # Claude Code files
 .claude/

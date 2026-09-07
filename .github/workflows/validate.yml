@@ -1,0 +1,39 @@
+name: Validate config and scripts
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Check Python syntax
+        run: python3 -m py_compile scripts/*.py
+
+      - name: Check shell script syntax
+        run: |
+          shopt -s nullglob
+          for f in scripts/*.sh setup.sh; do
+            bash -n "$f"
+          done
+
+      - name: Validate JSON config files
+        run: |
+          python3 -m json.tool .vscode/mcp.json > /dev/null
+          python3 -m json.tool config/tools-tracking.json > /dev/null
+
+      - name: Validate MCP config consistency
+        run: python3 scripts/validate-mcp-config.py

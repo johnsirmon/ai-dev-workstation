@@ -1,99 +1,42 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+This file provides guidance to AI coding agents (Claude Code and others) working in this
+repository. It is the single source of truth for agent-facing repo context — if you add
+instructions for another agent, point it here instead of duplicating content.
 
-## Project Overview
+## Project overview
 
-This is an AI development workstation setup repository focused on modern AI agent development using VS Code Insiders on Windows 11 with WSL 2. The project serves as a comprehensive guide for developers working with AI agents, MCP servers, and various AI frameworks.
+This repo is a personal reference setup for developing with AI coding agents on **Windows 11 +
+WSL2 + VS Code**. It is documentation and small validation scripts, not a framework or product.
+See `README.md` for the full guide.
 
-## Key Architecture Components
+## Key facts
 
-### Development Environment Stack
-- **VS Code Insiders** as the primary IDE with agent-specific profiles
-- **WSL 2 Ubuntu 24.04** for Linux tooling and Python development
-- **GitHub Copilot** (agent mode) and **Claude Code** as AI coding assistants
-- **MCP (Model Context Protocol)** servers for enhanced AI capabilities
-- **Azure AI Foundry** integration for enterprise agent deployment
+- Target environment: WSL2 Ubuntu, VS Code with the Remote-WSL extension.
+- Primary coding agent: GitHub Copilot (agent mode), used from inside VS Code.
+- MCP servers are defined in `.vscode/mcp.json`; secrets are referenced as `${VAR_NAME}` and must
+  come from the environment/`.env`, never hard-coded in the file.
+- `config/tools-tracking.json` only tracks metadata for the MCP npm packages referenced in
+  `.vscode/mcp.json` — it is not a general AI-tool/framework catalog.
+- There is no scheduled automation that edits files or pushes commits. The only workflow
+  (`.github/workflows/validate.yml`) is read-only validation (`contents: read`).
 
-### MCP Server Configuration
-The repository references MCP server setup in `.vscode/mcp.json` with servers like:
-- `context7` for enhanced context management
-- `memory` for persistent memory across sessions
-- `brave-search` for real-time web search
-- `github` for repository management
-- `filesystem` for local file access (scoped to `${workspaceFolder}`)
+## Scripts
 
-Secrets (API keys and tokens) are managed via the `inputs` array in `.vscode/mcp.json`, which prompts VS Code to request values from the user at first use.
+- `scripts/validate-mcp-config.py` — validates `.vscode/mcp.json` against
+  `config/tools-tracking.json`, flags deprecated env vars, and (with `--check-registry`) checks
+  that referenced npm packages exist. Stdlib-only, no network access required unless
+  `--check-registry` is passed.
+- `scripts/review-pr.ps1` — optional PowerShell helper that wraps `gh pr review/merge` for manual
+  PR review (see `PR_CHECKLIST.md`). Requires the GitHub CLI (`gh`) to be authenticated.
 
-### Supported AI Frameworks
-The documentation covers multiple agent frameworks:
-- **CrewAI** (0.157.0) - Declarative YAML mission files
-- **Microsoft Autogen** (0.7.2) - Replay analytics and compliance hooks
-- **LangGraph** (0.6.4) - Graph-style branching flows
-- **Semantic Kernel** (1.35.2) - Process Framework with C#/Python parity
-- **GPTScript Agents** - Script agents for Kubernetes operations
+## When making changes
 
-## Environment Setup Commands
-
-### WSL 2 Management
-```bash
-# Update WSL
-wsl --update
-wsl --shutdown
-wsl --install Ubuntu-24.04
-
-# Keep WSL fresh
-sudo apt update && sudo apt full-upgrade
-```
-
-### Azure AI Foundry Setup
-```bash
-# Install Azure AI Foundry SDK
-pip install azure-ai-foundry
-
-# Run foundry configurations
-foundry run --config foundry.yaml
-
-# Authenticate
-az login
-foundry auth
-```
-
-### VS Code Integration
-```bash
-# Launch VS Code Insiders from WSL for lower latency
-code-insiders .
-```
-
-## Development Workflow
-
-### Profile Management
-- Use "Agent-Dev" profile in VS Code Insiders to isolate agent-specific extensions
-- Pin heavy extensions (Python, Docker) to Windows profile
-- Keep WSL profile lean for performance
-
-### Docker Configuration
-- Limit Docker Desktop to 4 GB RAM unless building large images
-- Enable WSL integration in Docker Desktop settings
-
-## Project Structure
-
-This is primarily a documentation and configuration repository with:
-- `README.md` - Comprehensive setup guide and framework comparisons
-- Future MCP server configurations
-- Development environment templates
-
-## Common Tasks
-
-Since this is a documentation repository, common tasks involve:
-1. Updating framework version information
-2. Adding new MCP server configurations
-3. Expanding environment setup instructions
-4. Adding new AI framework integrations
-
-## Important Notes
-
-- MCP servers on the same port (3917) will silently fail - always increment ports
-- Use WSL 2 for Python-heavy agent development
-- Keep framework versions current as the ecosystem evolves rapidly
-- Follow the 30-second setup checklist for quick environment validation
+- Keep the README's AI-tool section durable and neutral: prefer capability-based guidance (repo
+  context, tool/terminal access, MCP support, review workflow, privacy, cost) over vendor hype or
+  version numbers that go stale quickly.
+- Don't reintroduce automation that commits or pushes to the repository without human review.
+- Don't hard-code secrets in `.vscode/mcp.json`, `config/tools-tracking.json`, or any committed
+  file — use `${VAR_NAME}` placeholders and document the variable in `.env.example`.
+- If you update `.vscode/mcp.json`, run `python3 scripts/validate-mcp-config.py` and update
+  `config/tools-tracking.json` and `README.md`'s MCP table to match.
