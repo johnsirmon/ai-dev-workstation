@@ -1,343 +1,172 @@
 # ai-dev-workstation
-Modern AI Agent Development Toolkit — Windows 11 · WSL 2 · VS Code Insiders · GitHub Copilot Agent Mode
 
-> **Automation Notice:** This repository includes a weekly automation pipeline that can research ecosystem changes and update tracked tool data plus selected README sections.
+A practical setup guide for developing with AI coding agents on **Windows 11 + WSL2 + VS Code**.
 
-> **Audience:** Developers using **VS Code Insiders** on Windows 11 with GitHub Copilot (agent mode), Claude Code, WSL 2, and Azure resources.
+*Last reviewed: September 2026.*
 
----
+This repo is a personal reference, not a framework — it documents one working setup and ships a
+few small scripts to validate the configuration. AI vendor names, features, and pricing change
+fast; treat anything below as a starting point and check the linked official docs before relying
+on specifics.
 
-## 1 · VS Code Insiders as the Control Center  
+## Quick start
 
-| Step | What to do | Why |
-|------|------------|-----|
-|1|Install **VS Code Insiders** and enable **Auto‑update** (Settings → *Update: Mode* → `none` so it pulls the **daily** build automatically).|Daily insiders now ship improved chat‑mode diagnostics and tool‑hover support|
-|2|Create a *Profile* called **“Agent‑Dev”** to isolate your extensions and settings from regular coding.|Keeps MCP servers and agent‑specific snippets from cluttering other workspaces.|
-|3|Install **GitHub Copilot Nightly** and enable *Agent Mode* (`"github.copilot.chat.enable": true`).|Gives you model/tool routing in the chat sidebar.|
+**In PowerShell (Windows):**
 
-### MCP servers quick‑start
-
-```jsonc
-// .vscode/mcp.json
-{
-  "servers": {
-    "context7": {
-      "command": "npx",
-      "args": ["-y", "@upstash/context7-mcp"],
-      "type": "stdio",
-      "env": {
-        "UPSTASH_REDIS_REST_URL": "${UPSTASH_REDIS_REST_URL}",
-        "UPSTASH_REDIS_REST_TOKEN": "${UPSTASH_REDIS_REST_TOKEN}"
-      }
-    },
-    "memory": {
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-memory"],
-      "type": "stdio"
-    },
-    "brave-search": {
-      "command": "npx",
-      "args": ["-y", "@brave/brave-search-mcp-server", "--transport", "stdio"],
-      "type": "stdio",
-      "env": {
-        "BRAVE_API_KEY": "${BRAVE_API_KEY}"
-      }
-    },
-    "github": {
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-github"],
-      "type": "stdio",
-      "env": {
-        "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_TOKEN}"
-      }
-    },
-    "filesystem": {
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-filesystem", "--allowed-directory", "${workspaceFolder}"],
-      "type": "stdio"
-    }
-  }
-}
+```powershell
+wsl --install -d Ubuntu-24.04   # first time only
+wsl --update
+winget install Microsoft.VisualStudioCode Git.Git
 ```
 
-**When to spin up your own server**
-
-| Create new MCP server when… | Re‑use an existing server when… |
-|-----------------------------|---------------------------------|
-|You need a custom tool (e.g., call an internal REST API, run a Kusto query).|You just need vector search, retrieval, or memory that a generic server already exposes.|
-|Security requires you to run on localhost and audit code.|You trust the community‑maintained implementation.|
-
-GitHub’s docs outline editing `mcp.json` in the *Tools* panel.
-
-> **Gotcha ⚠️**: Two servers listening on the **same port (3917)** will silently fail; always increment the port or kill the other process first.
-
-> **MCP Ecosystem (Jan 2026):** Over 1,000 servers now available. Transport has evolved from local STDIO to **Streamable HTTP** for distributed, cloud-scale deployments. See [blog.modelcontextprotocol.io](https://blog.modelcontextprotocol.io) for the latest spec and server registry.
-
----
-
-## 2 · Choosing Your Coding Copilot  
-
-| Tool | Strengths | Watch‑outs |
-|------|-----------|-----------|
-|**GitHub Copilot** (agent mode) | Deep VS Code integration, multi-model sessions, Agent Skills via SKILL.md | Chat context limited to ~16k tokens unless MCP tooling expands it.|
-|**Claude Code** extension | 200k+ context, excels at refactors; can share MCP servers. | Must select the **Claude** sidebar; easy to think you’re still in Copilot.|
-|**Cursor** | Whole‑file edit commands, great for “make this async”, Agent Mode for autonomous coding.|Adds a separate forked VS Code; ingesting large repos can cause battery drain.|
-|**Windsurf** | $15/mo premium AI coding with broad model support including Claude and GPT-5.|Separate IDE fork; may lag behind core VS Code releases.|
-
-### New in VS Code Insiders (Jan–Feb 2026)
-
-| Feature | What it does |
-|---------|-------------|
-|**Agent Sessions view** | Monitor and manage Copilot, Claude, and background/cloud agents from a single dashboard. Subagents run in parallel for complex workflows.|
-|**Copilot Memory** | Remembers relevant context and learnings within a repository (expires after 28 days). Improves code completion and review quality across sessions.|
-|**SKILL.md Agent Skills** | Define custom agent capabilities with `SKILL.md` files (invoked as slash commands). Share skills org-wide for consistent team tooling.|
-|**Multi-model side-by-side** | Run Anthropic Claude, OpenAI Codex, and GitHub Copilot in the same IDE with shared prompts and tools.|
-|**Copilot SDK** (technical preview) | Programmatic access to Copilot for Node.js/TypeScript, Python, Go, and .NET. Enables custom AI platforms and automation pipelines.|
-|**Terminal sandboxing** | Prevents agents from executing unsafe commands (macOS/Linux). Auto-approval rules reduce unnecessary prompts while keeping you in control.|
-
----
-
-## 3 · Leading Agent Frameworks (Feb 2026)
-
-| Framework / Lib | Latest ver. | Killer features |
-|-----------------|------------|-----------------|
-|**CrewAI**|1.15.20 (Updated 2026-09-07)|Declarative YAML mission files, vector‑based memory, Agents → Roles → Tasks hierarchy. Fast multi-agent prototyping.|
-|**Microsoft Autogen**|0.7.5 (Updated 2026-09-07)|Event-driven multi-agent; human-in-the-loop support. Merging with Semantic Kernel into unified Microsoft Agent Framework (GA Q1 2026).|
-|**LangGraph**|1.2.11 (Updated 2026-09-07)|**Stable v1.0** reached Oct 2025. Graph‑style state machine orchestration; check-pointing, audit trails. Best for production compliance workloads.|
-|**Semantic Kernel**|1.44.1 (Updated 2026-09-07)|Enterprise Azure integration, planners, function-calling. Converging with AutoGen into unified Microsoft Agent Framework.|
-|**OpenAI Agents SDK**|0.22.0 (Updated 2026-09-07)|Official open-source SDK for orchestrating multi-agent workflows; supports handoffs, guardrails, tracing, and the new Responses API (replaces Assistants API by Aug 2026).|
-|**smolagents** (HF)|1.24.0|Ultra-minimal Hugging Face agents; CodeAgent paradigm, sandboxed execution, model-agnostic. Great for research/lightweight use.|
-|**Agno**|3.0.6 (Updated 2026-09-07)|High-performance runtime for large-scale multi-agent systems; streaming, governance, approval workflows, and audit logs built in.|
-|**LlamaIndex**|0.14.24 (Updated 2026-09-07)|Data/knowledge-centric framework; excels at RAG workflows, document agents, and retrieval-augmented production pipelines.|
-|**Google ADK**|2.8.0 (Updated 2026-09-07)|Google’s Agent Development Kit with native A2A protocol support; deploy on Cloud Run, GKE, or Vertex AI.|
-|**GPTScript Agents**|Bleeding‑edge|Script agents in 10 lines; great for Kubernetes ops.|
-
-### Choosing the Right Framework
-
-| Goal | Best choice |
-|------|------------|
-|Complex stateful workflows, compliance, audit | **LangGraph** |
-|Role-driven multi-agent collaboration | **CrewAI** |
-|Enterprise Azure integration, .NET/Java | **Semantic Kernel / AutoGen** |
-|OpenAI ecosystem, production agent pipelines | **OpenAI Agents SDK** |
-|RAG, document-intensive knowledge workflows | **LlamaIndex** |
-|Lightweight research / open-source models | **smolagents** |
-|Cross-vendor interoperable agent networks | **Google ADK + A2A** |
-
----
-
-## 4 · Azure-centric Agent Tooling  
-
-* **Azure AI Foundry**—“agent factory” announced at Build 2025. Adds governed deployment, Deep Research API (public preview)  
-* **Azure Functions MCP Support** (GA Jan 2026)—native, secure, scalable hosting for MCP servers with built-in authentication, Streamable HTTP, and Microsoft Entra/OAuth enterprise integration  
-* **Project Amelie**—auto‑builds ML pipelines from one prompt  
-
-Integrate via the Azure AI Foundry SDK and MCP:
+**In the WSL2 Ubuntu shell:**
 
 ```bash
-pip install azure-ai-foundry
-foundry run --config foundry.yaml
-
-# Host your own MCP server on Azure Functions (now GA)
-az functionapp create --runtime python --name my-mcp-server ...
+sudo apt update && sudo apt full-upgrade -y
+git clone https://github.com/johnsirmon/ai-dev-workstation.git
+cd ai-dev-workstation
+./setup.sh
 ```
 
-> **Azure MCP Tip:** Azure Functions MCP support uses on-behalf-of (OBO) authentication so agents access downstream systems with user identity, not shared credentials.
+Then in VS Code: install the **WSL** extension, run **"WSL: Connect to WSL"**, and open this
+folder from inside the WSL window (`code .` from the WSL terminal also works). Install **GitHub
+Copilot** (or your preferred coding agent extension) and sign in.
 
----
+## Why WSL2 for this workflow
 
-## 5 · Environment Strategy: WSL 2 vs Windows vs Docker  
+- Linux-native tooling (Python, Node, shell scripts) without path/line-ending friction.
+- VS Code's Remote-WSL support means the editor UI stays on Windows while everything else runs in
+  Linux — this is the officially recommended setup for Linux-first development on Windows.
+- Docker Desktop, if you use it, should have WSL2 integration enabled for the same reason.
 
-| Scenario | Best choice | Rationale |
-|----------|-------------|-----------|
-|Python‑heavy agent dev, need Linux tooling | **WSL 2** (Ubuntu 24.04) | Fast NT‑FS <-> ext4 I/O, GPU‑CUDA via DXGI.|
-|Stable, reproducible runtime for others | **Docker Desktop** | Image pinning; runs same in CI.|
-|GPU workloads w/ DirectML | **Windows native** | Avoid virtualization overhead.|
-
-### Keep WSL fresh  
+Keep WSL current (PowerShell):
 
 ```powershell
 wsl --update
 wsl --shutdown
-wsl --install Ubuntu-24.04
-sudo apt update && sudo apt full-upgrade
 ```
 
-(Install custom ISOs if 24.04 hasn’t hit the Store yet.)
+## Choosing an AI coding agent
 
----
+Don't try to run every agent at once. Pick **one primary agent** integrated into VS Code for daily
+work, and add a CLI agent or extra MCP servers only when you have a specific need.
 
-## 6 · Performance & Daily Ops Tips  
+**What actually matters when choosing:**
 
-- **Pin heavy extensions** (Python, Docker) to Windows profile; keep WSL profile lean.  
-- Use `code-insiders .` **inside** WSL for lower latency on large repos.  
-- Limit Docker Desktop to **4 GB RAM** unless building large images to save host resources.
+- **Repository context** — can it see your whole workspace, not just the open file?
+- **Terminal/tool access** — can it run tests, builds, and git commands, and do you trust the
+  scope it's given?
+- **MCP support** — can it use Model Context Protocol servers for extra tools/data sources?
+- **Review workflow** — does it produce diffs/PRs you can review before merging, or edit silently?
+- **Privacy & data controls** — what happens to your code/prompts (training use, retention,
+  enterprise/business data-handling tiers)?
+- **Cost and limits** — subscription vs. usage-based billing, and rate/context limits.
 
----
+None of these are fixed facts about a vendor forever — check the current docs before deciding.
 
-## 7 · Where to Watch the Frontier  
+### Current tool landscape (verify before relying on details)
 
-| Community | Why follow |
-|-----------|----------|
-|**OpenAI Developer Forum** | Responses API, Agents SDK, and Assistants API deprecation (Aug 2026) updates.|
-|**LangChain Slack / Discord** | Rapid Q&A on LangGraph 1.0 templates and production patterns.|
-|**Autogen / Semantic Kernel GitHub** | Microsoft unified Agent Framework (GA Q1 2026) design patterns.|
-|**Azure AI Foundry Blog** | Enterprise agent governance, Azure Functions MCP, and roadmap.|
-|**Hugging Face Discord** | smolagents, open-source models (Llama 4, Qwen 3.5, DeepSeek v4) benchmarks.|
-|**MCP Blog** (blog.modelcontextprotocol.io) | Spec updates, new server registry, Streamable HTTP transport.|
-|**Google Developer Blog** | A2A protocol upgrades, Agent Development Kit (ADK) releases.|
+| Tool | What it is | Status / caveats |
+|------|-----------|-------------------|
+| [GitHub Copilot](https://docs.github.com/en/copilot) (Chat/Agent mode, coding agent) | Deep VS Code/GitHub integration; can run agentic, multi-file tasks and open PRs. | Primary recommendation for this repo's workflow since it's native to VS Code and GitHub. |
+| [OpenAI Codex](https://developers.openai.com/codex) | OpenAI's agentic coding tool (CLI and IDE extension). | Model-agnostic within OpenAI's own models; check current CLI/extension docs for VS Code support. |
+| [Claude Code](https://docs.claude.com/en/docs/claude-code/overview) | Anthropic's terminal-first coding agent, also available as an extension. | Strong for large-context refactors; runs outside the VS Code chat UI unless using the extension. |
+| [Gemini CLI](https://github.com/google-gemini/gemini-cli) / [Gemini Code Assist](https://codeassist.google/) | Google's terminal agent and IDE assistant. | Gemini CLI is open source; Code Assist is the IDE-integrated product — check current free/paid tiers. |
+| [Cursor](https://cursor.com) | AI-first fork of VS Code (by Anysphere). | Anysphere/Cursor became a SpaceX subsidiary in 2026. Functionality and roadmap may change under new ownership — check cursor.com for the current state before adopting it as a primary tool. |
+| [Windsurf](https://windsurf.com) | AI-first IDE (originally Codeium). | Treat as optional/legacy context rather than a default pick; the competitive landscape around forked IDEs has shifted since 2025. Verify current status before recommending it to others. |
 
----
+This list is intentionally short. For anything not listed (agent frameworks, orchestration SDKs,
+model leaderboards, etc.), check the vendor's own documentation rather than a comparison blog —
+that space moves too fast for a static table to stay accurate.
 
-## 8 · 30‑Second Setup Checklist  
+## MCP servers
 
-- [ ] VS Code Insiders + Copilot Nightly installed  
-- [ ] `.vscode/mcp.json` with at least one local server  
-- [ ] WSL 2 Ubuntu 24.04 fully upgraded  
-- [ ] Docker Desktop with WSL integration ON  
-- [ ] `crewAI`, `autogen`, `semantic-kernel` installed in chosen environment  
-- [ ] `openai-agents` or `smolagents` installed for agent orchestration  
-- [ ] Azure credentials in `az login` & `foundry auth`  
-- [ ] Review Copilot Agent Skills (SKILL.md) and enable Copilot Memory in VS Code settings  
+[Model Context Protocol](https://modelcontextprotocol.io) (MCP) lets an agent call external tools
+(search, GitHub, memory, filesystem, internal APIs) through a standard interface. This repo's
+`.vscode/mcp.json` defines a small starter set:
 
-> **Done!** You're ready to build and ship multi‑agent apps on your Windows workstation without surprises.
+| Server | Purpose | Secret required |
+|--------|---------|------------------|
+| `context7` | Up-to-date library docs/context lookup. | `CONTEXT7_API_KEY` |
+| `memory` | In-session persistent notes/memory. | none |
+| `filesystem` | Read/write access scoped to this workspace folder. | none |
+| `github` | Repository/issue/PR access. | `GITHUB_TOKEN` (personal access token) |
+| `brave-search` | Web search. | `BRAVE_API_KEY` |
 
----
+Secrets are referenced as `${VAR_NAME}` in `mcp.json` and resolved from your environment or VS
+Code's secret storage — **never hard-code a token in `mcp.json` or commit one to git.** Copy
+`.env.example` to `.env`, fill in only the keys you actually need, and load it into your shell
+(e.g. `export $(grep -v '^#' .env | xargs)` in bash) before starting VS Code from that shell.
 
-## 9 · Key AI Models (Feb 2026)
+**Least-privilege guidance:**
+- Scope the GitHub token to the minimum permissions/repos you need, and prefer a fine-grained PAT.
+- Only add MCP servers you understand — each one is code you're letting an agent invoke on your
+  behalf. Remove servers you're not using from `mcp.json`.
+- Don't grant an agent write access (git push, file deletion, package publishing) unless you
+  review its proposed changes first. Prefer agents that show a diff/PR before applying edits.
 
-Knowing which models to reach for is as important as knowing which framework to use.
-
-| Model | Provider | Highlights |
-|-------|----------|-----------|
-|**GPT-5.x** (5.2/5.3)|OpenAI|Best-in-class reasoning, multimodal, function-calling accuracy. Default for OpenAI Agents SDK.|
-|**Claude Opus 4.6 / Sonnet 5**|Anthropic|Opus 4.6 for long-context analytical tasks (200k tokens); Sonnet 5 for coding + creative balance.|
-|**Gemini 3 Pro**|Google DeepMind|Advanced multimodal (text/audio/vision), GA Feb 2026 with stable APIs and competitive pricing.|
-|**Llama 4**|Meta|Leading open-source choice; ideal for private/local deployments and fine-tuning.|
-|**DeepSeek v4 / R1**|DeepSeek|Advanced reasoning, cost-effective self-hosted alternative in open-source AI.|
-|**Qwen 3.5**|Alibaba Cloud|Strong multilingual + coding; fast-growing open-source competitor.|
-
-> **Tip:** The OpenAI Assistants API is deprecated in favour of the **Responses API** (announced Mar 2025, sunset Aug 2026). Migrate new projects to the Responses API + Agents SDK stack.
-
----
-
-## 10 · Agent Interoperability: MCP & A2A
-
-### Model Context Protocol (MCP)
-
-MCP is now the **universal connector** for AI tools and data (“USB for AI”), with 1,000+ available servers and adoption by OpenAI, Google, Microsoft, Hugging Face, and more.
-
-| Update | Details |
-|--------|---------|
-|**1,000+ server ecosystem** | Servers for databases, REST APIs, IDEs, cloud services, and more.|
-|**Streamable HTTP transport** | Replaces early STDIO-only approach; supports millions of requests/day in distributed deployments.|
-|**Azure Functions MCP (GA Jan 2026)** | Secure, scalable MCP hosting with built-in Entra/OAuth and OBO authentication.|
-|**MCP Registry** | Official server registry for discovery; SDKs for Python, TypeScript, Go, Java.|
-
-### Google Agent2Agent (A2A) Protocol
-
-An open, vendor-neutral standard (now Linux Foundation‑governed) letting agents from any platform discover, authenticate, and collaborate:
+Validate the config any time you edit it:
 
 ```bash
-# Each agent publishes a discoverable "agent card"
-GET /.well-known/agent.json
-
-# Agents communicate via JSON-RPC 2.0 over HTTPS
-# Supports sync results and async task streams
-```
-
-| Feature | Details |
-|---------|---------|
-|**Agent cards** | JSON discovery doc at `/.well-known/agent.json` describing identity and capabilities.|
-|**Google ADK** | Open-source Agent Development Kit with native A2A support; deploy on Cloud Run / GKE.|
-|**150+ enterprise adopters** | Atlassian, Salesforce, SAP, Shopify, Box, and more.|
-|**A2A Inspector** | Web UI for debugging, inspecting, and validating A2A endpoints.|
-
-> **MCP vs A2A:** MCP connects agents to *tools/data*; A2A connects *agents to agents*. Use both for fully interoperable multi-agent systems.
-
----
-
-## Self-Updating Documentation System
-
-This workstation includes automated weekly research and update jobs to keep your AI agent development environment current:
-
-### Automated Update Features
-
-| Component | What it does | Frequency |
-|-----------|-------------|-----------|
-|**Tool Version Tracking**|Checks PyPI, npm, and GitHub for updates to all tracked frameworks|Weekly|
-|**Community Monitoring**|Scans GitHub conversations, Reddit, and Hacker News for trending topics|Weekly|
-|**Trending Tool Discovery**|Identifies new AI agent tools and frameworks gaining popularity|Weekly|
-|**Signal Ranking + Dedup**|Ranks topics by relevance, freshness, and engagement and removes near-duplicates|Weekly|
-|**README Auto-Updates**|Updates version numbers and trending tools section in this document|Weekly|
-
-### MCP Server Configuration
-
-Your `.vscode/mcp.json` is configured with:
-- **Context7** for enhanced AI context management
-- **Memory server** for persistent agent sessions
-- **Brave Search** for real-time information access
-- **GitHub integration** for repository management
-- **Filesystem access** for local development
-
-### Running Updates
-
-```bash
-# Manual update (weekly automation recommended)
-./scripts/weekly-update.sh
-
-# Check individual components
-python3 scripts/update-tools.py
-python3 scripts/forum-monitor.py
 python3 scripts/validate-mcp-config.py
 ```
 
-### Setup Automation
+## Recommended baseline workflow
 
-```bash
-# GitHub Actions automation (already configured)
-# .github/workflows/auto-update.yml runs every Monday at 09:00 UTC
+1. **VS Code + Remote-WSL** as the editor, running inside your Ubuntu WSL distro.
+2. **One primary coding agent** wired into VS Code (GitHub Copilot by default in this repo).
+3. **Git/GitHub** for review — let the agent propose changes as a diff or PR, don't let it push
+   directly to a protected branch.
+4. **MCP servers**, added incrementally, only for tools you actually need.
+5. **Optional CLI agents** (Claude Code, Gemini CLI, Codex CLI) for tasks better suited to a
+   terminal workflow (long-running scripts, headless environments) — keep credentials scoped the
+   same way as above.
 
-# Set up weekly cron job (Linux/WSL)
-echo "0 9 * * 1 cd /path/to/ai-dev-workstation && ./scripts/weekly-update.sh" | crontab -
+## Setup, update, and cleanup
 
-# Or use Windows Task Scheduler for weekly runs
+| Task | Shell | Command |
+|------|-------|---------|
+| Install WSL2 + Ubuntu | PowerShell | `wsl --install -d Ubuntu-24.04` |
+| Update WSL kernel | PowerShell | `wsl --update` |
+| Update Ubuntu packages | Bash (WSL) | `sudo apt update && sudo apt full-upgrade -y` |
+| Initial repo setup (venv, deps, `.env`) | Bash (WSL) | `./setup.sh` |
+| Validate MCP config | Bash (WSL) | `python3 scripts/validate-mcp-config.py` |
+| Validate Python syntax | Bash (WSL) | `python3 -m py_compile scripts/*.py` |
+| Stop/reset WSL distro | PowerShell | `wsl --shutdown` |
+| Remove local venv (clean) | Bash (WSL) | `rm -rf .venv` |
+
+`setup.sh` creates a Python virtual environment, installs `requirements.txt` (currently empty —
+kept for future scripts), makes the `scripts/` files executable, and copies `.env.example` to
+`.env` if one doesn't already exist. It does not install Node.js; only install it if an MCP
+server you use requires `npx`.
+
+## Repository layout
+
+```
+.
+├── .env.example              # Template for MCP server secrets — copy to .env, never commit .env
+├── .vscode/mcp.json           # MCP server definitions used by VS Code
+├── config/tools-tracking.json # Metadata cross-checked by scripts/validate-mcp-config.py
+├── scripts/
+│   ├── validate-mcp-config.py # Checks mcp.json against tracked servers, flags deprecated env vars
+│   └── review-pr.ps1          # Optional helper: approve/merge a PR via `gh` CLI
+├── setup.sh                   # One-time environment bootstrap
+├── requirements.txt            # Python deps (currently none required)
+├── CLAUDE.md                  # Agent-facing repo context (see below)
+└── PR_CHECKLIST.md            # Manual PR review checklist
 ```
 
-### Environment Variables for MCP Servers
+## Agent instructions
 
-Create a `.env` file in your project root:
+[`CLAUDE.md`](CLAUDE.md) is the single source of truth for repo context given to AI coding agents
+(Claude Code and others that read it). If you add instructions for another agent, point it at
+`CLAUDE.md` instead of duplicating content.
 
-```bash
-# Upstash Redis (for Context7)
-UPSTASH_REDIS_REST_URL=your_redis_url
-UPSTASH_REDIS_REST_TOKEN=your_redis_token
+## Automation
 
-# Brave Search API (for Brave Search MCP)
-BRAVE_API_KEY=your_brave_search_api_key
-
-# GitHub integration
-GITHUB_TOKEN=your_github_personal_access_token
-```
-
----
-
-*Generated February 22, 2026 - updated by weekly automation or manual runs.*  
-
-
----
-
-## Trending Tools to Investigate
-
-| Tool | Stars | Language | Use Case | Repository |
-|------|-------|----------|----------|------------|
-|**reverify**|1002|Python|Stop your AI from making things up — it proposes, deterministic tools decide, every claim checked ag...|[GitHub](https://github.com/2akouwu/reverify)|
-|**reef**|677|Python|Continual learning infra for self-improving agents|[GitHub](https://github.com/Human-Agent-Society/reef)|
-|**fable51-worlds**|460|JavaScript|worlds via code, from fable 5.1|[GitHub](https://github.com/PhiloLabs/fable51-worlds)|
-|**awesome-grokbot**|331|Python|598 live x.ai/bot shares for Grok Bot — every link status-checked, every row attributed. Bilingual E...|[GitHub](https://github.com/kydlikebtc/awesome-grokbot)|
-|**awesome-ai-agent-platforms**|244|Astro|A curated list of open-source AI agent platforms: AI coworkers and teammates, agent builders and fra...|[GitHub](https://github.com/Agenta-AI/awesome-ai-agent-platforms)|
-|**mobilecode**|141|TypeScript|mobilecode is a fork of opencode that builds and previews iOS and Android projects|[GitHub](https://github.com/hsandhu/mobilecode)|
-|**Apeireth**|99|Rust|Apeireth — A Pure Safe Rust AGI Operating System & Cognitive Microkernel. 16 crates: continuous topo...|[GitHub](https://github.com/Apeireth/Apeireth)|
-|**papergraph-mcp**|93|Python|Turn arXiv and LaTeX mathematical papers into theorem dependency graphs for AI agents through MCP.|[GitHub](https://github.com/lotchuazzz-crypto/papergraph-mcp)|
-|**Penelopa.ai**|85|JavaScript|Continuous improvement for AI coding agents: Penelopa analyzes real Codex and Claude Code sessions, ...|[GitHub](https://github.com/chigwell/Penelopa.ai)|
-|**subpool**|68|Go|  A lightweight, self-hosted AI subscription pool for teams.|[GitHub](https://github.com/gesta-run/subpool)|
+There is no scheduled automation in this repo. Tool versions and AI product details age quickly
+and are easy to get wrong when auto-generated, so this repo favors periodic manual review over a
+background job that edits `README.md` or commits unreviewed content. If you want to re-introduce
+scheduled checks, keep them read-only (validation only) or require a human to review the diff
+before merge — never grant a scheduled workflow permission to push directly to your default
+branch.

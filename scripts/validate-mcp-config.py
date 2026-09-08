@@ -12,7 +12,13 @@ from typing import Any
 
 MCP_CONFIG_PATH = Path('.vscode/mcp.json')
 TRACKING_PATH = Path('config/tools-tracking.json')
-DEPRECATED_ENV_KEYS = {'SEARCH_API_KEY', 'SEARCH_ENGINE_ID'}
+DEPRECATED_ENV_KEYS = {
+    'SEARCH_API_KEY',
+    'SEARCH_ENGINE_ID',
+    # context7 authenticates with CONTEXT7_API_KEY, not Upstash Redis creds.
+    'UPSTASH_REDIS_REST_URL',
+    'UPSTASH_REDIS_REST_TOKEN',
+}
 
 
 def load_json(path: Path) -> dict[str, Any]:
