@@ -4,51 +4,42 @@
       "command": "npx",
       "args": [
         "-y",
-        "@upstash/context7-mcp"
+        "@upstash/context7-mcp@4.1.0"
       ],
       "type": "stdio",
       "env": {
-        "CONTEXT7_API_KEY": "${CONTEXT7_API_KEY}"
+        "CONTEXT7_API_KEY": "${env:CONTEXT7_API_KEY}"
       }
     },
     "memory": {
       "command": "npx",
       "args": [
         "-y",
-        "@modelcontextprotocol/server-memory"
+        "@modelcontextprotocol/server-memory@2026.8.31"
       ],
-      "type": "stdio"
+      "type": "stdio",
+      "env": {
+        "MEMORY_FILE_PATH": "${workspaceFolder}/.mcp-memory.jsonl"
+      }
     },
     "brave-search": {
       "command": "npx",
       "args": [
         "-y",
-        "@brave/brave-search-mcp-server",
+        "@brave/brave-search-mcp-server@2.1.3",
         "--transport",
         "stdio"
       ],
       "env": {
-        "BRAVE_API_KEY": "${BRAVE_API_KEY}"
+        "BRAVE_API_KEY": "${env:BRAVE_API_KEY}"
       },
       "type": "stdio"
-    },
-    "github": {
-      "command": "npx",
-      "args": [
-        "-y",
-        "@modelcontextprotocol/server-github"
-      ],
-      "type": "stdio",
-      "env": {
-        "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_TOKEN}"
-      }
     },
     "filesystem": {
       "command": "npx",
       "args": [
         "-y",
-        "@modelcontextprotocol/server-filesystem",
-        "--allowed-directory",
+        "@modelcontextprotocol/server-filesystem@2026.8.31",
         "${workspaceFolder}"
       ],
       "type": "stdio"

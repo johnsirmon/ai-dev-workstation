@@ -12,10 +12,15 @@ See `README.md` for the full guide.
 
 ## Key facts
 
-- Target environment: WSL2 Ubuntu, VS Code with the Remote-WSL extension.
+- Target environment: WSL2 Ubuntu, VS Code with the WSL extension.
 - Primary coding agent: GitHub Copilot (agent mode), used from inside VS Code.
-- MCP servers are defined in `.vscode/mcp.json`; secrets are referenced as `${VAR_NAME}` and must
-  come from the environment/`.env`, never hard-coded in the file.
+- Four optional local MCP servers are defined in `.vscode/mcp.json`; secrets use VS Code's
+  `${env:VAR_NAME}` syntax. `.env.example` is a reference, not an automatically loaded file.
+  See `docs/mcp.md` for credentials, storage, and optional hosted GitHub MCP setup.
+- Local MCP package versions are pinned; tracking keys use the unversioned package names.
+  The memory graph is stored in the Git-ignored `.mcp-memory.jsonl`.
+- The architecture image is `docs/images/architecture.png`. It is conceptual: extension
+  placement varies, and optional frameworks/services are not installed by this repository.
 - `config/tools-tracking.json` only tracks metadata for the MCP npm packages referenced in
   `.vscode/mcp.json` — it is not a general AI-tool/framework catalog.
 - There is no scheduled automation that edits files or pushes commits. The only workflow
@@ -23,10 +28,15 @@ See `README.md` for the full guide.
 
 ## Scripts
 
+- `setup.sh` — runs the validator from the repository root without installing packages,
+  creating a venv, or writing credentials. Requires Python 3.10+.
 - `scripts/validate-mcp-config.py` — validates `.vscode/mcp.json` against
-  `config/tools-tracking.json`, flags deprecated env vars, and (with `--check-registry`) checks
-  that referenced npm packages exist. Stdlib-only, no network access required unless
-  `--check-registry` is passed.
+  `config/tools-tracking.json`, checks credential references and filesystem arguments, flags
+  deprecated env vars, and (with `--check-registry`) checks that referenced npm package names
+  exist. It does not audit vulnerabilities or verify pinned versions. Stdlib-only, no network
+  access required unless `--check-registry` is passed.
+- `tests/test_validate_mcp_config.py` — stdlib `unittest` regression tests; run with
+  `python3 -m unittest discover -s tests -v`.
 - `scripts/review-pr.ps1` — optional PowerShell helper that wraps `gh pr review/merge` for manual
   PR review (see `PR_CHECKLIST.md`). Requires the GitHub CLI (`gh`) to be authenticated.
 
@@ -37,6 +47,7 @@ See `README.md` for the full guide.
   version numbers that go stale quickly.
 - Don't reintroduce automation that commits or pushes to the repository without human review.
 - Don't hard-code secrets in `.vscode/mcp.json`, `config/tools-tracking.json`, or any committed
-  file — use `${VAR_NAME}` placeholders and document the variable in `.env.example`.
+  file — use `${env:VAR_NAME}` references and document the variable in `.env.example`.
 - If you update `.vscode/mcp.json`, run `python3 scripts/validate-mcp-config.py` and update
-  `config/tools-tracking.json` and `README.md`'s MCP table to match.
+  `config/tools-tracking.json` and `README.md`'s MCP table to match. Run the regression tests
+  when changing validation behavior. Keep the guide and its checks dependency-light.

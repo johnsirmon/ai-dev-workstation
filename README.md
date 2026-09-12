@@ -1,172 +1,148 @@
-# ai-dev-workstation
+<h1 align="center">AI Dev Workstation</h1>
 
-A practical setup guide for developing with AI coding agents on **Windows 11 + WSL2 + VS Code**.
+<p align="center">
+  <strong>Windows comfort. Linux tooling. AI-assisted development.</strong><br>
+  A lightweight reference for Windows 11, WSL 2, and VS Code.
+</p>
 
-*Last reviewed: September 2026.*
+<p align="center">
+  <a href="#architecture">Architecture</a> &nbsp;&middot;&nbsp;
+  <a href="#quick-start">Quick start</a> &nbsp;&middot;&nbsp;
+  <a href="#optional-tools">Optional tools</a> &nbsp;&middot;&nbsp;
+  <a href="#safety-boundaries">Safety</a>
+</p>
 
-This repo is a personal reference, not a framework — it documents one working setup and ships a
-few small scripts to validate the configuration. AI vendor names, features, and pricing change
-fast; treat anything below as a starting point and check the linked official docs before relying
-on specifics.
+![Windows 11 hosts the VS Code UI. The WSL extension connects it to VS Code Server, repository tools, and coding agents in Ubuntu. Agents connect to model providers; optional MCP tools connect to external services. The workflow is plan, edit, test, human review, then merge.](docs/images/architecture.png)
+
+<p align="center"><sub>Conceptual architecture &middot; <a href="docs/images/architecture.png">View full-size</a></sub></p>
+
+**A guide, not a framework or an installer bundle.** Start with an editor, a Linux workspace,
+and one coding agent. Add tools only when they solve a real problem.
+The repository's validator uses Python's standard library: no pip packages, containers,
+agent SDKs, or orchestration services are required.
+
+## Architecture
+
+| Layer | What belongs here | Why it matters |
+|---|---|---|
+| **Windows host** | Windows 11 and the VS Code UI | Keep your familiar desktop and editor. |
+| **WSL 2 / Ubuntu** | VS Code Server, source files, Git, terminals, Linux toolchains, and workspace-local MCP processes | Run Linux-first development tools alongside your code. |
+| **External services** | Model providers and any GitHub, documentation, or search services you enable | Make data leaving the workstation an explicit choice. |
+
+The [WSL extension](https://code.visualstudio.com/docs/remote/wsl) connects the Windows UI to
+the Linux workspace. Extension placement depends on the extension; not every agent or
+extension runs in Linux. The illustration is conceptual, not a process map.
+
+**Coding agents** plan, edit, and use tools. **MCP servers** provide additional tools and data;
+they are not required to call a model. **Agent frameworks** coordinate custom workflows and
+are optional, bring-your-own components. None are installed by this repository.
 
 ## Quick start
 
-**In PowerShell (Windows):**
+### 1. Prepare Windows
+
+In **PowerShell as Administrator**, if WSL is not already installed:
 
 ```powershell
-wsl --install -d Ubuntu-24.04   # first time only
-wsl --update
-winget install Microsoft.VisualStudioCode Git.Git
+wsl --install -d Ubuntu-24.04
 ```
 
-**In the WSL2 Ubuntu shell:**
+Restart if prompted, then open Ubuntu and finish creating your Linux user.
+Install [VS Code for Windows](https://code.visualstudio.com/download) and its
+[WSL extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl).
+For an existing installation, use `wsl --update` to update WSL.
+
+### 2. Open a Linux workspace
+
+In **Ubuntu**, ensure Git and Python 3.10+ are available
+(`sudo apt update && sudo apt install git python3` if needed), then:
 
 ```bash
-sudo apt update && sudo apt full-upgrade -y
+mkdir -p ~/src
+cd ~/src
 git clone https://github.com/johnsirmon/ai-dev-workstation.git
 cd ai-dev-workstation
-./setup.sh
+bash setup.sh
+code .
 ```
 
-Then in VS Code: install the **WSL** extension, run **"WSL: Connect to WSL"**, and open this
-folder from inside the WSL window (`code .` from the WSL terminal also works). Install **GitHub
-Copilot** (or your preferred coding agent extension) and sign in.
+[setup.sh](setup.sh) checks the configuration without installing packages, creating a virtual
+environment, or writing credentials. Keep Linux projects in the
+[WSL filesystem](https://learn.microsoft.com/windows/wsl/filesystems#file-storage-and-performance-across-file-systems)
+for Linux-tool performance. Confirm VS Code shows a **WSL** connection before running tools.
 
-## Why WSL2 for this workflow
+### 3. Choose one agent
 
-- Linux-native tooling (Python, Node, shell scripts) without path/line-ending friction.
-- VS Code's Remote-WSL support means the editor UI stays on Windows while everything else runs in
-  Linux — this is the officially recommended setup for Linux-first development on Windows.
-- Docker Desktop, if you use it, should have WSL2 integration enabled for the same reason.
+Install and sign in to your preferred coding agent. This guide uses
+[GitHub Copilot](https://docs.github.com/en/copilot) in VS Code as its baseline.
+Give it a small task, inspect the diff, and run the relevant checks.
+**MCP is optional; skip it until you need it.**
 
-Keep WSL current (PowerShell):
+## Optional tools
 
-```powershell
-wsl --update
-wsl --shutdown
-```
+Choose tools by **repository context, tool permissions, review controls, data handling,
+and cost**, not a model leaderboard. Terminal alternatives include
+[Claude Code](https://code.claude.com/docs/en/overview),
+[Codex](https://developers.openai.com/codex), and
+[Gemini CLI](https://github.com/google-gemini/gemini-cli).
+Check each project's current requirements and terms.
 
-## Choosing an AI coding agent
+The starter [MCP configuration](.vscode/mcp.json) contains four optional local servers.
+They require Node.js with `npx` in WSL; the basic guide and validator do not.
 
-Don't try to run every agent at once. Pick **one primary agent** integrated into VS Code for daily
-work, and add a CLI agent or extra MCP servers only when you have a specific need.
+| Server | Adds | Credential |
+|---|---|---|
+| [Context7](https://github.com/upstash/context7) | Library documentation lookup | `CONTEXT7_API_KEY` |
+| [Memory](https://github.com/modelcontextprotocol/servers/tree/main/src/memory) | A persistent local knowledge graph | None |
+| [Filesystem](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem) | File tools, initially scoped to this workspace | None |
+| [Brave Search](https://github.com/brave/brave-search-mcp-server) | Web search | `BRAVE_API_KEY` |
 
-**What actually matters when choosing:**
+**[MCP setup and credentials](docs/mcp.md)** covers enabling only what you need, storage,
+version updates, and an optional official GitHub connection. GitHub MCP is **not** included
+in the starter. Neither these servers nor any agent frameworks are preinstalled.
 
-- **Repository context** — can it see your whole workspace, not just the open file?
-- **Terminal/tool access** — can it run tests, builds, and git commands, and do you trust the
-  scope it's given?
-- **MCP support** — can it use Model Context Protocol servers for extra tools/data sources?
-- **Review workflow** — does it produce diffs/PRs you can review before merging, or edit silently?
-- **Privacy & data controls** — what happens to your code/prompts (training use, retention,
-  enterprise/business data-handling tiers)?
-- **Cost and limits** — subscription vs. usage-based billing, and rate/context limits.
+## Safety boundaries
 
-None of these are fixed facts about a vendor forever — check the current docs before deciding.
+- **Keep credentials out of Git and prompts.** Ignoring a file prevents accidental tracking,
+  not access by an agent. Never put secrets in the memory graph.
+- **Review before granting access.** MCP servers execute third-party code with the launching
+  user's permissions. Filesystem roots can change through the client; they are not a sandbox.
+- **Treat retrieved content as untrusted.** Web pages, issues, and tool results can contain
+  instructions that should not override your task or permissions.
+- **Know what leaves the machine.** Agents may send code and context to model providers;
+  remote tools may send queries or content to their services.
+- **Keep a human at the merge boundary.** Inspect diffs and terminal commands; retain approval
+  prompts. WSL is a development environment, **not a security sandbox**.
 
-### Current tool landscape (verify before relying on details)
+## The review loop
 
-| Tool | What it is | Status / caveats |
-|------|-----------|-------------------|
-| [GitHub Copilot](https://docs.github.com/en/copilot) (Chat/Agent mode, coding agent) | Deep VS Code/GitHub integration; can run agentic, multi-file tasks and open PRs. | Primary recommendation for this repo's workflow since it's native to VS Code and GitHub. |
-| [OpenAI Codex](https://developers.openai.com/codex) | OpenAI's agentic coding tool (CLI and IDE extension). | Model-agnostic within OpenAI's own models; check current CLI/extension docs for VS Code support. |
-| [Claude Code](https://docs.claude.com/en/docs/claude-code/overview) | Anthropic's terminal-first coding agent, also available as an extension. | Strong for large-context refactors; runs outside the VS Code chat UI unless using the extension. |
-| [Gemini CLI](https://github.com/google-gemini/gemini-cli) / [Gemini Code Assist](https://codeassist.google/) | Google's terminal agent and IDE assistant. | Gemini CLI is open source; Code Assist is the IDE-integrated product — check current free/paid tiers. |
-| [Cursor](https://cursor.com) | AI-first fork of VS Code (by Anysphere). | Anysphere/Cursor became a SpaceX subsidiary in 2026. Functionality and roadmap may change under new ownership — check cursor.com for the current state before adopting it as a primary tool. |
-| [Windsurf](https://windsurf.com) | AI-first IDE (originally Codeium). | Treat as optional/legacy context rather than a default pick; the competitive landscape around forked IDEs has shifted since 2025. Verify current status before recommending it to others. |
+**Plan &rarr; Edit &rarr; Test &rarr; Human review &rarr; Merge**
 
-This list is intentionally short. For anything not listed (agent frameworks, orchestration SDKs,
-model leaderboards, etc.), check the vendor's own documentation rather than a comparison blog —
-that space moves too fast for a static table to stay accurate.
-
-## MCP servers
-
-[Model Context Protocol](https://modelcontextprotocol.io) (MCP) lets an agent call external tools
-(search, GitHub, memory, filesystem, internal APIs) through a standard interface. This repo's
-`.vscode/mcp.json` defines a small starter set:
-
-| Server | Purpose | Secret required |
-|--------|---------|------------------|
-| `context7` | Up-to-date library docs/context lookup. | `CONTEXT7_API_KEY` |
-| `memory` | In-session persistent notes/memory. | none |
-| `filesystem` | Read/write access scoped to this workspace folder. | none |
-| `github` | Repository/issue/PR access. | `GITHUB_TOKEN` (personal access token) |
-| `brave-search` | Web search. | `BRAVE_API_KEY` |
-
-Secrets are referenced as `${VAR_NAME}` in `mcp.json` and resolved from your environment or VS
-Code's secret storage — **never hard-code a token in `mcp.json` or commit one to git.** Copy
-`.env.example` to `.env`, fill in only the keys you actually need, and load it into your shell
-(e.g. `export $(grep -v '^#' .env | xargs)` in bash) before starting VS Code from that shell.
-
-**Least-privilege guidance:**
-- Scope the GitHub token to the minimum permissions/repos you need, and prefer a fine-grained PAT.
-- Only add MCP servers you understand — each one is code you're letting an agent invoke on your
-  behalf. Remove servers you're not using from `mcp.json`.
-- Don't grant an agent write access (git push, file deletion, package publishing) unless you
-  review its proposed changes first. Prefer agents that show a diff/PR before applying edits.
-
-Validate the config any time you edit it:
+Keep each change small, run the relevant checks, then follow the
+[manual PR checklist](PR_CHECKLIST.md). For this repository, run these in Ubuntu:
 
 ```bash
 python3 scripts/validate-mcp-config.py
+python3 -m unittest discover -s tests -v
+bash -n setup.sh
+git diff --check
 ```
 
-## Recommended baseline workflow
+[CI](.github/workflows/validate.yml) checks syntax, JSON, configuration consistency, and
+regression tests. Its token has `contents: read`; it does not commit, push, or merge.
+There are no scheduled update jobs. Validation is not a security certification.
 
-1. **VS Code + Remote-WSL** as the editor, running inside your Ubuntu WSL distro.
-2. **One primary coding agent** wired into VS Code (GitHub Copilot by default in this repo).
-3. **Git/GitHub** for review — let the agent propose changes as a diff or PR, don't let it push
-   directly to a protected branch.
-4. **MCP servers**, added incrementally, only for tools you actually need.
-5. **Optional CLI agents** (Claude Code, Gemini CLI, Codex CLI) for tasks better suited to a
-   terminal workflow (long-running scripts, headless environments) — keep credentials scoped the
-   same way as above.
+## Inside the repository
 
-## Setup, update, and cleanup
+| Entry | Purpose |
+|---|---|
+| [README.md](README.md) | System design and minimal getting-started path |
+| [docs/mcp.md](docs/mcp.md) | Optional MCP configuration and credential guidance |
+| [docs/images/architecture.png](docs/images/architecture.png) | Architecture illustration |
+| [.vscode/mcp.json](.vscode/mcp.json) / [config/tools-tracking.json](config/tools-tracking.json) | Server definitions and npm-package metadata |
+| [scripts/](scripts/) / [tests/](tests/) | Small validation/review helpers and standard-library tests |
+| [CLAUDE.md](CLAUDE.md) | Shared repository instructions for coding agents |
 
-| Task | Shell | Command |
-|------|-------|---------|
-| Install WSL2 + Ubuntu | PowerShell | `wsl --install -d Ubuntu-24.04` |
-| Update WSL kernel | PowerShell | `wsl --update` |
-| Update Ubuntu packages | Bash (WSL) | `sudo apt update && sudo apt full-upgrade -y` |
-| Initial repo setup (venv, deps, `.env`) | Bash (WSL) | `./setup.sh` |
-| Validate MCP config | Bash (WSL) | `python3 scripts/validate-mcp-config.py` |
-| Validate Python syntax | Bash (WSL) | `python3 -m py_compile scripts/*.py` |
-| Stop/reset WSL distro | PowerShell | `wsl --shutdown` |
-| Remove local venv (clean) | Bash (WSL) | `rm -rf .venv` |
-
-`setup.sh` creates a Python virtual environment, installs `requirements.txt` (currently empty —
-kept for future scripts), makes the `scripts/` files executable, and copies `.env.example` to
-`.env` if one doesn't already exist. It does not install Node.js; only install it if an MCP
-server you use requires `npx`.
-
-## Repository layout
-
-```
-.
-├── .env.example              # Template for MCP server secrets — copy to .env, never commit .env
-├── .vscode/mcp.json           # MCP server definitions used by VS Code
-├── config/tools-tracking.json # Metadata cross-checked by scripts/validate-mcp-config.py
-├── scripts/
-│   ├── validate-mcp-config.py # Checks mcp.json against tracked servers, flags deprecated env vars
-│   └── review-pr.ps1          # Optional helper: approve/merge a PR via `gh` CLI
-├── setup.sh                   # One-time environment bootstrap
-├── requirements.txt            # Python deps (currently none required)
-├── CLAUDE.md                  # Agent-facing repo context (see below)
-└── PR_CHECKLIST.md            # Manual PR review checklist
-```
-
-## Agent instructions
-
-[`CLAUDE.md`](CLAUDE.md) is the single source of truth for repo context given to AI coding agents
-(Claude Code and others that read it). If you add instructions for another agent, point it at
-`CLAUDE.md` instead of duplicating content.
-
-## Automation
-
-There is no scheduled automation in this repo. Tool versions and AI product details age quickly
-and are easy to get wrong when auto-generated, so this repo favors periodic manual review over a
-background job that edits `README.md` or commits unreviewed content. If you want to re-introduce
-scheduled checks, keep them read-only (validation only) or require a human to review the diff
-before merge — never grant a scheduled workflow permission to push directly to your default
-branch.
+[Copilot's instructions](.github/copilot-instructions.md) point to [CLAUDE.md](CLAUDE.md)
+instead of duplicating context. Adapt the guide to your projects; keep the toolchain small
+and the decisions reviewable.

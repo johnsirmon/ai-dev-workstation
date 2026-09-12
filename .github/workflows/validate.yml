@@ -21,7 +21,7 @@ jobs:
           python-version: "3.12"
 
       - name: Check Python syntax
-        run: python3 -m py_compile scripts/*.py
+        run: python3 -m py_compile scripts/*.py tests/*.py
 
       - name: Check shell script syntax
         run: |
@@ -37,3 +37,6 @@ jobs:
 
       - name: Validate MCP config consistency
         run: python3 scripts/validate-mcp-config.py
+
+      - name: Run regression tests
+        run: python3 -m unittest discover -s tests -v

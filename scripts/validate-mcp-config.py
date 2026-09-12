@@ -3,6 +3,7 @@
 
 import argparse
 import json
+import re
 import sys
 import urllib.error
 import urllib.request
@@ -36,8 +37,25 @@ def extract_npm_package(server_cfg: dict[str, Any]) -> str | None:
 
     for token in args:
         if isinstance(token, str) and token.startswith('@'):
-            return token
+            return token.rsplit('@', 1)[0] if '@' in token[1:] else token
     return None
+
+
+def is_secret_reference(value: object, inputs: object) -> bool:
+    if not isinstance(value, str):
+        return False
+    if re.fullmatch(r'\$\{env:[A-Za-z_][A-Za-z0-9_]*\}', value):
+        return True
+    match = re.fullmatch(r'\$\{input:([^}]+)\}', value)
+    if match is None or not isinstance(inputs, list):
+        return False
+    return any(
+        isinstance(item, dict)
+        and item.get('id') == match.group(1)
+        and item.get('type') == 'promptString'
+        and item.get('password') is True
+        for item in inputs
+    )
 
 
 def check_npm_package_exists(package_name: str, timeout: int = 8) -> bool:
@@ -103,14 +121,30 @@ def validate(check_registry: bool) -> int:
                         f"Could not verify npm package '{pkg}': {exc}"
                     )
 
-    brave_cfg = servers.get('brave-search')
-    if isinstance(brave_cfg, dict):
-        brave_env = brave_cfg.get('env', {})
-        if not isinstance(brave_env, dict):
-            errors.append("Server 'brave-search' env must be an object")
-        elif brave_env.get('BRAVE_API_KEY') != '${BRAVE_API_KEY}':
+    for server_name, key in (
+        ('context7', 'CONTEXT7_API_KEY'),
+        ('brave-search', 'BRAVE_API_KEY'),
+    ):
+        config = servers.get(server_name)
+        if not isinstance(config, dict):
+            continue
+        env = config.get('env', {})
+        if not isinstance(env, dict):
+            errors.append(f"Server '{server_name}' env must be an object")
+        elif not is_secret_reference(env.get(key), mcp_config.get('inputs', [])):
             errors.append(
-                "Server 'brave-search' must map BRAVE_API_KEY to '${BRAVE_API_KEY}'"
+                f"Server '{server_name}' must map {key} to a VS Code "
+                "'${env:VARIABLE}' reference or a defined password input"
+            )
+
+    filesystem = servers.get('filesystem')
+    if isinstance(filesystem, dict):
+        args = filesystem.get('args', [])
+        if not isinstance(args, list) or '${workspaceFolder}' not in args:
+            errors.append("Server 'filesystem' must include '${workspaceFolder}' in args")
+        elif '--allowed-directory' in args:
+            errors.append(
+                "Server 'filesystem' uses positional directories, not '--allowed-directory'"
             )
 
     tracked_only = sorted(set(tracked.keys()) - mcp_packages)

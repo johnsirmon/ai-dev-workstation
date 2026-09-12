@@ -7,15 +7,11 @@
       },
       "@modelcontextprotocol/server-memory": {
         "source": "https://github.com/modelcontextprotocol/servers",
-        "description": "In-session persistent memory for AI agents"
+        "description": "Persistent local knowledge graph for AI agents"
       },
       "@modelcontextprotocol/server-filesystem": {
         "source": "https://github.com/modelcontextprotocol/servers",
-        "description": "Filesystem access scoped to the workspace folder"
-      },
-      "@modelcontextprotocol/server-github": {
-        "source": "https://github.com/modelcontextprotocol/servers",
-        "description": "GitHub repository/issue/PR access"
+        "description": "Filesystem access initially scoped to the workspace; client Roots can change the scope"
       },
       "@brave/brave-search-mcp-server": {
         "source": "https://www.npmjs.com/package/@brave/brave-search-mcp-server",

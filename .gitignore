@@ -1,5 +1,10 @@
 # Environment variables (contains sensitive keys)
 .env
+.env.*
+!.env.example
+
+# Local MCP memory (may contain private project context)
+.mcp-memory.jsonl
 
 # Python cache
 __pycache__/

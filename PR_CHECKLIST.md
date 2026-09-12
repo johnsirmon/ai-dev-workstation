@@ -23,10 +23,11 @@ git diff main...HEAD -- <file1>
 git diff main...HEAD -- <file2>
 ```
 
-Validate MCP config consistency (when MCP files are touched):
+Validate MCP config consistency and its regression tests (when MCP files are touched):
 
 ```powershell
 python scripts/validate-mcp-config.py
+python -m unittest discover -s tests -v
 ```
 
 ## 3. Approve PR
@@ -60,11 +61,14 @@ git branch -d review/<short-name>
 
 ## Optional: One-Command Helper
 
-Use the helper script in this repo:
+The [helper script](scripts/review-pr.ps1) is a manual shortcut, **not a review or safety
+gate**. It uses your authenticated GitHub CLI account. Review the diff and CI results first;
+use the individual commands above when you want to inspect each step.
 
 ```powershell
 # approve + ready + squash merge + optional branch delete
 ./scripts/review-pr.ps1 -PrNumber <PR_NUMBER> -Approve -Ready -Merge -MergeMethod squash -DeleteBranch
 ```
 
-If you omit action switches, the script defaults to approve + ready + merge.
+**Warning:** if you omit action switches, the script defaults to approve + ready + merge.
+It is not a dry run. To avoid approving or merging, do not invoke it without explicit actions.

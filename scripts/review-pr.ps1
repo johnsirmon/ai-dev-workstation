@@ -29,8 +29,7 @@ function Invoke-Step {
     & $Action
 }
 
-# Safe defaults:
-# - If no action switches are supplied, run approve + ready + merge.
+# Omitting action switches performs all three actions, not a dry run.
 if (-not ($Approve -or $Ready -or $Merge)) {
     $Approve = $true
     $Ready = $true
