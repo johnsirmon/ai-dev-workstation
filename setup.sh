@@ -13,4 +13,4 @@ python3 scripts/validate-mcp-config.py
 
 printf '\nConfiguration checked. Nothing was installed.\n'
 printf 'Open this folder in VS Code through the WSL extension and choose one coding agent.\n'
-printf 'Optional MCP servers need Node.js/npx; see docs/mcp.md before enabling them.\n'
+printf 'Optional MCP servers need Node.js and npm ci; see docs/mcp.md before enabling them.\n'

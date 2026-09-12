@@ -12,16 +12,20 @@ Start only the servers you trust and need.
 2. Install a supported [Node.js LTS release](https://nodejs.org/en/download) in WSL if needed.
    The current Context7 pin requires Node.js 20.18.1 or newer; prefer a supported LTS
    rather than installing an older runtime just to meet that minimum.
-3. Review each server's package, arguments, and permissions in
+3. Run `npm ci --ignore-scripts` from the repository root. This installs the exact dependency
+   graph and integrity hashes recorded in `package-lock.json` without running package lifecycle
+   scripts.
+4. Review each server's package, arguments, and permissions in
    [.vscode/mcp.json](../.vscode/mcp.json).
-4. Supply credentials for the servers you want, as described below.
-5. Use **MCP: List Servers** to start or disable individual servers and inspect their output.
+5. Supply credentials for the servers you want, as described below.
+6. Use **MCP: List Servers** to start or disable individual servers and inspect their output.
    Enabling/disabling in VS Code does not require deleting shared configuration.
 
-`npx -y` may download the selected package and its dependencies when a server starts.
-The direct package versions are pinned for repeatability; this does **not** lock their
-transitive dependencies or prove they are safe. Review updates before changing the pins.
-Do not enable blanket tool approvals.
+The starter launches packages from the workspace's `node_modules` directory rather than
+downloading code when a server starts. Direct versions are exact in `package.json`, and
+`package-lock.json` locks the transitive dependency graph and package integrity hashes.
+The lockfile improves reproducibility; it does **not** prove packages are safe. Review lockfile
+changes before running `npm ci`, and do not enable blanket tool approvals.
 
 Workspace-configured local servers run in WSL when the workspace is opened through the WSL
 extension. User-profile servers may run on the Windows host instead. See
@@ -38,7 +42,9 @@ The starter uses VS Code's `${env:VARIABLE_NAME}` syntax:
 
 Create keys through [Context7](https://context7.com/dashboard) or
 [Brave Search](https://api.search.brave.com/), only if using those servers.
-Set the variables in the environment used to launch the MCP processes.
+Set only the variables each server needs in the environment used to launch the MCP processes.
+Local MCP processes can inherit other variables from VS Code, so avoid launching VS Code from
+a shell containing unrelated credentials.
 Windows and WSL environments are separate; an already-running VS Code Server may not
 pick up a later shell export. For remote sessions, follow the official
 [WSL server environment setup](https://code.visualstudio.com/docs/remote/wsl#_advanced-environment-setup-script).
@@ -98,4 +104,5 @@ python3 -m unittest discover -s tests -v
 When changing packages, update [tools-tracking.json](../config/tools-tracking.json) and the
 [README's MCP table](../README.md#optional-tools). Tracking covers npm packages only, not
 hosted services or agent frameworks. The optional `--check-registry` flag checks whether
-package names exist on npm; it does not audit vulnerabilities or verify pinned versions.
+package names exist on npm; it does not audit vulnerabilities. The validator requires exact
+direct versions and integrity entries for the complete dependency graph in `package-lock.json`.

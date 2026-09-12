@@ -13,6 +13,8 @@ from typing import Any
 
 MCP_CONFIG_PATH = Path('.vscode/mcp.json')
 TRACKING_PATH = Path('config/tools-tracking.json')
+PACKAGE_PATH = Path('package.json')
+PACKAGE_LOCK_PATH = Path('package-lock.json')
 DEPRECATED_ENV_KEYS = {
     'SEARCH_API_KEY',
     'SEARCH_ENGINE_ID',
@@ -32,12 +34,22 @@ def extract_npm_package(server_cfg: dict[str, Any]) -> str | None:
     command = server_cfg.get('command')
     args = server_cfg.get('args', [])
 
-    if command != 'npx' or not isinstance(args, list):
+    if not isinstance(args, list):
         return None
 
-    for token in args:
-        if isinstance(token, str) and token.startswith('@'):
-            return token.rsplit('@', 1)[0] if '@' in token[1:] else token
+    if command == 'npx':
+        for token in args:
+            if isinstance(token, str) and token.startswith('@'):
+                return token.rsplit('@', 1)[0] if '@' in token[1:] else token
+
+    if command == 'node' and args and isinstance(args[0], str):
+        match = re.fullmatch(
+            r'\$\{workspaceFolder\}/node_modules/(@[^/]+/[^/]+|[^/]+)/.+',
+            args[0],
+        )
+        if match:
+            return match.group(1)
+
     return None
 
 
@@ -74,9 +86,13 @@ def check_npm_package_exists(package_name: str, timeout: int = 8) -> bool:
 def validate(check_registry: bool) -> int:
     mcp_config = load_json(MCP_CONFIG_PATH)
     tracking = load_json(TRACKING_PATH)
+    package = load_json(PACKAGE_PATH)
+    package_lock = load_json(PACKAGE_LOCK_PATH)
 
     servers = mcp_config.get('servers', {})
     tracked = tracking.get('tracked_tools', {}).get('mcp_servers', {})
+    dependencies = package.get('dependencies', {})
+    locked_packages = package_lock.get('packages', {})
 
     if not isinstance(servers, dict):
         print('ERROR: .vscode/mcp.json must contain an object at servers')
@@ -89,6 +105,29 @@ def validate(check_registry: bool) -> int:
     errors: list[str] = []
     warnings: list[str] = []
     mcp_packages: set[str] = set()
+
+    lock_root = locked_packages.get('') if isinstance(locked_packages, dict) else None
+    if (
+        not isinstance(dependencies, dict)
+        or not isinstance(lock_root, dict)
+        or lock_root.get('dependencies') != dependencies
+    ):
+        errors.append('package.json dependencies must match package-lock.json')
+
+    if isinstance(locked_packages, dict):
+        for package_path, lock_entry in locked_packages.items():
+            if not package_path:
+                continue
+            if (
+                not isinstance(lock_entry, dict)
+                or (
+                    lock_entry.get('link') is not True
+                    and not isinstance(lock_entry.get('integrity'), str)
+                )
+            ):
+                errors.append(
+                    f"Locked package '{package_path}' must include an integrity hash"
+                )
 
     for server_name, server_cfg in servers.items():
         if not isinstance(server_cfg, dict):
@@ -106,9 +145,31 @@ def validate(check_registry: bool) -> int:
         pkg = extract_npm_package(server_cfg)
         if pkg:
             mcp_packages.add(pkg)
+            if server_cfg.get('command') != 'node':
+                errors.append(
+                    f"Server '{server_name}' must use its workspace-local locked package"
+                )
             if pkg not in tracked:
                 errors.append(
                     f"Package '{pkg}' used by server '{server_name}' is not tracked in config/tools-tracking.json"
+                )
+            version = dependencies.get(pkg) if isinstance(dependencies, dict) else None
+            if not isinstance(version, str) or re.fullmatch(r'\d+\.\d+\.\d+', version) is None:
+                errors.append(
+                    f"Package '{pkg}' must have an exact version in package.json"
+                )
+            lock_entry = (
+                locked_packages.get(f'node_modules/{pkg}')
+                if isinstance(locked_packages, dict)
+                else None
+            )
+            if (
+                not isinstance(lock_entry, dict)
+                or lock_entry.get('version') != version
+                or not isinstance(lock_entry.get('integrity'), str)
+            ):
+                errors.append(
+                    f"Package '{pkg}' must match an integrity-pinned package-lock.json entry"
                 )
             elif check_registry:
                 try:
@@ -120,6 +181,10 @@ def validate(check_registry: bool) -> int:
                     warnings.append(
                         f"Could not verify npm package '{pkg}': {exc}"
                     )
+        elif server_cfg.get('type') == 'stdio':
+            errors.append(
+                f"Server '{server_name}' must reference a workspace-local npm package"
+            )
 
     for server_name, key in (
         ('context7', 'CONTEXT7_API_KEY'),
@@ -177,7 +242,7 @@ def main() -> None:
     parser.add_argument(
         '--check-registry',
         action='store_true',
-        help='Also verify npx package names exist in npm registry',
+        help='Also verify configured package names exist in npm registry',
     )
     args = parser.parse_args()
 

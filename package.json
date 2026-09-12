@@ -1,0 +1,14 @@
+{
+  "name": "ai-dev-workstation-mcp",
+  "private": true,
+  "description": "Locked dependencies for the optional local MCP servers",
+  "engines": {
+    "node": ">=20.18.1"
+  },
+  "dependencies": {
+    "@brave/brave-search-mcp-server": "2.1.3",
+    "@modelcontextprotocol/server-filesystem": "2026.8.31",
+    "@modelcontextprotocol/server-memory": "2026.8.31",
+    "@upstash/context7-mcp": "4.1.0"
+  }
+}

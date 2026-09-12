@@ -88,7 +88,9 @@ and cost**, not a model leaderboard. Terminal alternatives include
 Check each project's current requirements and terms.
 
 The starter [MCP configuration](.vscode/mcp.json) contains four optional local servers.
-They require Node.js with `npx` in WSL; the basic guide and validator do not.
+They require Node.js in WSL and an explicit `npm ci --ignore-scripts` installation; the basic
+guide and validator do not install them. Their complete dependency graph and integrity hashes
+are committed in `package-lock.json`.
 
 | Server | Adds | Credential |
 |---|---|---|
@@ -97,9 +99,10 @@ They require Node.js with `npx` in WSL; the basic guide and validator do not.
 | [Filesystem](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem) | File tools, initially scoped to this workspace | None |
 | [Brave Search](https://github.com/brave/brave-search-mcp-server) | Web search | `BRAVE_API_KEY` |
 
-**[MCP setup and credentials](docs/mcp.md)** covers enabling only what you need, storage,
-version updates, and an optional official GitHub connection. GitHub MCP is **not** included
-in the starter. Neither these servers nor any agent frameworks are preinstalled.
+**[MCP setup and credentials](docs/mcp.md)** covers installing the locked packages, enabling
+only what you need, storage, version updates, and an optional official GitHub connection.
+GitHub MCP is **not** included in the starter. Neither these servers nor any agent frameworks
+are preinstalled.
 
 ## Safety boundaries
 

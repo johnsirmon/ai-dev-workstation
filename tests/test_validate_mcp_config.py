@@ -23,11 +23,24 @@ class ValidateMcpConfigTests(unittest.TestCase):
         self.tracking = json.loads(
             (ROOT / 'config' / 'tools-tracking.json').read_text(encoding='utf-8')
         )
+        self.package = json.loads((ROOT / 'package.json').read_text(encoding='utf-8'))
+        self.package_lock = json.loads(
+            (ROOT / 'package-lock.json').read_text(encoding='utf-8')
+        )
 
     def run_validation(self, check_registry: bool = False) -> tuple[int, str]:
         output = io.StringIO()
         with (
-            patch.object(validator, 'load_json', side_effect=[self.config, self.tracking]),
+            patch.object(
+                validator,
+                'load_json',
+                side_effect=[
+                    self.config,
+                    self.tracking,
+                    self.package,
+                    self.package_lock,
+                ],
+            ),
             contextlib.redirect_stdout(output),
         ):
             code = validator.validate(check_registry)
@@ -45,6 +58,17 @@ class ValidateMcpConfigTests(unittest.TestCase):
             with self.subTest(package=package):
                 config = {'command': 'npx', 'args': ['-y', package]}
                 self.assertEqual(validator.extract_npm_package(config), '@scope/server')
+        self.assertEqual(
+            validator.extract_npm_package(
+                {
+                    'command': 'node',
+                    'args': [
+                        '${workspaceFolder}/node_modules/@scope/server/dist/index.js'
+                    ],
+                }
+            ),
+            '@scope/server',
+        )
         self.assertIsNone(validator.extract_npm_package({'type': 'http', 'url': 'https://example.com'}))
 
     def test_registry_checks_unversioned_package_names(self) -> None:
@@ -110,10 +134,58 @@ class ValidateMcpConfigTests(unittest.TestCase):
         self.assertIn('workspaceFolder', output)
 
     def test_untracked_pinned_package_is_rejected(self) -> None:
-        self.config['servers']['memory']['args'][-1] = '@scope/untracked@1.2.3'
+        self.config['servers']['memory']['args'][0] = (
+            '${workspaceFolder}/node_modules/@scope/untracked/dist/index.js'
+        )
         code, output = self.run_validation()
         self.assertEqual(code, 1)
         self.assertIn("Package '@scope/untracked'", output)
+
+    def test_npx_package_is_rejected(self) -> None:
+        self.config['servers']['memory'] |= {
+            'command': 'npx',
+            'args': ['-y', '@modelcontextprotocol/server-memory@2026.8.31'],
+        }
+        code, output = self.run_validation()
+        self.assertEqual(code, 1)
+        self.assertIn('workspace-local locked package', output)
+
+    def test_nonexact_dependency_is_rejected(self) -> None:
+        self.package['dependencies']['@modelcontextprotocol/server-memory'] = '^2026.8.31'
+        code, output = self.run_validation()
+        self.assertEqual(code, 1)
+        self.assertIn('exact version', output)
+
+    def test_missing_integrity_is_rejected(self) -> None:
+        del self.package_lock['packages'][
+            'node_modules/@modelcontextprotocol/server-memory'
+        ]['integrity']
+        code, output = self.run_validation()
+        self.assertEqual(code, 1)
+        self.assertIn('integrity-pinned', output)
+
+    def test_missing_transitive_integrity_is_rejected(self) -> None:
+        del self.package_lock['packages']['node_modules/accepts']['integrity']
+        code, output = self.run_validation()
+        self.assertEqual(code, 1)
+        self.assertIn("Locked package 'node_modules/accepts'", output)
+
+    def test_package_lock_root_must_match_dependencies(self) -> None:
+        del self.package_lock['packages']['']['dependencies'][
+            '@modelcontextprotocol/server-memory'
+        ]
+        code, output = self.run_validation()
+        self.assertEqual(code, 1)
+        self.assertIn('dependencies must match', output)
+
+    def test_unrecognized_stdio_command_is_rejected(self) -> None:
+        self.config['servers']['memory'] |= {
+            'command': 'custom-server',
+            'args': [],
+        }
+        code, output = self.run_validation()
+        self.assertEqual(code, 1)
+        self.assertIn('workspace-local npm package', output)
 
     def test_deprecated_environment_keys_are_still_rejected(self) -> None:
         self.config['servers']['brave-search']['env']['SEARCH_API_KEY'] = '${env:SEARCH_API_KEY}'

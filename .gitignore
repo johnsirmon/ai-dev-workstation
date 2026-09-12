@@ -16,6 +16,9 @@ venv/
 env/
 .venv/
 
+# Optional workspace-local MCP packages
+node_modules/
+
 # IDE files
 .vscode/settings.json
 .idea/
